@@ -11,8 +11,8 @@ CREATE TABLE Persona
 
 CREATE TABLE TelefonoP
 (
-	Cedula CHAR(9) NOT NULL,
-	Telefono VARCHAR(8) NOT NULL,
+	Cedula 		CHAR(9) NOT NULL,
+	Telefono 	VARCHAR(8) NOT NULL,
 	CONSTRAINT Tels_Persona PRIMARY KEY ( Cedula, Telefono ),
 	CONSTRAINT Ref_Per FOREIGN KEY ( Cedula ) REFERENCES Persona( Cedula )
 	ON DELETE CASCADE
@@ -20,8 +20,8 @@ CREATE TABLE TelefonoP
 /* SCRIPT PARA LA TABLA ENCARGADO */
 CREATE TABLE Encargado
 (
-	CedEncargado CHAR (9)NOT NULL,
-	CONSTRAINT Ced_Encar PRIMARY KEY( CedEncargado ),
+	CedEncargado 			CHAR (9)NOT NULL,
+	CONSTRAINT Ced_Encar 	PRIMARY KEY( CedEncargado ),
 	CONSTRAINT Ref_Per_Encar FOREIGN KEY ( CedEncargado ) REFERENCES Persona(Cedula)
 );
 
@@ -57,8 +57,8 @@ CREATE TABLE Escuela
 
 CREATE TABLE TelefonoE
 (
-	NombreEsc VARCHAR(30) NOT NULL,
-	Telefono  VARCHAR(8) NOT NULL,
+	NombreEsc 		VARCHAR(30) NOT NULL,
+	Telefono  		VARCHAR(8) NOT NULL,
 	CONSTRAINT Telf_Esc PRIMARY KEY ( NombreEsc, Telefono ),
 	CONSTRAINT Ref_Esc FOREIGN KEY ( NombreEsc ) REFERENCES Escuela ( Nombre )
 		ON DELETE CASCADE
@@ -79,8 +79,8 @@ CREATE TABLE PagosDeJugador
 
 CREATE TABLE PagoMensualidad
 (
-	NombreEscuela VARCHAR(30) NOT NULL,
-	NumeroRecibo TINYINT NOT NULL,
+	NombreEscuela 	VARCHAR(30) NOT NULL,
+	NumeroRecibo 	TINYINT NOT NULL,
 	CONSTRAINT Pago_Men PRIMARY KEY ( NombreEscuela, NumeroRecibo ),
 	CONSTRAINT Ref_Pago FOREIGN KEY ( NombreEscuela, NumeroRecibo ) REFERENCES PagosDeJugador( NombreEscuela, NumeroRecibo )
 		ON DELETE CASCADE
@@ -88,10 +88,10 @@ CREATE TABLE PagoMensualidad
 
 CREATE TABLE Mes
 (
-	NombreEscuela VARCHAR(30) NOT NULL,
-	NumeroRecibo TINYINT NOT NULL,
-	Mes			 TINYINT NOT NULL,
-	Año			 TINYINT NOT NULL,
+	NombreEscuela 	VARCHAR(30) NOT NULL,
+	NumeroRecibo 	TINYINT NOT NULL,
+	Mes			 	TINYINT NOT NULL,
+	Año			 	TINYINT NOT NULL,
 	CONSTRAINT Pago_Meses PRIMARY KEY ( NombreEscuela, NumeroRecibo, Mes, Año ),
 	CONSTRAINT Ref_PagoM  FOREIGN KEY ( NombreEscuela, NumeroRecibo ) REFERENCES PagoMensualidad ( NombreEscuela, NumeroRecibo )      
 		ON DELETE CASCADE
@@ -99,13 +99,25 @@ CREATE TABLE Mes
 
 CREATE TABLE PagoMatricula
 (
-	NombreEscuela VARCHAR(30) NOT NULL,
-	NumeroRecibo TINYINT NOT NULL,
+	NombreEscuela 	VARCHAR(30) NOT NULL,
+	NumeroRecibo 	TINYINT NOT NULL,
 	CONSTRAINT Pago_Matri PRIMARY KEY ( NombreEscuela, NumeroRecibo ),
 	CONSTRAINT Ref2_Pago FOREIGN KEY ( NombreEscuela, NumeroRecibo ) REFERENCES PagosDeJugador( NombreEscuela, NumeroRecibo )
 );
 
 /* SCRIPT PARA LA TABLA DE ENTRENAMIENTOS */
-
+CREATE TABLE Entrenamiento
+(
+	Fecha 			DATE NOT NULL,
+	Hora 			TIME NOT NULL,
+	CONSTRAINT Fecha_entreno PRIMARY KEY( Fecha )
+);
 
 /* SCRIPT PARA LA TABLA DE NIVELES */
+CREATE TABLE Nivel
+(
+	Numero 			TINYINT(30) NOT NULL,
+	EdadInicio	 	Date NOT NULL,
+	EdadFin	 		Date NOT NULL,
+	CONSTRAINT Num_nivel PRIMARY KEY ( Numero)
+);
