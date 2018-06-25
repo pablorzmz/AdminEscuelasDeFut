@@ -45,17 +45,71 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\Conexion.cs" />
-    <Compile Include="Formularios\Principal.cs">
+    <Compile Include="Classes\Connection.cs" />
+    <Compile Include="Forms\HeadQuarters.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Principal.Designer.cs">
-      <DependentUpon>Principal.cs</DependentUpon>
+    <Compile Include="Forms\HeadQuarters.Designer.cs">
+      <DependentUpon>HeadQuarters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Levels.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Levels.Designer.cs">
+      <DependentUpon>Levels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pays.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pays.Designer.cs">
+      <DependentUpon>Pays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Players.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Players.Designer.cs">
+      <DependentUpon>Players.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Schools.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Schools.Designer.cs">
+      <DependentUpon>Schools.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Trainings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Trainings.Designer.cs">
+      <DependentUpon>Trainings.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularios\Principal.resx">
-      <DependentUpon>Principal.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HeadQuarters.resx">
+      <DependentUpon>HeadQuarters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Levels.resx">
+      <DependentUpon>Levels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pays.resx">
+      <DependentUpon>Pays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Players.resx">
+      <DependentUpon>Players.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Schools.resx">
+      <DependentUpon>Schools.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Trainings.resx">
+      <DependentUpon>Trainings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

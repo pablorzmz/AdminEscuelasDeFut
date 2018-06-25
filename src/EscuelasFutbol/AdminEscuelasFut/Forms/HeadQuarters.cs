@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace AdminEscuelasFut
 {
-    public partial class Form1 : Form
+    public partial class HeadQuarters : Form
     {
-        public Form1()
+        public HeadQuarters()
         {
             InitializeComponent();
+        }
+
+        private void HeadQuarters_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
