@@ -37,7 +37,7 @@
             // 
             // menLevels
             // 
-            this.menLevels.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.menLevels.BackColor = System.Drawing.Color.LightSeaGreen;
             this.menLevels.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.ayudaToolStripMenuItem});

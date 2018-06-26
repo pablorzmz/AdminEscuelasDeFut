@@ -1,0 +1,23 @@
+La aplicación  muestra todos los textos, tooltips para el usuario en español, pero se programa en inglés.
+
+
+Prefijo para los Nombres para los componentes:
+
+Buttons -> btn"Texto que muestra en español"
+Labels  -> lb"Texto que muestra en español"
+ComboBox -> cbo"Datos que despliega en español"
+DataGridView -> dgv"Datos que despliega en español"
+RadioButton -> rbtn"Dato que se selecciona en español"
+DateTimePicker ->dtp"Fecha sobre que dato se selecciona en español"
+CheckBox -> ckbx"Texto que muestra en español"
+menúes -> men"Nombre en español de texto del form al que pertenece"
+menuitem -> menuItem"Nombre del item del menú al que representa en español"
+
+
+Variables usando lower camel case, ejem: varibleNameWithLowerCamelCase
+
+
+Ubicaciones de los formularios: en la carpeta Forms. 
+Los formularios no tiene prefijos. Nombre inglés de para nombrarlo, en plural en la mayoría de los casos.
+
+Ubicaciones de la clases: Carpeta classes. Nombre en ingles para las clases.

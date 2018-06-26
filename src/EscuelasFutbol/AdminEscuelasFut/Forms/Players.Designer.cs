@@ -1,4 +1,4 @@
-﻿namespace AdminEscuelasFut.Forms
+﻿namespace AdminEscuelasFut
 {
     partial class Players
     {
@@ -31,15 +31,15 @@
             this.menPlayers = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemConsultarEntren = new System.Windows.Forms.ToolStripMenuItem();
+            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menPlayers.SuspendLayout();
             this.SuspendLayout();
             // 
             // menPlayers
             // 
-            this.menPlayers.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.menPlayers.BackColor = System.Drawing.Color.LightSeaGreen;
             this.menPlayers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.herramientasToolStripMenuItem,
@@ -61,14 +61,8 @@
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
-            // 
-            // ayudaToolStripMenuItem
-            // 
-            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
             // herramientasToolStripMenuItem
             // 
@@ -83,6 +77,13 @@
             this.menuItemConsultarEntren.Name = "menuItemConsultarEntren";
             this.menuItemConsultarEntren.Size = new System.Drawing.Size(211, 22);
             this.menuItemConsultarEntren.Text = "Consultar entrenamientos";
+            this.menuItemConsultarEntren.Click += new System.EventHandler(this.menuItemConsultarEntren_Click);
+            // 
+            // ayudaToolStripMenuItem
+            // 
+            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
             // Players
             // 
@@ -92,7 +93,8 @@
             this.Controls.Add(this.menPlayers);
             this.Name = "Players";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Players";
+            this.Text = "Módulo de jugadores";
+            this.Load += new System.EventHandler(this.Players_Load);
             this.menPlayers.ResumeLayout(false);
             this.menPlayers.PerformLayout();
             this.ResumeLayout(false);

@@ -35,12 +35,12 @@
             this.entrenadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.equipamientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.instalacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.jugadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemRegistPagJugadores = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarPagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entrenadorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.equipamientoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.instalacionesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.jugadorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemConsultPagJugador = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarPagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menPays.SuspendLayout();
@@ -48,7 +48,7 @@
             // 
             // menPays
             // 
-            this.menPays.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.menPays.BackColor = System.Drawing.Color.LightSeaGreen;
             this.menPays.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.registrarPagosToolStripMenuItem,
@@ -81,7 +81,7 @@
             this.entrenadorToolStripMenuItem,
             this.equipamientoToolStripMenuItem,
             this.instalacionesToolStripMenuItem,
-            this.jugadorToolStripMenuItem});
+            this.menuItemRegistPagJugadores});
             this.registrarPagosToolStripMenuItem.Name = "registrarPagosToolStripMenuItem";
             this.registrarPagosToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
             this.registrarPagosToolStripMenuItem.Text = "Registrar pagos";
@@ -107,11 +107,12 @@
             this.instalacionesToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.instalacionesToolStripMenuItem.Text = "Instalaciones";
             // 
-            // jugadorToolStripMenuItem
+            // menuItemRegistPagJugadores
             // 
-            this.jugadorToolStripMenuItem.Name = "jugadorToolStripMenuItem";
-            this.jugadorToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.jugadorToolStripMenuItem.Text = "Jugador";
+            this.menuItemRegistPagJugadores.Name = "menuItemRegistPagJugadores";
+            this.menuItemRegistPagJugadores.Size = new System.Drawing.Size(148, 22);
+            this.menuItemRegistPagJugadores.Text = "Jugadores";
+            this.menuItemRegistPagJugadores.Click += new System.EventHandler(this.menuItemRegistPagJugadores_Click);
             // 
             // consultarPagosToolStripMenuItem
             // 
@@ -119,7 +120,7 @@
             this.entrenadorToolStripMenuItem1,
             this.equipamientoToolStripMenuItem1,
             this.instalacionesToolStripMenuItem1,
-            this.jugadorToolStripMenuItem1});
+            this.menuItemConsultPagJugador});
             this.consultarPagosToolStripMenuItem.Name = "consultarPagosToolStripMenuItem";
             this.consultarPagosToolStripMenuItem.Size = new System.Drawing.Size(105, 20);
             this.consultarPagosToolStripMenuItem.Text = "Consultar pagos";
@@ -145,11 +146,12 @@
             this.instalacionesToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
             this.instalacionesToolStripMenuItem1.Text = "Instalaciones";
             // 
-            // jugadorToolStripMenuItem1
+            // menuItemConsultPagJugador
             // 
-            this.jugadorToolStripMenuItem1.Name = "jugadorToolStripMenuItem1";
-            this.jugadorToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
-            this.jugadorToolStripMenuItem1.Text = "Jugador";
+            this.menuItemConsultPagJugador.Name = "menuItemConsultPagJugador";
+            this.menuItemConsultPagJugador.Size = new System.Drawing.Size(148, 22);
+            this.menuItemConsultPagJugador.Text = "Jugador";
+            this.menuItemConsultPagJugador.Click += new System.EventHandler(this.menuItemConsultPagJugador_Click);
             // 
             // modificarPagoToolStripMenuItem
             // 
@@ -190,12 +192,12 @@
         private System.Windows.Forms.ToolStripMenuItem entrenadorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem equipamientoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem instalacionesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem jugadorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarPagosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem entrenadorToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem equipamientoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem instalacionesToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem jugadorToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem menuItemConsultPagJugador;
         private System.Windows.Forms.ToolStripMenuItem modificarPagoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuItemRegistPagJugadores;
     }
 }

@@ -12,27 +12,37 @@ namespace AdminEscuelasFut
 {
     public partial class Schools : Form
     {
-        private static HeadQuarters headQuatersModule;
+        private  HeadQuarters headQuatersModule;
+        private  SchoolLevels schoolLevesManagement;
         public Schools()
         {
             InitializeComponent();
         }
 
-        public static void showHeadQuaderModule()
+        public void showHeadQuaderModule()
         {
-            if (headQuatersModule == null)
-            {
-                headQuatersModule = new HeadQuarters();
-                headQuatersModule.ShowDialog();
-            }
-            else
-            {
-                headQuatersModule.Focus();
-            }
+          headQuatersModule = new HeadQuarters();
+          headQuatersModule.ShowDialog();
         }
         private void menuItemAdministrarInst_Click(object sender, EventArgs e)
         {
             showHeadQuaderModule();
+        }
+
+        public void showSchooLevels()
+        {
+           schoolLevesManagement = new SchoolLevels();
+           schoolLevesManagement.ShowDialog();
+        }
+
+        private void menuItemGestionarNiveles_Click(object sender, EventArgs e)
+        {
+            showSchooLevels();
+        }
+
+        private void Schools_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

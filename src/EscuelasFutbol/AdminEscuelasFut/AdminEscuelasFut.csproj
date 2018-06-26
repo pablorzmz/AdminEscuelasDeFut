@@ -70,11 +70,35 @@
     <Compile Include="Forms\Pays.Designer.cs">
       <DependentUpon>Pays.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PlayerPaysQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlayerPaysQuery.Designer.cs">
+      <DependentUpon>PlayerPaysQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PlayerPaysRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlayerPaysRegister.Designer.cs">
+      <DependentUpon>PlayerPaysRegister.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Players.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Players.Designer.cs">
       <DependentUpon>Players.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PlayerTrainnings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlayerTrainnings.Designer.cs">
+      <DependentUpon>PlayerTrainnings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SchoolLevels.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SchoolLevels.Designer.cs">
+      <DependentUpon>SchoolLevels.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Schools.cs">
       <SubType>Form</SubType>
@@ -102,8 +126,20 @@
     <EmbeddedResource Include="Forms\Pays.resx">
       <DependentUpon>Pays.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlayerPaysQuery.resx">
+      <DependentUpon>PlayerPaysQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlayerPaysRegister.resx">
+      <DependentUpon>PlayerPaysRegister.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Players.resx">
       <DependentUpon>Players.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlayerTrainnings.resx">
+      <DependentUpon>PlayerTrainnings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SchoolLevels.resx">
+      <DependentUpon>SchoolLevels.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Schools.resx">
       <DependentUpon>Schools.cs</DependentUpon>

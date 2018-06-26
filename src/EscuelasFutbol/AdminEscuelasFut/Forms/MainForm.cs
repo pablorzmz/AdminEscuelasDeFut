@@ -12,10 +12,11 @@ namespace AdminEscuelasFut
 {
     public partial class MainForm : Form
     {
-        private static Pays paysModule;
-        private static Levels levelsModule;
-        private static Trainings trainingsModule;
-        private static Schools schoolsModule;
+        private  Pays paysModule;
+        private  Levels levelsModule;
+        private  Trainings trainingsModule;
+        private  Schools schoolsModule;
+        private  Players playersModule;
 
         public MainForm()
         {
@@ -24,16 +25,37 @@ namespace AdminEscuelasFut
 
         private void MainForm_Load( object sender, EventArgs e )
         {
+            this.WindowState = FormWindowState.Maximized;
+            this.MinimumSize = this.Size;
+            this.IsMdiContainer = true;
+            MdiClient ctlMDI;
+            // for the control of type MdiClient.
+            foreach (Control ctl in this.Controls)
+            {
+                try
+                {
+                    // Attempt to cast the control to type MdiClient.
+                    ctlMDI = (MdiClient)ctl;
+
+                    // Set the BackColor of the MdiClient control.
+                    ctlMDI.BackColor = this.BackColor;
+                }
+                catch (InvalidCastException exc)
+                {
+                    // Catch and ignore the error if casting failed.
+                }
+            }
         }
 
         /**
          * 
         **/
-        public static void showPaysModule()
+        public void showPaysModule()
         {
             if ( paysModule == null )
             {
                 paysModule = new Pays();
+                paysModule.MdiParent = this;                
                 paysModule.Show();
             }
             else
@@ -45,11 +67,12 @@ namespace AdminEscuelasFut
         /**
          * 
         **/
-        public static void showLevelsModule()
+        public void showLevelsModule()
         {
             if ( levelsModule == null )
             {
                 levelsModule = new Levels();
+                levelsModule.MdiParent = this;
                 levelsModule.Show();
             }
             else
@@ -58,11 +81,12 @@ namespace AdminEscuelasFut
             }
         }
 
-        public static void showTrainginsModule()
+        public void showTrainginsModule()
         {
             if ( trainingsModule == null )
             {
                 trainingsModule = new Trainings();
+                trainingsModule.MdiParent = this;
                 trainingsModule.Show();
             }
             else
@@ -71,11 +95,12 @@ namespace AdminEscuelasFut
             }
         }
 
-        public static void showSchoolsModule()
+        public void showSchoolsModule()
         {
             if (schoolsModule == null)
             {
                 schoolsModule = new Schools();
+                schoolsModule.MdiParent = this;
                 schoolsModule.Show();
             }
             else
@@ -83,6 +108,20 @@ namespace AdminEscuelasFut
                 schoolsModule.Focus();
             }
         }
+        public void showPlayersModule()
+        {
+            if (playersModule == null)
+            {
+                playersModule = new Players();
+                playersModule.MdiParent = this;
+                playersModule.Show();
+            }
+            else
+            {
+                playersModule.Focus();
+            }
+        }
+
         private void menuItemPagos_Click(object sender, EventArgs e)
         {
             showPaysModule();
@@ -105,6 +144,11 @@ namespace AdminEscuelasFut
         private void escuelasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showSchoolsModule();
+        }
+
+        private void menuItemJugadores_Click(object sender, EventArgs e)
+        {
+            showPlayersModule();
         }
     }
 }

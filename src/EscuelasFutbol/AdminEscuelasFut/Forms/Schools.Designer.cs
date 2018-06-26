@@ -40,7 +40,7 @@
             // 
             // menSchools
             // 
-            this.menSchools.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.menSchools.BackColor = System.Drawing.Color.LightSeaGreen;
             this.menSchools.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.heeraToolStripMenuItem,
@@ -86,6 +86,7 @@
             this.menuItemGestionarNiveles.Name = "menuItemGestionarNiveles";
             this.menuItemGestionarNiveles.Size = new System.Drawing.Size(207, 22);
             this.menuItemGestionarNiveles.Text = "Gestionar niveles";
+            this.menuItemGestionarNiveles.Click += new System.EventHandler(this.menuItemGestionarNiveles_Click);
             // 
             // ayudaToolStripMenuItem
             // 
@@ -102,6 +103,7 @@
             this.Name = "Schools";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Módulo de Escuelas";
+            this.Load += new System.EventHandler(this.Schools_Load);
             this.menSchools.ResumeLayout(false);
             this.menSchools.PerformLayout();
             this.ResumeLayout(false);

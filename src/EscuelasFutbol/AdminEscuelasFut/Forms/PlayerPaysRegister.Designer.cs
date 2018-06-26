@@ -1,6 +1,6 @@
 ﻿namespace AdminEscuelasFut
 {
-    partial class Trainings
+    partial class PlayerPaysRegister
     {
         /// <summary>
         /// Required designer variable.
@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menTrainings = new System.Windows.Forms.MenuStrip();
+            this.menPlayerPays = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menTrainings.SuspendLayout();
+            this.menPlayerPays.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menTrainings
+            // menPlayerPays
             // 
-            this.menTrainings.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.menTrainings.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menPlayerPays.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.menPlayerPays.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.ayudaToolStripMenuItem});
-            this.menTrainings.Location = new System.Drawing.Point(0, 0);
-            this.menTrainings.Name = "menTrainings";
-            this.menTrainings.Size = new System.Drawing.Size(796, 24);
-            this.menTrainings.TabIndex = 4;
-            this.menTrainings.Text = "menuPrincipal";
+            this.menPlayerPays.Location = new System.Drawing.Point(0, 0);
+            this.menPlayerPays.Name = "menPlayerPays";
+            this.menPlayerPays.Size = new System.Drawing.Size(696, 24);
+            this.menPlayerPays.TabIndex = 5;
+            this.menPlayerPays.Text = "menuPrincipal";
             // 
             // archivoToolStripMenuItem
             // 
@@ -58,7 +58,7 @@
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // ayudaToolStripMenuItem
@@ -67,18 +67,19 @@
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
-            // Trainings
+            // PlayerPaysRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(796, 514);
-            this.Controls.Add(this.menTrainings);
-            this.Name = "Trainings";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Módulo de entrenamientos";
-            this.Load += new System.EventHandler(this.Trainings_Load);
-            this.menTrainings.ResumeLayout(false);
-            this.menTrainings.PerformLayout();
+            this.ClientSize = new System.Drawing.Size(696, 414);
+            this.Controls.Add(this.menPlayerPays);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Name = "PlayerPaysRegister";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Regsitrar pagos de jugadores";
+            this.Load += new System.EventHandler(this.PlayerPaysRegister_Load);
+            this.menPlayerPays.ResumeLayout(false);
+            this.menPlayerPays.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -86,7 +87,7 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menTrainings;
+        private System.Windows.Forms.MenuStrip menPlayerPays;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
