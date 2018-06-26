@@ -38,3 +38,5 @@
 1- /* Eliminar un encargador hasta que el número de jugadores donde él sale a cargo sea de cero
 y que no sea un entrenador, adminsitrativo, etc */
 
+2- /*A la hora de insertar un jugador en un nivel, verificar que la edad corresponda con el nivel*/
+
