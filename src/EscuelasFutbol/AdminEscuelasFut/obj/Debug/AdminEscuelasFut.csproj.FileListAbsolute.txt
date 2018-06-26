@@ -17,3 +17,4 @@ C:\Users\pablo\Documents\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscue
 C:\Users\pablo\Documents\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.SchoolLevels.resources
 C:\Users\pablo\Documents\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.PlayerPaysRegister.resources
 C:\Users\pablo\Documents\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.PlayerPaysQuery.resources
+C:\Users\pablo\Documents\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.splashScreen.resources

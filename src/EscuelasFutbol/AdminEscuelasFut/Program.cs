@@ -19,4 +19,5 @@ namespace AdminEscuelasFut
             Application.Run(new MainForm());
         }
     }
+
 }
