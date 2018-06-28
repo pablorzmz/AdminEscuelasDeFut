@@ -83,7 +83,7 @@
             // txtIDPlayerTraining
             // 
             this.txtIDPlayerTraining.Location = new System.Drawing.Point(429, 84);
-            this.txtIDPlayerTraining.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIDPlayerTraining.Margin = new System.Windows.Forms.Padding(2);
             this.txtIDPlayerTraining.Name = "txtIDPlayerTraining";
             this.txtIDPlayerTraining.Size = new System.Drawing.Size(93, 20);
             this.txtIDPlayerTraining.TabIndex = 39;
@@ -92,50 +92,54 @@
             // 
             this.dtpDatePlayerTraining.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDatePlayerTraining.Location = new System.Drawing.Point(209, 84);
-            this.dtpDatePlayerTraining.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpDatePlayerTraining.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDatePlayerTraining.Name = "dtpDatePlayerTraining";
             this.dtpDatePlayerTraining.Size = new System.Drawing.Size(112, 20);
             this.dtpDatePlayerTraining.TabIndex = 38;
             // 
             // btnDeletePlayerTraining
             // 
-            this.btnDeletePlayerTraining.Location = new System.Drawing.Point(542, 161);
-            this.btnDeletePlayerTraining.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDeletePlayerTraining.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnDeletePlayerTraining.Location = new System.Drawing.Point(265, 161);
+            this.btnDeletePlayerTraining.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeletePlayerTraining.Name = "btnDeletePlayerTraining";
             this.btnDeletePlayerTraining.Size = new System.Drawing.Size(68, 28);
             this.btnDeletePlayerTraining.TabIndex = 37;
             this.btnDeletePlayerTraining.Text = "Borrar";
-            this.btnDeletePlayerTraining.UseVisualStyleBackColor = true;
+            this.btnDeletePlayerTraining.UseVisualStyleBackColor = false;
             // 
             // btnUpdatePlayerTraining
             // 
-            this.btnUpdatePlayerTraining.Location = new System.Drawing.Point(400, 161);
-            this.btnUpdatePlayerTraining.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdatePlayerTraining.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnUpdatePlayerTraining.Location = new System.Drawing.Point(176, 161);
+            this.btnUpdatePlayerTraining.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdatePlayerTraining.Name = "btnUpdatePlayerTraining";
             this.btnUpdatePlayerTraining.Size = new System.Drawing.Size(68, 28);
             this.btnUpdatePlayerTraining.TabIndex = 36;
             this.btnUpdatePlayerTraining.Text = "Actualizar";
-            this.btnUpdatePlayerTraining.UseVisualStyleBackColor = true;
+            this.btnUpdatePlayerTraining.UseVisualStyleBackColor = false;
             // 
             // btnSearchPlayerTraining
             // 
-            this.btnSearchPlayerTraining.Location = new System.Drawing.Point(241, 161);
-            this.btnSearchPlayerTraining.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchPlayerTraining.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnSearchPlayerTraining.Location = new System.Drawing.Point(429, 161);
+            this.btnSearchPlayerTraining.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchPlayerTraining.Name = "btnSearchPlayerTraining";
-            this.btnSearchPlayerTraining.Size = new System.Drawing.Size(68, 28);
+            this.btnSearchPlayerTraining.Size = new System.Drawing.Size(132, 28);
             this.btnSearchPlayerTraining.TabIndex = 35;
-            this.btnSearchPlayerTraining.Text = "Buscar";
-            this.btnSearchPlayerTraining.UseVisualStyleBackColor = true;
+            this.btnSearchPlayerTraining.Text = "Buscar Entrenamientos";
+            this.btnSearchPlayerTraining.UseVisualStyleBackColor = false;
             // 
             // btnRegisterPlayerTraining
             // 
+            this.btnRegisterPlayerTraining.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnRegisterPlayerTraining.Location = new System.Drawing.Point(88, 161);
-            this.btnRegisterPlayerTraining.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegisterPlayerTraining.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegisterPlayerTraining.Name = "btnRegisterPlayerTraining";
             this.btnRegisterPlayerTraining.Size = new System.Drawing.Size(68, 28);
             this.btnRegisterPlayerTraining.TabIndex = 34;
             this.btnRegisterPlayerTraining.Text = "Registrar";
-            this.btnRegisterPlayerTraining.UseVisualStyleBackColor = true;
+            this.btnRegisterPlayerTraining.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
@@ -163,7 +167,7 @@
             // 
             this.dgvPlayerTraining.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPlayerTraining.Location = new System.Drawing.Point(44, 226);
-            this.dgvPlayerTraining.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvPlayerTraining.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPlayerTraining.Name = "dgvPlayerTraining";
             this.dgvPlayerTraining.RowTemplate.Height = 24;
             this.dgvPlayerTraining.Size = new System.Drawing.Size(615, 179);

@@ -84,7 +84,7 @@
             // 
             this.dgvTrainingM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTrainingM.Location = new System.Drawing.Point(50, 301);
-            this.dgvTrainingM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvTrainingM.Margin = new System.Windows.Forms.Padding(2);
             this.dgvTrainingM.Name = "dgvTrainingM";
             this.dgvTrainingM.RowTemplate.Height = 24;
             this.dgvTrainingM.Size = new System.Drawing.Size(690, 195);
@@ -114,49 +114,53 @@
             // 
             // btnRegisterTrainingM
             // 
+            this.btnRegisterTrainingM.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnRegisterTrainingM.Location = new System.Drawing.Point(136, 258);
-            this.btnRegisterTrainingM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegisterTrainingM.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegisterTrainingM.Name = "btnRegisterTrainingM";
             this.btnRegisterTrainingM.Size = new System.Drawing.Size(68, 28);
             this.btnRegisterTrainingM.TabIndex = 14;
             this.btnRegisterTrainingM.Text = "Registrar";
-            this.btnRegisterTrainingM.UseVisualStyleBackColor = true;
+            this.btnRegisterTrainingM.UseVisualStyleBackColor = false;
             // 
             // btnSearchTrainingM
             // 
-            this.btnSearchTrainingM.Location = new System.Drawing.Point(288, 258);
-            this.btnSearchTrainingM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchTrainingM.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnSearchTrainingM.Location = new System.Drawing.Point(495, 258);
+            this.btnSearchTrainingM.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchTrainingM.Name = "btnSearchTrainingM";
-            this.btnSearchTrainingM.Size = new System.Drawing.Size(68, 28);
+            this.btnSearchTrainingM.Size = new System.Drawing.Size(143, 28);
             this.btnSearchTrainingM.TabIndex = 15;
-            this.btnSearchTrainingM.Text = "Buscar";
-            this.btnSearchTrainingM.UseVisualStyleBackColor = true;
+            this.btnSearchTrainingM.Text = "Buscar Entrenamientos";
+            this.btnSearchTrainingM.UseVisualStyleBackColor = false;
             // 
             // btnUpdateTrainingM
             // 
-            this.btnUpdateTrainingM.Location = new System.Drawing.Point(447, 258);
-            this.btnUpdateTrainingM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdateTrainingM.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnUpdateTrainingM.Location = new System.Drawing.Point(225, 258);
+            this.btnUpdateTrainingM.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateTrainingM.Name = "btnUpdateTrainingM";
             this.btnUpdateTrainingM.Size = new System.Drawing.Size(68, 28);
             this.btnUpdateTrainingM.TabIndex = 16;
             this.btnUpdateTrainingM.Text = "Actualizar";
-            this.btnUpdateTrainingM.UseVisualStyleBackColor = true;
+            this.btnUpdateTrainingM.UseVisualStyleBackColor = false;
             // 
             // btnDeleteTrainingM
             // 
-            this.btnDeleteTrainingM.Location = new System.Drawing.Point(590, 258);
-            this.btnDeleteTrainingM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDeleteTrainingM.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnDeleteTrainingM.Location = new System.Drawing.Point(322, 258);
+            this.btnDeleteTrainingM.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteTrainingM.Name = "btnDeleteTrainingM";
             this.btnDeleteTrainingM.Size = new System.Drawing.Size(68, 28);
             this.btnDeleteTrainingM.TabIndex = 17;
             this.btnDeleteTrainingM.Text = "Borrar";
-            this.btnDeleteTrainingM.UseVisualStyleBackColor = true;
+            this.btnDeleteTrainingM.UseVisualStyleBackColor = false;
             // 
             // dtpDateTrainingM
             // 
             this.dtpDateTrainingM.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDateTrainingM.Location = new System.Drawing.Point(250, 111);
-            this.dtpDateTrainingM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpDateTrainingM.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDateTrainingM.Name = "dtpDateTrainingM";
             this.dtpDateTrainingM.Size = new System.Drawing.Size(112, 20);
             this.dtpDateTrainingM.TabIndex = 18;
@@ -164,7 +168,7 @@
             // txtHourTrainingM
             // 
             this.txtHourTrainingM.Location = new System.Drawing.Point(470, 111);
-            this.txtHourTrainingM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtHourTrainingM.Margin = new System.Windows.Forms.Padding(2);
             this.txtHourTrainingM.Name = "txtHourTrainingM";
             this.txtHourTrainingM.Size = new System.Drawing.Size(93, 20);
             this.txtHourTrainingM.TabIndex = 30;
