@@ -36,12 +36,10 @@
             this.lbNivel = new System.Windows.Forms.Label();
             this.lbEdadFin = new System.Windows.Forms.Label();
             this.lbEdadInicio = new System.Windows.Forms.Label();
-            this.lbNombreEscuela = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txbEdadFin = new System.Windows.Forms.TextBox();
             this.txbEdadInicio = new System.Windows.Forms.TextBox();
             this.txbNivel = new System.Windows.Forms.TextBox();
-            this.txbNombreEscuela = new System.Windows.Forms.TextBox();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
@@ -75,7 +73,7 @@
             // 
             this.salirToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -88,7 +86,7 @@
             // lbNivel
             // 
             this.lbNivel.AutoSize = true;
-            this.lbNivel.Location = new System.Drawing.Point(201, 126);
+            this.lbNivel.Location = new System.Drawing.Point(287, 85);
             this.lbNivel.Name = "lbNivel";
             this.lbNivel.Size = new System.Drawing.Size(31, 13);
             this.lbNivel.TabIndex = 5;
@@ -97,7 +95,7 @@
             // lbEdadFin
             // 
             this.lbEdadFin.AutoSize = true;
-            this.lbEdadFin.Location = new System.Drawing.Point(369, 179);
+            this.lbEdadFin.Location = new System.Drawing.Point(269, 165);
             this.lbEdadFin.Name = "lbEdadFin";
             this.lbEdadFin.Size = new System.Drawing.Size(49, 13);
             this.lbEdadFin.TabIndex = 6;
@@ -106,20 +104,11 @@
             // lbEdadInicio
             // 
             this.lbEdadInicio.AutoSize = true;
-            this.lbEdadInicio.Location = new System.Drawing.Point(169, 179);
+            this.lbEdadInicio.Location = new System.Drawing.Point(255, 123);
             this.lbEdadInicio.Name = "lbEdadInicio";
             this.lbEdadInicio.Size = new System.Drawing.Size(63, 13);
             this.lbEdadInicio.TabIndex = 7;
             this.lbEdadInicio.Text = "Edad  Inicio";
-            // 
-            // lbNombreEscuela
-            // 
-            this.lbNombreEscuela.AutoSize = true;
-            this.lbNombreEscuela.Location = new System.Drawing.Point(132, 74);
-            this.lbNombreEscuela.Name = "lbNombreEscuela";
-            this.lbNombreEscuela.Size = new System.Drawing.Size(100, 13);
-            this.lbNombreEscuela.TabIndex = 8;
-            this.lbNombreEscuela.Text = "Nombre de Escuela";
             // 
             // dataGridView1
             // 
@@ -131,31 +120,24 @@
             // 
             // txbEdadFin
             // 
-            this.txbEdadFin.Location = new System.Drawing.Point(424, 172);
+            this.txbEdadFin.Location = new System.Drawing.Point(324, 158);
             this.txbEdadFin.Name = "txbEdadFin";
             this.txbEdadFin.Size = new System.Drawing.Size(100, 20);
             this.txbEdadFin.TabIndex = 10;
             // 
             // txbEdadInicio
             // 
-            this.txbEdadInicio.Location = new System.Drawing.Point(238, 172);
+            this.txbEdadInicio.Location = new System.Drawing.Point(324, 116);
             this.txbEdadInicio.Name = "txbEdadInicio";
             this.txbEdadInicio.Size = new System.Drawing.Size(100, 20);
             this.txbEdadInicio.TabIndex = 11;
             // 
             // txbNivel
             // 
-            this.txbNivel.Location = new System.Drawing.Point(238, 119);
+            this.txbNivel.Location = new System.Drawing.Point(324, 78);
             this.txbNivel.Name = "txbNivel";
             this.txbNivel.Size = new System.Drawing.Size(100, 20);
             this.txbNivel.TabIndex = 12;
-            // 
-            // txbNombreEscuela
-            // 
-            this.txbNombreEscuela.Location = new System.Drawing.Point(238, 67);
-            this.txbNombreEscuela.Name = "txbNombreEscuela";
-            this.txbNombreEscuela.Size = new System.Drawing.Size(100, 20);
-            this.txbNombreEscuela.TabIndex = 13;
             // 
             // btnConsultar
             // 
@@ -190,7 +172,7 @@
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnBuscar.Location = new System.Drawing.Point(372, 65);
+            this.btnBuscar.Location = new System.Drawing.Point(441, 76);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 17;
@@ -206,12 +188,10 @@
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnConsultar);
-            this.Controls.Add(this.txbNombreEscuela);
             this.Controls.Add(this.txbNivel);
             this.Controls.Add(this.txbEdadInicio);
             this.Controls.Add(this.txbEdadFin);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.lbNombreEscuela);
             this.Controls.Add(this.lbEdadInicio);
             this.Controls.Add(this.lbEdadFin);
             this.Controls.Add(this.lbNivel);
@@ -238,12 +218,10 @@
         private System.Windows.Forms.Label lbNivel;
         private System.Windows.Forms.Label lbEdadFin;
         private System.Windows.Forms.Label lbEdadInicio;
-        private System.Windows.Forms.Label lbNombreEscuela;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txbEdadFin;
         private System.Windows.Forms.TextBox txbEdadInicio;
         private System.Windows.Forms.TextBox txbNivel;
-        private System.Windows.Forms.TextBox txbNombreEscuela;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnRegistrar;

@@ -35,17 +35,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnDeleteSchoolLevel = new System.Windows.Forms.Button();
             this.btnUpdateSchoolLevel = new System.Windows.Forms.Button();
-            this.btnSearchTrainingM = new System.Windows.Forms.Button();
             this.btnRegisterSchoolLevel = new System.Windows.Forms.Button();
             this.dgvSchoolLevel = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtSchoolNameSchoolLevel = new System.Windows.Forms.TextBox();
             this.cmbSchoolLevel = new System.Windows.Forms.ComboBox();
             this.txtMinimumAgeSchoolLevel = new System.Windows.Forms.TextBox();
             this.txtMaximumAgeSchoolLevel = new System.Windows.Forms.TextBox();
             this.btnConsultSchoolLevel = new System.Windows.Forms.Button();
+            this.cmbSchoolName = new System.Windows.Forms.ComboBox();
             this.menSchoolLeves.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchoolLevel)).BeginInit();
             this.SuspendLayout();
@@ -116,17 +115,6 @@
             this.btnUpdateSchoolLevel.Text = "Actualizar";
             this.btnUpdateSchoolLevel.UseVisualStyleBackColor = false;
             // 
-            // btnSearchTrainingM
-            // 
-            this.btnSearchTrainingM.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnSearchTrainingM.Location = new System.Drawing.Point(492, 36);
-            this.btnSearchTrainingM.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSearchTrainingM.Name = "btnSearchTrainingM";
-            this.btnSearchTrainingM.Size = new System.Drawing.Size(91, 28);
-            this.btnSearchTrainingM.TabIndex = 20;
-            this.btnSearchTrainingM.Text = "Buscar Escuela";
-            this.btnSearchTrainingM.UseVisualStyleBackColor = false;
-            // 
             // btnRegisterSchoolLevel
             // 
             this.btnRegisterSchoolLevel.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -178,14 +166,6 @@
             this.label4.TabIndex = 25;
             this.label4.Text = "Nivel";
             // 
-            // txtSchoolNameSchoolLevel
-            // 
-            this.txtSchoolNameSchoolLevel.Location = new System.Drawing.Point(204, 41);
-            this.txtSchoolNameSchoolLevel.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSchoolNameSchoolLevel.Name = "txtSchoolNameSchoolLevel";
-            this.txtSchoolNameSchoolLevel.Size = new System.Drawing.Size(261, 20);
-            this.txtSchoolNameSchoolLevel.TabIndex = 26;
-            // 
             // cmbSchoolLevel
             // 
             this.cmbSchoolLevel.BackColor = System.Drawing.Color.AliceBlue;
@@ -223,22 +203,31 @@
             this.btnConsultSchoolLevel.Text = "Consultar";
             this.btnConsultSchoolLevel.UseVisualStyleBackColor = false;
             // 
+            // cmbSchoolName
+            // 
+            this.cmbSchoolName.BackColor = System.Drawing.Color.AliceBlue;
+            this.cmbSchoolName.FormattingEnabled = true;
+            this.cmbSchoolName.Location = new System.Drawing.Point(204, 38);
+            this.cmbSchoolName.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbSchoolName.Name = "cmbSchoolName";
+            this.cmbSchoolName.Size = new System.Drawing.Size(230, 21);
+            this.cmbSchoolName.TabIndex = 31;
+            // 
             // SchoolLevels
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(696, 414);
+            this.Controls.Add(this.cmbSchoolName);
             this.Controls.Add(this.btnConsultSchoolLevel);
             this.Controls.Add(this.txtMaximumAgeSchoolLevel);
             this.Controls.Add(this.txtMinimumAgeSchoolLevel);
             this.Controls.Add(this.cmbSchoolLevel);
-            this.Controls.Add(this.txtSchoolNameSchoolLevel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnDeleteSchoolLevel);
             this.Controls.Add(this.btnUpdateSchoolLevel);
-            this.Controls.Add(this.btnSearchTrainingM);
             this.Controls.Add(this.btnRegisterSchoolLevel);
             this.Controls.Add(this.dgvSchoolLevel);
             this.Controls.Add(this.label1);
@@ -265,16 +254,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDeleteSchoolLevel;
         private System.Windows.Forms.Button btnUpdateSchoolLevel;
-        private System.Windows.Forms.Button btnSearchTrainingM;
         private System.Windows.Forms.Button btnRegisterSchoolLevel;
         private System.Windows.Forms.DataGridView dgvSchoolLevel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtSchoolNameSchoolLevel;
         private System.Windows.Forms.ComboBox cmbSchoolLevel;
         private System.Windows.Forms.TextBox txtMinimumAgeSchoolLevel;
         private System.Windows.Forms.TextBox txtMaximumAgeSchoolLevel;
         private System.Windows.Forms.Button btnConsultSchoolLevel;
+        private System.Windows.Forms.ComboBox cmbSchoolName;
     }
 }
