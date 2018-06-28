@@ -51,7 +51,7 @@ CREATE TABLE Escuela
 (
 	Nombre			VARCHAR(30) NOT NULL,
 	Lugar			VARCHAR(30) NOT NULL,
-	DireccionInst	VARCHAR(30) NOT NULL,
+	DireccionInst	VARCHAR(30) NULL,
 	CONSTRAINT Nomb_Esc  PRIMARY KEY( Nombre ),
 	CONSTRAINT Ref_Insta FOREIGN KEY ( DireccionInst ) REFERENCES Instalacion( Direccion )
 		ON DELETE SET NULL ON UPDATE CASCADE
@@ -120,8 +120,8 @@ CREATE TABLE Entrenamiento
 CREATE TABLE Nivel
 (
 	Numero 		    TINYINT		NOT NULL,
-	EdadInicio	 	DATE	    NOT NULL,
-	EdadFin	 		DATE		NOT NULL,
+	EdadInicio	 	TINYINT	    NOT NULL,
+	EdadFin	 		TINYINT		NOT NULL,
 	CONSTRAINT Num_nivel PRIMARY KEY ( Numero)
 );
 
@@ -158,8 +158,8 @@ CREATE TABLE Tiene
 	NomEsc			VARCHAR(30)		NOT NULL,
 	NumNivel		TINYINT			NOT NULL,
 	CONSTRAINT	Esc_Nivel  PRIMARY KEY ( NomEsc, NumNivel ) ,
-	CONSTRAINT	Ref_Esc	   FOREIGN KEY ( NomEsc ) REFERENCES Escuela ( Nombre )
+	CONSTRAINT	Ref_Esc1	   FOREIGN KEY ( NomEsc ) REFERENCES Escuela ( Nombre )
 		ON DELETE CASCADE ON UPDATE CASCADE,
-	CONSTRAINT	Ref_Esc	   FOREIGN KEY ( NumNivel ) REFERENCES Nivel ( Numero )
+	CONSTRAINT	Ref_Esc2	   FOREIGN KEY ( NumNivel ) REFERENCES Nivel ( Numero )
 		ON DELETE CASCADE ON UPDATE CASCADE
 );
