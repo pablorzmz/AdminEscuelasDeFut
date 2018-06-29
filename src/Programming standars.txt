@@ -36,3 +36,4 @@ Campos de texto size:
 	Numeros: 
 
 Botones size: Width = 90; Height = 34
+
