@@ -39,3 +39,25 @@ C:\Users\Usuario\Desktop\Github\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscue
 C:\Users\Usuario\Desktop\Github\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Desktop\Github\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.exe
 C:\Users\Usuario\Desktop\Github\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.pdb
+D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\bin\Debug\AdminEscuelasFut.exe.config
+D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\bin\Debug\AdminEscuelasFut.exe
+D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\bin\Debug\AdminEscuelasFut.pdb
+D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.csprojAssemblyReference.cache
+D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.HeadQuarters.resources
+D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.Levels.resources
+D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.MainForm.resources
+D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.Pays.resources
+D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.PlayerPaysQuery.resources
+D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.PlayerPaysRegister.resources
+D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.Players.resources
+D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.PlayerTrainnings.resources
+D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.SchoolLevels.resources
+D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.Schools.resources
+D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.splashScreen.resources
+D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.Trainings.resources
+D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.Properties.Resources.resources
+D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.csproj.GenerateResource.cache
+D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.csproj.CoreCompileInputs.cache
+D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.exe
+D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.pdb
+D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.Forms.Equipment.resources

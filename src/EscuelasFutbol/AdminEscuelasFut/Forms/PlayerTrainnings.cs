@@ -22,5 +22,10 @@ namespace AdminEscuelasFut
             this.MinimumSize = this.Size;
             this.MaximumSize = new Size(this.Width + 100, this.Height + 100);
         }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

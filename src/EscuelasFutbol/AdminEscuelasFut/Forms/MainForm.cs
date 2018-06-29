@@ -130,6 +130,7 @@ namespace AdminEscuelasFut
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Close();
         }
 
         private void entrenamientosToolStripMenuItem_Click(object sender, EventArgs e)

@@ -38,12 +38,14 @@
             // menLevels
             // 
             this.menLevels.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.menLevels.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menLevels.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.ayudaToolStripMenuItem});
             this.menLevels.Location = new System.Drawing.Point(0, 0);
             this.menLevels.Name = "menLevels";
-            this.menLevels.Size = new System.Drawing.Size(796, 24);
+            this.menLevels.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menLevels.Size = new System.Drawing.Size(1061, 28);
             this.menLevels.TabIndex = 4;
             this.menLevels.Text = "menuPays";
             // 
@@ -52,27 +54,29 @@
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
             // Levels
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(796, 514);
+            this.ClientSize = new System.Drawing.Size(1061, 633);
             this.Controls.Add(this.menLevels);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Levels";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Módulo de Niveles";
