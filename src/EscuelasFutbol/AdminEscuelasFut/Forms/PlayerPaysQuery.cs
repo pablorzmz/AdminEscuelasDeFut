@@ -20,7 +20,8 @@ namespace AdminEscuelasFut
         private void PlayerPaysQuery_Load(object sender, EventArgs e)
         {
             this.MinimumSize = this.Size;
-            this.MaximumSize = new Size(this.Width + 100, this.Height + 100);
+            this.MaximumSize = this.Size;
         }
     }
 }
+

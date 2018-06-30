@@ -59,7 +59,7 @@
             this.ayudaToolStripMenuItem});
             this.menPays.Location = new System.Drawing.Point(0, 0);
             this.menPays.Name = "menPays";
-            this.menPays.Size = new System.Drawing.Size(796, 24);
+            this.menPays.Size = new System.Drawing.Size(696, 24);
             this.menPays.TabIndex = 3;
             this.menPays.Text = "menuPays";
             // 
@@ -172,9 +172,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(796, 514);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(696, 579);
             this.Controls.Add(this.menPays);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Pays";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Módulo de Pagos";

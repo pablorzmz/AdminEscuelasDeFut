@@ -20,12 +20,38 @@ namespace AdminEscuelasFut
         private void PlayerPaysRegister_Load(object sender, EventArgs e)
         {
             this.MinimumSize = this.Size;
-            this.MaximumSize = new Size(this.Width + 100, this.Height + 100);
+            this.MaximumSize = this.Size;
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ckbxMonthlyRPaymentPlayer_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbxMonthlyRPaymentPlayer.Checked)
+            {
+                dtpFechaFinMensualidad.Enabled = true;
+                dtpFechaInicMensualidad.Enabled = true;
+            }
+            else
+            {
+                dtpFechaFinMensualidad.Enabled = false;
+                dtpFechaInicMensualidad.Enabled = false;
+            }
+        }
+
+        private void chbxAnnuityRPaymentPlayer_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbxAnnuityRPaymentPlayer.Checked)
+            {
+                dtpFechaMatricula.Enabled = true;
+            }
+            else
+            {
+                dtpFechaMatricula.Enabled = false;
+            }
         }
     }
 }
