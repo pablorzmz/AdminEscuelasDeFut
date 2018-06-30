@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pays));
             this.menPays = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,8 +59,7 @@
             this.ayudaToolStripMenuItem});
             this.menPays.Location = new System.Drawing.Point(0, 0);
             this.menPays.Name = "menPays";
-            this.menPays.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menPays.Size = new System.Drawing.Size(1061, 28);
+            this.menPays.Size = new System.Drawing.Size(796, 24);
             this.menPays.TabIndex = 3;
             this.menPays.Text = "menuPays";
             // 
@@ -68,13 +68,13 @@
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -86,34 +86,34 @@
             this.instalacionesToolStripMenuItem,
             this.menuItemRegistPagJugadores});
             this.registrarPagosToolStripMenuItem.Name = "registrarPagosToolStripMenuItem";
-            this.registrarPagosToolStripMenuItem.Size = new System.Drawing.Size(125, 24);
+            this.registrarPagosToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
             this.registrarPagosToolStripMenuItem.Text = "Registrar pagos";
             // 
             // entrenadorToolStripMenuItem
             // 
             this.entrenadorToolStripMenuItem.Enabled = false;
             this.entrenadorToolStripMenuItem.Name = "entrenadorToolStripMenuItem";
-            this.entrenadorToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.entrenadorToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.entrenadorToolStripMenuItem.Text = "Entrenador";
             // 
             // equipamientoToolStripMenuItem
             // 
             this.equipamientoToolStripMenuItem.Enabled = false;
             this.equipamientoToolStripMenuItem.Name = "equipamientoToolStripMenuItem";
-            this.equipamientoToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.equipamientoToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.equipamientoToolStripMenuItem.Text = "Equipamiento";
             // 
             // instalacionesToolStripMenuItem
             // 
             this.instalacionesToolStripMenuItem.Enabled = false;
             this.instalacionesToolStripMenuItem.Name = "instalacionesToolStripMenuItem";
-            this.instalacionesToolStripMenuItem.Size = new System.Drawing.Size(177, 26);
+            this.instalacionesToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.instalacionesToolStripMenuItem.Text = "Instalaciones";
             // 
             // menuItemRegistPagJugadores
             // 
             this.menuItemRegistPagJugadores.Name = "menuItemRegistPagJugadores";
-            this.menuItemRegistPagJugadores.Size = new System.Drawing.Size(177, 26);
+            this.menuItemRegistPagJugadores.Size = new System.Drawing.Size(148, 22);
             this.menuItemRegistPagJugadores.Text = "Jugadores";
             this.menuItemRegistPagJugadores.Click += new System.EventHandler(this.menuItemRegistPagJugadores_Click);
             // 
@@ -125,56 +125,56 @@
             this.instalacionesToolStripMenuItem1,
             this.menuItemConsultPagJugador});
             this.consultarPagosToolStripMenuItem.Name = "consultarPagosToolStripMenuItem";
-            this.consultarPagosToolStripMenuItem.Size = new System.Drawing.Size(128, 24);
+            this.consultarPagosToolStripMenuItem.Size = new System.Drawing.Size(105, 20);
             this.consultarPagosToolStripMenuItem.Text = "Consultar pagos";
             // 
             // entrenadorToolStripMenuItem1
             // 
             this.entrenadorToolStripMenuItem1.Enabled = false;
             this.entrenadorToolStripMenuItem1.Name = "entrenadorToolStripMenuItem1";
-            this.entrenadorToolStripMenuItem1.Size = new System.Drawing.Size(177, 26);
+            this.entrenadorToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
             this.entrenadorToolStripMenuItem1.Text = "Entrenador";
             // 
             // equipamientoToolStripMenuItem1
             // 
             this.equipamientoToolStripMenuItem1.Enabled = false;
             this.equipamientoToolStripMenuItem1.Name = "equipamientoToolStripMenuItem1";
-            this.equipamientoToolStripMenuItem1.Size = new System.Drawing.Size(177, 26);
+            this.equipamientoToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
             this.equipamientoToolStripMenuItem1.Text = "Equipamiento";
             // 
             // instalacionesToolStripMenuItem1
             // 
             this.instalacionesToolStripMenuItem1.Enabled = false;
             this.instalacionesToolStripMenuItem1.Name = "instalacionesToolStripMenuItem1";
-            this.instalacionesToolStripMenuItem1.Size = new System.Drawing.Size(177, 26);
+            this.instalacionesToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
             this.instalacionesToolStripMenuItem1.Text = "Instalaciones";
             // 
             // menuItemConsultPagJugador
             // 
             this.menuItemConsultPagJugador.Name = "menuItemConsultPagJugador";
-            this.menuItemConsultPagJugador.Size = new System.Drawing.Size(177, 26);
+            this.menuItemConsultPagJugador.Size = new System.Drawing.Size(148, 22);
             this.menuItemConsultPagJugador.Text = "Jugador";
             this.menuItemConsultPagJugador.Click += new System.EventHandler(this.menuItemConsultPagJugador_Click);
             // 
             // modificarPagoToolStripMenuItem
             // 
             this.modificarPagoToolStripMenuItem.Name = "modificarPagoToolStripMenuItem";
-            this.modificarPagoToolStripMenuItem.Size = new System.Drawing.Size(124, 24);
+            this.modificarPagoToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
             this.modificarPagoToolStripMenuItem.Text = "Modificar pago";
             // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
             // Pays
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1061, 633);
+            this.ClientSize = new System.Drawing.Size(796, 514);
             this.Controls.Add(this.menPays);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Pays";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Módulo de Pagos";

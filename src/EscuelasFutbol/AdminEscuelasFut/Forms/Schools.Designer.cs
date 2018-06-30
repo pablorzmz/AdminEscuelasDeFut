@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Schools));
             this.menSchools = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,8 +67,7 @@
             this.ayudaToolStripMenuItem});
             this.menSchools.Location = new System.Drawing.Point(0, 0);
             this.menSchools.Name = "menSchools";
-            this.menSchools.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menSchools.Size = new System.Drawing.Size(1061, 28);
+            this.menSchools.Size = new System.Drawing.Size(796, 24);
             this.menSchools.TabIndex = 5;
             this.menSchools.Text = "menuPays";
             // 
@@ -76,13 +76,13 @@
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -92,130 +92,143 @@
             this.menuItemAdministrarInst,
             this.menuItemGestionarNiveles});
             this.heeraToolStripMenuItem.Name = "heeraToolStripMenuItem";
-            this.heeraToolStripMenuItem.Size = new System.Drawing.Size(110, 24);
+            this.heeraToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
             this.heeraToolStripMenuItem.Text = "Herramientas";
             // 
             // menuItemAdministrarInst
             // 
             this.menuItemAdministrarInst.Name = "menuItemAdministrarInst";
-            this.menuItemAdministrarInst.Size = new System.Drawing.Size(250, 26);
+            this.menuItemAdministrarInst.Size = new System.Drawing.Size(207, 22);
             this.menuItemAdministrarInst.Text = "Administrar instalaciones";
             this.menuItemAdministrarInst.Click += new System.EventHandler(this.menuItemAdministrarInst_Click);
             // 
             // menuItemGestionarNiveles
             // 
             this.menuItemGestionarNiveles.Name = "menuItemGestionarNiveles";
-            this.menuItemGestionarNiveles.Size = new System.Drawing.Size(250, 26);
+            this.menuItemGestionarNiveles.Size = new System.Drawing.Size(207, 22);
             this.menuItemGestionarNiveles.Text = "Gestionar niveles";
             this.menuItemGestionarNiveles.Click += new System.EventHandler(this.menuItemGestionarNiveles_Click);
             // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(50, 84);
+            this.label1.Location = new System.Drawing.Point(38, 68);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 23);
+            this.label1.Size = new System.Drawing.Size(75, 19);
             this.label1.TabIndex = 24;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(110, 171);
+            this.label3.Location = new System.Drawing.Point(82, 139);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 17);
+            this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 8;
             this.label3.Text = "Dirección";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(110, 209);
+            this.label4.Location = new System.Drawing.Point(82, 170);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(129, 17);
+            this.label4.Size = new System.Drawing.Size(97, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "Nombre instalación";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(110, 255);
+            this.label5.Location = new System.Drawing.Point(82, 207);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 17);
+            this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 10;
             this.label5.Text = "Télefono";
             // 
             // txtNameSchoolM
             // 
-            this.txtNameSchoolM.Location = new System.Drawing.Point(326, 81);
+            this.txtNameSchoolM.Location = new System.Drawing.Point(244, 66);
+            this.txtNameSchoolM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNameSchoolM.Name = "txtNameSchoolM";
-            this.txtNameSchoolM.Size = new System.Drawing.Size(375, 22);
+            this.txtNameSchoolM.Size = new System.Drawing.Size(282, 20);
             this.txtNameSchoolM.TabIndex = 11;
             // 
             // txtTelephoneSchoolM
             // 
-            this.txtTelephoneSchoolM.Location = new System.Drawing.Point(326, 252);
+            this.txtTelephoneSchoolM.Location = new System.Drawing.Point(244, 205);
+            this.txtTelephoneSchoolM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTelephoneSchoolM.Name = "txtTelephoneSchoolM";
-            this.txtTelephoneSchoolM.Size = new System.Drawing.Size(375, 22);
+            this.txtTelephoneSchoolM.Size = new System.Drawing.Size(282, 20);
             this.txtTelephoneSchoolM.TabIndex = 12;
             // 
             // txtInstallationNameSchoolM
             // 
-            this.txtInstallationNameSchoolM.Location = new System.Drawing.Point(326, 209);
+            this.txtInstallationNameSchoolM.Location = new System.Drawing.Point(244, 170);
+            this.txtInstallationNameSchoolM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtInstallationNameSchoolM.Name = "txtInstallationNameSchoolM";
-            this.txtInstallationNameSchoolM.Size = new System.Drawing.Size(375, 22);
+            this.txtInstallationNameSchoolM.Size = new System.Drawing.Size(282, 20);
             this.txtInstallationNameSchoolM.TabIndex = 13;
             // 
             // txtAddressSchoolM
             // 
-            this.txtAddressSchoolM.Location = new System.Drawing.Point(326, 166);
+            this.txtAddressSchoolM.Location = new System.Drawing.Point(244, 135);
+            this.txtAddressSchoolM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAddressSchoolM.Name = "txtAddressSchoolM";
-            this.txtAddressSchoolM.Size = new System.Drawing.Size(375, 22);
+            this.txtAddressSchoolM.Size = new System.Drawing.Size(282, 20);
             this.txtAddressSchoolM.TabIndex = 14;
             // 
             // txtPlaceSchoolM
             // 
-            this.txtPlaceSchoolM.Location = new System.Drawing.Point(326, 123);
+            this.txtPlaceSchoolM.Location = new System.Drawing.Point(244, 100);
+            this.txtPlaceSchoolM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPlaceSchoolM.Name = "txtPlaceSchoolM";
-            this.txtPlaceSchoolM.Size = new System.Drawing.Size(375, 22);
+            this.txtPlaceSchoolM.Size = new System.Drawing.Size(282, 20);
             this.txtPlaceSchoolM.TabIndex = 15;
             // 
             // btnDeleteSchoolM
             // 
-            this.btnDeleteSchoolM.Location = new System.Drawing.Point(788, 327);
+            this.btnDeleteSchoolM.Location = new System.Drawing.Point(591, 266);
+            this.btnDeleteSchoolM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDeleteSchoolM.Name = "btnDeleteSchoolM";
-            this.btnDeleteSchoolM.Size = new System.Drawing.Size(90, 34);
+            this.btnDeleteSchoolM.Size = new System.Drawing.Size(68, 28);
             this.btnDeleteSchoolM.TabIndex = 22;
             this.btnDeleteSchoolM.Text = "Borrar";
             this.btnDeleteSchoolM.UseVisualStyleBackColor = true;
             // 
             // btnUpdateSchoolM
             // 
-            this.btnUpdateSchoolM.Location = new System.Drawing.Point(598, 327);
+            this.btnUpdateSchoolM.Location = new System.Drawing.Point(448, 266);
+            this.btnUpdateSchoolM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUpdateSchoolM.Name = "btnUpdateSchoolM";
-            this.btnUpdateSchoolM.Size = new System.Drawing.Size(90, 34);
+            this.btnUpdateSchoolM.Size = new System.Drawing.Size(68, 28);
             this.btnUpdateSchoolM.TabIndex = 21;
             this.btnUpdateSchoolM.Text = "Actualizar";
             this.btnUpdateSchoolM.UseVisualStyleBackColor = true;
             // 
             // btnConsultSchoolM
             // 
-            this.btnConsultSchoolM.Location = new System.Drawing.Point(386, 327);
+            this.btnConsultSchoolM.Location = new System.Drawing.Point(290, 266);
+            this.btnConsultSchoolM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnConsultSchoolM.Name = "btnConsultSchoolM";
-            this.btnConsultSchoolM.Size = new System.Drawing.Size(90, 34);
+            this.btnConsultSchoolM.Size = new System.Drawing.Size(68, 28);
             this.btnConsultSchoolM.TabIndex = 20;
             this.btnConsultSchoolM.Text = "Consultar";
             this.btnConsultSchoolM.UseVisualStyleBackColor = true;
             // 
             // btnRegisterSchoolM
             // 
-            this.btnRegisterSchoolM.Location = new System.Drawing.Point(183, 327);
+            this.btnRegisterSchoolM.Location = new System.Drawing.Point(137, 266);
+            this.btnRegisterSchoolM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRegisterSchoolM.Name = "btnRegisterSchoolM";
-            this.btnRegisterSchoolM.Size = new System.Drawing.Size(90, 34);
+            this.btnRegisterSchoolM.Size = new System.Drawing.Size(68, 28);
             this.btnRegisterSchoolM.TabIndex = 19;
             this.btnRegisterSchoolM.Text = "Registrar";
             this.btnRegisterSchoolM.UseVisualStyleBackColor = true;
@@ -223,44 +236,48 @@
             // dgvSchoolM
             // 
             this.dgvSchoolM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSchoolM.Location = new System.Drawing.Point(69, 381);
+            this.dgvSchoolM.Location = new System.Drawing.Point(52, 310);
+            this.dgvSchoolM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvSchoolM.Name = "dgvSchoolM";
             this.dgvSchoolM.RowTemplate.Height = 24;
-            this.dgvSchoolM.Size = new System.Drawing.Size(920, 240);
+            this.dgvSchoolM.Size = new System.Drawing.Size(690, 195);
             this.dgvSchoolM.TabIndex = 18;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(110, 126);
+            this.label2.Location = new System.Drawing.Point(82, 102);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 17);
+            this.label2.Size = new System.Drawing.Size(34, 13);
             this.label2.TabIndex = 25;
             this.label2.Text = "Lugar";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(110, 81);
+            this.label6.Location = new System.Drawing.Point(82, 66);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 17);
+            this.label6.Size = new System.Drawing.Size(84, 13);
             this.label6.TabIndex = 26;
             this.label6.Text = "Nombre escuela";
             // 
             // btnSearchSchoolM
             // 
-            this.btnSearchSchoolM.Location = new System.Drawing.Point(724, 200);
+            this.btnSearchSchoolM.Location = new System.Drawing.Point(543, 162);
+            this.btnSearchSchoolM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearchSchoolM.Name = "btnSearchSchoolM";
-            this.btnSearchSchoolM.Size = new System.Drawing.Size(90, 34);
+            this.btnSearchSchoolM.Size = new System.Drawing.Size(68, 28);
             this.btnSearchSchoolM.TabIndex = 27;
             this.btnSearchSchoolM.Text = "Buscar";
             this.btnSearchSchoolM.UseVisualStyleBackColor = true;
             // 
             // Schools
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1061, 633);
+            this.ClientSize = new System.Drawing.Size(796, 514);
             this.Controls.Add(this.btnSearchSchoolM);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
@@ -279,7 +296,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menSchools);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Schools";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Módulo de Escuelas";

@@ -61,3 +61,4 @@ D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuela
 D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.exe
 D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.pdb
 D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.Forms.Equipment.resources
+C:\Users\pablo\Documents\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.Forms.Equipment.resources
