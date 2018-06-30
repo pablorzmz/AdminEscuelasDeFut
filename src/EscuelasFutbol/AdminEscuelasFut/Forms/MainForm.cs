@@ -36,7 +36,9 @@ namespace AdminEscuelasFut
                     // Set the BackColor of the MdiClient control.
                     ctlMDI.BackColor = this.BackColor;
                 }
+#pragma warning disable CS0168 // La variable está declarada pero nunca se usa
                 catch (InvalidCastException exc)
+#pragma warning restore CS0168 // La variable está declarada pero nunca se usa
                 {
                     // Catch and ignore the error if casting failed.
                 }

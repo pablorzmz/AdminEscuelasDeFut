@@ -112,11 +112,7 @@
             // 
             // txtNameRPaymentPlayer
             // 
-<<<<<<< HEAD
             this.txtNameRPaymentPlayer.Location = new System.Drawing.Point(53, 22);
-=======
-            this.txtNameRPaymentPlayer.Location = new System.Drawing.Point(244, 76);
->>>>>>> 0431e99bf5ff23d290eb300da5f08f8b6ca51130
             this.txtNameRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
             this.txtNameRPaymentPlayer.Name = "txtNameRPaymentPlayer";
             this.txtNameRPaymentPlayer.Size = new System.Drawing.Size(284, 20);
@@ -124,51 +120,18 @@
             // 
             // txtIDRPaymentPlayer
             // 
-<<<<<<< HEAD
             this.txtIDRPaymentPlayer.Location = new System.Drawing.Point(394, 24);
-=======
-            this.txtIDRPaymentPlayer.Location = new System.Drawing.Point(244, 50);
->>>>>>> 0431e99bf5ff23d290eb300da5f08f8b6ca51130
             this.txtIDRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
             this.txtIDRPaymentPlayer.Name = "txtIDRPaymentPlayer";
             this.txtIDRPaymentPlayer.Size = new System.Drawing.Size(192, 20);
             this.txtIDRPaymentPlayer.TabIndex = 50;
             // 
-<<<<<<< HEAD
-=======
-            // btnSearchRPaymentPlayer
-            // 
-            this.btnSearchRPaymentPlayer.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnSearchRPaymentPlayer.Location = new System.Drawing.Point(524, 45);
-            this.btnSearchRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSearchRPaymentPlayer.Name = "btnSearchRPaymentPlayer";
-            this.btnSearchRPaymentPlayer.Size = new System.Drawing.Size(104, 28);
-            this.btnSearchRPaymentPlayer.TabIndex = 49;
-            this.btnSearchRPaymentPlayer.Text = "Buscar Cédula";
-            this.btnSearchRPaymentPlayer.UseVisualStyleBackColor = false;
-            // 
-            // btnRegisterRPaymentPlayer
-            // 
-            this.btnRegisterRPaymentPlayer.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnRegisterRPaymentPlayer.Location = new System.Drawing.Point(304, 193);
-            this.btnRegisterRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRegisterRPaymentPlayer.Name = "btnRegisterRPaymentPlayer";
-            this.btnRegisterRPaymentPlayer.Size = new System.Drawing.Size(68, 28);
-            this.btnRegisterRPaymentPlayer.TabIndex = 48;
-            this.btnRegisterRPaymentPlayer.Text = "Registrar";
-            this.btnRegisterRPaymentPlayer.UseVisualStyleBackColor = false;
-            // 
->>>>>>> 0431e99bf5ff23d290eb300da5f08f8b6ca51130
             // dgvRPaymentPlayer
             // 
             this.dgvRPaymentPlayer.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.dgvRPaymentPlayer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-<<<<<<< HEAD
             this.dgvRPaymentPlayer.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvRPaymentPlayer.Location = new System.Drawing.Point(0, 217);
-=======
-            this.dgvRPaymentPlayer.Location = new System.Drawing.Point(40, 226);
->>>>>>> 0431e99bf5ff23d290eb300da5f08f8b6ca51130
             this.dgvRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
             this.dgvRPaymentPlayer.Name = "dgvRPaymentPlayer";
             this.dgvRPaymentPlayer.RowTemplate.Height = 24;
@@ -187,11 +150,7 @@
             // 
             // txtReceiptNumberRPaymentPlayer
             // 
-<<<<<<< HEAD
             this.txtReceiptNumberRPaymentPlayer.Location = new System.Drawing.Point(68, 55);
-=======
-            this.txtReceiptNumberRPaymentPlayer.Location = new System.Drawing.Point(244, 109);
->>>>>>> 0431e99bf5ff23d290eb300da5f08f8b6ca51130
             this.txtReceiptNumberRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
             this.txtReceiptNumberRPaymentPlayer.Name = "txtReceiptNumberRPaymentPlayer";
             this.txtReceiptNumberRPaymentPlayer.Size = new System.Drawing.Size(269, 20);
@@ -209,11 +168,7 @@
             // 
             // txtAmountRPaymentPlayer
             // 
-<<<<<<< HEAD
             this.txtAmountRPaymentPlayer.Location = new System.Drawing.Point(394, 55);
-=======
-            this.txtAmountRPaymentPlayer.Location = new System.Drawing.Point(412, 109);
->>>>>>> 0431e99bf5ff23d290eb300da5f08f8b6ca51130
             this.txtAmountRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
             this.txtAmountRPaymentPlayer.Name = "txtAmountRPaymentPlayer";
             this.txtAmountRPaymentPlayer.Size = new System.Drawing.Size(274, 20);
@@ -222,27 +177,18 @@
             // chbxAnnuityRPaymentPlayer
             // 
             this.chbxAnnuityRPaymentPlayer.AutoSize = true;
-<<<<<<< HEAD
             this.chbxAnnuityRPaymentPlayer.Location = new System.Drawing.Point(8, 122);
-=======
-            this.chbxAnnuityRPaymentPlayer.Location = new System.Drawing.Point(159, 167);
->>>>>>> 0431e99bf5ff23d290eb300da5f08f8b6ca51130
             this.chbxAnnuityRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
             this.chbxAnnuityRPaymentPlayer.Name = "chbxAnnuityRPaymentPlayer";
             this.chbxAnnuityRPaymentPlayer.Size = new System.Drawing.Size(71, 17);
             this.chbxAnnuityRPaymentPlayer.TabIndex = 58;
             this.chbxAnnuityRPaymentPlayer.Text = "Matrícula";
             this.chbxAnnuityRPaymentPlayer.UseVisualStyleBackColor = true;
-            this.chbxAnnuityRPaymentPlayer.CheckedChanged += new System.EventHandler(this.chbxAnnuityRPaymentPlayer_CheckedChanged);
             // 
             // ckbxMonthlyRPaymentPlayer
             // 
             this.ckbxMonthlyRPaymentPlayer.AutoSize = true;
-<<<<<<< HEAD
             this.ckbxMonthlyRPaymentPlayer.Location = new System.Drawing.Point(8, 91);
-=======
-            this.ckbxMonthlyRPaymentPlayer.Location = new System.Drawing.Point(159, 141);
->>>>>>> 0431e99bf5ff23d290eb300da5f08f8b6ca51130
             this.ckbxMonthlyRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
             this.ckbxMonthlyRPaymentPlayer.Name = "ckbxMonthlyRPaymentPlayer";
             this.ckbxMonthlyRPaymentPlayer.Size = new System.Drawing.Size(86, 17);
@@ -315,7 +261,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos para el registro del pago";
             // 
-<<<<<<< HEAD
             // btnRegisterRPaymentPlayer
             // 
             this.btnRegisterRPaymentPlayer.BackColor = System.Drawing.Color.Gold;
@@ -345,32 +290,6 @@
             this.btnBuscar.TabIndex = 72;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
-=======
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(244, 141);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(93, 20);
-            this.dateTimePicker1.TabIndex = 63;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(412, 140);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(93, 20);
-            this.dateTimePicker2.TabIndex = 64;
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(244, 167);
-            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(93, 20);
-            this.dateTimePicker3.TabIndex = 65;
->>>>>>> 0431e99bf5ff23d290eb300da5f08f8b6ca51130
             // 
             // PlayerPaysRegister
             // 

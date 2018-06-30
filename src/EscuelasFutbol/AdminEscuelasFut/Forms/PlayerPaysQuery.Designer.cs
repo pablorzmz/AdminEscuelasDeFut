@@ -42,10 +42,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.grpBoxInformacioPago = new System.Windows.Forms.GroupBox();
+            this.chkBoxPagoMatricula = new System.Windows.Forms.CheckBox();
+            this.chkBoxPagoMensualidad = new System.Windows.Forms.CheckBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.btnConsultar = new System.Windows.Forms.Button();
-            this.chkBoxPagoMensualidad = new System.Windows.Forms.CheckBox();
-            this.chkBoxPagoMatricula = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQPaymentPlayer)).BeginInit();
             this.grpBoxInformacioPago.SuspendLayout();
             this.SuspendLayout();
@@ -72,57 +72,26 @@
             // 
             // txtNombre
             // 
-<<<<<<< HEAD
             this.txtNombre.Location = new System.Drawing.Point(61, 18);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(284, 20);
             this.txtNombre.TabIndex = 57;
-=======
-            this.txtNameQPaymentPlayer.Location = new System.Drawing.Point(118, 76);
-            this.txtNameQPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNameQPaymentPlayer.Name = "txtNameQPaymentPlayer";
-            this.txtNameQPaymentPlayer.Size = new System.Drawing.Size(134, 20);
-            this.txtNameQPaymentPlayer.TabIndex = 57;
->>>>>>> 0431e99bf5ff23d290eb300da5f08f8b6ca51130
             // 
             // txtCedula
             // 
-<<<<<<< HEAD
             this.txtCedula.Location = new System.Drawing.Point(403, 18);
             this.txtCedula.Margin = new System.Windows.Forms.Padding(2);
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(276, 20);
             this.txtCedula.TabIndex = 56;
-=======
-            this.txtIDQPaymentPlayer.Location = new System.Drawing.Point(118, 122);
-            this.txtIDQPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
-            this.txtIDQPaymentPlayer.Name = "txtIDQPaymentPlayer";
-            this.txtIDQPaymentPlayer.Size = new System.Drawing.Size(134, 20);
-            this.txtIDQPaymentPlayer.TabIndex = 56;
-            // 
-            // btnConsultQPaymentPlayer
-            // 
-            this.btnConsultQPaymentPlayer.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnConsultQPaymentPlayer.Location = new System.Drawing.Point(299, 186);
-            this.btnConsultQPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
-            this.btnConsultQPaymentPlayer.Name = "btnConsultQPaymentPlayer";
-            this.btnConsultQPaymentPlayer.Size = new System.Drawing.Size(68, 28);
-            this.btnConsultQPaymentPlayer.TabIndex = 55;
-            this.btnConsultQPaymentPlayer.Text = "Consultar";
-            this.btnConsultQPaymentPlayer.UseVisualStyleBackColor = false;
->>>>>>> 0431e99bf5ff23d290eb300da5f08f8b6ca51130
             // 
             // dgvQPaymentPlayer
             // 
             this.dgvQPaymentPlayer.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.dgvQPaymentPlayer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-<<<<<<< HEAD
             this.dgvQPaymentPlayer.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvQPaymentPlayer.Location = new System.Drawing.Point(0, 190);
-=======
-            this.dgvQPaymentPlayer.Location = new System.Drawing.Point(36, 226);
->>>>>>> 0431e99bf5ff23d290eb300da5f08f8b6ca51130
             this.dgvQPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
             this.dgvQPaymentPlayer.Name = "dgvQPaymentPlayer";
             this.dgvQPaymentPlayer.RowTemplate.Height = 24;
@@ -141,35 +110,19 @@
             // 
             // txtPrimerApellido
             // 
-<<<<<<< HEAD
             this.txtPrimerApellido.Location = new System.Drawing.Point(92, 46);
             this.txtPrimerApellido.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrimerApellido.Name = "txtPrimerApellido";
             this.txtPrimerApellido.Size = new System.Drawing.Size(253, 20);
             this.txtPrimerApellido.TabIndex = 61;
-=======
-            this.txtLastNameQPaymentPlayer.Location = new System.Drawing.Point(438, 76);
-            this.txtLastNameQPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
-            this.txtLastNameQPaymentPlayer.Name = "txtLastNameQPaymentPlayer";
-            this.txtLastNameQPaymentPlayer.Size = new System.Drawing.Size(134, 20);
-            this.txtLastNameQPaymentPlayer.TabIndex = 61;
->>>>>>> 0431e99bf5ff23d290eb300da5f08f8b6ca51130
             // 
             // txtSegundoApellido
             // 
-<<<<<<< HEAD
             this.txtSegundoApellido.Location = new System.Drawing.Point(452, 46);
             this.txtSegundoApellido.Margin = new System.Windows.Forms.Padding(2);
             this.txtSegundoApellido.Name = "txtSegundoApellido";
             this.txtSegundoApellido.Size = new System.Drawing.Size(227, 20);
             this.txtSegundoApellido.TabIndex = 60;
-=======
-            this.txtSurnameQPaymentPlayer.Location = new System.Drawing.Point(277, 76);
-            this.txtSurnameQPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSurnameQPaymentPlayer.Name = "txtSurnameQPaymentPlayer";
-            this.txtSurnameQPaymentPlayer.Size = new System.Drawing.Size(134, 20);
-            this.txtSurnameQPaymentPlayer.TabIndex = 60;
->>>>>>> 0431e99bf5ff23d290eb300da5f08f8b6ca51130
             // 
             // label5
             // 
@@ -183,11 +136,7 @@
             // 
             // txtReceiptNumberQPaymentPlayer
             // 
-<<<<<<< HEAD
             this.txtReceiptNumberQPaymentPlayer.Location = new System.Drawing.Point(73, 78);
-=======
-            this.txtReceiptNumberQPaymentPlayer.Location = new System.Drawing.Point(277, 122);
->>>>>>> 0431e99bf5ff23d290eb300da5f08f8b6ca51130
             this.txtReceiptNumberQPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
             this.txtReceiptNumberQPaymentPlayer.Name = "txtReceiptNumberQPaymentPlayer";
             this.txtReceiptNumberQPaymentPlayer.Size = new System.Drawing.Size(272, 20);
@@ -236,6 +185,26 @@
             this.grpBoxInformacioPago.TabStop = false;
             this.grpBoxInformacioPago.Text = "Detalles del pago";
             // 
+            // chkBoxPagoMatricula
+            // 
+            this.chkBoxPagoMatricula.AutoSize = true;
+            this.chkBoxPagoMatricula.Location = new System.Drawing.Point(166, 112);
+            this.chkBoxPagoMatricula.Name = "chkBoxPagoMatricula";
+            this.chkBoxPagoMatricula.Size = new System.Drawing.Size(123, 17);
+            this.chkBoxPagoMatricula.TabIndex = 71;
+            this.chkBoxPagoMatricula.Text = "Pagos de matrículas";
+            this.chkBoxPagoMatricula.UseVisualStyleBackColor = true;
+            // 
+            // chkBoxPagoMensualidad
+            // 
+            this.chkBoxPagoMensualidad.AutoSize = true;
+            this.chkBoxPagoMensualidad.Location = new System.Drawing.Point(16, 112);
+            this.chkBoxPagoMensualidad.Name = "chkBoxPagoMensualidad";
+            this.chkBoxPagoMensualidad.Size = new System.Drawing.Size(144, 17);
+            this.chkBoxPagoMensualidad.TabIndex = 70;
+            this.chkBoxPagoMensualidad.Text = "Pagos de mensualidades";
+            this.chkBoxPagoMensualidad.UseVisualStyleBackColor = true;
+            // 
             // dtpFecha
             // 
             this.dtpFecha.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -259,34 +228,6 @@
             this.btnConsultar.TabIndex = 70;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = false;
-            // 
-            // chkBoxPagoMensualidad
-            // 
-            this.chkBoxPagoMensualidad.AutoSize = true;
-            this.chkBoxPagoMensualidad.Location = new System.Drawing.Point(16, 112);
-            this.chkBoxPagoMensualidad.Name = "chkBoxPagoMensualidad";
-            this.chkBoxPagoMensualidad.Size = new System.Drawing.Size(144, 17);
-            this.chkBoxPagoMensualidad.TabIndex = 70;
-            this.chkBoxPagoMensualidad.Text = "Pagos de mensualidades";
-            this.chkBoxPagoMensualidad.UseVisualStyleBackColor = true;
-            // 
-            // chkBoxPagoMatricula
-            // 
-<<<<<<< HEAD
-            this.chkBoxPagoMatricula.AutoSize = true;
-            this.chkBoxPagoMatricula.Location = new System.Drawing.Point(166, 112);
-            this.chkBoxPagoMatricula.Name = "chkBoxPagoMatricula";
-            this.chkBoxPagoMatricula.Size = new System.Drawing.Size(123, 17);
-            this.chkBoxPagoMatricula.TabIndex = 71;
-            this.chkBoxPagoMatricula.Text = "Pagos de matrículas";
-            this.chkBoxPagoMatricula.UseVisualStyleBackColor = true;
-=======
-            this.txtDateQPaymentPlayer.Location = new System.Drawing.Point(438, 122);
-            this.txtDateQPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDateQPaymentPlayer.Name = "txtDateQPaymentPlayer";
-            this.txtDateQPaymentPlayer.Size = new System.Drawing.Size(134, 20);
-            this.txtDateQPaymentPlayer.TabIndex = 67;
->>>>>>> 0431e99bf5ff23d290eb300da5f08f8b6ca51130
             // 
             // PlayerPaysQuery
             // 
