@@ -156,7 +156,7 @@
             // txtNameSchoolM
             // 
             this.txtNameSchoolM.Location = new System.Drawing.Point(244, 66);
-            this.txtNameSchoolM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNameSchoolM.Margin = new System.Windows.Forms.Padding(2);
             this.txtNameSchoolM.Name = "txtNameSchoolM";
             this.txtNameSchoolM.Size = new System.Drawing.Size(282, 20);
             this.txtNameSchoolM.TabIndex = 11;
@@ -164,7 +164,7 @@
             // txtTelephoneSchoolM
             // 
             this.txtTelephoneSchoolM.Location = new System.Drawing.Point(244, 205);
-            this.txtTelephoneSchoolM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTelephoneSchoolM.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelephoneSchoolM.Name = "txtTelephoneSchoolM";
             this.txtTelephoneSchoolM.Size = new System.Drawing.Size(282, 20);
             this.txtTelephoneSchoolM.TabIndex = 12;
@@ -172,7 +172,7 @@
             // txtInstallationNameSchoolM
             // 
             this.txtInstallationNameSchoolM.Location = new System.Drawing.Point(244, 170);
-            this.txtInstallationNameSchoolM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtInstallationNameSchoolM.Margin = new System.Windows.Forms.Padding(2);
             this.txtInstallationNameSchoolM.Name = "txtInstallationNameSchoolM";
             this.txtInstallationNameSchoolM.Size = new System.Drawing.Size(282, 20);
             this.txtInstallationNameSchoolM.TabIndex = 13;
@@ -180,7 +180,7 @@
             // txtAddressSchoolM
             // 
             this.txtAddressSchoolM.Location = new System.Drawing.Point(244, 135);
-            this.txtAddressSchoolM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddressSchoolM.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddressSchoolM.Name = "txtAddressSchoolM";
             this.txtAddressSchoolM.Size = new System.Drawing.Size(282, 20);
             this.txtAddressSchoolM.TabIndex = 14;
@@ -188,56 +188,60 @@
             // txtPlaceSchoolM
             // 
             this.txtPlaceSchoolM.Location = new System.Drawing.Point(244, 100);
-            this.txtPlaceSchoolM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPlaceSchoolM.Margin = new System.Windows.Forms.Padding(2);
             this.txtPlaceSchoolM.Name = "txtPlaceSchoolM";
             this.txtPlaceSchoolM.Size = new System.Drawing.Size(282, 20);
             this.txtPlaceSchoolM.TabIndex = 15;
             // 
             // btnDeleteSchoolM
             // 
+            this.btnDeleteSchoolM.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnDeleteSchoolM.Location = new System.Drawing.Point(591, 266);
-            this.btnDeleteSchoolM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDeleteSchoolM.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteSchoolM.Name = "btnDeleteSchoolM";
             this.btnDeleteSchoolM.Size = new System.Drawing.Size(68, 28);
             this.btnDeleteSchoolM.TabIndex = 22;
             this.btnDeleteSchoolM.Text = "Borrar";
-            this.btnDeleteSchoolM.UseVisualStyleBackColor = true;
+            this.btnDeleteSchoolM.UseVisualStyleBackColor = false;
             // 
             // btnUpdateSchoolM
             // 
+            this.btnUpdateSchoolM.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnUpdateSchoolM.Location = new System.Drawing.Point(448, 266);
-            this.btnUpdateSchoolM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdateSchoolM.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateSchoolM.Name = "btnUpdateSchoolM";
             this.btnUpdateSchoolM.Size = new System.Drawing.Size(68, 28);
             this.btnUpdateSchoolM.TabIndex = 21;
             this.btnUpdateSchoolM.Text = "Actualizar";
-            this.btnUpdateSchoolM.UseVisualStyleBackColor = true;
+            this.btnUpdateSchoolM.UseVisualStyleBackColor = false;
             // 
             // btnConsultSchoolM
             // 
+            this.btnConsultSchoolM.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnConsultSchoolM.Location = new System.Drawing.Point(290, 266);
-            this.btnConsultSchoolM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConsultSchoolM.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultSchoolM.Name = "btnConsultSchoolM";
             this.btnConsultSchoolM.Size = new System.Drawing.Size(68, 28);
             this.btnConsultSchoolM.TabIndex = 20;
             this.btnConsultSchoolM.Text = "Consultar";
-            this.btnConsultSchoolM.UseVisualStyleBackColor = true;
+            this.btnConsultSchoolM.UseVisualStyleBackColor = false;
             // 
             // btnRegisterSchoolM
             // 
+            this.btnRegisterSchoolM.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnRegisterSchoolM.Location = new System.Drawing.Point(137, 266);
-            this.btnRegisterSchoolM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegisterSchoolM.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegisterSchoolM.Name = "btnRegisterSchoolM";
             this.btnRegisterSchoolM.Size = new System.Drawing.Size(68, 28);
             this.btnRegisterSchoolM.TabIndex = 19;
             this.btnRegisterSchoolM.Text = "Registrar";
-            this.btnRegisterSchoolM.UseVisualStyleBackColor = true;
+            this.btnRegisterSchoolM.UseVisualStyleBackColor = false;
             // 
             // dgvSchoolM
             // 
             this.dgvSchoolM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSchoolM.Location = new System.Drawing.Point(52, 310);
-            this.dgvSchoolM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvSchoolM.Margin = new System.Windows.Forms.Padding(2);
             this.dgvSchoolM.Name = "dgvSchoolM";
             this.dgvSchoolM.RowTemplate.Height = 24;
             this.dgvSchoolM.Size = new System.Drawing.Size(690, 195);
@@ -265,13 +269,14 @@
             // 
             // btnSearchSchoolM
             // 
+            this.btnSearchSchoolM.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnSearchSchoolM.Location = new System.Drawing.Point(543, 162);
-            this.btnSearchSchoolM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchSchoolM.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchSchoolM.Name = "btnSearchSchoolM";
-            this.btnSearchSchoolM.Size = new System.Drawing.Size(68, 28);
+            this.btnSearchSchoolM.Size = new System.Drawing.Size(116, 28);
             this.btnSearchSchoolM.TabIndex = 27;
-            this.btnSearchSchoolM.Text = "Buscar";
-            this.btnSearchSchoolM.UseVisualStyleBackColor = true;
+            this.btnSearchSchoolM.Text = "Buscar Instalación";
+            this.btnSearchSchoolM.UseVisualStyleBackColor = false;
             // 
             // Schools
             // 

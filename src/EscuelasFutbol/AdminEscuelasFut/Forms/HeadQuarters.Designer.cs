@@ -82,49 +82,53 @@
             // 
             // btnDeleteAdministerInstallation
             // 
+            this.btnDeleteAdministerInstallation.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnDeleteAdministerInstallation.Location = new System.Drawing.Point(541, 174);
-            this.btnDeleteAdministerInstallation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDeleteAdministerInstallation.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteAdministerInstallation.Name = "btnDeleteAdministerInstallation";
             this.btnDeleteAdministerInstallation.Size = new System.Drawing.Size(68, 28);
             this.btnDeleteAdministerInstallation.TabIndex = 42;
             this.btnDeleteAdministerInstallation.Text = "Borrar";
-            this.btnDeleteAdministerInstallation.UseVisualStyleBackColor = true;
+            this.btnDeleteAdministerInstallation.UseVisualStyleBackColor = false;
             // 
             // btnUpdateAdministerInstallation
             // 
+            this.btnUpdateAdministerInstallation.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnUpdateAdministerInstallation.Location = new System.Drawing.Point(398, 174);
-            this.btnUpdateAdministerInstallation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdateAdministerInstallation.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateAdministerInstallation.Name = "btnUpdateAdministerInstallation";
             this.btnUpdateAdministerInstallation.Size = new System.Drawing.Size(68, 28);
             this.btnUpdateAdministerInstallation.TabIndex = 41;
             this.btnUpdateAdministerInstallation.Text = "Actualizar";
-            this.btnUpdateAdministerInstallation.UseVisualStyleBackColor = true;
+            this.btnUpdateAdministerInstallation.UseVisualStyleBackColor = false;
             // 
             // btnConsultAdministerInstallation
             // 
+            this.btnConsultAdministerInstallation.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnConsultAdministerInstallation.Location = new System.Drawing.Point(239, 174);
-            this.btnConsultAdministerInstallation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConsultAdministerInstallation.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultAdministerInstallation.Name = "btnConsultAdministerInstallation";
             this.btnConsultAdministerInstallation.Size = new System.Drawing.Size(68, 28);
             this.btnConsultAdministerInstallation.TabIndex = 40;
             this.btnConsultAdministerInstallation.Text = "Consultar";
-            this.btnConsultAdministerInstallation.UseVisualStyleBackColor = true;
+            this.btnConsultAdministerInstallation.UseVisualStyleBackColor = false;
             // 
             // btnRegisterAdministerInstallation
             // 
+            this.btnRegisterAdministerInstallation.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnRegisterAdministerInstallation.Location = new System.Drawing.Point(87, 174);
-            this.btnRegisterAdministerInstallation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegisterAdministerInstallation.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegisterAdministerInstallation.Name = "btnRegisterAdministerInstallation";
             this.btnRegisterAdministerInstallation.Size = new System.Drawing.Size(68, 28);
             this.btnRegisterAdministerInstallation.TabIndex = 39;
             this.btnRegisterAdministerInstallation.Text = "Registrar";
-            this.btnRegisterAdministerInstallation.UseVisualStyleBackColor = true;
+            this.btnRegisterAdministerInstallation.UseVisualStyleBackColor = false;
             // 
             // dgvAdministerInstallation
             // 
             this.dgvAdministerInstallation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAdministerInstallation.Location = new System.Drawing.Point(42, 226);
-            this.dgvAdministerInstallation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvAdministerInstallation.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAdministerInstallation.Name = "dgvAdministerInstallation";
             this.dgvAdministerInstallation.RowTemplate.Height = 24;
             this.dgvAdministerInstallation.Size = new System.Drawing.Size(615, 179);
@@ -133,7 +137,7 @@
             // txtAddressAdministerInstallation
             // 
             this.txtAddressAdministerInstallation.Location = new System.Drawing.Point(264, 50);
-            this.txtAddressAdministerInstallation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddressAdministerInstallation.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddressAdministerInstallation.Name = "txtAddressAdministerInstallation";
             this.txtAddressAdministerInstallation.Size = new System.Drawing.Size(203, 20);
             this.txtAddressAdministerInstallation.TabIndex = 43;
@@ -141,7 +145,7 @@
             // txtTelephoneAdministerInstallation
             // 
             this.txtTelephoneAdministerInstallation.Location = new System.Drawing.Point(264, 94);
-            this.txtTelephoneAdministerInstallation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTelephoneAdministerInstallation.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelephoneAdministerInstallation.Name = "txtTelephoneAdministerInstallation";
             this.txtTelephoneAdministerInstallation.Size = new System.Drawing.Size(203, 20);
             this.txtTelephoneAdministerInstallation.TabIndex = 44;

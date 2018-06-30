@@ -41,3 +41,29 @@ D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuela
 D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.exe
 D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.pdb
 D:\Ciencias de la Computacion e informatica\Bases de datos\Proyecto\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.Forms.Equipment.resources
+<<<<<<< HEAD
+=======
+C:\Users\pablo\Documents\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.Forms.Equipment.resources
+C:\Users\Chompi\Desktop\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\bin\Debug\AdminEscuelasFut.exe.config
+C:\Users\Chompi\Desktop\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\bin\Debug\AdminEscuelasFut.exe
+C:\Users\Chompi\Desktop\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\bin\Debug\AdminEscuelasFut.pdb
+C:\Users\Chompi\Desktop\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.csprojAssemblyReference.cache
+C:\Users\Chompi\Desktop\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.Forms.Equipment.resources
+C:\Users\Chompi\Desktop\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.HeadQuarters.resources
+C:\Users\Chompi\Desktop\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.Levels.resources
+C:\Users\Chompi\Desktop\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.MainForm.resources
+C:\Users\Chompi\Desktop\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.Pays.resources
+C:\Users\Chompi\Desktop\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.PlayerPaysQuery.resources
+C:\Users\Chompi\Desktop\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.PlayerPaysRegister.resources
+C:\Users\Chompi\Desktop\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.Players.resources
+C:\Users\Chompi\Desktop\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.PlayerTrainnings.resources
+C:\Users\Chompi\Desktop\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.SchoolLevels.resources
+C:\Users\Chompi\Desktop\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.Schools.resources
+C:\Users\Chompi\Desktop\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.splashScreen.resources
+C:\Users\Chompi\Desktop\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.Trainings.resources
+C:\Users\Chompi\Desktop\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.Properties.Resources.resources
+C:\Users\Chompi\Desktop\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.csproj.GenerateResource.cache
+C:\Users\Chompi\Desktop\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.csproj.CoreCompileInputs.cache
+C:\Users\Chompi\Desktop\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.exe
+C:\Users\Chompi\Desktop\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Debug\AdminEscuelasFut.pdb
+>>>>>>> 0431e99bf5ff23d290eb300da5f08f8b6ca51130

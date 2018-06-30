@@ -48,7 +48,7 @@
             this.lbNombreDEncargado = new System.Windows.Forms.Label();
             this.lbCedulaDEncargado = new System.Windows.Forms.Label();
             this.grbDatosJugador = new System.Windows.Forms.GroupBox();
-            this.txbNivel = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dtpFechaDeNacimiento = new System.Windows.Forms.DateTimePicker();
             this.txbNumeroPoliza = new System.Windows.Forms.TextBox();
             this.rbtnHombre = new System.Windows.Forms.RadioButton();
@@ -248,7 +248,7 @@
             // grbDatosJugador
             // 
             this.grbDatosJugador.AutoSize = true;
-            this.grbDatosJugador.Controls.Add(this.txbNivel);
+            this.grbDatosJugador.Controls.Add(this.comboBox1);
             this.grbDatosJugador.Controls.Add(this.dtpFechaDeNacimiento);
             this.grbDatosJugador.Controls.Add(this.txbNumeroPoliza);
             this.grbDatosJugador.Controls.Add(this.rbtnHombre);
@@ -275,12 +275,13 @@
             this.grbDatosJugador.TabStop = false;
             this.grbDatosJugador.Text = "Datos personales del jugador";
             // 
-            // txbNivel
+            // comboBox1
             // 
-            this.txbNivel.Location = new System.Drawing.Point(51, 115);
-            this.txbNivel.Name = "txbNivel";
-            this.txbNivel.Size = new System.Drawing.Size(297, 20);
-            this.txbNivel.TabIndex = 16;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(54, 114);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(76, 21);
+            this.comboBox1.TabIndex = 19;
             // 
             // dtpFechaDeNacimiento
             // 
@@ -452,7 +453,7 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.BackColor = System.Drawing.Color.Gold;
+            this.btnRegistrar.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnRegistrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegistrar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnRegistrar.FlatAppearance.BorderSize = 0;
@@ -467,7 +468,7 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnActualizar.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnActualizar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnActualizar.FlatAppearance.BorderSize = 0;
@@ -482,7 +483,7 @@
             // 
             // btnBorrar
             // 
-            this.btnBorrar.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnBorrar.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnBorrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBorrar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnBorrar.FlatAppearance.BorderSize = 0;
@@ -585,7 +586,6 @@
         private System.Windows.Forms.Label lbSexo;
         private System.Windows.Forms.TextBox txbCedula;
         private System.Windows.Forms.TextBox txbNombre;
-        private System.Windows.Forms.TextBox txbNivel;
         private System.Windows.Forms.Label lbCedulaDEncargado;
         private System.Windows.Forms.TextBox txbCedulaEncargado;
         private System.Windows.Forms.TextBox txbNombreEncargado;
@@ -602,5 +602,6 @@
         private System.Windows.Forms.TextBox txbPrimerApellidoEncargado;
         private System.Windows.Forms.Label lbSegundoApellidoDEncargado;
         private System.Windows.Forms.Label lbPrimerApellidoDEncargado;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
