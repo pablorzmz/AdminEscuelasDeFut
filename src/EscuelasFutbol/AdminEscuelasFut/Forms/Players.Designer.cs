@@ -104,8 +104,9 @@
             // 
             // salirToolStripMenuItem
             // 
+            this.salirToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -119,6 +120,7 @@
             // 
             // menuItemConsultarEntren
             // 
+            this.menuItemConsultarEntren.BackColor = System.Drawing.Color.AliceBlue;
             this.menuItemConsultarEntren.Name = "menuItemConsultarEntren";
             this.menuItemConsultarEntren.Size = new System.Drawing.Size(211, 22);
             this.menuItemConsultarEntren.Text = "Consultar entrenamientos";
@@ -277,14 +279,16 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.BackColor = System.Drawing.Color.AliceBlue;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(54, 114);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(76, 21);
+            this.comboBox1.Size = new System.Drawing.Size(294, 21);
             this.comboBox1.TabIndex = 19;
             // 
             // dtpFechaDeNacimiento
             // 
+            this.dtpFechaDeNacimiento.CalendarTitleBackColor = System.Drawing.Color.AliceBlue;
             this.dtpFechaDeNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaDeNacimiento.Location = new System.Drawing.Point(480, 83);
             this.dtpFechaDeNacimiento.Name = "dtpFechaDeNacimiento";
@@ -507,6 +511,7 @@
             // 
             // dtpFechaIngreso
             // 
+            this.dtpFechaIngreso.CalendarTitleBackColor = System.Drawing.Color.AliceBlue;
             this.dtpFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaIngreso.Location = new System.Drawing.Point(102, 351);
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";

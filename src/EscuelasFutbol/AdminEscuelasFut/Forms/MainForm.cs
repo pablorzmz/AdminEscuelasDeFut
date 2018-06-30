@@ -36,13 +36,23 @@ namespace AdminEscuelasFut
                     // Set the BackColor of the MdiClient control.
                     ctlMDI.BackColor = this.BackColor;
                 }
-#pragma warning disable CS0168 // La variable está declarada pero nunca se usa
                 catch (InvalidCastException exc)
-#pragma warning restore CS0168 // La variable está declarada pero nunca se usa
                 {
                     // Catch and ignore the error if casting failed.
                 }
             }
+
+            trainingsModule = new Trainings();
+            schoolsModule   = new Schools();
+            playersModule   = new Players();
+            paysModule      = new Pays();
+            levelsModule    = new Levels();
+            
+            trainingsModule.MdiParent = this;
+            schoolsModule.MdiParent   = this;
+            playersModule.MdiParent   = this;
+            paysModule.MdiParent      = this;
+            levelsModule.MdiParent    = this;
         }
 
         /**
@@ -50,16 +60,13 @@ namespace AdminEscuelasFut
         **/
         public void showPaysModule()
         {
-            if ( paysModule == null )
+            if ( paysModule.IsDisposed )
             {
                 paysModule = new Pays();
-                paysModule.MdiParent = this;                
-                paysModule.Show();
+                paysModule.MdiParent = this;                                
             }
-            else
-            {
-                paysModule.Focus();
-            }
+            paysModule.Show();
+            paysModule.Focus();
         }
 
         /**
@@ -67,57 +74,48 @@ namespace AdminEscuelasFut
         **/
         public void showLevelsModule()
         {
-            if ( levelsModule == null )
+            if ( levelsModule.IsDisposed )
             {
                 levelsModule = new Levels();
-                levelsModule.MdiParent = this;
-                levelsModule.Show();
+                levelsModule.MdiParent = this;  
             }
-            else
-            {
-                levelsModule.Focus();
-            }
+
+            levelsModule.Show();
+            levelsModule.Focus();
         }
 
         public void showTrainginsModule()
         {
-            if ( trainingsModule == null )
+            if ( trainingsModule.IsDisposed )
             {
                 trainingsModule = new Trainings();
                 trainingsModule.MdiParent = this;
-                trainingsModule.Show();
             }
-            else
-            {
-                trainingsModule.Focus();
-            }
+            trainingsModule.Show();
+            trainingsModule.Focus();
         }
 
         public void showSchoolsModule()
         {
-            if (schoolsModule == null)
+            if (schoolsModule.IsDisposed )
             {
                 schoolsModule = new Schools();
-                schoolsModule.MdiParent = this;
-                schoolsModule.Show();
+                schoolsModule.MdiParent = this;                
             }
-            else
-            {
-                schoolsModule.Focus();
-            }
+
+            schoolsModule.Show();
+            schoolsModule.Focus();
         }
         public void showPlayersModule()
         {
-            if (playersModule == null)
+            if (playersModule.IsDisposed )
             {
                 playersModule = new Players();
-                playersModule.MdiParent = this;
-                playersModule.Show();
+                playersModule.MdiParent = this;                
             }
-            else
-            {
-                playersModule.Focus();
-            }
+
+            playersModule.Show();
+            playersModule.Focus();
         }
 
         private void menuItemPagos_Click(object sender, EventArgs e)

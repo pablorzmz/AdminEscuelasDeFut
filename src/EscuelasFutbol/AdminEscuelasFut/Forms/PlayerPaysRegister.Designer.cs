@@ -49,8 +49,8 @@
             this.dtpFechaFinMensualidad = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaMatricula = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnRegisterRPaymentPlayer = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnRegisterRPaymentPlayer = new System.Windows.Forms.Button();
             this.menPlayerPays.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRPaymentPlayer)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -80,7 +80,7 @@
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -184,6 +184,7 @@
             this.chbxAnnuityRPaymentPlayer.TabIndex = 58;
             this.chbxAnnuityRPaymentPlayer.Text = "Matrícula";
             this.chbxAnnuityRPaymentPlayer.UseVisualStyleBackColor = true;
+            this.chbxAnnuityRPaymentPlayer.CheckedChanged += new System.EventHandler(this.chbxAnnuityRPaymentPlayer_CheckedChanged_1);
             // 
             // ckbxMonthlyRPaymentPlayer
             // 
@@ -261,21 +262,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos para el registro del pago";
             // 
-            // btnRegisterRPaymentPlayer
-            // 
-            this.btnRegisterRPaymentPlayer.BackColor = System.Drawing.Color.Gold;
-            this.btnRegisterRPaymentPlayer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegisterRPaymentPlayer.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnRegisterRPaymentPlayer.FlatAppearance.BorderSize = 0;
-            this.btnRegisterRPaymentPlayer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnRegisterRPaymentPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegisterRPaymentPlayer.Location = new System.Drawing.Point(588, 185);
-            this.btnRegisterRPaymentPlayer.Name = "btnRegisterRPaymentPlayer";
-            this.btnRegisterRPaymentPlayer.Size = new System.Drawing.Size(89, 23);
-            this.btnRegisterRPaymentPlayer.TabIndex = 71;
-            this.btnRegisterRPaymentPlayer.Text = "Registrar pago";
-            this.btnRegisterRPaymentPlayer.UseVisualStyleBackColor = false;
-            // 
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -290,6 +276,21 @@
             this.btnBuscar.TabIndex = 72;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            // 
+            // btnRegisterRPaymentPlayer
+            // 
+            this.btnRegisterRPaymentPlayer.BackColor = System.Drawing.Color.Gold;
+            this.btnRegisterRPaymentPlayer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegisterRPaymentPlayer.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnRegisterRPaymentPlayer.FlatAppearance.BorderSize = 0;
+            this.btnRegisterRPaymentPlayer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnRegisterRPaymentPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegisterRPaymentPlayer.Location = new System.Drawing.Point(588, 185);
+            this.btnRegisterRPaymentPlayer.Name = "btnRegisterRPaymentPlayer";
+            this.btnRegisterRPaymentPlayer.Size = new System.Drawing.Size(89, 23);
+            this.btnRegisterRPaymentPlayer.TabIndex = 71;
+            this.btnRegisterRPaymentPlayer.Text = "Registrar pago";
+            this.btnRegisterRPaymentPlayer.UseVisualStyleBackColor = false;
             // 
             // PlayerPaysRegister
             // 

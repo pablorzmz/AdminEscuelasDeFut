@@ -63,6 +63,16 @@ namespace AdminEscuelasFut.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap coins_1726618_1920 {
+            get {
+                object obj = ResourceManager.GetObject("coins-1726618_1920", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap estadioFondo {
             get {
                 object obj = ResourceManager.GetObject("estadioFondo", resourceCulture);

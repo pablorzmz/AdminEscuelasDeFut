@@ -1,9 +1,0 @@
-C:\Users\pablo\Documents\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\bin\Release\AdminEscuelasFut.exe.config
-C:\Users\pablo\Documents\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\bin\Release\AdminEscuelasFut.exe
-C:\Users\pablo\Documents\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\bin\Release\AdminEscuelasFut.pdb
-C:\Users\pablo\Documents\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Release\AdminEscuelasFut.MainForm.resources
-C:\Users\pablo\Documents\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Release\AdminEscuelasFut.Pays.resources
-C:\Users\pablo\Documents\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Release\AdminEscuelasFut.Properties.Resources.resources
-C:\Users\pablo\Documents\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Release\AdminEscuelasFut.csproj.GenerateResource.Cache
-C:\Users\pablo\Documents\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Release\AdminEscuelasFut.exe
-C:\Users\pablo\Documents\GitHub\AdminEscuelasDeFut\src\EscuelasFutbol\AdminEscuelasFut\obj\Release\AdminEscuelasFut.pdb

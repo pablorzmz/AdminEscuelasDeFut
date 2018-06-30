@@ -98,7 +98,7 @@
             // 
             this.btnDeleteSchoolLevel.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnDeleteSchoolLevel.Location = new System.Drawing.Point(539, 166);
-            this.btnDeleteSchoolLevel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDeleteSchoolLevel.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteSchoolLevel.Name = "btnDeleteSchoolLevel";
             this.btnDeleteSchoolLevel.Size = new System.Drawing.Size(68, 28);
             this.btnDeleteSchoolLevel.TabIndex = 22;
@@ -109,7 +109,7 @@
             // 
             this.btnUpdateSchoolLevel.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnUpdateSchoolLevel.Location = new System.Drawing.Point(397, 166);
-            this.btnUpdateSchoolLevel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdateSchoolLevel.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateSchoolLevel.Name = "btnUpdateSchoolLevel";
             this.btnUpdateSchoolLevel.Size = new System.Drawing.Size(68, 28);
             this.btnUpdateSchoolLevel.TabIndex = 21;
@@ -120,7 +120,7 @@
             // 
             this.btnSearchTrainingM.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnSearchTrainingM.Location = new System.Drawing.Point(492, 36);
-            this.btnSearchTrainingM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchTrainingM.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchTrainingM.Name = "btnSearchTrainingM";
             this.btnSearchTrainingM.Size = new System.Drawing.Size(91, 28);
             this.btnSearchTrainingM.TabIndex = 20;
@@ -131,7 +131,7 @@
             // 
             this.btnRegisterSchoolLevel.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnRegisterSchoolLevel.Location = new System.Drawing.Point(86, 166);
-            this.btnRegisterSchoolLevel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegisterSchoolLevel.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegisterSchoolLevel.Name = "btnRegisterSchoolLevel";
             this.btnRegisterSchoolLevel.Size = new System.Drawing.Size(68, 28);
             this.btnRegisterSchoolLevel.TabIndex = 19;
@@ -142,7 +142,7 @@
             // 
             this.dgvSchoolLevel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSchoolLevel.Location = new System.Drawing.Point(44, 226);
-            this.dgvSchoolLevel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvSchoolLevel.Margin = new System.Windows.Forms.Padding(2);
             this.dgvSchoolLevel.Name = "dgvSchoolLevel";
             this.dgvSchoolLevel.RowTemplate.Height = 24;
             this.dgvSchoolLevel.Size = new System.Drawing.Size(615, 179);
@@ -181,16 +181,17 @@
             // txtSchoolNameSchoolLevel
             // 
             this.txtSchoolNameSchoolLevel.Location = new System.Drawing.Point(204, 41);
-            this.txtSchoolNameSchoolLevel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSchoolNameSchoolLevel.Margin = new System.Windows.Forms.Padding(2);
             this.txtSchoolNameSchoolLevel.Name = "txtSchoolNameSchoolLevel";
             this.txtSchoolNameSchoolLevel.Size = new System.Drawing.Size(261, 20);
             this.txtSchoolNameSchoolLevel.TabIndex = 26;
             // 
             // cmbSchoolLevel
             // 
+            this.cmbSchoolLevel.BackColor = System.Drawing.Color.AliceBlue;
             this.cmbSchoolLevel.FormattingEnabled = true;
             this.cmbSchoolLevel.Location = new System.Drawing.Point(204, 64);
-            this.cmbSchoolLevel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbSchoolLevel.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSchoolLevel.Name = "cmbSchoolLevel";
             this.cmbSchoolLevel.Size = new System.Drawing.Size(76, 21);
             this.cmbSchoolLevel.TabIndex = 27;
@@ -198,7 +199,7 @@
             // txtMinimumAgeSchoolLevel
             // 
             this.txtMinimumAgeSchoolLevel.Location = new System.Drawing.Point(204, 89);
-            this.txtMinimumAgeSchoolLevel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMinimumAgeSchoolLevel.Margin = new System.Windows.Forms.Padding(2);
             this.txtMinimumAgeSchoolLevel.Name = "txtMinimumAgeSchoolLevel";
             this.txtMinimumAgeSchoolLevel.Size = new System.Drawing.Size(76, 20);
             this.txtMinimumAgeSchoolLevel.TabIndex = 28;
@@ -206,7 +207,7 @@
             // txtMaximumAgeSchoolLevel
             // 
             this.txtMaximumAgeSchoolLevel.Location = new System.Drawing.Point(204, 112);
-            this.txtMaximumAgeSchoolLevel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaximumAgeSchoolLevel.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaximumAgeSchoolLevel.Name = "txtMaximumAgeSchoolLevel";
             this.txtMaximumAgeSchoolLevel.Size = new System.Drawing.Size(76, 20);
             this.txtMaximumAgeSchoolLevel.TabIndex = 29;
@@ -215,7 +216,7 @@
             // 
             this.btnConsultSchoolLevel.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnConsultSchoolLevel.Location = new System.Drawing.Point(250, 166);
-            this.btnConsultSchoolLevel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConsultSchoolLevel.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultSchoolLevel.Name = "btnConsultSchoolLevel";
             this.btnConsultSchoolLevel.Size = new System.Drawing.Size(68, 28);
             this.btnConsultSchoolLevel.TabIndex = 30;

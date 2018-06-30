@@ -73,8 +73,9 @@
             // 
             // salirToolStripMenuItem
             // 
+            this.salirToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -91,29 +92,33 @@
             // 
             // entrenadorToolStripMenuItem
             // 
+            this.entrenadorToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
             this.entrenadorToolStripMenuItem.Enabled = false;
             this.entrenadorToolStripMenuItem.Name = "entrenadorToolStripMenuItem";
-            this.entrenadorToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.entrenadorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.entrenadorToolStripMenuItem.Text = "Entrenador";
             // 
             // equipamientoToolStripMenuItem
             // 
+            this.equipamientoToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
             this.equipamientoToolStripMenuItem.Enabled = false;
             this.equipamientoToolStripMenuItem.Name = "equipamientoToolStripMenuItem";
-            this.equipamientoToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.equipamientoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.equipamientoToolStripMenuItem.Text = "Equipamiento";
             // 
             // instalacionesToolStripMenuItem
             // 
+            this.instalacionesToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
             this.instalacionesToolStripMenuItem.Enabled = false;
             this.instalacionesToolStripMenuItem.Name = "instalacionesToolStripMenuItem";
-            this.instalacionesToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.instalacionesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.instalacionesToolStripMenuItem.Text = "Instalaciones";
             // 
             // menuItemRegistPagJugadores
             // 
+            this.menuItemRegistPagJugadores.BackColor = System.Drawing.Color.AliceBlue;
             this.menuItemRegistPagJugadores.Name = "menuItemRegistPagJugadores";
-            this.menuItemRegistPagJugadores.Size = new System.Drawing.Size(148, 22);
+            this.menuItemRegistPagJugadores.Size = new System.Drawing.Size(152, 22);
             this.menuItemRegistPagJugadores.Text = "Jugadores";
             this.menuItemRegistPagJugadores.Click += new System.EventHandler(this.menuItemRegistPagJugadores_Click);
             // 
@@ -130,29 +135,33 @@
             // 
             // entrenadorToolStripMenuItem1
             // 
+            this.entrenadorToolStripMenuItem1.BackColor = System.Drawing.Color.AliceBlue;
             this.entrenadorToolStripMenuItem1.Enabled = false;
             this.entrenadorToolStripMenuItem1.Name = "entrenadorToolStripMenuItem1";
-            this.entrenadorToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
+            this.entrenadorToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.entrenadorToolStripMenuItem1.Text = "Entrenador";
             // 
             // equipamientoToolStripMenuItem1
             // 
+            this.equipamientoToolStripMenuItem1.BackColor = System.Drawing.Color.AliceBlue;
             this.equipamientoToolStripMenuItem1.Enabled = false;
             this.equipamientoToolStripMenuItem1.Name = "equipamientoToolStripMenuItem1";
-            this.equipamientoToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
+            this.equipamientoToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.equipamientoToolStripMenuItem1.Text = "Equipamiento";
             // 
             // instalacionesToolStripMenuItem1
             // 
+            this.instalacionesToolStripMenuItem1.BackColor = System.Drawing.Color.AliceBlue;
             this.instalacionesToolStripMenuItem1.Enabled = false;
             this.instalacionesToolStripMenuItem1.Name = "instalacionesToolStripMenuItem1";
-            this.instalacionesToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
+            this.instalacionesToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.instalacionesToolStripMenuItem1.Text = "Instalaciones";
             // 
             // menuItemConsultPagJugador
             // 
+            this.menuItemConsultPagJugador.BackColor = System.Drawing.Color.AliceBlue;
             this.menuItemConsultPagJugador.Name = "menuItemConsultPagJugador";
-            this.menuItemConsultPagJugador.Size = new System.Drawing.Size(148, 22);
+            this.menuItemConsultPagJugador.Size = new System.Drawing.Size(152, 22);
             this.menuItemConsultPagJugador.Text = "Jugador";
             this.menuItemConsultPagJugador.Click += new System.EventHandler(this.menuItemConsultPagJugador_Click);
             // 
@@ -172,6 +181,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(696, 579);
             this.Controls.Add(this.menPays);

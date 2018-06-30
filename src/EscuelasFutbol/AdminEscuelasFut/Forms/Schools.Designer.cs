@@ -81,13 +81,15 @@
             // 
             // salirToolStripMenuItem
             // 
+            this.salirToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // heeraToolStripMenuItem
             // 
+            this.heeraToolStripMenuItem.BackColor = System.Drawing.Color.LightSeaGreen;
             this.heeraToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuItemAdministrarInst,
             this.menuItemGestionarNiveles});
@@ -97,6 +99,7 @@
             // 
             // menuItemAdministrarInst
             // 
+            this.menuItemAdministrarInst.BackColor = System.Drawing.Color.AliceBlue;
             this.menuItemAdministrarInst.Name = "menuItemAdministrarInst";
             this.menuItemAdministrarInst.Size = new System.Drawing.Size(207, 22);
             this.menuItemAdministrarInst.Text = "Administrar instalaciones";
@@ -104,6 +107,7 @@
             // 
             // menuItemGestionarNiveles
             // 
+            this.menuItemGestionarNiveles.BackColor = System.Drawing.Color.AliceBlue;
             this.menuItemGestionarNiveles.Name = "menuItemGestionarNiveles";
             this.menuItemGestionarNiveles.Size = new System.Drawing.Size(207, 22);
             this.menuItemGestionarNiveles.Text = "Gestionar niveles";

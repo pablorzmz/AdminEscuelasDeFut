@@ -42,7 +42,7 @@ namespace AdminEscuelasFut
             }
         }
 
-        private void chbxAnnuityRPaymentPlayer_CheckedChanged(object sender, EventArgs e)
+        private void chbxAnnuityRPaymentPlayer_CheckedChanged_1(object sender, EventArgs e)
         {
             if (chbxAnnuityRPaymentPlayer.Checked)
             {

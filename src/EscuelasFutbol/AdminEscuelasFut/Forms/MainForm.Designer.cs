@@ -46,7 +46,7 @@
             // 
             // menPrincp
             // 
-            this.menPrincp.BackColor = System.Drawing.Color.DarkKhaki;
+            this.menPrincp.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.menPrincp.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.módulosToolStripMenuItem,
@@ -61,14 +61,16 @@
             // 
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.salirToolStripMenuItem});
+            this.archivoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // salirToolStripMenuItem
             // 
+            this.salirToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlLight;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -88,6 +90,7 @@
             // 
             // administradoresToolStripMenuItem
             // 
+            this.administradoresToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlLight;
             this.administradoresToolStripMenuItem.Enabled = false;
             this.administradoresToolStripMenuItem.Name = "administradoresToolStripMenuItem";
             this.administradoresToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
@@ -95,6 +98,7 @@
             // 
             // entrenadoresToolStripMenuItem
             // 
+            this.entrenadoresToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlLight;
             this.entrenadoresToolStripMenuItem.Enabled = false;
             this.entrenadoresToolStripMenuItem.Name = "entrenadoresToolStripMenuItem";
             this.entrenadoresToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
@@ -102,6 +106,7 @@
             // 
             // entrenamientosToolStripMenuItem
             // 
+            this.entrenamientosToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlLight;
             this.entrenamientosToolStripMenuItem.Name = "entrenamientosToolStripMenuItem";
             this.entrenamientosToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.entrenamientosToolStripMenuItem.Text = "Entrenamientos";
@@ -109,6 +114,7 @@
             // 
             // escuelasToolStripMenuItem
             // 
+            this.escuelasToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlLight;
             this.escuelasToolStripMenuItem.Name = "escuelasToolStripMenuItem";
             this.escuelasToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.escuelasToolStripMenuItem.Text = "Escuelas";
@@ -116,6 +122,7 @@
             // 
             // menuItemJugadores
             // 
+            this.menuItemJugadores.BackColor = System.Drawing.SystemColors.ControlLight;
             this.menuItemJugadores.Name = "menuItemJugadores";
             this.menuItemJugadores.Size = new System.Drawing.Size(161, 22);
             this.menuItemJugadores.Text = "Jugadores";
@@ -123,6 +130,7 @@
             // 
             // menuItemNiveles
             // 
+            this.menuItemNiveles.BackColor = System.Drawing.SystemColors.ControlLight;
             this.menuItemNiveles.Name = "menuItemNiveles";
             this.menuItemNiveles.Size = new System.Drawing.Size(161, 22);
             this.menuItemNiveles.Text = "Niveles";
@@ -130,6 +138,7 @@
             // 
             // menuItemPagos
             // 
+            this.menuItemPagos.BackColor = System.Drawing.SystemColors.ControlLight;
             this.menuItemPagos.Name = "menuItemPagos";
             this.menuItemPagos.Size = new System.Drawing.Size(161, 22);
             this.menuItemPagos.Text = "Pagos";
