@@ -53,7 +53,7 @@
             this.ayudaToolStripMenuItem});
             this.menPrincp.Location = new System.Drawing.Point(0, 0);
             this.menPrincp.Name = "menPrincp";
-            this.menPrincp.Size = new System.Drawing.Size(630, 24);
+            this.menPrincp.Size = new System.Drawing.Size(1037, 24);
             this.menPrincp.TabIndex = 2;
             this.menPrincp.Text = "menuPrincipal";
             // 
@@ -70,7 +70,7 @@
             // 
             this.salirToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlLight;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -157,7 +157,7 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImage = global::AdminEscuelasFut.Properties.Resources.estadioFondo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(630, 447);
+            this.ClientSize = new System.Drawing.Size(1037, 549);
             this.Controls.Add(this.menPrincp);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";

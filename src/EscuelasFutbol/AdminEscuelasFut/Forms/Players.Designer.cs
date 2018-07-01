@@ -37,10 +37,12 @@
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grbDatosEncargado = new System.Windows.Forms.GroupBox();
             this.txbSegundoApellidoEncargado = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnConsultarCedEncar = new System.Windows.Forms.Button();
+            this.dtpFechaIngreso = new System.Windows.Forms.DateTimePicker();
             this.txbPrimerApellidoEncargado = new System.Windows.Forms.TextBox();
+            this.lbFechaIngreso = new System.Windows.Forms.Label();
             this.lbSegundoApellidoDEncargado = new System.Windows.Forms.Label();
-            this.txbCedulaEncargado = new System.Windows.Forms.TextBox();
+            this.txtCedulaEncargado = new System.Windows.Forms.TextBox();
             this.txbNombreEncargado = new System.Windows.Forms.TextBox();
             this.lbPrimerApellidoDEncargado = new System.Windows.Forms.Label();
             this.lbTelefonoDEncargado = new System.Windows.Forms.Label();
@@ -59,7 +61,6 @@
             this.txbNombre = new System.Windows.Forms.TextBox();
             this.lbNivel = new System.Windows.Forms.Label();
             this.lbCedula = new System.Windows.Forms.Label();
-            this.btnConsultar = new System.Windows.Forms.Button();
             this.txbTelefono = new System.Windows.Forms.TextBox();
             this.lbNombre = new System.Windows.Forms.Label();
             this.txbSegundoApellido = new System.Windows.Forms.TextBox();
@@ -71,9 +72,8 @@
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
-            this.lbFechaIngreso = new System.Windows.Forms.Label();
-            this.dtpFechaIngreso = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnConsultar = new System.Windows.Forms.Button();
             this.menPlayers.SuspendLayout();
             this.grbDatosEncargado.SuspendLayout();
             this.grbDatosJugador.SuspendLayout();
@@ -90,7 +90,7 @@
             this.ayudaToolStripMenuItem});
             this.menPlayers.Location = new System.Drawing.Point(0, 0);
             this.menPlayers.Name = "menPlayers";
-            this.menPlayers.Size = new System.Drawing.Size(696, 24);
+            this.menPlayers.Size = new System.Drawing.Size(691, 24);
             this.menPlayers.TabIndex = 3;
             this.menPlayers.Text = "menuPrincipal";
             // 
@@ -106,7 +106,7 @@
             // 
             this.salirToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -135,10 +135,12 @@
             // grbDatosEncargado
             // 
             this.grbDatosEncargado.Controls.Add(this.txbSegundoApellidoEncargado);
-            this.grbDatosEncargado.Controls.Add(this.button1);
+            this.grbDatosEncargado.Controls.Add(this.btnConsultarCedEncar);
+            this.grbDatosEncargado.Controls.Add(this.dtpFechaIngreso);
             this.grbDatosEncargado.Controls.Add(this.txbPrimerApellidoEncargado);
+            this.grbDatosEncargado.Controls.Add(this.lbFechaIngreso);
             this.grbDatosEncargado.Controls.Add(this.lbSegundoApellidoDEncargado);
-            this.grbDatosEncargado.Controls.Add(this.txbCedulaEncargado);
+            this.grbDatosEncargado.Controls.Add(this.txtCedulaEncargado);
             this.grbDatosEncargado.Controls.Add(this.txbNombreEncargado);
             this.grbDatosEncargado.Controls.Add(this.lbPrimerApellidoDEncargado);
             this.grbDatosEncargado.Controls.Add(this.lbTelefonoDEncargado);
@@ -158,21 +160,31 @@
             this.txbSegundoApellidoEncargado.Name = "txbSegundoApellidoEncargado";
             this.txbSegundoApellidoEncargado.Size = new System.Drawing.Size(284, 20);
             this.txbSegundoApellidoEncargado.TabIndex = 21;
+            this.txbSegundoApellidoEncargado.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // button1
+            // btnConsultarCedEncar
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(590, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Consultar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnConsultarCedEncar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnConsultarCedEncar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsultarCedEncar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnConsultarCedEncar.FlatAppearance.BorderSize = 0;
+            this.btnConsultarCedEncar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnConsultarCedEncar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultarCedEncar.Location = new System.Drawing.Point(559, 18);
+            this.btnConsultarCedEncar.Name = "btnConsultarCedEncar";
+            this.btnConsultarCedEncar.Size = new System.Drawing.Size(104, 20);
+            this.btnConsultarCedEncar.TabIndex = 18;
+            this.btnConsultarCedEncar.Text = "Buscar cédula";
+            this.btnConsultarCedEncar.UseVisualStyleBackColor = false;
+            // 
+            // dtpFechaIngreso
+            // 
+            this.dtpFechaIngreso.CalendarTitleBackColor = System.Drawing.Color.AliceBlue;
+            this.dtpFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(464, 76);
+            this.dtpFechaIngreso.Name = "dtpFechaIngreso";
+            this.dtpFechaIngreso.Size = new System.Drawing.Size(201, 20);
+            this.dtpFechaIngreso.TabIndex = 17;
             // 
             // txbPrimerApellidoEncargado
             // 
@@ -180,6 +192,16 @@
             this.txbPrimerApellidoEncargado.Name = "txbPrimerApellidoEncargado";
             this.txbPrimerApellidoEncargado.Size = new System.Drawing.Size(259, 20);
             this.txbPrimerApellidoEncargado.TabIndex = 22;
+            this.txbPrimerApellidoEncargado.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lbFechaIngreso
+            // 
+            this.lbFechaIngreso.AutoSize = true;
+            this.lbFechaIngreso.Location = new System.Drawing.Point(368, 77);
+            this.lbFechaIngreso.Name = "lbFechaIngreso";
+            this.lbFechaIngreso.Size = new System.Drawing.Size(90, 13);
+            this.lbFechaIngreso.TabIndex = 14;
+            this.lbFechaIngreso.Text = "Fecha de Ingreso";
             // 
             // lbSegundoApellidoDEncargado
             // 
@@ -190,12 +212,14 @@
             this.lbSegundoApellidoDEncargado.TabIndex = 19;
             this.lbSegundoApellidoDEncargado.Text = "Segundo Apellido";
             // 
-            // txbCedulaEncargado
+            // txtCedulaEncargado
             // 
-            this.txbCedulaEncargado.Location = new System.Drawing.Point(409, 18);
-            this.txbCedulaEncargado.Name = "txbCedulaEncargado";
-            this.txbCedulaEncargado.Size = new System.Drawing.Size(175, 20);
-            this.txbCedulaEncargado.TabIndex = 14;
+            this.txtCedulaEncargado.Location = new System.Drawing.Point(409, 18);
+            this.txtCedulaEncargado.Name = "txtCedulaEncargado";
+            this.txtCedulaEncargado.Size = new System.Drawing.Size(144, 20);
+            this.txtCedulaEncargado.TabIndex = 14;
+            this.txtCedulaEncargado.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCedulaEncargado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedulaEncargado_KeyPress);
             // 
             // txbNombreEncargado
             // 
@@ -203,6 +227,7 @@
             this.txbNombreEncargado.Name = "txbNombreEncargado";
             this.txbNombreEncargado.Size = new System.Drawing.Size(284, 20);
             this.txbNombreEncargado.TabIndex = 15;
+            this.txbNombreEncargado.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lbPrimerApellidoDEncargado
             // 
@@ -228,6 +253,7 @@
             this.txbTelefonoDEncargado.Name = "txbTelefonoDEncargado";
             this.txbTelefonoDEncargado.Size = new System.Drawing.Size(204, 20);
             this.txbTelefonoDEncargado.TabIndex = 16;
+            this.txbTelefonoDEncargado.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lbNombreDEncargado
             // 
@@ -261,7 +287,6 @@
             this.grbDatosJugador.Controls.Add(this.txbNombre);
             this.grbDatosJugador.Controls.Add(this.lbNivel);
             this.grbDatosJugador.Controls.Add(this.lbCedula);
-            this.grbDatosJugador.Controls.Add(this.btnConsultar);
             this.grbDatosJugador.Controls.Add(this.txbTelefono);
             this.grbDatosJugador.Controls.Add(this.lbNombre);
             this.grbDatosJugador.Controls.Add(this.txbSegundoApellido);
@@ -301,6 +326,7 @@
             this.txbNumeroPoliza.Name = "txbNumeroPoliza";
             this.txbNumeroPoliza.Size = new System.Drawing.Size(216, 20);
             this.txbNumeroPoliza.TabIndex = 17;
+            this.txbNumeroPoliza.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // rbtnHombre
             // 
@@ -346,8 +372,9 @@
             // 
             this.txbCedula.Location = new System.Drawing.Point(409, 31);
             this.txbCedula.Name = "txbCedula";
-            this.txbCedula.Size = new System.Drawing.Size(175, 20);
+            this.txbCedula.Size = new System.Drawing.Size(256, 20);
             this.txbCedula.TabIndex = 12;
+            this.txbCedula.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txbNombre
             // 
@@ -355,6 +382,7 @@
             this.txbNombre.Name = "txbNombre";
             this.txbNombre.Size = new System.Drawing.Size(284, 20);
             this.txbNombre.TabIndex = 13;
+            this.txbNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lbNivel
             // 
@@ -374,27 +402,13 @@
             this.lbCedula.TabIndex = 4;
             this.lbCedula.Text = "Cédula";
             // 
-            // btnConsultar
-            // 
-            this.btnConsultar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnConsultar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConsultar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnConsultar.FlatAppearance.BorderSize = 0;
-            this.btnConsultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultar.Location = new System.Drawing.Point(590, 28);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(75, 23);
-            this.btnConsultar.TabIndex = 8;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = false;
-            // 
             // txbTelefono
             // 
             this.txbTelefono.Location = new System.Drawing.Point(64, 83);
             this.txbTelefono.Name = "txbTelefono";
             this.txbTelefono.Size = new System.Drawing.Size(284, 20);
             this.txbTelefono.TabIndex = 9;
+            this.txbTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lbNombre
             // 
@@ -411,6 +425,7 @@
             this.txbSegundoApellido.Name = "txbSegundoApellido";
             this.txbSegundoApellido.Size = new System.Drawing.Size(204, 20);
             this.txbSegundoApellido.TabIndex = 10;
+            this.txbSegundoApellido.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txbPrimerApellido
             // 
@@ -418,6 +433,7 @@
             this.txbPrimerApellido.Name = "txbPrimerApellido";
             this.txbPrimerApellido.Size = new System.Drawing.Size(259, 20);
             this.txbPrimerApellido.TabIndex = 11;
+            this.txbPrimerApellido.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lbSexo
             // 
@@ -457,13 +473,13 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnRegistrar.BackColor = System.Drawing.Color.Gold;
             this.btnRegistrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegistrar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnRegistrar.FlatAppearance.BorderSize = 0;
             this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrar.Location = new System.Drawing.Point(381, 348);
+            this.btnRegistrar.Location = new System.Drawing.Point(359, 342);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
             this.btnRegistrar.TabIndex = 5;
@@ -472,13 +488,13 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnActualizar.BackColor = System.Drawing.Color.LimeGreen;
             this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnActualizar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnActualizar.FlatAppearance.BorderSize = 0;
             this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Location = new System.Drawing.Point(477, 348);
+            this.btnActualizar.Location = new System.Drawing.Point(441, 342);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 6;
@@ -487,55 +503,51 @@
             // 
             // btnBorrar
             // 
-            this.btnBorrar.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnBorrar.BackColor = System.Drawing.Color.Firebrick;
             this.btnBorrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBorrar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnBorrar.FlatAppearance.BorderSize = 0;
             this.btnBorrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBorrar.Location = new System.Drawing.Point(576, 348);
+            this.btnBorrar.Location = new System.Drawing.Point(608, 342);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(75, 23);
             this.btnBorrar.TabIndex = 7;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = false;
             // 
-            // lbFechaIngreso
-            // 
-            this.lbFechaIngreso.AutoSize = true;
-            this.lbFechaIngreso.Location = new System.Drawing.Point(14, 354);
-            this.lbFechaIngreso.Name = "lbFechaIngreso";
-            this.lbFechaIngreso.Size = new System.Drawing.Size(90, 13);
-            this.lbFechaIngreso.TabIndex = 14;
-            this.lbFechaIngreso.Text = "Fecha de Ingreso";
-            // 
-            // dtpFechaIngreso
-            // 
-            this.dtpFechaIngreso.CalendarTitleBackColor = System.Drawing.Color.AliceBlue;
-            this.dtpFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaIngreso.Location = new System.Drawing.Point(102, 351);
-            this.dtpFechaIngreso.Name = "dtpFechaIngreso";
-            this.dtpFechaIngreso.Size = new System.Drawing.Size(259, 20);
-            this.dtpFechaIngreso.TabIndex = 17;
-            // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 387);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 371);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(696, 192);
+            this.dataGridView1.Size = new System.Drawing.Size(691, 143);
             this.dataGridView1.TabIndex = 18;
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnConsultar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsultar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnConsultar.FlatAppearance.BorderSize = 0;
+            this.btnConsultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar.Location = new System.Drawing.Point(525, 342);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(75, 23);
+            this.btnConsultar.TabIndex = 20;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = false;
             // 
             // Players
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(696, 579);
+            this.ClientSize = new System.Drawing.Size(691, 514);
+            this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.dtpFechaIngreso);
-            this.Controls.Add(this.lbFechaIngreso);
             this.Controls.Add(this.grbDatosJugador);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.btnActualizar);
@@ -547,7 +559,7 @@
             this.MaximizeBox = false;
             this.Name = "Players";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Módulo de jugadores";
+            this.Text = "Módulo de Jugadores";
             this.Load += new System.EventHandler(this.Players_Load);
             this.menPlayers.ResumeLayout(false);
             this.menPlayers.PerformLayout();
@@ -579,7 +591,6 @@
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnBorrar;
-        private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.DateTimePicker dtpFechaDeNacimiento;
         private System.Windows.Forms.RadioButton rbtnHombre;
         private System.Windows.Forms.RadioButton rbtnMujer;
@@ -592,7 +603,7 @@
         private System.Windows.Forms.TextBox txbCedula;
         private System.Windows.Forms.TextBox txbNombre;
         private System.Windows.Forms.Label lbCedulaDEncargado;
-        private System.Windows.Forms.TextBox txbCedulaEncargado;
+        private System.Windows.Forms.TextBox txtCedulaEncargado;
         private System.Windows.Forms.TextBox txbNombreEncargado;
         private System.Windows.Forms.TextBox txbTelefonoDEncargado;
         private System.Windows.Forms.Label lbTelefonoDEncargado;
@@ -603,10 +614,11 @@
         private System.Windows.Forms.DateTimePicker dtpFechaIngreso;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txbSegundoApellidoEncargado;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnConsultarCedEncar;
         private System.Windows.Forms.TextBox txbPrimerApellidoEncargado;
         private System.Windows.Forms.Label lbSegundoApellidoDEncargado;
         private System.Windows.Forms.Label lbPrimerApellidoDEncargado;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnConsultar;
     }
 }

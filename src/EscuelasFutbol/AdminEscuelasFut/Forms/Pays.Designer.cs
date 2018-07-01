@@ -116,13 +116,13 @@
             this.tabCPagosGeneral.Controls.Add(this.tabPage4);
             this.tabCPagosGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabCPagosGeneral.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tabCPagosGeneral.ItemSize = new System.Drawing.Size(137, 150);
+            this.tabCPagosGeneral.ItemSize = new System.Drawing.Size(121, 150);
             this.tabCPagosGeneral.Location = new System.Drawing.Point(0, 24);
             this.tabCPagosGeneral.Multiline = true;
             this.tabCPagosGeneral.Name = "tabCPagosGeneral";
             this.tabCPagosGeneral.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabCPagosGeneral.SelectedIndex = 0;
-            this.tabCPagosGeneral.Size = new System.Drawing.Size(804, 555);
+            this.tabCPagosGeneral.Size = new System.Drawing.Size(804, 490);
             this.tabCPagosGeneral.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabCPagosGeneral.TabIndex = 4;
             this.tabCPagosGeneral.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabCPagosGeneral_DrawItem);
@@ -138,7 +138,7 @@
             this.tabPage1.Location = new System.Drawing.Point(154, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(646, 547);
+            this.tabPage1.Size = new System.Drawing.Size(646, 482);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Pagos jugadores";
             // 
@@ -150,11 +150,11 @@
             this.btnConsultar.FlatAppearance.BorderSize = 0;
             this.btnConsultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultar.Location = new System.Drawing.Point(554, 190);
+            this.btnConsultar.Location = new System.Drawing.Point(545, 190);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(78, 23);
+            this.btnConsultar.Size = new System.Drawing.Size(87, 23);
             this.btnConsultar.TabIndex = 73;
-            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.Text = "Consultar pago";
             this.btnConsultar.UseVisualStyleBackColor = false;
             // 
             // dgvPagosJugador
@@ -176,7 +176,7 @@
             this.btnRegisterRPaymentPlayer.FlatAppearance.BorderSize = 0;
             this.btnRegisterRPaymentPlayer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnRegisterRPaymentPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegisterRPaymentPlayer.Location = new System.Drawing.Point(449, 190);
+            this.btnRegisterRPaymentPlayer.Location = new System.Drawing.Point(450, 190);
             this.btnRegisterRPaymentPlayer.Name = "btnRegisterRPaymentPlayer";
             this.btnRegisterRPaymentPlayer.Size = new System.Drawing.Size(89, 23);
             this.btnRegisterRPaymentPlayer.TabIndex = 72;
@@ -215,11 +215,11 @@
             this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Location = new System.Drawing.Point(561, 24);
+            this.btnBuscar.Location = new System.Drawing.Point(525, 24);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(64, 20);
+            this.btnBuscar.Size = new System.Drawing.Size(101, 20);
             this.btnBuscar.TabIndex = 72;
-            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Text = "Consultar cédula";
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
             // dtpFechaMatricula
@@ -257,7 +257,7 @@
             this.txtIDRPaymentPlayer.Location = new System.Drawing.Point(394, 24);
             this.txtIDRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
             this.txtIDRPaymentPlayer.Name = "txtIDRPaymentPlayer";
-            this.txtIDRPaymentPlayer.Size = new System.Drawing.Size(162, 20);
+            this.txtIDRPaymentPlayer.Size = new System.Drawing.Size(126, 20);
             this.txtIDRPaymentPlayer.TabIndex = 50;
             // 
             // label5
@@ -363,7 +363,7 @@
             this.tabPage2.Location = new System.Drawing.Point(154, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(646, 498);
+            this.tabPage2.Size = new System.Drawing.Size(646, 547);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Pagos instalaciones";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -373,7 +373,7 @@
             this.tabPage3.Location = new System.Drawing.Point(154, 4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(646, 498);
+            this.tabPage3.Size = new System.Drawing.Size(646, 547);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Pagos entrenadores";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -382,7 +382,7 @@
             // 
             this.tabPage4.Location = new System.Drawing.Point(154, 4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(646, 498);
+            this.tabPage4.Size = new System.Drawing.Size(646, 547);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Pagos equipamientos";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -393,7 +393,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(804, 579);
+            this.ClientSize = new System.Drawing.Size(804, 514);
             this.Controls.Add(this.tabCPagosGeneral);
             this.Controls.Add(this.menPays);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

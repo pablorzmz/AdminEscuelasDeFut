@@ -67,10 +67,11 @@
             this.ClientSize = new System.Drawing.Size(649, 299);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label1);
+            this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "splashScreen";
-            this.Opacity = 0.65D;
+            this.Opacity = 0.85D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "splashScreen";
             this.Load += new System.EventHandler(this.splashScreen_Load);

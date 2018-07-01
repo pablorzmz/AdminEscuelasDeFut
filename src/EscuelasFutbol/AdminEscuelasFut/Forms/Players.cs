@@ -37,5 +37,10 @@ namespace AdminEscuelasFut
         {
             this.Close();
         }
+
+        private void txtCedulaEncargado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.validateNumbers(sender,e,false);            
+        }
     }
 }

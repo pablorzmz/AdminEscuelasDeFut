@@ -36,7 +36,6 @@
             this.menuItemAdministrarInst = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemGestionarNiveles = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,16 +44,20 @@
             this.txtInstallationNameSchoolM = new System.Windows.Forms.TextBox();
             this.txtAddressSchoolM = new System.Windows.Forms.TextBox();
             this.txtPlaceSchoolM = new System.Windows.Forms.TextBox();
-            this.btnDeleteSchoolM = new System.Windows.Forms.Button();
-            this.btnUpdateSchoolM = new System.Windows.Forms.Button();
-            this.btnConsultSchoolM = new System.Windows.Forms.Button();
-            this.btnRegisterSchoolM = new System.Windows.Forms.Button();
             this.dgvSchoolM = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnSearchSchoolM = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscarInstalacion = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.btnRegistrar = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnBorrar = new System.Windows.Forms.Button();
             this.menSchools.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchoolM)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menSchools
@@ -67,7 +70,7 @@
             this.ayudaToolStripMenuItem});
             this.menSchools.Location = new System.Drawing.Point(0, 0);
             this.menSchools.Name = "menSchools";
-            this.menSchools.Size = new System.Drawing.Size(796, 24);
+            this.menSchools.Size = new System.Drawing.Size(507, 24);
             this.menSchools.TabIndex = 5;
             this.menSchools.Text = "menuPays";
             // 
@@ -83,7 +86,7 @@
             // 
             this.salirToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -119,18 +122,10 @@
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(38, 68);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 19);
-            this.label1.TabIndex = 24;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(82, 139);
+            this.label3.Location = new System.Drawing.Point(14, 82);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
@@ -140,121 +135,78 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(82, 170);
+            this.label4.Location = new System.Drawing.Point(14, 105);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 13);
+            this.label4.Size = new System.Drawing.Size(123, 13);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Nombre instalación";
+            this.label4.Text = "Nombre de la instalación";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(82, 207);
+            this.label5.Location = new System.Drawing.Point(14, 133);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
+            this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Télefono";
+            this.label5.Text = "Télefono1";
             // 
             // txtNameSchoolM
             // 
-            this.txtNameSchoolM.Location = new System.Drawing.Point(244, 66);
+            this.txtNameSchoolM.Location = new System.Drawing.Point(62, 26);
             this.txtNameSchoolM.Margin = new System.Windows.Forms.Padding(2);
             this.txtNameSchoolM.Name = "txtNameSchoolM";
-            this.txtNameSchoolM.Size = new System.Drawing.Size(282, 20);
+            this.txtNameSchoolM.Size = new System.Drawing.Size(416, 20);
             this.txtNameSchoolM.TabIndex = 11;
             // 
             // txtTelephoneSchoolM
             // 
-            this.txtTelephoneSchoolM.Location = new System.Drawing.Point(244, 205);
+            this.txtTelephoneSchoolM.Location = new System.Drawing.Point(73, 130);
             this.txtTelephoneSchoolM.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelephoneSchoolM.Name = "txtTelephoneSchoolM";
-            this.txtTelephoneSchoolM.Size = new System.Drawing.Size(282, 20);
+            this.txtTelephoneSchoolM.Size = new System.Drawing.Size(405, 20);
             this.txtTelephoneSchoolM.TabIndex = 12;
             // 
             // txtInstallationNameSchoolM
             // 
-            this.txtInstallationNameSchoolM.Location = new System.Drawing.Point(244, 170);
+            this.txtInstallationNameSchoolM.Location = new System.Drawing.Point(141, 102);
             this.txtInstallationNameSchoolM.Margin = new System.Windows.Forms.Padding(2);
             this.txtInstallationNameSchoolM.Name = "txtInstallationNameSchoolM";
-            this.txtInstallationNameSchoolM.Size = new System.Drawing.Size(282, 20);
+            this.txtInstallationNameSchoolM.Size = new System.Drawing.Size(228, 20);
             this.txtInstallationNameSchoolM.TabIndex = 13;
             // 
             // txtAddressSchoolM
             // 
-            this.txtAddressSchoolM.Location = new System.Drawing.Point(244, 135);
+            this.txtAddressSchoolM.Location = new System.Drawing.Point(70, 77);
             this.txtAddressSchoolM.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddressSchoolM.Name = "txtAddressSchoolM";
-            this.txtAddressSchoolM.Size = new System.Drawing.Size(282, 20);
+            this.txtAddressSchoolM.Size = new System.Drawing.Size(408, 20);
             this.txtAddressSchoolM.TabIndex = 14;
             // 
             // txtPlaceSchoolM
             // 
-            this.txtPlaceSchoolM.Location = new System.Drawing.Point(244, 100);
+            this.txtPlaceSchoolM.Location = new System.Drawing.Point(62, 53);
             this.txtPlaceSchoolM.Margin = new System.Windows.Forms.Padding(2);
             this.txtPlaceSchoolM.Name = "txtPlaceSchoolM";
-            this.txtPlaceSchoolM.Size = new System.Drawing.Size(282, 20);
+            this.txtPlaceSchoolM.Size = new System.Drawing.Size(416, 20);
             this.txtPlaceSchoolM.TabIndex = 15;
-            // 
-            // btnDeleteSchoolM
-            // 
-            this.btnDeleteSchoolM.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnDeleteSchoolM.Location = new System.Drawing.Point(591, 266);
-            this.btnDeleteSchoolM.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDeleteSchoolM.Name = "btnDeleteSchoolM";
-            this.btnDeleteSchoolM.Size = new System.Drawing.Size(68, 28);
-            this.btnDeleteSchoolM.TabIndex = 22;
-            this.btnDeleteSchoolM.Text = "Borrar";
-            this.btnDeleteSchoolM.UseVisualStyleBackColor = false;
-            // 
-            // btnUpdateSchoolM
-            // 
-            this.btnUpdateSchoolM.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnUpdateSchoolM.Location = new System.Drawing.Point(448, 266);
-            this.btnUpdateSchoolM.Margin = new System.Windows.Forms.Padding(2);
-            this.btnUpdateSchoolM.Name = "btnUpdateSchoolM";
-            this.btnUpdateSchoolM.Size = new System.Drawing.Size(68, 28);
-            this.btnUpdateSchoolM.TabIndex = 21;
-            this.btnUpdateSchoolM.Text = "Actualizar";
-            this.btnUpdateSchoolM.UseVisualStyleBackColor = false;
-            // 
-            // btnConsultSchoolM
-            // 
-            this.btnConsultSchoolM.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnConsultSchoolM.Location = new System.Drawing.Point(290, 266);
-            this.btnConsultSchoolM.Margin = new System.Windows.Forms.Padding(2);
-            this.btnConsultSchoolM.Name = "btnConsultSchoolM";
-            this.btnConsultSchoolM.Size = new System.Drawing.Size(68, 28);
-            this.btnConsultSchoolM.TabIndex = 20;
-            this.btnConsultSchoolM.Text = "Consultar";
-            this.btnConsultSchoolM.UseVisualStyleBackColor = false;
-            // 
-            // btnRegisterSchoolM
-            // 
-            this.btnRegisterSchoolM.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnRegisterSchoolM.Location = new System.Drawing.Point(137, 266);
-            this.btnRegisterSchoolM.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRegisterSchoolM.Name = "btnRegisterSchoolM";
-            this.btnRegisterSchoolM.Size = new System.Drawing.Size(68, 28);
-            this.btnRegisterSchoolM.TabIndex = 19;
-            this.btnRegisterSchoolM.Text = "Registrar";
-            this.btnRegisterSchoolM.UseVisualStyleBackColor = false;
             // 
             // dgvSchoolM
             // 
             this.dgvSchoolM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSchoolM.Location = new System.Drawing.Point(52, 310);
+            this.dgvSchoolM.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvSchoolM.Location = new System.Drawing.Point(0, 265);
             this.dgvSchoolM.Margin = new System.Windows.Forms.Padding(2);
             this.dgvSchoolM.Name = "dgvSchoolM";
             this.dgvSchoolM.RowTemplate.Height = 24;
-            this.dgvSchoolM.Size = new System.Drawing.Size(690, 195);
+            this.dgvSchoolM.Size = new System.Drawing.Size(507, 249);
             this.dgvSchoolM.TabIndex = 18;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(82, 102);
+            this.label2.Location = new System.Drawing.Point(15, 57);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 13);
@@ -264,48 +216,143 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(82, 66);
+            this.label6.Location = new System.Drawing.Point(14, 29);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 13);
+            this.label6.Size = new System.Drawing.Size(44, 13);
             this.label6.TabIndex = 26;
-            this.label6.Text = "Nombre escuela";
+            this.label6.Text = "Nombre";
             // 
-            // btnSearchSchoolM
+            // groupBox1
             // 
-            this.btnSearchSchoolM.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnSearchSchoolM.Location = new System.Drawing.Point(543, 162);
-            this.btnSearchSchoolM.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSearchSchoolM.Name = "btnSearchSchoolM";
-            this.btnSearchSchoolM.Size = new System.Drawing.Size(116, 28);
-            this.btnSearchSchoolM.TabIndex = 27;
-            this.btnSearchSchoolM.Text = "Buscar Instalación";
-            this.btnSearchSchoolM.UseVisualStyleBackColor = false;
+            this.groupBox1.Controls.Add(this.btnBuscarInstalacion);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtNameSchoolM);
+            this.groupBox1.Controls.Add(this.txtTelephoneSchoolM);
+            this.groupBox1.Controls.Add(this.txtInstallationNameSchoolM);
+            this.groupBox1.Controls.Add(this.txtAddressSchoolM);
+            this.groupBox1.Controls.Add(this.txtPlaceSchoolM);
+            this.groupBox1.Location = new System.Drawing.Point(12, 37);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(487, 194);
+            this.groupBox1.TabIndex = 28;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Información de las escuelas";
+            // 
+            // btnBuscarInstalacion
+            // 
+            this.btnBuscarInstalacion.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnBuscarInstalacion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarInstalacion.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnBuscarInstalacion.FlatAppearance.BorderSize = 0;
+            this.btnBuscarInstalacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnBuscarInstalacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarInstalacion.Location = new System.Drawing.Point(374, 101);
+            this.btnBuscarInstalacion.Name = "btnBuscarInstalacion";
+            this.btnBuscarInstalacion.Size = new System.Drawing.Size(104, 20);
+            this.btnBuscarInstalacion.TabIndex = 33;
+            this.btnBuscarInstalacion.Text = "Buscar instalación";
+            this.btnBuscarInstalacion.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(73, 157);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(405, 20);
+            this.textBox1.TabIndex = 29;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 160);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Télefono2";
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnConsultar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsultar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnConsultar.FlatAppearance.BorderSize = 0;
+            this.btnConsultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar.Location = new System.Drawing.Point(341, 237);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(75, 23);
+            this.btnConsultar.TabIndex = 32;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = false;
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.BackColor = System.Drawing.Color.Gold;
+            this.btnRegistrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegistrar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnRegistrar.FlatAppearance.BorderSize = 0;
+            this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Location = new System.Drawing.Point(175, 237);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
+            this.btnRegistrar.TabIndex = 29;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.UseVisualStyleBackColor = false;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnActualizar.FlatAppearance.BorderSize = 0;
+            this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Location = new System.Drawing.Point(257, 237);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.TabIndex = 30;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.BackColor = System.Drawing.Color.Firebrick;
+            this.btnBorrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBorrar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnBorrar.FlatAppearance.BorderSize = 0;
+            this.btnBorrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrar.Location = new System.Drawing.Point(424, 237);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(75, 23);
+            this.btnBorrar.TabIndex = 31;
+            this.btnBorrar.Text = "Borrar";
+            this.btnBorrar.UseVisualStyleBackColor = false;
             // 
             // Schools
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(796, 514);
-            this.Controls.Add(this.btnSearchSchoolM);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnDeleteSchoolM);
-            this.Controls.Add(this.btnUpdateSchoolM);
-            this.Controls.Add(this.btnConsultSchoolM);
-            this.Controls.Add(this.btnRegisterSchoolM);
+            this.ClientSize = new System.Drawing.Size(507, 514);
+            this.Controls.Add(this.btnConsultar);
+            this.Controls.Add(this.btnRegistrar);
+            this.Controls.Add(this.btnActualizar);
+            this.Controls.Add(this.btnBorrar);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvSchoolM);
-            this.Controls.Add(this.txtPlaceSchoolM);
-            this.Controls.Add(this.txtAddressSchoolM);
-            this.Controls.Add(this.txtInstallationNameSchoolM);
-            this.Controls.Add(this.txtTelephoneSchoolM);
-            this.Controls.Add(this.txtNameSchoolM);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.menSchools);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Schools";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Módulo de Escuelas";
@@ -313,6 +360,8 @@
             this.menSchools.ResumeLayout(false);
             this.menSchools.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchoolM)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,7 +376,6 @@
         private System.Windows.Forms.ToolStripMenuItem heeraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuItemGestionarNiveles;
         private System.Windows.Forms.ToolStripMenuItem menuItemAdministrarInst;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -336,13 +384,16 @@
         private System.Windows.Forms.TextBox txtInstallationNameSchoolM;
         private System.Windows.Forms.TextBox txtAddressSchoolM;
         private System.Windows.Forms.TextBox txtPlaceSchoolM;
-        private System.Windows.Forms.Button btnDeleteSchoolM;
-        private System.Windows.Forms.Button btnUpdateSchoolM;
-        private System.Windows.Forms.Button btnConsultSchoolM;
-        private System.Windows.Forms.Button btnRegisterSchoolM;
         private System.Windows.Forms.DataGridView dgvSchoolM;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnSearchSchoolM;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnConsultar;
+        private System.Windows.Forms.Button btnRegistrar;
+        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnBorrar;
+        private System.Windows.Forms.Button btnBuscarInstalacion;
     }
 }
