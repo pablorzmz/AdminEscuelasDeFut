@@ -32,19 +32,37 @@
             this.menPays = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarPagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.entrenadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.equipamientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.instalacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuItemRegistPagJugadores = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarPagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.entrenadorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.equipamientoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.instalacionesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuItemConsultPagJugador = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarPagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabCPagosGeneral = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.dgvPagosJugador = new System.Windows.Forms.DataGridView();
+            this.btnRegisterRPaymentPlayer = new System.Windows.Forms.Button();
+            this.goBoxInfoPagosJugador = new System.Windows.Forms.GroupBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.dtpFechaMatricula = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaFinMensualidad = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaInicMensualidad = new System.Windows.Forms.DateTimePicker();
+            this.txtIDRPaymentPlayer = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtNameRPaymentPlayer = new System.Windows.Forms.TextBox();
+            this.ckbxMonthlyRPaymentPlayer = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.chbxAnnuityRPaymentPlayer = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtReceiptNumberRPaymentPlayer = new System.Windows.Forms.TextBox();
+            this.txtAmountRPaymentPlayer = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.menPays.SuspendLayout();
+            this.tabCPagosGeneral.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPagosJugador)).BeginInit();
+            this.goBoxInfoPagosJugador.SuspendLayout();
             this.SuspendLayout();
             // 
             // menPays
@@ -53,13 +71,11 @@
             this.menPays.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menPays.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
-            this.registrarPagosToolStripMenuItem,
-            this.consultarPagosToolStripMenuItem,
             this.modificarPagoToolStripMenuItem,
             this.ayudaToolStripMenuItem});
             this.menPays.Location = new System.Drawing.Point(0, 0);
             this.menPays.Name = "menPays";
-            this.menPays.Size = new System.Drawing.Size(696, 24);
+            this.menPays.Size = new System.Drawing.Size(804, 24);
             this.menPays.TabIndex = 3;
             this.menPays.Text = "menuPays";
             // 
@@ -75,101 +91,15 @@
             // 
             this.salirToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
-            // registrarPagosToolStripMenuItem
-            // 
-            this.registrarPagosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.entrenadorToolStripMenuItem,
-            this.equipamientoToolStripMenuItem,
-            this.instalacionesToolStripMenuItem,
-            this.menuItemRegistPagJugadores});
-            this.registrarPagosToolStripMenuItem.Name = "registrarPagosToolStripMenuItem";
-            this.registrarPagosToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
-            this.registrarPagosToolStripMenuItem.Text = "Registrar pagos";
-            // 
-            // entrenadorToolStripMenuItem
-            // 
-            this.entrenadorToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
-            this.entrenadorToolStripMenuItem.Enabled = false;
-            this.entrenadorToolStripMenuItem.Name = "entrenadorToolStripMenuItem";
-            this.entrenadorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.entrenadorToolStripMenuItem.Text = "Entrenador";
-            // 
-            // equipamientoToolStripMenuItem
-            // 
-            this.equipamientoToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
-            this.equipamientoToolStripMenuItem.Enabled = false;
-            this.equipamientoToolStripMenuItem.Name = "equipamientoToolStripMenuItem";
-            this.equipamientoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.equipamientoToolStripMenuItem.Text = "Equipamiento";
-            // 
-            // instalacionesToolStripMenuItem
-            // 
-            this.instalacionesToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
-            this.instalacionesToolStripMenuItem.Enabled = false;
-            this.instalacionesToolStripMenuItem.Name = "instalacionesToolStripMenuItem";
-            this.instalacionesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.instalacionesToolStripMenuItem.Text = "Instalaciones";
-            // 
-            // menuItemRegistPagJugadores
-            // 
-            this.menuItemRegistPagJugadores.BackColor = System.Drawing.Color.AliceBlue;
-            this.menuItemRegistPagJugadores.Name = "menuItemRegistPagJugadores";
-            this.menuItemRegistPagJugadores.Size = new System.Drawing.Size(152, 22);
-            this.menuItemRegistPagJugadores.Text = "Jugadores";
-            this.menuItemRegistPagJugadores.Click += new System.EventHandler(this.menuItemRegistPagJugadores_Click);
-            // 
-            // consultarPagosToolStripMenuItem
-            // 
-            this.consultarPagosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.entrenadorToolStripMenuItem1,
-            this.equipamientoToolStripMenuItem1,
-            this.instalacionesToolStripMenuItem1,
-            this.menuItemConsultPagJugador});
-            this.consultarPagosToolStripMenuItem.Name = "consultarPagosToolStripMenuItem";
-            this.consultarPagosToolStripMenuItem.Size = new System.Drawing.Size(105, 20);
-            this.consultarPagosToolStripMenuItem.Text = "Consultar pagos";
-            // 
-            // entrenadorToolStripMenuItem1
-            // 
-            this.entrenadorToolStripMenuItem1.BackColor = System.Drawing.Color.AliceBlue;
-            this.entrenadorToolStripMenuItem1.Enabled = false;
-            this.entrenadorToolStripMenuItem1.Name = "entrenadorToolStripMenuItem1";
-            this.entrenadorToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.entrenadorToolStripMenuItem1.Text = "Entrenador";
-            // 
-            // equipamientoToolStripMenuItem1
-            // 
-            this.equipamientoToolStripMenuItem1.BackColor = System.Drawing.Color.AliceBlue;
-            this.equipamientoToolStripMenuItem1.Enabled = false;
-            this.equipamientoToolStripMenuItem1.Name = "equipamientoToolStripMenuItem1";
-            this.equipamientoToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.equipamientoToolStripMenuItem1.Text = "Equipamiento";
-            // 
-            // instalacionesToolStripMenuItem1
-            // 
-            this.instalacionesToolStripMenuItem1.BackColor = System.Drawing.Color.AliceBlue;
-            this.instalacionesToolStripMenuItem1.Enabled = false;
-            this.instalacionesToolStripMenuItem1.Name = "instalacionesToolStripMenuItem1";
-            this.instalacionesToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.instalacionesToolStripMenuItem1.Text = "Instalaciones";
-            // 
-            // menuItemConsultPagJugador
-            // 
-            this.menuItemConsultPagJugador.BackColor = System.Drawing.Color.AliceBlue;
-            this.menuItemConsultPagJugador.Name = "menuItemConsultPagJugador";
-            this.menuItemConsultPagJugador.Size = new System.Drawing.Size(152, 22);
-            this.menuItemConsultPagJugador.Text = "Jugador";
-            this.menuItemConsultPagJugador.Click += new System.EventHandler(this.menuItemConsultPagJugador_Click);
             // 
             // modificarPagoToolStripMenuItem
             // 
             this.modificarPagoToolStripMenuItem.Name = "modificarPagoToolStripMenuItem";
-            this.modificarPagoToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
-            this.modificarPagoToolStripMenuItem.Text = "Modificar pago";
+            this.modificarPagoToolStripMenuItem.Size = new System.Drawing.Size(105, 20);
+            this.modificarPagoToolStripMenuItem.Text = "Modificar pagos";
             // 
             // ayudaToolStripMenuItem
             // 
@@ -177,13 +107,294 @@
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
+            // tabCPagosGeneral
+            // 
+            this.tabCPagosGeneral.Alignment = System.Windows.Forms.TabAlignment.Left;
+            this.tabCPagosGeneral.Controls.Add(this.tabPage1);
+            this.tabCPagosGeneral.Controls.Add(this.tabPage2);
+            this.tabCPagosGeneral.Controls.Add(this.tabPage3);
+            this.tabCPagosGeneral.Controls.Add(this.tabPage4);
+            this.tabCPagosGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabCPagosGeneral.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.tabCPagosGeneral.ItemSize = new System.Drawing.Size(137, 150);
+            this.tabCPagosGeneral.Location = new System.Drawing.Point(0, 24);
+            this.tabCPagosGeneral.Multiline = true;
+            this.tabCPagosGeneral.Name = "tabCPagosGeneral";
+            this.tabCPagosGeneral.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tabCPagosGeneral.SelectedIndex = 0;
+            this.tabCPagosGeneral.Size = new System.Drawing.Size(804, 555);
+            this.tabCPagosGeneral.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.tabCPagosGeneral.TabIndex = 4;
+            this.tabCPagosGeneral.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabCPagosGeneral_DrawItem);
+            this.tabCPagosGeneral.SelectedIndexChanged += new System.EventHandler(this.tabCPagosGeneral_SelectedIndexChanged);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.tabPage1.Controls.Add(this.btnConsultar);
+            this.tabPage1.Controls.Add(this.dgvPagosJugador);
+            this.tabPage1.Controls.Add(this.btnRegisterRPaymentPlayer);
+            this.tabPage1.Controls.Add(this.goBoxInfoPagosJugador);
+            this.tabPage1.Location = new System.Drawing.Point(154, 4);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(646, 547);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Pagos jugadores";
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnConsultar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsultar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnConsultar.FlatAppearance.BorderSize = 0;
+            this.btnConsultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar.Location = new System.Drawing.Point(554, 190);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(78, 23);
+            this.btnConsultar.TabIndex = 73;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = false;
+            // 
+            // dgvPagosJugador
+            // 
+            this.dgvPagosJugador.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.dgvPagosJugador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPagosJugador.Location = new System.Drawing.Point(7, 218);
+            this.dgvPagosJugador.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvPagosJugador.Name = "dgvPagosJugador";
+            this.dgvPagosJugador.RowTemplate.Height = 24;
+            this.dgvPagosJugador.Size = new System.Drawing.Size(637, 322);
+            this.dgvPagosJugador.TabIndex = 73;
+            // 
+            // btnRegisterRPaymentPlayer
+            // 
+            this.btnRegisterRPaymentPlayer.BackColor = System.Drawing.Color.Gold;
+            this.btnRegisterRPaymentPlayer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegisterRPaymentPlayer.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnRegisterRPaymentPlayer.FlatAppearance.BorderSize = 0;
+            this.btnRegisterRPaymentPlayer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnRegisterRPaymentPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegisterRPaymentPlayer.Location = new System.Drawing.Point(449, 190);
+            this.btnRegisterRPaymentPlayer.Name = "btnRegisterRPaymentPlayer";
+            this.btnRegisterRPaymentPlayer.Size = new System.Drawing.Size(89, 23);
+            this.btnRegisterRPaymentPlayer.TabIndex = 72;
+            this.btnRegisterRPaymentPlayer.Text = "Registrar pago";
+            this.btnRegisterRPaymentPlayer.UseVisualStyleBackColor = false;
+            // 
+            // goBoxInfoPagosJugador
+            // 
+            this.goBoxInfoPagosJugador.Controls.Add(this.btnBuscar);
+            this.goBoxInfoPagosJugador.Controls.Add(this.dtpFechaMatricula);
+            this.goBoxInfoPagosJugador.Controls.Add(this.dtpFechaFinMensualidad);
+            this.goBoxInfoPagosJugador.Controls.Add(this.dtpFechaInicMensualidad);
+            this.goBoxInfoPagosJugador.Controls.Add(this.txtIDRPaymentPlayer);
+            this.goBoxInfoPagosJugador.Controls.Add(this.label5);
+            this.goBoxInfoPagosJugador.Controls.Add(this.txtNameRPaymentPlayer);
+            this.goBoxInfoPagosJugador.Controls.Add(this.ckbxMonthlyRPaymentPlayer);
+            this.goBoxInfoPagosJugador.Controls.Add(this.label1);
+            this.goBoxInfoPagosJugador.Controls.Add(this.chbxAnnuityRPaymentPlayer);
+            this.goBoxInfoPagosJugador.Controls.Add(this.label2);
+            this.goBoxInfoPagosJugador.Controls.Add(this.label4);
+            this.goBoxInfoPagosJugador.Controls.Add(this.txtReceiptNumberRPaymentPlayer);
+            this.goBoxInfoPagosJugador.Controls.Add(this.txtAmountRPaymentPlayer);
+            this.goBoxInfoPagosJugador.Controls.Add(this.label3);
+            this.goBoxInfoPagosJugador.Location = new System.Drawing.Point(7, 15);
+            this.goBoxInfoPagosJugador.Name = "goBoxInfoPagosJugador";
+            this.goBoxInfoPagosJugador.Size = new System.Drawing.Size(631, 167);
+            this.goBoxInfoPagosJugador.TabIndex = 67;
+            this.goBoxInfoPagosJugador.TabStop = false;
+            this.goBoxInfoPagosJugador.Text = "Datos del pago";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Location = new System.Drawing.Point(561, 24);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(64, 20);
+            this.btnBuscar.TabIndex = 72;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            // 
+            // dtpFechaMatricula
+            // 
+            this.dtpFechaMatricula.Enabled = false;
+            this.dtpFechaMatricula.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaMatricula.Location = new System.Drawing.Point(97, 119);
+            this.dtpFechaMatricula.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpFechaMatricula.Name = "dtpFechaMatricula";
+            this.dtpFechaMatricula.Size = new System.Drawing.Size(93, 20);
+            this.dtpFechaMatricula.TabIndex = 65;
+            // 
+            // dtpFechaFinMensualidad
+            // 
+            this.dtpFechaFinMensualidad.Enabled = false;
+            this.dtpFechaFinMensualidad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaFinMensualidad.Location = new System.Drawing.Point(241, 88);
+            this.dtpFechaFinMensualidad.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpFechaFinMensualidad.Name = "dtpFechaFinMensualidad";
+            this.dtpFechaFinMensualidad.Size = new System.Drawing.Size(96, 20);
+            this.dtpFechaFinMensualidad.TabIndex = 64;
+            // 
+            // dtpFechaInicMensualidad
+            // 
+            this.dtpFechaInicMensualidad.Enabled = false;
+            this.dtpFechaInicMensualidad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaInicMensualidad.Location = new System.Drawing.Point(97, 88);
+            this.dtpFechaInicMensualidad.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpFechaInicMensualidad.Name = "dtpFechaInicMensualidad";
+            this.dtpFechaInicMensualidad.Size = new System.Drawing.Size(93, 20);
+            this.dtpFechaInicMensualidad.TabIndex = 63;
+            // 
+            // txtIDRPaymentPlayer
+            // 
+            this.txtIDRPaymentPlayer.Location = new System.Drawing.Point(394, 24);
+            this.txtIDRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
+            this.txtIDRPaymentPlayer.Name = "txtIDRPaymentPlayer";
+            this.txtIDRPaymentPlayer.Size = new System.Drawing.Size(162, 20);
+            this.txtIDRPaymentPlayer.TabIndex = 50;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(204, 91);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(33, 13);
+            this.label5.TabIndex = 62;
+            this.label5.Text = "hasta";
+            // 
+            // txtNameRPaymentPlayer
+            // 
+            this.txtNameRPaymentPlayer.Location = new System.Drawing.Point(53, 22);
+            this.txtNameRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNameRPaymentPlayer.Name = "txtNameRPaymentPlayer";
+            this.txtNameRPaymentPlayer.Size = new System.Drawing.Size(284, 20);
+            this.txtNameRPaymentPlayer.TabIndex = 51;
+            // 
+            // ckbxMonthlyRPaymentPlayer
+            // 
+            this.ckbxMonthlyRPaymentPlayer.AutoSize = true;
+            this.ckbxMonthlyRPaymentPlayer.Location = new System.Drawing.Point(8, 91);
+            this.ckbxMonthlyRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
+            this.ckbxMonthlyRPaymentPlayer.Name = "ckbxMonthlyRPaymentPlayer";
+            this.ckbxMonthlyRPaymentPlayer.Size = new System.Drawing.Size(86, 17);
+            this.ckbxMonthlyRPaymentPlayer.TabIndex = 59;
+            this.ckbxMonthlyRPaymentPlayer.Text = "Mensualidad";
+            this.ckbxMonthlyRPaymentPlayer.UseVisualStyleBackColor = true;
+            this.ckbxMonthlyRPaymentPlayer.CheckedChanged += new System.EventHandler(this.ckbxMonthlyRPaymentPlayer_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(350, 27);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 52;
+            this.label1.Text = "Cédula";
+            // 
+            // chbxAnnuityRPaymentPlayer
+            // 
+            this.chbxAnnuityRPaymentPlayer.AutoSize = true;
+            this.chbxAnnuityRPaymentPlayer.Location = new System.Drawing.Point(8, 122);
+            this.chbxAnnuityRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
+            this.chbxAnnuityRPaymentPlayer.Name = "chbxAnnuityRPaymentPlayer";
+            this.chbxAnnuityRPaymentPlayer.Size = new System.Drawing.Size(71, 17);
+            this.chbxAnnuityRPaymentPlayer.TabIndex = 58;
+            this.chbxAnnuityRPaymentPlayer.Text = "Matrícula";
+            this.chbxAnnuityRPaymentPlayer.UseVisualStyleBackColor = true;
+            this.chbxAnnuityRPaymentPlayer.CheckedChanged += new System.EventHandler(this.chbxAnnuityRPaymentPlayer_CheckedChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(5, 27);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 53;
+            this.label2.Text = "Nombre";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(350, 58);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.TabIndex = 57;
+            this.label4.Text = "Monto";
+            // 
+            // txtReceiptNumberRPaymentPlayer
+            // 
+            this.txtReceiptNumberRPaymentPlayer.Location = new System.Drawing.Point(68, 55);
+            this.txtReceiptNumberRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
+            this.txtReceiptNumberRPaymentPlayer.Name = "txtReceiptNumberRPaymentPlayer";
+            this.txtReceiptNumberRPaymentPlayer.Size = new System.Drawing.Size(269, 20);
+            this.txtReceiptNumberRPaymentPlayer.TabIndex = 54;
+            // 
+            // txtAmountRPaymentPlayer
+            // 
+            this.txtAmountRPaymentPlayer.Location = new System.Drawing.Point(394, 55);
+            this.txtAmountRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAmountRPaymentPlayer.Name = "txtAmountRPaymentPlayer";
+            this.txtAmountRPaymentPlayer.Size = new System.Drawing.Size(232, 20);
+            this.txtAmountRPaymentPlayer.TabIndex = 56;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(5, 62);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.TabIndex = 55;
+            this.label3.Text = "N°  Recibo";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(154, 4);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(646, 498);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Pagos instalaciones";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(154, 4);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(646, 498);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Pagos entrenadores";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(154, 4);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(646, 498);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Pagos equipamientos";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
             // Pays
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(696, 579);
+            this.ClientSize = new System.Drawing.Size(804, 579);
+            this.Controls.Add(this.tabCPagosGeneral);
             this.Controls.Add(this.menPays);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -194,6 +405,11 @@
             this.Load += new System.EventHandler(this.Pays_Load);
             this.menPays.ResumeLayout(false);
             this.menPays.PerformLayout();
+            this.tabCPagosGeneral.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPagosJugador)).EndInit();
+            this.goBoxInfoPagosJugador.ResumeLayout(false);
+            this.goBoxInfoPagosJugador.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,16 +421,30 @@
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem registrarPagosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem entrenadorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem equipamientoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem instalacionesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem consultarPagosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem entrenadorToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem equipamientoToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem instalacionesToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem menuItemConsultPagJugador;
         private System.Windows.Forms.ToolStripMenuItem modificarPagoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem menuItemRegistPagJugadores;
+        private System.Windows.Forms.TabControl tabCPagosGeneral;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.GroupBox goBoxInfoPagosJugador;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.DateTimePicker dtpFechaMatricula;
+        private System.Windows.Forms.DateTimePicker dtpFechaFinMensualidad;
+        private System.Windows.Forms.DateTimePicker dtpFechaInicMensualidad;
+        private System.Windows.Forms.TextBox txtIDRPaymentPlayer;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtNameRPaymentPlayer;
+        private System.Windows.Forms.CheckBox ckbxMonthlyRPaymentPlayer;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox chbxAnnuityRPaymentPlayer;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtReceiptNumberRPaymentPlayer;
+        private System.Windows.Forms.TextBox txtAmountRPaymentPlayer;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnRegisterRPaymentPlayer;
+        private System.Windows.Forms.Button btnConsultar;
+        private System.Windows.Forms.DataGridView dgvPagosJugador;
     }
 }
