@@ -70,20 +70,22 @@ CREATE TABLE TelefonoE
 CREATE TABLE PagosDeJugador
 (
 	NombreEscuela	VARCHAR(30)		NOT NULL,
-	NumeroRecibo	TINYINT			NOT NULL,
+	NumeroRecibo	VARCHAR(5)		NOT NULL,
 	Fecha			DATE			NOT NULL,
-	Monto			NUMERIC(5,0)	NOT NULL,
+	Monto			NUMERIC(6,0)	NOT NULL,
 	Detalle			VARCHAR(500)	NULL,
 	CedJugador		CHAR(9)			NOT NULL,
 	CONSTRAINT Nomb_NumR PRIMARY KEY( NombreEscuela, NumeroRecibo ),
-	CONSTRAINT Ref_Jug	 FOREIGN KEY ( CedJugador ) REFERENCES Jugador ( CedJugador )
+	CONSTRAINT Ref_Jug1	 FOREIGN KEY ( CedJugador ) REFERENCES Jugador ( CedJugador )
+		ON UPDATE CASCADE ON DELETE NO ACTION,
+	CONSTRAINT Ref_Escc	 FOREIGN KEY ( NombreEscuela ) REFERENCES Escuela ( Nombre )
 		ON UPDATE CASCADE ON DELETE NO ACTION
 );
 
 CREATE TABLE PagoMensualidad
 (
 	NombreEscuela 	VARCHAR(30)		NOT NULL,
-	NumeroRecibo 	TINYINT			NOT NULL,
+	NumeroRecibo 	VARCHAR(5)			NOT NULL,
 	CONSTRAINT Pago_Men PRIMARY KEY ( NombreEscuela, NumeroRecibo ),
 	CONSTRAINT Ref_Pago FOREIGN KEY ( NombreEscuela, NumeroRecibo ) REFERENCES PagosDeJugador( NombreEscuela, NumeroRecibo )
 		ON UPDATE CASCADE ON DELETE NO ACTION
@@ -92,9 +94,9 @@ CREATE TABLE PagoMensualidad
 CREATE TABLE Mes
 (
 	NombreEscuela 	VARCHAR(30) NOT NULL,
-	NumeroRecibo 	TINYINT		NOT NULL,
-	Mes			 	TINYINT		NOT NULL,
-	Año			 	TINYINT		NOT NULL,
+	NumeroRecibo 	VARCHAR(5)		NOT NULL,
+	Mes			 	CHAR(3)		NOT NULL,
+	Año			 	CHAR(4)		NOT NULL,
 	CONSTRAINT Pago_Meses PRIMARY KEY ( NombreEscuela, NumeroRecibo, Mes, Año ),
 	CONSTRAINT Ref_PagoM  FOREIGN KEY ( NombreEscuela, NumeroRecibo ) REFERENCES PagoMensualidad ( NombreEscuela, NumeroRecibo )      
 		ON DELETE CASCADE ON UPDATE CASCADE
@@ -103,7 +105,7 @@ CREATE TABLE Mes
 CREATE TABLE PagoMatricula
 (
 	NombreEscuela 	VARCHAR(30) NOT NULL,
-	NumeroRecibo 	TINYINT		NOT NULL,
+	NumeroRecibo 	VARCHAR(5)		NOT NULL,
 	CONSTRAINT Pago_Matri PRIMARY KEY ( NombreEscuela, NumeroRecibo ),
 	CONSTRAINT Ref2_Pago FOREIGN KEY ( NombreEscuela, NumeroRecibo ) REFERENCES PagosDeJugador( NombreEscuela, NumeroRecibo )
 		ON UPDATE CASCADE

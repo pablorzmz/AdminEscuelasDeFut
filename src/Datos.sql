@@ -369,12 +369,6 @@ INSERT INTO Jugador VALUES
 	('120920268', 7, 'm', '2010-08-11', '111111192'),
 	('120190159', 10, 'm', '2008-02-29', '111111193');
 	
-INSERT INTO Instalacion(Direccion) VALUES
-	(''),
-	(''),
-	(''),
-	('');
-	
 INSERT INTO Escuela VALUES
 	('Saprissa Barrio Socorro', 'Santo Domingo', NULL),
 	('Saprissa Aserri', 'Aserri', NULL),
@@ -508,3 +502,345 @@ INSERT INTO Esta_En VALUES
 	('120630557', 'Saprissa Goicoechea', 2),
 	('120920268', 'Saprissa Goicoechea', 1),
 	('120190159', 'Saprissa Goicoechea', 2);
+
+INSERT INTO Entrenamiento VALUES
+	('2018-06-16', '08:00:00'),
+	('2018-06-23', '08:00:00');
+
+INSERT INTO Asiste VALUES
+	('118970385', '2018-06-16'),
+	('119240631', '2018-06-16'),
+	('119850549', '2018-06-16'),
+	('120620453', '2018-06-16'),
+	('120280345', '2018-06-16'),
+	('121370122', '2018-06-16'),
+	('119700766', '2018-06-16'),
+	('112050998', '2018-06-16'),
+	('121030949', '2018-06-16'),
+	('121260216', '2018-06-16'),
+	('119540445', '2018-06-16'),
+	('120760451', '2018-06-16'),
+	('121070225', '2018-06-16'),
+	('121030949', '2018-06-23'),
+	('121260216', '2018-06-23'),
+	('119540445', '2018-06-23'),
+	('120760451', '2018-06-23'),
+	('121070225', '2018-06-23'),
+	('120810834', '2018-06-23'),
+	('121410727', '2018-06-23'),
+	('121260812', '2018-06-23');
+
+INSERT INTO Asiste VALUES
+	('118560165', '2018-06-16'),
+	('120510375', '2018-06-16'),
+	('120670913', '2018-06-16'),
+	('119950586', '2018-06-16'),
+	('120180902', '2018-06-16'),
+	('121710909', '2018-06-16'),
+	('119970870', '2018-06-16'),
+	('118870467', '2018-06-16'),
+	('118380352', '2018-06-16'),
+	('118560165', '2018-06-23'),
+	('120510375', '2018-06-23'),
+	('120670913', '2018-06-23'),
+	('119950586', '2018-06-23'),
+	('120180902', '2018-06-23'),
+	('121710909', '2018-06-23'),
+	('119970870', '2018-06-23'),
+	('118870467', '2018-06-23'),
+	('118380352', '2018-06-23'),
+	('121580342', '2018-06-23'),
+	('120950829', '2018-06-23');
+
+INSERT INTO Asiste VALUES
+	('119520227', '2018-06-16'),
+	('120830480', '2018-06-16'),
+	('118590602', '2018-06-16'),
+	('118750197', '2018-06-16'),
+	('119910019', '2018-06-16'),
+	('120230211', '2018-06-16'),
+	('119610413', '2018-06-16'),
+	('120200571', '2018-06-16'),
+	('119910017', '2018-06-16'),
+	('119910017', '2018-06-23'),
+	('119080374', '2018-06-23'),
+	('120730209', '2018-06-23'),
+	('121490728', '2018-06-23'),
+	('118920041', '2018-06-23'),
+	('120290918', '2018-06-23'),
+	('120410031', '2018-06-23'),
+	('119320122', '2018-06-23'),
+	('120840558', '2018-06-23'),
+	('120640273', '2018-06-23');
+
+INSERT INTO Asiste VALUES
+	('119190117', '2018-06-16'),
+	('118920964', '2018-06-16'),
+	('901250638', '2018-06-16'),
+	('121290298', '2018-06-16'),
+	('120790617', '2018-06-16'),
+	('119160950', '2018-06-16'),
+	('703190015', '2018-06-16'),
+	('703470514', '2018-06-16'),
+	('120920268', '2018-06-16'),
+	('120190159', '2018-06-16'),
+	('703190015', '2018-06-23'),
+	('703470514', '2018-06-23'),
+	('119790996', '2018-06-23'),
+	('120680332', '2018-06-23'),
+	('120630557', '2018-06-23'),
+	('120920268', '2018-06-23'),
+	('120190159', '2018-06-23');
+
+INSERT INTO PagosDeJugador VALUES
+	('Saprissa Barrio Socorro', '0001', '2018-06-23', 11000, 'Pago de Matricula', '118970385'),
+	('Saprissa Barrio Socorro', '0002', '2018-06-23', 11000, 'Pago de Matricula', '121110544'),
+	('Saprissa Barrio Socorro', '0003', '2018-06-23', 24000, 'Pago de 2 meses', '121110544'),
+	('Saprissa Barrio Socorro', '0004', '2018-06-23', 12000, NULL, '119240631'),
+	('Saprissa Barrio Socorro', '0005', '2018-06-23', 23000, 'Pago matricula y mensualidad', '119850549'),
+	('Saprissa Barrio Socorro', '0006', '2018-06-23', 12000, NULL, '120620453'),
+	('Saprissa Barrio Socorro', '0007', '2018-06-23', 12000, NULL, '119300696'),
+	('Saprissa Barrio Socorro', '0008', '2018-06-23', 11000, NULL, '120260877');
+
+INSERT INTO PagoMatricula VALUES
+	('Saprissa Barrio Socorro', '0001'),
+	('Saprissa Barrio Socorro', '0002'),
+	('Saprissa Barrio Socorro', '0005'),
+	('Saprissa Barrio Socorro', '0008');
+
+INSERT INTO PagoMensualidad VALUES
+	('Saprissa Barrio Socorro', '0003'),
+	('Saprissa Barrio Socorro', '0004'),
+	('Saprissa Barrio Socorro', '0005'),
+	('Saprissa Barrio Socorro', '0006'),
+	('Saprissa Barrio Socorro', '0007');
+
+INSERT INTO Mes VALUES
+	('Saprissa Barrio Socorro', '0003', 'MAY', '2018'),
+	('Saprissa Barrio Socorro', '0003', 'JUN', '2018'),
+	('Saprissa Barrio Socorro', '0004', 'JUN', '2018'),
+	('Saprissa Barrio Socorro', '0005', 'JUN', '2018'),
+	('Saprissa Barrio Socorro', '0006', 'MAY', '2018'),
+	('Saprissa Barrio Socorro', '0007', 'JUN', '2018');
+
+/* ---------------------- Falta Ejecutar ----------------*/
+
+INSERT INTO Instalacion(Direccion) VALUES
+	('Santo Domingo, Heredia'),
+	('Aserri, San Jose'),
+	('Desamparados, San Jose'),
+	('Goicoechea, San Jose');
+
+UPDATE Escuela SET DireccionInst = 'Santo Domingo, Heredia' WHERE Nombre = 'Saprissa Barrio Socorro';
+UPDATE Escuela SET DireccionInst = 'Aserri, San Jose' WHERE Nombre = 'Saprissa Aserri';
+UPDATE Escuela SET DireccionInst = 'Desamparados, San Jose' WHERE Nombre = 'Saprissa San Antonio';
+UPDATE Escuela SET DireccionInst = 'Goicoechea, San Jose' WHERE Nombre = 'Saprissa Goicoechea';
+
+INSERT INTO PagosDeJugador VALUES
+	('Saprissa Aserri', '0009', '2018-06-23', 23000, 'Mat y 1 Mes', '118560165'),
+	('Saprissa Aserri', '0010', '2018-06-23', 36000, '3 Meses', '120510375'),
+	('Saprissa Aserri', '0011', '2018-06-23', 11000, NULL, '120670913'),
+	('Saprissa Aserri', '0012', '2018-06-23', 12000, NULL, '119950586'),
+	('Saprissa Aserri', '0013', '2018-06-23', 11000, NULL, '120180902'),
+	('Saprissa Aserri', '0014', '2018-06-23', 24000, NULL, '121710909'),
+	('Saprissa Aserri', '0015', '2018-06-23', 23000, 'Mat y 1 Mes', '119970870'),
+	('Saprissa Aserri', '0016', '2018-06-23', 12000, NULL, '118870467'),
+	('Saprissa Aserri', '0017', '2018-06-23', 11000, NULL, '118380352'),
+	('Saprissa Aserri', '0018', '2018-06-23', 23000, 'Mat y 1 Mes', '121580342');
+
+INSERT INTO PagoMatricula VALUES
+	('Saprissa Aserri', '0009'),
+	('Saprissa Aserri', '0011'),
+	('Saprissa Aserri', '0013'),
+	('Saprissa Aserri', '0015'),
+	('Saprissa Aserri', '0017'),
+	('Saprissa Aserri', '0018');
+
+INSERT INTO PagoMensualidad VALUES
+	('Saprissa Aserri', '0009'),
+	('Saprissa Aserri', '0010'),
+	('Saprissa Aserri', '0012'),
+	('Saprissa Aserri', '0014'),
+	('Saprissa Aserri', '0015'),
+	('Saprissa Aserri', '0016'),
+	('Saprissa Aserri', '0018');
+
+INSERT INTO Mes VALUES
+	('Saprissa Aserri', '0009', 'JUN', '2018'),
+	('Saprissa Aserri', '0010', 'JUN', '2018'),
+	('Saprissa Aserri', '0010', 'JUL', '2018'),
+	('Saprissa Aserri', '0010', 'AGO', '2018'),
+	('Saprissa Aserri', '0012', 'MAY', '2018'),
+	('Saprissa Aserri', '0014', 'MAY', '2018'),
+	('Saprissa Aserri', '0014', 'JUN', '2018'),
+	('Saprissa Aserri', '0015', 'JUN', '2018'),
+	('Saprissa Aserri', '0016', 'MAY', '2018'),
+	('Saprissa Aserri', '0018', 'JUN', '2018');
+
+INSERT INTO PagosDeJugador VALUES
+	('Saprissa San Antonio', '0019', '2018-06-23', 12000, NULL, '118750197'),
+	('Saprissa San Antonio', '0020', '2018-06-23', 12000, NULL, '119910019'),
+	('Saprissa San Antonio', '0021', '2018-06-23', 12000, NULL, '120230211'),
+	('Saprissa San Antonio', '0022', '2018-06-23', 12000, NULL, '119610413'),
+	('Saprissa San Antonio', '0023', '2018-06-23', 11000, NULL, '120200571'),
+	('Saprissa San Antonio', '0024', '2018-06-23', 12000, NULL, '119910017'),
+	('Saprissa San Antonio', '0025', '2018-06-23', 11000, NULL, '119080374'),
+	('Saprissa San Antonio', '0026', '2018-06-23', 12000, NULL, '120730209'),
+	('Saprissa San Antonio', '0027', '2018-06-23', 24000, NULL, '121490728'),
+	('Saprissa San Antonio', '0028', '2018-06-23', 12000, NULL, '118920041');
+
+INSERT INTO PagoMatricula VALUES
+	('Saprissa San Antonio', '0023'),
+	('Saprissa San Antonio', '0025');
+
+INSERT INTO PagoMensualidad VALUES
+	('Saprissa San Antonio', '0019'),
+	('Saprissa San Antonio', '0020'),
+	('Saprissa San Antonio', '0021'),
+	('Saprissa San Antonio', '0022'),
+	('Saprissa San Antonio', '0024'),
+	('Saprissa San Antonio', '0026'),
+	('Saprissa San Antonio', '0027'),
+	('Saprissa San Antonio', '0028');
+
+INSERT INTO Mes VALUES
+	('Saprissa San Antonio', '0019', 'JUL', '2018'),
+	('Saprissa San Antonio', '0020', 'MAY', '2018'),
+	('Saprissa San Antonio', '0021', 'JUN', '2018'),
+	('Saprissa San Antonio', '0022', 'JUN', '2018'),
+	('Saprissa San Antonio', '0024', 'MAY', '2018'),
+	('Saprissa San Antonio', '0026', 'JUN', '2018'),
+	('Saprissa San Antonio', '0027', 'MAY', '2018'),
+	('Saprissa San Antonio', '0027', 'JUN', '2018'),
+	('Saprissa San Antonio', '0028', 'JUN', '2018');
+
+INSERT INTO PagosDeJugador VALUES
+	('Saprissa Goicoechea', '0029', '2018-06-23', 23000, NULL, '119190117'),
+	('Saprissa Goicoechea', '0030', '2018-06-23', 12000, NULL, '118920964'),
+	('Saprissa Goicoechea', '0031', '2018-06-23', 11000, NULL, '120140114'),
+	('Saprissa Goicoechea', '0032', '2018-06-23', 12000, NULL, '120180569'),
+	('Saprissa Goicoechea', '0033', '2018-06-23', 12000, NULL, '119730005'),
+	('Saprissa Goicoechea', '0034', '2018-06-23', 12000, NULL, '119720698'),
+	('Saprissa Goicoechea', '0035', '2018-06-23', 24000, NULL, '118980618');
+
+INSERT INTO PagoMatricula VALUES
+	('Saprissa Goicoechea', '0029'),
+	('Saprissa Goicoechea', '0031');
+
+INSERT INTO PagoMensualidad VALUES
+	('Saprissa Goicoechea', '0029'),
+	('Saprissa Goicoechea', '0030'),
+	('Saprissa Goicoechea', '0032'),
+	('Saprissa Goicoechea', '0033'),
+	('Saprissa Goicoechea', '0034'),
+	('Saprissa Goicoechea', '0035');
+
+INSERT INTO Mes VALUES
+	('Saprissa Goicoechea', '0029', 'JUN', '2018'),
+	('Saprissa Goicoechea', '0030', 'JUN', '2018'),
+	('Saprissa Goicoechea', '0032', 'JUN', '2018'),
+	('Saprissa Goicoechea', '0033', 'MAY', '2018'),
+	('Saprissa Goicoechea', '0034', 'JUL', '2018'),
+	('Saprissa Goicoechea', '0035', 'JUN', '2018'),
+	('Saprissa Goicoechea', '0035', 'JUN', '2018');
+
+INSERT INTO TelefonoP VALUES
+	('118970385','83390385'),
+	('121110544','70654395'),
+	('121110544','22584039'),
+	('119240631','60717769'),
+	('119240631','86470935'),
+	('119850549','88784235'),
+	('120620453','83287507'),
+	('119300696','88740990'),
+	('120260877','57102210'),
+	('120880278','83780581'),
+	('120280345','88214478'),
+	('121370122','89622899'),
+	('119700766','88231656'),
+	('112050998','87959139'),
+	('121030949','88656004'),
+	('121260216','88190638'),
+	('119540445','88890228'),
+	('120760451','83420327'),
+	('121070225','89189324'),
+	('120810834','60575548'),
+	('121410727','83111388'),
+	('121260812','60778090'),
+	('120320638','88233355'),
+	('119730338','89684003');
+
+INSERT INTO TelefonoP VALUES
+	('118560165','72401006'),
+	('118560165','83843615'),
+	('120510375','50161055'),
+	('120510375','89891742'),
+	('120670913','50161055'),
+	('119950586','85457335'),
+	('120180902','88854749'),
+	('121710909','88854749'),
+	('119970870','83944111'),
+	('118870467','83263229'),
+	('118380352','87294151'),
+	('121580342','83473737'),
+	('120950829','85354885'),
+	('120330078','86265369'),
+	('121160438','86265369'),
+	('119530198','70708481'),
+	('121210471','72933372'),
+	('119970661','86410641'),
+	('119880297','83806682'),
+	('121370206','84779392'),
+	('120870828','83530099'),
+	('120090315','87593018'),
+	('119170222','71813890'),
+	('121760378','87013039');
+
+INSERT INTO TelefonoP VALUES
+	('119520227','88436799'),
+	('120830480','83206550'),
+	('120830480','22515035'),
+	('118590602','60492596'),
+	('118750197','88162175'),
+	('119910019','84728261'),
+	('120230211','84728261'),
+	('119610413','88148741'),
+	('120200571','89679316'),
+	('119910017','88996847'),
+	('119080374','86435833'),
+	('120730209','88085856'),
+	('121490728','86212445'),
+	('118920041','88621141'),
+	('120290918','72885952'),
+	('120410031','85216479'),
+	('119320122','70391121'),
+	('120840558','89154347'),
+	('120640273','83399992'),
+	('121080016','88349017'),
+	('119080095','89843180'),
+	('118370307','89166564'),
+	('120050263','88158804');
+
+INSERT INTO TelefonoP VALUES
+	('119190117','61637185'),
+	('119190117','84721726'),
+	('118920964','60351521'),
+	('120140114','83102251'),
+	('120180569','87075743'),
+	('119730005','83126756'),
+	('119720698','87742398'),
+	('118980618','83166277'),
+	('118980618','71318619'),
+	('901250638','89400840'),
+	('121290298','70571310'),
+	('120790617','70181903'),
+	('119160950','89429145'),
+	('703190015','22974661'),
+	('703190015','88509541'),
+	('703470514','22974661'),
+	('703470514','88509541'),
+	('119790996','72800651'),
+	('120680332','85083997'),
+	('120630557','83829992'),
+	('120920268','70245309'),
+	('120190159','88554490');
