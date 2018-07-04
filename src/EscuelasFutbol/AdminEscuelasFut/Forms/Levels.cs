@@ -26,5 +26,20 @@ namespace AdminEscuelasFut
         {
             this.Close();
         }
+
+        private void txbNivel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.validateNumbers(sender, e, false);
+        }
+
+        private void txbEdadInicio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.validateNumbers(sender, e, false);
+        }
+
+        private void txbEdadFin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.validateNumbers(sender, e, false);
+        }
     }
 }

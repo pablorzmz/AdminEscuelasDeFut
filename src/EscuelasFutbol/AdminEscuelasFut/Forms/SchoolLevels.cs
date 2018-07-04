@@ -27,5 +27,15 @@ namespace AdminEscuelasFut
         {
             this.Close();
         }
+
+        private void txtMinimumAgeSchoolLevel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.validateNumbers(sender, e, false);
+        }
+
+        private void txtMaximumAgeSchoolLevel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.validateNumbers(sender, e, false);
+        }
     }
 }

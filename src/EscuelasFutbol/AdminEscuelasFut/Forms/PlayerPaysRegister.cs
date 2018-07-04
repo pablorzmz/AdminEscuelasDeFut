@@ -53,5 +53,10 @@ namespace AdminEscuelasFut
                 dtpFechaMatricula.Enabled = false;
             }
         }
+
+        private void txtNameRPaymentPlayer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.controlSQLInjection(sender, e);
+        }
     }
 }

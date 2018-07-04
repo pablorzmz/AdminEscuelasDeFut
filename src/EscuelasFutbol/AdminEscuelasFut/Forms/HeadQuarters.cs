@@ -26,5 +26,10 @@ namespace AdminEscuelasFut
         {
             this.Close();
         }
+
+        private void txtAddressAdministerInstallation_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.controlSQLInjection(sender, e);
+        }
     }
 }

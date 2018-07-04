@@ -22,6 +22,26 @@ namespace AdminEscuelasFut
             this.MinimumSize = this.Size;
             this.MaximumSize = this.Size;
         }
+
+        private void txtReceiptNumberQPaymentPlayer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.validateNumbers(sender, e, false);
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.controlSQLInjection(sender, e);
+        }
+
+        private void txtPrimerApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.controlSQLInjection(sender, e);
+        }
+
+        private void txtSegundoApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.controlSQLInjection(sender, e);
+        }
     }
 }
 

@@ -52,6 +52,7 @@ namespace AdminEscuelasFut
             invalidChars.Add('-');
             invalidChars.Add('(');
             invalidChars.Add(')');
+            invalidChars.Add(':');
             bool invalid = false;
             for (int x = 0; x < invalidChars.Count; ++x)
             {                

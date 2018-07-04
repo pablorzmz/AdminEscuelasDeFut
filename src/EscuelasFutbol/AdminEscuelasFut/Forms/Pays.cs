@@ -114,5 +114,22 @@ namespace AdminEscuelasFut
                 dtpFechaMatricula.Enabled = false;
             }
         }
+
+        private void txtNameRPaymentPlayer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.controlSQLInjection(sender, e);
+        }
+
+       
+
+        private void txtAmountRPaymentPlayer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.validateNumbers(sender, e, false);
+        }
+
+        private void txtReceiptNumberRPaymentPlayer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.validateNumbers(sender, e, false);
+        }
     }
 }

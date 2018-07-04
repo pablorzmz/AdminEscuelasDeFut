@@ -16,5 +16,12 @@ namespace AdminEscuelasFut.Forms
         {
             InitializeComponent();
         }
+
+        private void txtPriceEquipmentM_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.validateNumbers(sender, e, true);
+        }
+
+       
     }
 }

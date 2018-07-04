@@ -57,7 +57,8 @@
             this.ayudaToolStripMenuItem});
             this.menAdminInstalaciones.Location = new System.Drawing.Point(0, 0);
             this.menAdminInstalaciones.Name = "menAdminInstalaciones";
-            this.menAdminInstalaciones.Size = new System.Drawing.Size(473, 24);
+            this.menAdminInstalaciones.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menAdminInstalaciones.Size = new System.Drawing.Size(631, 28);
             this.menAdminInstalaciones.TabIndex = 5;
             this.menAdminInstalaciones.Text = "menuPrincipal";
             // 
@@ -66,66 +67,65 @@
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(113, 26);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
             // dgvAdministerInstallation
             // 
             this.dgvAdministerInstallation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAdministerInstallation.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvAdministerInstallation.Location = new System.Drawing.Point(0, 173);
-            this.dgvAdministerInstallation.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvAdministerInstallation.Location = new System.Drawing.Point(0, 213);
+            this.dgvAdministerInstallation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvAdministerInstallation.Name = "dgvAdministerInstallation";
             this.dgvAdministerInstallation.RowTemplate.Height = 24;
-            this.dgvAdministerInstallation.Size = new System.Drawing.Size(473, 175);
+            this.dgvAdministerInstallation.Size = new System.Drawing.Size(631, 215);
             this.dgvAdministerInstallation.TabIndex = 38;
             // 
             // txtAddressAdministerInstallation
             // 
-            this.txtAddressAdministerInstallation.Location = new System.Drawing.Point(74, 22);
-            this.txtAddressAdministerInstallation.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAddressAdministerInstallation.Location = new System.Drawing.Point(99, 27);
+            this.txtAddressAdministerInstallation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAddressAdministerInstallation.Name = "txtAddressAdministerInstallation";
-            this.txtAddressAdministerInstallation.Size = new System.Drawing.Size(384, 20);
+            this.txtAddressAdministerInstallation.Size = new System.Drawing.Size(511, 22);
             this.txtAddressAdministerInstallation.TabIndex = 43;
+            this.txtAddressAdministerInstallation.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddressAdministerInstallation_KeyPress);
             // 
             // txtTelephoneAdministerInstallation
             // 
-            this.txtTelephoneAdministerInstallation.Location = new System.Drawing.Point(74, 51);
-            this.txtTelephoneAdministerInstallation.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTelephoneAdministerInstallation.Location = new System.Drawing.Point(99, 63);
+            this.txtTelephoneAdministerInstallation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTelephoneAdministerInstallation.Name = "txtTelephoneAdministerInstallation";
-            this.txtTelephoneAdministerInstallation.Size = new System.Drawing.Size(384, 20);
+            this.txtTelephoneAdministerInstallation.Size = new System.Drawing.Size(511, 22);
             this.txtTelephoneAdministerInstallation.TabIndex = 44;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 26);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(13, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(72, 17);
             this.label1.TabIndex = 45;
             this.label1.Text = "Dirrección";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 54);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(13, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.Size = new System.Drawing.Size(64, 17);
             this.label2.TabIndex = 46;
             this.label2.Text = "Teléfono";
             // 
@@ -135,9 +135,11 @@
             this.groupBox1.Controls.Add(this.txtTelephoneAdministerInstallation);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtAddressAdministerInstallation);
-            this.groupBox1.Location = new System.Drawing.Point(0, 31);
+            this.groupBox1.Location = new System.Drawing.Point(0, 38);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(470, 103);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(627, 127);
             this.groupBox1.TabIndex = 47;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información de las intalaciones";
@@ -150,9 +152,10 @@
             this.btnConsultar.FlatAppearance.BorderSize = 0;
             this.btnConsultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultar.Location = new System.Drawing.Point(306, 145);
+            this.btnConsultar.Location = new System.Drawing.Point(408, 178);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(75, 23);
+            this.btnConsultar.Size = new System.Drawing.Size(100, 28);
             this.btnConsultar.TabIndex = 51;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = false;
@@ -165,9 +168,10 @@
             this.btnRegistrar.FlatAppearance.BorderSize = 0;
             this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrar.Location = new System.Drawing.Point(140, 145);
+            this.btnRegistrar.Location = new System.Drawing.Point(187, 178);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
+            this.btnRegistrar.Size = new System.Drawing.Size(100, 28);
             this.btnRegistrar.TabIndex = 48;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
@@ -180,9 +184,10 @@
             this.btnActualizar.FlatAppearance.BorderSize = 0;
             this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Location = new System.Drawing.Point(222, 145);
+            this.btnActualizar.Location = new System.Drawing.Point(296, 178);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(100, 28);
             this.btnActualizar.TabIndex = 49;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -195,18 +200,19 @@
             this.btnBorrar.FlatAppearance.BorderSize = 0;
             this.btnBorrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBorrar.Location = new System.Drawing.Point(389, 145);
+            this.btnBorrar.Location = new System.Drawing.Point(519, 178);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(75, 23);
+            this.btnBorrar.Size = new System.Drawing.Size(100, 28);
             this.btnBorrar.TabIndex = 50;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = false;
             // 
             // HeadQuarters
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 348);
+            this.ClientSize = new System.Drawing.Size(631, 428);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.btnActualizar);
@@ -216,6 +222,7 @@
             this.Controls.Add(this.menAdminInstalaciones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "HeadQuarters";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

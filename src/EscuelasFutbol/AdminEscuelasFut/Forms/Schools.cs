@@ -49,5 +49,25 @@ namespace AdminEscuelasFut
         {
             this.Close();
         }
+
+        private void txtNameSchoolM_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.controlSQLInjection(sender, e);
+        }
+
+        private void txtPlaceSchoolM_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.controlSQLInjection(sender, e);
+        }
+
+        private void txtAddressSchoolM_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.controlSQLInjection(sender, e);
+        }
+
+        private void txtInstallationNameSchoolM_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.controlSQLInjection(sender, e);
+        }
     }
 }

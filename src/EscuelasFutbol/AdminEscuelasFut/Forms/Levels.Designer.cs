@@ -59,7 +59,8 @@
             this.ayudaToolStripMenuItem});
             this.menLevels.Location = new System.Drawing.Point(0, 0);
             this.menLevels.Name = "menLevels";
-            this.menLevels.Size = new System.Drawing.Size(563, 24);
+            this.menLevels.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menLevels.Size = new System.Drawing.Size(751, 28);
             this.menLevels.TabIndex = 4;
             this.menLevels.Text = "menuPays";
             // 
@@ -68,47 +69,50 @@
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(113, 26);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
             // lbNivel
             // 
             this.lbNivel.AutoSize = true;
-            this.lbNivel.Location = new System.Drawing.Point(10, 29);
+            this.lbNivel.Location = new System.Drawing.Point(13, 36);
+            this.lbNivel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbNivel.Name = "lbNivel";
-            this.lbNivel.Size = new System.Drawing.Size(31, 13);
+            this.lbNivel.Size = new System.Drawing.Size(39, 17);
             this.lbNivel.TabIndex = 5;
             this.lbNivel.Text = "Nivel";
             // 
             // lbEdadFin
             // 
             this.lbEdadFin.AutoSize = true;
-            this.lbEdadFin.Location = new System.Drawing.Point(10, 100);
+            this.lbEdadFin.Location = new System.Drawing.Point(13, 123);
+            this.lbEdadFin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbEdadFin.Name = "lbEdadFin";
-            this.lbEdadFin.Size = new System.Drawing.Size(49, 13);
+            this.lbEdadFin.Size = new System.Drawing.Size(64, 17);
             this.lbEdadFin.TabIndex = 6;
             this.lbEdadFin.Text = "Edad Fin";
             // 
             // lbEdadInicio
             // 
             this.lbEdadInicio.AutoSize = true;
-            this.lbEdadInicio.Location = new System.Drawing.Point(10, 66);
+            this.lbEdadInicio.Location = new System.Drawing.Point(13, 81);
+            this.lbEdadInicio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbEdadInicio.Name = "lbEdadInicio";
-            this.lbEdadInicio.Size = new System.Drawing.Size(63, 13);
+            this.lbEdadInicio.Size = new System.Drawing.Size(81, 17);
             this.lbEdadInicio.TabIndex = 7;
             this.lbEdadInicio.Text = "Edad  Inicio";
             // 
@@ -116,31 +120,38 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 222);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 274);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(563, 292);
+            this.dataGridView1.Size = new System.Drawing.Size(751, 359);
             this.dataGridView1.TabIndex = 9;
             // 
             // txbEdadFin
             // 
-            this.txbEdadFin.Location = new System.Drawing.Point(65, 97);
+            this.txbEdadFin.Location = new System.Drawing.Point(87, 119);
+            this.txbEdadFin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txbEdadFin.Name = "txbEdadFin";
-            this.txbEdadFin.Size = new System.Drawing.Size(473, 20);
+            this.txbEdadFin.Size = new System.Drawing.Size(629, 22);
             this.txbEdadFin.TabIndex = 10;
+            this.txbEdadFin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbEdadFin_KeyPress);
             // 
             // txbEdadInicio
             // 
-            this.txbEdadInicio.Location = new System.Drawing.Point(79, 62);
+            this.txbEdadInicio.Location = new System.Drawing.Point(105, 76);
+            this.txbEdadInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txbEdadInicio.Name = "txbEdadInicio";
-            this.txbEdadInicio.Size = new System.Drawing.Size(459, 20);
+            this.txbEdadInicio.Size = new System.Drawing.Size(611, 22);
             this.txbEdadInicio.TabIndex = 11;
+            this.txbEdadInicio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbEdadInicio_KeyPress);
             // 
             // txbNivel
             // 
-            this.txbNivel.Location = new System.Drawing.Point(47, 26);
+            this.txbNivel.Location = new System.Drawing.Point(63, 32);
+            this.txbNivel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txbNivel.Name = "txbNivel";
-            this.txbNivel.Size = new System.Drawing.Size(491, 20);
+            this.txbNivel.Size = new System.Drawing.Size(653, 22);
             this.txbNivel.TabIndex = 12;
+            this.txbNivel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbNivel_KeyPress);
             // 
             // groupBox1
             // 
@@ -150,9 +161,11 @@
             this.groupBox1.Controls.Add(this.lbEdadInicio);
             this.groupBox1.Controls.Add(this.txbEdadFin);
             this.groupBox1.Controls.Add(this.txbNivel);
-            this.groupBox1.Location = new System.Drawing.Point(13, 37);
+            this.groupBox1.Location = new System.Drawing.Point(17, 46);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(544, 150);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(725, 185);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información de los niveles";
@@ -165,9 +178,10 @@
             this.btnConsultar.FlatAppearance.BorderSize = 0;
             this.btnConsultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultar.Location = new System.Drawing.Point(393, 193);
+            this.btnConsultar.Location = new System.Drawing.Point(524, 238);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(75, 23);
+            this.btnConsultar.Size = new System.Drawing.Size(100, 28);
             this.btnConsultar.TabIndex = 24;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = false;
@@ -180,9 +194,10 @@
             this.btnRegistrar.FlatAppearance.BorderSize = 0;
             this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrar.Location = new System.Drawing.Point(224, 193);
+            this.btnRegistrar.Location = new System.Drawing.Point(299, 238);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
+            this.btnRegistrar.Size = new System.Drawing.Size(100, 28);
             this.btnRegistrar.TabIndex = 21;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
@@ -195,9 +210,10 @@
             this.btnActualizar.FlatAppearance.BorderSize = 0;
             this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Location = new System.Drawing.Point(309, 193);
+            this.btnActualizar.Location = new System.Drawing.Point(412, 238);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
+            this.btnActualizar.Size = new System.Drawing.Size(100, 28);
             this.btnActualizar.TabIndex = 22;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -210,18 +226,19 @@
             this.btnBorrar.FlatAppearance.BorderSize = 0;
             this.btnBorrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBorrar.Location = new System.Drawing.Point(476, 193);
+            this.btnBorrar.Location = new System.Drawing.Point(635, 238);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(75, 23);
+            this.btnBorrar.Size = new System.Drawing.Size(100, 28);
             this.btnBorrar.TabIndex = 23;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = false;
             // 
             // Levels
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 514);
+            this.ClientSize = new System.Drawing.Size(751, 633);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.btnActualizar);
@@ -231,6 +248,7 @@
             this.Controls.Add(this.menLevels);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "Levels";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -42,5 +42,40 @@ namespace AdminEscuelasFut
         {
             Utilities.validateNumbers(sender,e,false);            
         }
+
+        private void txbNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.controlSQLInjection(sender, e);
+        }
+
+        private void txbPrimerApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.controlSQLInjection(sender, e);
+        }
+
+        private void txbSegundoApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.controlSQLInjection(sender, e);
+        }
+
+        private void txbNombreEncargado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.controlSQLInjection(sender, e);
+        }
+
+        private void txbNumeroPoliza_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.validateNumbers(sender, e, false);
+        }
+
+        private void txbPrimerApellidoEncargado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.controlSQLInjection(sender, e);
+        }
+
+        private void txbTelefonoDEncargado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.controlSQLInjection(sender, e);
+        }
     }
 }
