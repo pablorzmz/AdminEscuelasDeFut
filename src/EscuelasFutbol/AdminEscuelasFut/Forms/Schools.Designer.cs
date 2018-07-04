@@ -152,10 +152,11 @@
             // 
             // txtNameSchoolM
             // 
-            this.txtNameSchoolM.Location = new System.Drawing.Point(83, 32);
+            this.txtNameSchoolM.Location = new System.Drawing.Point(97, 32);
             this.txtNameSchoolM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNameSchoolM.MaxLength = 30;
             this.txtNameSchoolM.Name = "txtNameSchoolM";
-            this.txtNameSchoolM.Size = new System.Drawing.Size(553, 22);
+            this.txtNameSchoolM.Size = new System.Drawing.Size(539, 22);
             this.txtNameSchoolM.TabIndex = 11;
             this.txtNameSchoolM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameSchoolM_KeyPress);
             // 
@@ -163,6 +164,7 @@
             // 
             this.txtTelephoneSchoolM.Location = new System.Drawing.Point(97, 160);
             this.txtTelephoneSchoolM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTelephoneSchoolM.MaxLength = 8;
             this.txtTelephoneSchoolM.Name = "txtTelephoneSchoolM";
             this.txtTelephoneSchoolM.Size = new System.Drawing.Size(539, 22);
             this.txtTelephoneSchoolM.TabIndex = 12;
@@ -178,19 +180,21 @@
             // 
             // txtAddressSchoolM
             // 
-            this.txtAddressSchoolM.Location = new System.Drawing.Point(93, 95);
+            this.txtAddressSchoolM.Location = new System.Drawing.Point(97, 95);
             this.txtAddressSchoolM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAddressSchoolM.MaxLength = 30;
             this.txtAddressSchoolM.Name = "txtAddressSchoolM";
-            this.txtAddressSchoolM.Size = new System.Drawing.Size(543, 22);
+            this.txtAddressSchoolM.Size = new System.Drawing.Size(539, 22);
             this.txtAddressSchoolM.TabIndex = 14;
             this.txtAddressSchoolM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddressSchoolM_KeyPress);
             // 
             // txtPlaceSchoolM
             // 
-            this.txtPlaceSchoolM.Location = new System.Drawing.Point(83, 65);
+            this.txtPlaceSchoolM.Location = new System.Drawing.Point(97, 65);
             this.txtPlaceSchoolM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPlaceSchoolM.MaxLength = 30;
             this.txtPlaceSchoolM.Name = "txtPlaceSchoolM";
-            this.txtPlaceSchoolM.Size = new System.Drawing.Size(553, 22);
+            this.txtPlaceSchoolM.Size = new System.Drawing.Size(539, 22);
             this.txtPlaceSchoolM.TabIndex = 15;
             this.txtPlaceSchoolM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPlaceSchoolM_KeyPress);
             // 
@@ -239,9 +243,9 @@
             this.groupBox1.Controls.Add(this.txtAddressSchoolM);
             this.groupBox1.Controls.Add(this.txtPlaceSchoolM);
             this.groupBox1.Location = new System.Drawing.Point(16, 46);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(649, 239);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
@@ -256,7 +260,7 @@
             this.btnBuscarInstalacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnBuscarInstalacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarInstalacion.Location = new System.Drawing.Point(499, 124);
-            this.btnBuscarInstalacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscarInstalacion.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarInstalacion.Name = "btnBuscarInstalacion";
             this.btnBuscarInstalacion.Size = new System.Drawing.Size(139, 25);
             this.btnBuscarInstalacion.TabIndex = 33;
@@ -267,6 +271,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(97, 193);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.MaxLength = 8;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(539, 22);
             this.textBox1.TabIndex = 29;
@@ -289,7 +294,7 @@
             this.btnConsultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultar.Location = new System.Drawing.Point(455, 292);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(100, 28);
             this.btnConsultar.TabIndex = 32;
@@ -305,7 +310,7 @@
             this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Location = new System.Drawing.Point(233, 292);
-            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(100, 28);
             this.btnRegistrar.TabIndex = 29;
@@ -321,7 +326,7 @@
             this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Location = new System.Drawing.Point(343, 292);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(100, 28);
             this.btnActualizar.TabIndex = 30;
@@ -337,7 +342,7 @@
             this.btnBorrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrar.Location = new System.Drawing.Point(565, 292);
-            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(100, 28);
             this.btnBorrar.TabIndex = 31;
@@ -358,7 +363,7 @@
             this.Controls.Add(this.menSchools);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Schools";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -159,10 +159,11 @@
             // 
             // txbSegundoApellidoEncargado
             // 
-            this.txbSegundoApellidoEncargado.Location = new System.Drawing.Point(85, 95);
+            this.txbSegundoApellidoEncargado.Location = new System.Drawing.Point(119, 95);
             this.txbSegundoApellidoEncargado.Margin = new System.Windows.Forms.Padding(4);
+            this.txbSegundoApellidoEncargado.MaxLength = 8;
             this.txbSegundoApellidoEncargado.Name = "txbSegundoApellidoEncargado";
-            this.txbSegundoApellidoEncargado.Size = new System.Drawing.Size(377, 22);
+            this.txbSegundoApellidoEncargado.Size = new System.Drawing.Size(343, 22);
             this.txbSegundoApellidoEncargado.TabIndex = 21;
             this.txbSegundoApellidoEncargado.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -196,6 +197,7 @@
             // 
             this.txbPrimerApellidoEncargado.Location = new System.Drawing.Point(119, 63);
             this.txbPrimerApellidoEncargado.Margin = new System.Windows.Forms.Padding(4);
+            this.txbPrimerApellidoEncargado.MaxLength = 15;
             this.txbPrimerApellidoEncargado.Name = "txbPrimerApellidoEncargado";
             this.txbPrimerApellidoEncargado.Size = new System.Drawing.Size(344, 22);
             this.txbPrimerApellidoEncargado.TabIndex = 22;
@@ -226,6 +228,7 @@
             // 
             this.txtCedulaEncargado.Location = new System.Drawing.Point(545, 22);
             this.txtCedulaEncargado.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCedulaEncargado.MaxLength = 9;
             this.txtCedulaEncargado.Name = "txtCedulaEncargado";
             this.txtCedulaEncargado.Size = new System.Drawing.Size(191, 22);
             this.txtCedulaEncargado.TabIndex = 14;
@@ -234,10 +237,11 @@
             // 
             // txbNombreEncargado
             // 
-            this.txbNombreEncargado.Location = new System.Drawing.Point(85, 27);
+            this.txbNombreEncargado.Location = new System.Drawing.Point(119, 27);
             this.txbNombreEncargado.Margin = new System.Windows.Forms.Padding(4);
+            this.txbNombreEncargado.MaxLength = 30;
             this.txbNombreEncargado.Name = "txbNombreEncargado";
-            this.txbNombreEncargado.Size = new System.Drawing.Size(377, 22);
+            this.txbNombreEncargado.Size = new System.Drawing.Size(343, 22);
             this.txbNombreEncargado.TabIndex = 15;
             this.txbNombreEncargado.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txbNombreEncargado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbNombreEncargado_KeyPress);
@@ -266,6 +270,7 @@
             // 
             this.txbTelefonoDEncargado.Location = new System.Drawing.Point(615, 58);
             this.txbTelefonoDEncargado.Margin = new System.Windows.Forms.Padding(4);
+            this.txbTelefonoDEncargado.MaxLength = 15;
             this.txbTelefonoDEncargado.Name = "txbTelefonoDEncargado";
             this.txbTelefonoDEncargado.Size = new System.Drawing.Size(271, 22);
             this.txbTelefonoDEncargado.TabIndex = 16;
@@ -327,10 +332,10 @@
             // 
             this.comboBox1.BackColor = System.Drawing.Color.AliceBlue;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(72, 140);
+            this.comboBox1.Location = new System.Drawing.Point(122, 140);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(391, 24);
+            this.comboBox1.Size = new System.Drawing.Size(341, 24);
             this.comboBox1.TabIndex = 19;
             // 
             // dtpFechaDeNacimiento
@@ -345,10 +350,10 @@
             // 
             // txbNumeroPoliza
             // 
-            this.txbNumeroPoliza.Location = new System.Drawing.Point(599, 142);
+            this.txbNumeroPoliza.Location = new System.Drawing.Point(640, 142);
             this.txbNumeroPoliza.Margin = new System.Windows.Forms.Padding(4);
             this.txbNumeroPoliza.Name = "txbNumeroPoliza";
-            this.txbNumeroPoliza.Size = new System.Drawing.Size(287, 22);
+            this.txbNumeroPoliza.Size = new System.Drawing.Size(246, 22);
             this.txbNumeroPoliza.TabIndex = 17;
             this.txbNumeroPoliza.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txbNumeroPoliza.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbNumeroPoliza_KeyPress);
@@ -399,19 +404,21 @@
             // 
             // txbCedula
             // 
-            this.txbCedula.Location = new System.Drawing.Point(545, 38);
+            this.txbCedula.Location = new System.Drawing.Point(640, 38);
             this.txbCedula.Margin = new System.Windows.Forms.Padding(4);
+            this.txbCedula.MaxLength = 9;
             this.txbCedula.Name = "txbCedula";
-            this.txbCedula.Size = new System.Drawing.Size(340, 22);
+            this.txbCedula.Size = new System.Drawing.Size(245, 22);
             this.txbCedula.TabIndex = 12;
             this.txbCedula.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txbNombre
             // 
-            this.txbNombre.Location = new System.Drawing.Point(85, 38);
+            this.txbNombre.Location = new System.Drawing.Point(122, 38);
             this.txbNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txbNombre.MaxLength = 30;
             this.txbNombre.Name = "txbNombre";
-            this.txbNombre.Size = new System.Drawing.Size(377, 22);
+            this.txbNombre.Size = new System.Drawing.Size(340, 22);
             this.txbNombre.TabIndex = 13;
             this.txbNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txbNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbNombre_KeyPress);
@@ -438,10 +445,11 @@
             // 
             // txbTelefono
             // 
-            this.txbTelefono.Location = new System.Drawing.Point(85, 102);
+            this.txbTelefono.Location = new System.Drawing.Point(122, 102);
             this.txbTelefono.Margin = new System.Windows.Forms.Padding(4);
+            this.txbTelefono.MaxLength = 8;
             this.txbTelefono.Name = "txbTelefono";
-            this.txbTelefono.Size = new System.Drawing.Size(377, 22);
+            this.txbTelefono.Size = new System.Drawing.Size(340, 22);
             this.txbTelefono.TabIndex = 9;
             this.txbTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -457,20 +465,22 @@
             // 
             // txbSegundoApellido
             // 
-            this.txbSegundoApellido.Location = new System.Drawing.Point(615, 70);
+            this.txbSegundoApellido.Location = new System.Drawing.Point(640, 70);
             this.txbSegundoApellido.Margin = new System.Windows.Forms.Padding(4);
+            this.txbSegundoApellido.MaxLength = 15;
             this.txbSegundoApellido.Name = "txbSegundoApellido";
-            this.txbSegundoApellido.Size = new System.Drawing.Size(271, 22);
+            this.txbSegundoApellido.Size = new System.Drawing.Size(246, 22);
             this.txbSegundoApellido.TabIndex = 10;
             this.txbSegundoApellido.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txbSegundoApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSegundoApellido_KeyPress);
             // 
             // txbPrimerApellido
             // 
-            this.txbPrimerApellido.Location = new System.Drawing.Point(119, 70);
+            this.txbPrimerApellido.Location = new System.Drawing.Point(122, 70);
             this.txbPrimerApellido.Margin = new System.Windows.Forms.Padding(4);
+            this.txbPrimerApellido.MaxLength = 15;
             this.txbPrimerApellido.Name = "txbPrimerApellido";
-            this.txbPrimerApellido.Size = new System.Drawing.Size(344, 22);
+            this.txbPrimerApellido.Size = new System.Drawing.Size(341, 22);
             this.txbPrimerApellido.TabIndex = 11;
             this.txbPrimerApellido.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txbPrimerApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPrimerApellido_KeyPress);

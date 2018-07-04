@@ -111,10 +111,11 @@
             // 
             // txtNameRPaymentPlayer
             // 
-            this.txtNameRPaymentPlayer.Location = new System.Drawing.Point(71, 27);
+            this.txtNameRPaymentPlayer.Location = new System.Drawing.Point(91, 27);
             this.txtNameRPaymentPlayer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNameRPaymentPlayer.MaxLength = 30;
             this.txtNameRPaymentPlayer.Name = "txtNameRPaymentPlayer";
-            this.txtNameRPaymentPlayer.Size = new System.Drawing.Size(377, 22);
+            this.txtNameRPaymentPlayer.Size = new System.Drawing.Size(357, 22);
             this.txtNameRPaymentPlayer.TabIndex = 51;
             this.txtNameRPaymentPlayer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameRPaymentPlayer_KeyPress);
             // 
@@ -122,6 +123,7 @@
             // 
             this.txtIDRPaymentPlayer.Location = new System.Drawing.Point(525, 30);
             this.txtIDRPaymentPlayer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtIDRPaymentPlayer.MaxLength = 9;
             this.txtIDRPaymentPlayer.Name = "txtIDRPaymentPlayer";
             this.txtIDRPaymentPlayer.Size = new System.Drawing.Size(255, 22);
             this.txtIDRPaymentPlayer.TabIndex = 50;
@@ -151,6 +153,7 @@
             // 
             this.txtReceiptNumberRPaymentPlayer.Location = new System.Drawing.Point(91, 68);
             this.txtReceiptNumberRPaymentPlayer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtReceiptNumberRPaymentPlayer.MaxLength = 5;
             this.txtReceiptNumberRPaymentPlayer.Name = "txtReceiptNumberRPaymentPlayer";
             this.txtReceiptNumberRPaymentPlayer.Size = new System.Drawing.Size(357, 22);
             this.txtReceiptNumberRPaymentPlayer.TabIndex = 54;
@@ -253,9 +256,9 @@
             this.groupBox1.Controls.Add(this.txtAmountRPaymentPlayer);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(12, 38);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(901, 182);
             this.groupBox1.TabIndex = 66;
             this.groupBox1.TabStop = false;
@@ -270,7 +273,7 @@
             this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Location = new System.Drawing.Point(805, 28);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(85, 25);
             this.btnBuscar.TabIndex = 72;
@@ -286,7 +289,7 @@
             this.btnRegisterRPaymentPlayer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnRegisterRPaymentPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegisterRPaymentPlayer.Location = new System.Drawing.Point(784, 228);
-            this.btnRegisterRPaymentPlayer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegisterRPaymentPlayer.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegisterRPaymentPlayer.Name = "btnRegisterRPaymentPlayer";
             this.btnRegisterRPaymentPlayer.Size = new System.Drawing.Size(119, 28);
             this.btnRegisterRPaymentPlayer.TabIndex = 71;
@@ -304,7 +307,7 @@
             this.Controls.Add(this.menPlayerPays);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PlayerPaysRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Registrar pagos de jugadores";

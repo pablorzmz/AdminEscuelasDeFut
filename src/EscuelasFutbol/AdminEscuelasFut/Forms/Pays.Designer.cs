@@ -264,6 +264,7 @@
             // 
             this.txtIDRPaymentPlayer.Location = new System.Drawing.Point(525, 30);
             this.txtIDRPaymentPlayer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtIDRPaymentPlayer.MaxLength = 9;
             this.txtIDRPaymentPlayer.Name = "txtIDRPaymentPlayer";
             this.txtIDRPaymentPlayer.Size = new System.Drawing.Size(167, 22);
             this.txtIDRPaymentPlayer.TabIndex = 2;
@@ -341,6 +342,7 @@
             // 
             this.txtReceiptNumberRPaymentPlayer.Location = new System.Drawing.Point(91, 68);
             this.txtReceiptNumberRPaymentPlayer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtReceiptNumberRPaymentPlayer.MaxLength = 5;
             this.txtReceiptNumberRPaymentPlayer.Name = "txtReceiptNumberRPaymentPlayer";
             this.txtReceiptNumberRPaymentPlayer.Size = new System.Drawing.Size(357, 22);
             this.txtReceiptNumberRPaymentPlayer.TabIndex = 4;

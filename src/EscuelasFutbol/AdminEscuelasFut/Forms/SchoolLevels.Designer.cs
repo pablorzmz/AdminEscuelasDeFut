@@ -95,9 +95,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(17, 38);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(645, 180);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
@@ -115,19 +115,21 @@
             // 
             // txtMaximumAgeSchoolLevel
             // 
-            this.txtMaximumAgeSchoolLevel.Location = new System.Drawing.Point(85, 127);
+            this.txtMaximumAgeSchoolLevel.Location = new System.Drawing.Point(136, 127);
             this.txtMaximumAgeSchoolLevel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMaximumAgeSchoolLevel.MaxLength = 2;
             this.txtMaximumAgeSchoolLevel.Name = "txtMaximumAgeSchoolLevel";
-            this.txtMaximumAgeSchoolLevel.Size = new System.Drawing.Size(549, 22);
+            this.txtMaximumAgeSchoolLevel.Size = new System.Drawing.Size(498, 22);
             this.txtMaximumAgeSchoolLevel.TabIndex = 38;
             this.txtMaximumAgeSchoolLevel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaximumAgeSchoolLevel_KeyPress);
             // 
             // txtMinimumAgeSchoolLevel
             // 
-            this.txtMinimumAgeSchoolLevel.Location = new System.Drawing.Point(103, 96);
+            this.txtMinimumAgeSchoolLevel.Location = new System.Drawing.Point(136, 96);
             this.txtMinimumAgeSchoolLevel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMinimumAgeSchoolLevel.MaxLength = 2;
             this.txtMinimumAgeSchoolLevel.Name = "txtMinimumAgeSchoolLevel";
-            this.txtMinimumAgeSchoolLevel.Size = new System.Drawing.Size(532, 22);
+            this.txtMinimumAgeSchoolLevel.Size = new System.Drawing.Size(499, 22);
             this.txtMinimumAgeSchoolLevel.TabIndex = 37;
             this.txtMinimumAgeSchoolLevel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMinimumAgeSchoolLevel_KeyPress);
             // 
@@ -135,10 +137,10 @@
             // 
             this.cmbSchoolLevel.BackColor = System.Drawing.Color.AliceBlue;
             this.cmbSchoolLevel.FormattingEnabled = true;
-            this.cmbSchoolLevel.Location = new System.Drawing.Point(65, 63);
+            this.cmbSchoolLevel.Location = new System.Drawing.Point(136, 63);
             this.cmbSchoolLevel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbSchoolLevel.Name = "cmbSchoolLevel";
-            this.cmbSchoolLevel.Size = new System.Drawing.Size(569, 24);
+            this.cmbSchoolLevel.Size = new System.Drawing.Size(498, 24);
             this.cmbSchoolLevel.TabIndex = 36;
             // 
             // label4
@@ -186,7 +188,7 @@
             this.btnConsultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultar.Location = new System.Drawing.Point(444, 225);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(100, 28);
             this.btnConsultar.TabIndex = 55;
@@ -202,7 +204,7 @@
             this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Location = new System.Drawing.Point(223, 225);
-            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(100, 28);
             this.btnRegistrar.TabIndex = 52;
@@ -218,7 +220,7 @@
             this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Location = new System.Drawing.Point(332, 225);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(100, 28);
             this.btnActualizar.TabIndex = 53;
@@ -234,7 +236,7 @@
             this.btnBorrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrar.Location = new System.Drawing.Point(555, 225);
-            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(100, 28);
             this.btnBorrar.TabIndex = 54;
@@ -253,7 +255,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menSchoolLeves);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "SchoolLevels";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

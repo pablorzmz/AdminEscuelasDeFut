@@ -121,24 +121,26 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 274);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(751, 359);
             this.dataGridView1.TabIndex = 9;
             // 
             // txbEdadFin
             // 
-            this.txbEdadFin.Location = new System.Drawing.Point(87, 119);
-            this.txbEdadFin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbEdadFin.Location = new System.Drawing.Point(105, 119);
+            this.txbEdadFin.Margin = new System.Windows.Forms.Padding(4);
+            this.txbEdadFin.MaxLength = 2;
             this.txbEdadFin.Name = "txbEdadFin";
-            this.txbEdadFin.Size = new System.Drawing.Size(629, 22);
+            this.txbEdadFin.Size = new System.Drawing.Size(611, 22);
             this.txbEdadFin.TabIndex = 10;
             this.txbEdadFin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbEdadFin_KeyPress);
             // 
             // txbEdadInicio
             // 
             this.txbEdadInicio.Location = new System.Drawing.Point(105, 76);
-            this.txbEdadInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbEdadInicio.Margin = new System.Windows.Forms.Padding(4);
+            this.txbEdadInicio.MaxLength = 2;
             this.txbEdadInicio.Name = "txbEdadInicio";
             this.txbEdadInicio.Size = new System.Drawing.Size(611, 22);
             this.txbEdadInicio.TabIndex = 11;
@@ -146,10 +148,11 @@
             // 
             // txbNivel
             // 
-            this.txbNivel.Location = new System.Drawing.Point(63, 32);
-            this.txbNivel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbNivel.Location = new System.Drawing.Point(105, 32);
+            this.txbNivel.Margin = new System.Windows.Forms.Padding(4);
+            this.txbNivel.MaxLength = 2;
             this.txbNivel.Name = "txbNivel";
-            this.txbNivel.Size = new System.Drawing.Size(653, 22);
+            this.txbNivel.Size = new System.Drawing.Size(611, 22);
             this.txbNivel.TabIndex = 12;
             this.txbNivel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbNivel_KeyPress);
             // 
@@ -162,9 +165,9 @@
             this.groupBox1.Controls.Add(this.txbEdadFin);
             this.groupBox1.Controls.Add(this.txbNivel);
             this.groupBox1.Location = new System.Drawing.Point(17, 46);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(725, 185);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
@@ -179,7 +182,7 @@
             this.btnConsultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultar.Location = new System.Drawing.Point(524, 238);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(100, 28);
             this.btnConsultar.TabIndex = 24;
@@ -195,7 +198,7 @@
             this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Location = new System.Drawing.Point(299, 238);
-            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(100, 28);
             this.btnRegistrar.TabIndex = 21;
@@ -211,7 +214,7 @@
             this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Location = new System.Drawing.Point(412, 238);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(100, 28);
             this.btnActualizar.TabIndex = 22;
@@ -227,7 +230,7 @@
             this.btnBorrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrar.Location = new System.Drawing.Point(635, 238);
-            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(100, 28);
             this.btnBorrar.TabIndex = 23;
@@ -248,7 +251,7 @@
             this.Controls.Add(this.menLevels);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Levels";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

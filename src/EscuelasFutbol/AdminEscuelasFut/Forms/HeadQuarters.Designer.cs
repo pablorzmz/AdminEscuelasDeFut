@@ -98,6 +98,7 @@
             // 
             this.txtAddressAdministerInstallation.Location = new System.Drawing.Point(99, 27);
             this.txtAddressAdministerInstallation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAddressAdministerInstallation.MaxLength = 30;
             this.txtAddressAdministerInstallation.Name = "txtAddressAdministerInstallation";
             this.txtAddressAdministerInstallation.Size = new System.Drawing.Size(511, 22);
             this.txtAddressAdministerInstallation.TabIndex = 43;
@@ -107,6 +108,7 @@
             // 
             this.txtTelephoneAdministerInstallation.Location = new System.Drawing.Point(99, 63);
             this.txtTelephoneAdministerInstallation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTelephoneAdministerInstallation.MaxLength = 8;
             this.txtTelephoneAdministerInstallation.Name = "txtTelephoneAdministerInstallation";
             this.txtTelephoneAdministerInstallation.Size = new System.Drawing.Size(511, 22);
             this.txtTelephoneAdministerInstallation.TabIndex = 44;
