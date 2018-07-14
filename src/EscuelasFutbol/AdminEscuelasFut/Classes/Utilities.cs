@@ -41,6 +41,14 @@ namespace AdminEscuelasFut
 
         public static void controlSQLInjection( object sender, KeyPressEventArgs e )
         {
+            if (char.IsLetter(e.KeyChar) == false )
+            {
+                if (e.KeyChar != 8)
+                {
+                    e.Handled = true;
+                    return;
+                }                
+            }
             List<char> invalidChars = new List<char>();
             invalidChars.Add(';');
             invalidChars.Add('=');
@@ -66,10 +74,11 @@ namespace AdminEscuelasFut
             {
                 e.Handled = true;
             }
-            else
+            /*else
             {
-                e.Handled = false;
+                //e.Handled = false;
             }
+            */
         }
 
         public static void readCurrentRowFromDataGridView( DataGridView dgtv, int rowIndex,int amountOfColumns, List<String> buffer )

@@ -36,7 +36,14 @@ namespace AdminEscuelasFut
         {
             /* Fill combo box with user levels*/
             playerController.fillLevesComboBox(this.cboNiveles);
-            playerController.fillPlayerDataGridView( dgtvPlayersInfo, null );            
+            playerController.fillSchoolsComboBox(this.cboEscuelas);
+            playerController.fillPlayerDataGridView( dgtvPlayersInfo, null );
+
+            dgtvPlayersInfo.Columns[6].Visible = false;
+            dgtvPlayersInfo.Columns[7].Visible = false;
+            dgtvPlayersInfo.Columns[12].Visible = false;
+            dgtvPlayersInfo.Columns[13].Visible = false;
+            
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -87,9 +94,9 @@ namespace AdminEscuelasFut
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             List<String> parameters = new List<String>();
-            /*0*/
-            parameters.Add(txbCedula.Text);
+            /*0*/parameters.Add(txbCedula.Text);
             /*1*/parameters.Add(txbNombre.Text);
+            /*2*/parameters.Add(cboEscuelas.SelectedItem.ToString());
             playerController.fillPlayerDataGridView(dgtvPlayersInfo, parameters);
         }
 
@@ -129,12 +136,13 @@ namespace AdminEscuelasFut
                 {
                     t2 = Convert.ToDateTime(buffer[7]);
                     dtpFechaIngreso.Value = t2;
-                }
-                nivel = Convert.ToInt16(buffer[8]);
-                txtCedulaEncargado.Text = buffer[9];
-                txbNombreEncargado.Text = buffer[10];
-                txbPrimerApellidoEncargado.Text = buffer[11];
-                txbSegundoApellidoEncargado.Text = buffer[12];
+                }                
+                cboEscuelas.SelectedItem = buffer[8];
+                nivel = Convert.ToInt16(buffer[9]);
+                txtCedulaEncargado.Text = buffer[10];
+                txbNombreEncargado.Text = buffer[11];
+                txbPrimerApellidoEncargado.Text = buffer[12];
+                txbSegundoApellidoEncargado.Text = buffer[13];
 
                 if (sex == "f")
                 {
@@ -147,6 +155,32 @@ namespace AdminEscuelasFut
 
                 cboNiveles.SelectedIndex = nivel;
             }
+        }
+
+        private void txbCedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.validateNumbers(sender, e, false);
+        }
+
+        private void txbTelefonoJug1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.validateNumbers(sender, e, false);
+        }
+
+        private void txbTelefonoJug2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.validateNumbers(sender, e, false);
+        }
+
+        private void txbSegundoApellidoEncargado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.validateNumbers(sender, e, false);
+        }
+
+        private void pruebaProcAlmacenadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            playerController.probarProcedimientoAlmacenado( dtpFechaIngreso.Value.ToString("yyyy-MM-dd") );
+            playerController.fillPlayerDataGridView(dgtvPlayersInfo, null);
         }
     }
 }

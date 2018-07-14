@@ -70,5 +70,49 @@ namespace AdminEscuelasFut
             database.closeConnection();
             return table;
         }
+        public struct storedProcData
+        {
+            public String storedProcParam;            
+            public SqlDbType storedProcParamType;
+            public String userParams;
+        }
+
+        public int executeStoreProcedure( List<storedProcData> storedProcData ,String storeProcName)
+        {
+            int error = 0;            
+            SqlConnection con = database.getValidConnection();
+            using ( con )
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand(storeProcName, con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        for (int index = 0; index < storedProcData.Count; ++index)
+                        {
+                            cmd.Parameters.Add
+                                (storedProcData[index].storedProcParam,
+                                storedProcData[index].storedProcParamType).Value
+                                = storedProcData[index].userParams;
+                        }                        
+                        //Se ejecuta el procedimiento almacenado
+                        database.openConnection();                        
+                        cmd.ExecuteNonQuery();
+                        database.closeConnection();
+                        return error;
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Players));
             this.menPlayers = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +51,8 @@
             this.lbNombreDEncargado = new System.Windows.Forms.Label();
             this.lbCedulaDEncargado = new System.Windows.Forms.Label();
             this.grbDatosJugador = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txbTelefonoJug2 = new System.Windows.Forms.TextBox();
             this.cboNiveles = new System.Windows.Forms.ComboBox();
             this.dtpFechaDeNacimiento = new System.Windows.Forms.DateTimePicker();
             this.rbtnHombre = new System.Windows.Forms.RadioButton();
@@ -72,8 +75,9 @@
             this.btnBorrar = new System.Windows.Forms.Button();
             this.dgtvPlayersInfo = new System.Windows.Forms.DataGridView();
             this.btnConsultar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txbTelefonoJug2 = new System.Windows.Forms.TextBox();
+            this.cboEscuelas = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pruebaProcAlmacenadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menPlayers.SuspendLayout();
             this.grbDatosEncargado.SuspendLayout();
             this.grbDatosJugador.SuspendLayout();
@@ -87,7 +91,8 @@
             this.menPlayers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.herramientasToolStripMenuItem,
-            this.ayudaToolStripMenuItem});
+            this.ayudaToolStripMenuItem,
+            this.pruebaProcAlmacenadoToolStripMenuItem});
             this.menPlayers.Location = new System.Drawing.Point(0, 0);
             this.menPlayers.Name = "menPlayers";
             this.menPlayers.Size = new System.Drawing.Size(690, 24);
@@ -161,7 +166,7 @@
             this.txbSegundoApellidoEncargado.Name = "txbSegundoApellidoEncargado";
             this.txbSegundoApellidoEncargado.Size = new System.Drawing.Size(258, 20);
             this.txbSegundoApellidoEncargado.TabIndex = 21;
-            this.txbSegundoApellidoEncargado.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txbSegundoApellidoEncargado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSegundoApellidoEncargado_KeyPress);
             // 
             // btnConsultarCedEncar
             // 
@@ -194,7 +199,6 @@
             this.txbPrimerApellidoEncargado.Name = "txbPrimerApellidoEncargado";
             this.txbPrimerApellidoEncargado.Size = new System.Drawing.Size(259, 20);
             this.txbPrimerApellidoEncargado.TabIndex = 22;
-            this.txbPrimerApellidoEncargado.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txbPrimerApellidoEncargado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPrimerApellidoEncargado_KeyPress);
             // 
             // lbFechaIngreso
@@ -222,7 +226,6 @@
             this.txtCedulaEncargado.Name = "txtCedulaEncargado";
             this.txtCedulaEncargado.Size = new System.Drawing.Size(144, 20);
             this.txtCedulaEncargado.TabIndex = 14;
-            this.txtCedulaEncargado.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCedulaEncargado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedulaEncargado_KeyPress);
             // 
             // txbNombreEncargado
@@ -232,7 +235,6 @@
             this.txbNombreEncargado.Name = "txbNombreEncargado";
             this.txbNombreEncargado.Size = new System.Drawing.Size(258, 20);
             this.txbNombreEncargado.TabIndex = 15;
-            this.txbNombreEncargado.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txbNombreEncargado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbNombreEncargado_KeyPress);
             // 
             // lbPrimerApellidoDEncargado
@@ -260,7 +262,6 @@
             this.txbTelefonoDEncargado.Name = "txbTelefonoDEncargado";
             this.txbTelefonoDEncargado.Size = new System.Drawing.Size(204, 20);
             this.txbTelefonoDEncargado.TabIndex = 16;
-            this.txbTelefonoDEncargado.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txbTelefonoDEncargado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbTelefonoDEncargado_KeyPress);
             // 
             // lbNombreDEncargado
@@ -284,6 +285,8 @@
             // grbDatosJugador
             // 
             this.grbDatosJugador.AutoSize = true;
+            this.grbDatosJugador.Controls.Add(this.cboEscuelas);
+            this.grbDatosJugador.Controls.Add(this.label3);
             this.grbDatosJugador.Controls.Add(this.label1);
             this.grbDatosJugador.Controls.Add(this.txbTelefonoJug2);
             this.grbDatosJugador.Controls.Add(this.cboNiveles);
@@ -310,13 +313,31 @@
             this.grbDatosJugador.TabStop = false;
             this.grbDatosJugador.Text = "Datos personales del jugador";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 113);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Teléfono 2";
+            // 
+            // txbTelefonoJug2
+            // 
+            this.txbTelefonoJug2.Location = new System.Drawing.Point(92, 109);
+            this.txbTelefonoJug2.MaxLength = 8;
+            this.txbTelefonoJug2.Name = "txbTelefonoJug2";
+            this.txbTelefonoJug2.Size = new System.Drawing.Size(256, 20);
+            this.txbTelefonoJug2.TabIndex = 21;
+            this.txbTelefonoJug2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbTelefonoJug2_KeyPress);
+            // 
             // cboNiveles
             // 
             this.cboNiveles.BackColor = System.Drawing.Color.AliceBlue;
             this.cboNiveles.FormattingEnabled = true;
-            this.cboNiveles.Location = new System.Drawing.Point(480, 110);
+            this.cboNiveles.Location = new System.Drawing.Point(92, 140);
             this.cboNiveles.Name = "cboNiveles";
-            this.cboNiveles.Size = new System.Drawing.Size(188, 21);
+            this.cboNiveles.Size = new System.Drawing.Size(258, 21);
             this.cboNiveles.TabIndex = 19;
             // 
             // dtpFechaDeNacimiento
@@ -332,7 +353,7 @@
             // 
             this.rbtnHombre.AutoSize = true;
             this.rbtnHombre.Checked = true;
-            this.rbtnHombre.Location = new System.Drawing.Point(54, 152);
+            this.rbtnHombre.Location = new System.Drawing.Point(480, 116);
             this.rbtnHombre.Name = "rbtnHombre";
             this.rbtnHombre.Size = new System.Drawing.Size(62, 17);
             this.rbtnHombre.TabIndex = 14;
@@ -344,7 +365,7 @@
             // rbtnMujer
             // 
             this.rbtnMujer.AutoSize = true;
-            this.rbtnMujer.Location = new System.Drawing.Point(122, 151);
+            this.rbtnMujer.Location = new System.Drawing.Point(548, 116);
             this.rbtnMujer.Name = "rbtnMujer";
             this.rbtnMujer.Size = new System.Drawing.Size(51, 17);
             this.rbtnMujer.TabIndex = 13;
@@ -369,7 +390,7 @@
             this.txbCedula.Name = "txbCedula";
             this.txbCedula.Size = new System.Drawing.Size(185, 20);
             this.txbCedula.TabIndex = 12;
-            this.txbCedula.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txbCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbCedula_KeyPress);
             // 
             // txbNombre
             // 
@@ -378,13 +399,12 @@
             this.txbNombre.Name = "txbNombre";
             this.txbNombre.Size = new System.Drawing.Size(256, 20);
             this.txbNombre.TabIndex = 13;
-            this.txbNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txbNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbNombre_KeyPress);
             // 
             // lbNivel
             // 
             this.lbNivel.AutoSize = true;
-            this.lbNivel.Location = new System.Drawing.Point(370, 115);
+            this.lbNivel.Location = new System.Drawing.Point(16, 143);
             this.lbNivel.Name = "lbNivel";
             this.lbNivel.Size = new System.Drawing.Size(31, 13);
             this.lbNivel.TabIndex = 10;
@@ -406,7 +426,7 @@
             this.txbTelefonoJug1.Name = "txbTelefonoJug1";
             this.txbTelefonoJug1.Size = new System.Drawing.Size(256, 20);
             this.txbTelefonoJug1.TabIndex = 9;
-            this.txbTelefonoJug1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txbTelefonoJug1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbTelefonoJug1_KeyPress);
             // 
             // lbNombre
             // 
@@ -424,7 +444,6 @@
             this.txbSegundoApellidoJug.Name = "txbSegundoApellidoJug";
             this.txbSegundoApellidoJug.Size = new System.Drawing.Size(186, 20);
             this.txbSegundoApellidoJug.TabIndex = 10;
-            this.txbSegundoApellidoJug.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txbSegundoApellidoJug.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSegundoApellido_KeyPress);
             // 
             // txbPrimerApellidoJug
@@ -434,13 +453,12 @@
             this.txbPrimerApellidoJug.Name = "txbPrimerApellidoJug";
             this.txbPrimerApellidoJug.Size = new System.Drawing.Size(257, 20);
             this.txbPrimerApellidoJug.TabIndex = 11;
-            this.txbPrimerApellidoJug.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txbPrimerApellidoJug.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPrimerApellido_KeyPress);
             // 
             // lbSexo
             // 
             this.lbSexo.AutoSize = true;
-            this.lbSexo.Location = new System.Drawing.Point(17, 156);
+            this.lbSexo.Location = new System.Drawing.Point(370, 116);
             this.lbSexo.Name = "lbSexo";
             this.lbSexo.Size = new System.Drawing.Size(31, 13);
             this.lbSexo.TabIndex = 11;
@@ -522,6 +540,14 @@
             // 
             this.dgtvPlayersInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgtvPlayersInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgtvPlayersInfo.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgtvPlayersInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgtvPlayersInfo.Location = new System.Drawing.Point(0, 371);
             this.dgtvPlayersInfo.Name = "dgtvPlayersInfo";
@@ -545,23 +571,30 @@
             this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
-            // label1
+            // cboEscuelas
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 113);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Teléfono 2";
+            this.cboEscuelas.BackColor = System.Drawing.Color.AliceBlue;
+            this.cboEscuelas.FormattingEnabled = true;
+            this.cboEscuelas.Location = new System.Drawing.Point(480, 140);
+            this.cboEscuelas.Name = "cboEscuelas";
+            this.cboEscuelas.Size = new System.Drawing.Size(188, 21);
+            this.cboEscuelas.TabIndex = 23;
             // 
-            // txbTelefonoJug2
+            // label3
             // 
-            this.txbTelefonoJug2.Location = new System.Drawing.Point(92, 109);
-            this.txbTelefonoJug2.MaxLength = 8;
-            this.txbTelefonoJug2.Name = "txbTelefonoJug2";
-            this.txbTelefonoJug2.Size = new System.Drawing.Size(256, 20);
-            this.txbTelefonoJug2.TabIndex = 21;
-            this.txbTelefonoJug2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(371, 144);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Escuela";
+            // 
+            // pruebaProcAlmacenadoToolStripMenuItem
+            // 
+            this.pruebaProcAlmacenadoToolStripMenuItem.Name = "pruebaProcAlmacenadoToolStripMenuItem";
+            this.pruebaProcAlmacenadoToolStripMenuItem.Size = new System.Drawing.Size(151, 20);
+            this.pruebaProcAlmacenadoToolStripMenuItem.Text = "Prueba proc almacenado";
+            this.pruebaProcAlmacenadoToolStripMenuItem.Click += new System.EventHandler(this.pruebaProcAlmacenadoToolStripMenuItem_Click);
             // 
             // Players
             // 
@@ -643,5 +676,8 @@
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txbTelefonoJug2;
+        private System.Windows.Forms.ComboBox cboEscuelas;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolStripMenuItem pruebaProcAlmacenadoToolStripMenuItem;
     }
 }
