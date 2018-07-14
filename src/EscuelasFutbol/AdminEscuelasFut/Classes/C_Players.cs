@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AdminEscuelasFut
@@ -43,7 +40,7 @@ namespace AdminEscuelasFut
             DataTable dataTable = null;
             if (parameters == null)
             {
-                dataTable = dataAccess.getTableFromQuery(loadDefaultQuery);
+                dataTable = dataAccess.getTableFromQuery(loadDefaultQuery);                
             }
             else
             {
