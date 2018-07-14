@@ -42,16 +42,13 @@ GO
 
 1- /* Eliminar un jugador de la base de datos */
 GO
-CREATE PROCEDURE Eliminar_Jugador  /*ESTE PROCEDIMIENTO NO HA SIDO EJECUTADO/IMPLEMENTADO*/
+CREATE PROCEDURE Eliminar_Jugador
 	@Cedula char(9)
 	AS
 		DELETE FROM Asiste
 		WHERE CedJugador = @Cedula;  /* Se elimina el jugador de la tabla asiste*/
 
 		DELETE FROM Esta_En
-		WHERE CedJugador = @Cedula;
-
-		DELETE FROM PagosDeJugador
 		WHERE CedJugador = @Cedula;
 
 		DELETE FROM Jugador 
