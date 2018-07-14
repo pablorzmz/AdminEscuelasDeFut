@@ -65,6 +65,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Connection.cs" />
+    <Compile Include="Classes\DataAccess.cs" />
+    <Compile Include="Classes\C_Players.cs" />
     <Compile Include="Classes\Utilities.cs" />
     <Compile Include="Forms\Equipment.cs">
       <SubType>Form</SubType>

@@ -13,9 +13,13 @@ namespace AdminEscuelasFut
     public partial class Players : Form
     {
         private PlayerTrainnings playerTrainingsTool;
+        private C_Players playerController;
+        private String sexValue;
         public Players()
         {
             InitializeComponent();
+            playerController = new C_Players();
+            sexValue = "";
         }
 
         public void showPlayersTraingins()
@@ -30,7 +34,9 @@ namespace AdminEscuelasFut
 
         private void Players_Load(object sender, EventArgs e)
         {
-
+            /* Fill combo box with user levels*/
+            playerController.fillLevesComboBox(this.cboNiveles);
+            playerController.fillPlayerDataGridView( dgtvPlayersInfo, null );            
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -77,5 +83,71 @@ namespace AdminEscuelasFut
         {
             Utilities.controlSQLInjection(sender, e);
         }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            List<String> parameters = new List<String>();
+            /*0*/
+            parameters.Add(txbCedula.Text);
+            /*1*/parameters.Add(txbNombre.Text);
+            playerController.fillPlayerDataGridView(dgtvPlayersInfo, parameters);
+        }
+
+        private void rbtnHombre_CheckedChanged(object sender, EventArgs e)
+        {
+            this.sexValue = "m";
+        }
+
+        private void rbtnMujer_CheckedChanged(object sender, EventArgs e)
+        {
+            this.sexValue = "f";
+        }
+
+        private void lbTeléfono_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgtvPlayersInfo_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dgtvPlayersInfo.RowCount -1)
+            {
+                List<String> buffer = new List<string>();
+                Utilities.readCurrentRowFromDataGridView(dgtvPlayersInfo, e.RowIndex, dgtvPlayersInfo.ColumnCount, buffer);
+                DateTime t1;
+                DateTime t2;
+                String sex;
+                int nivel = -1;
+                txbCedula.Text = buffer[0];
+                txbNombre.Text = buffer[1];
+                txbPrimerApellidoJug.Text = buffer[2];
+                txbSegundoApellidoJug.Text = buffer[3];
+                sex = buffer[5];
+                t1 = Convert.ToDateTime(buffer[6]);
+                dtpFechaDeNacimiento.Value = t1;
+                if (buffer[7] != "")
+                {
+                    t2 = Convert.ToDateTime(buffer[7]);
+                    dtpFechaIngreso.Value = t2;
+                }
+                nivel = Convert.ToInt16(buffer[8]);
+                txtCedulaEncargado.Text = buffer[9];
+                txbNombreEncargado.Text = buffer[10];
+                txbPrimerApellidoEncargado.Text = buffer[11];
+                txbSegundoApellidoEncargado.Text = buffer[12];
+
+                if (sex == "f")
+                {
+                    rbtnMujer.Checked = true;
+                }
+                else
+                {
+                    rbtnHombre.Checked = true;
+                }
+
+                cboNiveles.SelectedIndex = nivel;
+            }
+        }
     }
 }
+

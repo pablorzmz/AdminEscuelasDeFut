@@ -53,6 +53,8 @@ namespace AdminEscuelasFut
             playersModule.MdiParent   = this;
             paysModule.MdiParent      = this;
             levelsModule.MdiParent    = this;
+            Connection c = new Connection();
+            c.testConnection();
         }
 
         /**

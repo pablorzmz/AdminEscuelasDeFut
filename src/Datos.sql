@@ -728,21 +728,22 @@ INSERT INTO PagoMatricula VALUES
 	('Saprissa Goicoechea', '0031');
 
 INSERT INTO PagoMensualidad VALUES
-	('Saprissa Goicoechea', '0029'),
+	('Saprissa Goicoechea', '0036'),
 	('Saprissa Goicoechea', '0030'),
 	('Saprissa Goicoechea', '0032'),
 	('Saprissa Goicoechea', '0033'),
 	('Saprissa Goicoechea', '0034'),
 	('Saprissa Goicoechea', '0035');
 
+SELECT * FROM PagoMensualidad where NombreEscuela = 'Saprissa Goicoechea';
+SELECT * FROM mes where NombreEscuela = 'Saprissa Goicoechea';
 INSERT INTO Mes VALUES
 	('Saprissa Goicoechea', '0029', 'JUN', '2018'),
 	('Saprissa Goicoechea', '0030', 'JUN', '2018'),
 	('Saprissa Goicoechea', '0032', 'JUN', '2018'),
 	('Saprissa Goicoechea', '0033', 'MAY', '2018'),
 	('Saprissa Goicoechea', '0034', 'JUL', '2018'),
-	('Saprissa Goicoechea', '0035', 'JUN', '2018'),
-	('Saprissa Goicoechea', '0035', 'JUN', '2018');
+	('Saprissa Goicoechea', '0035', 'JUN', '2018');	
 
 INSERT INTO TelefonoP VALUES
 	('118970385','83390385'),

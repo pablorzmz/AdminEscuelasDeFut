@@ -11,27 +11,49 @@ namespace AdminEscuelasFut
 {
     class Connection
     {
-        private const String user = "Su Carnet";
-        private const String password = "Su contraseña";
+        private const String user = "Su Usuario";
+        private const String password = "Su Contraseña!";
         private const String database = "DB_ERROR404";
         private const String connectionString = "Data Source=10.1.4.55;User ID=" + user + ";Password=" + password + "; Initial Catalog=" + database + "; Integrated Security=false";
-        
+        private SqlConnection sqlConnection;
+
+        public Connection()
+        {
+            sqlConnection = new SqlConnection(connectionString);
+        }
+
+        public SqlConnection getValidConnection()
+        {
+            return sqlConnection;
+        }
+
         /**
          * Method for testing databse connection access         
          */
         public void testConnection()
         {
-            SqlConnection sqlConnecion = new SqlConnection( connectionString );
-            sqlConnecion.Open();
-            if ( sqlConnecion.State == ConnectionState.Open )
+            openConnection();
+            if (sqlConnection.State == ConnectionState.Open )
             {
                 MessageBox.Show( "Connected to " + database );
-                sqlConnecion.Close();
+                closeConnection();
             }
             else
             {
                 MessageBox.Show( "Fail to connecto to " + database );
             }
         }
+
+        public void openConnection()
+        {
+            sqlConnection.Open();
+        }
+
+        public void closeConnection()
+        {            
+            if (sqlConnection != null)
+                sqlConnection.Close();
+        }
+
     }
 }

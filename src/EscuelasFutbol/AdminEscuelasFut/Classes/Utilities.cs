@@ -71,5 +71,16 @@ namespace AdminEscuelasFut
                 e.Handled = false;
             }
         }
+
+        public static void readCurrentRowFromDataGridView( DataGridView dgtv, int rowIndex,int amountOfColumns, List<String> buffer )
+        {
+            DataGridViewRow row = dgtv.Rows[rowIndex];
+            String value = "";
+            for (int c = 0; c < amountOfColumns; ++c)
+            {
+                value = row.Cells[c].Value.ToString();
+                buffer.Add( value );
+            }
+        }
     }
 }
