@@ -77,17 +77,5 @@ namespace AdminEscuelasFut
             }
 
         }
-        public int probarProcedimientoAlmacenado(String fecha)
-        {
-            DataAccess.storedProcData datos =new DataAccess.storedProcData();
-            datos.storedProcParam = "@fecha";
-            datos.storedProcParamType = SqlDbType.Date;
-            datos.userParams = fecha;
-
-            List<DataAccess.storedProcData> parameters = new List<DataAccess.storedProcData>();
-            parameters.Add(datos);
-
-            return dataAccess.executeStoreProcedure(parameters, "fechaNacimientoGeneral");      
-        }
     }
 }

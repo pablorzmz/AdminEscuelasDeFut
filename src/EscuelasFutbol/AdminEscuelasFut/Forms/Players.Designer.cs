@@ -51,6 +51,8 @@
             this.lbNombreDEncargado = new System.Windows.Forms.Label();
             this.lbCedulaDEncargado = new System.Windows.Forms.Label();
             this.grbDatosJugador = new System.Windows.Forms.GroupBox();
+            this.cboEscuelas = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txbTelefonoJug2 = new System.Windows.Forms.TextBox();
             this.cboNiveles = new System.Windows.Forms.ComboBox();
@@ -75,9 +77,6 @@
             this.btnBorrar = new System.Windows.Forms.Button();
             this.dgtvPlayersInfo = new System.Windows.Forms.DataGridView();
             this.btnConsultar = new System.Windows.Forms.Button();
-            this.cboEscuelas = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pruebaProcAlmacenadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menPlayers.SuspendLayout();
             this.grbDatosEncargado.SuspendLayout();
             this.grbDatosJugador.SuspendLayout();
@@ -91,8 +90,7 @@
             this.menPlayers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.herramientasToolStripMenuItem,
-            this.ayudaToolStripMenuItem,
-            this.pruebaProcAlmacenadoToolStripMenuItem});
+            this.ayudaToolStripMenuItem});
             this.menPlayers.Location = new System.Drawing.Point(0, 0);
             this.menPlayers.Name = "menPlayers";
             this.menPlayers.Size = new System.Drawing.Size(690, 24);
@@ -312,6 +310,24 @@
             this.grbDatosJugador.TabIndex = 0;
             this.grbDatosJugador.TabStop = false;
             this.grbDatosJugador.Text = "Datos personales del jugador";
+            // 
+            // cboEscuelas
+            // 
+            this.cboEscuelas.BackColor = System.Drawing.Color.AliceBlue;
+            this.cboEscuelas.FormattingEnabled = true;
+            this.cboEscuelas.Location = new System.Drawing.Point(480, 140);
+            this.cboEscuelas.Name = "cboEscuelas";
+            this.cboEscuelas.Size = new System.Drawing.Size(188, 21);
+            this.cboEscuelas.TabIndex = 23;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(371, 144);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Escuela";
             // 
             // label1
             // 
@@ -538,6 +554,10 @@
             // 
             // dgtvPlayersInfo
             // 
+            this.dgtvPlayersInfo.AllowUserToAddRows = false;
+            this.dgtvPlayersInfo.AllowUserToDeleteRows = false;
+            this.dgtvPlayersInfo.AllowUserToResizeColumns = false;
+            this.dgtvPlayersInfo.AllowUserToResizeRows = false;
             this.dgtvPlayersInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgtvPlayersInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -570,31 +590,6 @@
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
-            // 
-            // cboEscuelas
-            // 
-            this.cboEscuelas.BackColor = System.Drawing.Color.AliceBlue;
-            this.cboEscuelas.FormattingEnabled = true;
-            this.cboEscuelas.Location = new System.Drawing.Point(480, 140);
-            this.cboEscuelas.Name = "cboEscuelas";
-            this.cboEscuelas.Size = new System.Drawing.Size(188, 21);
-            this.cboEscuelas.TabIndex = 23;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(371, 144);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 13);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Escuela";
-            // 
-            // pruebaProcAlmacenadoToolStripMenuItem
-            // 
-            this.pruebaProcAlmacenadoToolStripMenuItem.Name = "pruebaProcAlmacenadoToolStripMenuItem";
-            this.pruebaProcAlmacenadoToolStripMenuItem.Size = new System.Drawing.Size(151, 20);
-            this.pruebaProcAlmacenadoToolStripMenuItem.Text = "Prueba proc almacenado";
-            this.pruebaProcAlmacenadoToolStripMenuItem.Click += new System.EventHandler(this.pruebaProcAlmacenadoToolStripMenuItem_Click);
             // 
             // Players
             // 
@@ -678,6 +673,5 @@
         private System.Windows.Forms.TextBox txbTelefonoJug2;
         private System.Windows.Forms.ComboBox cboEscuelas;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ToolStripMenuItem pruebaProcAlmacenadoToolStripMenuItem;
     }
 }

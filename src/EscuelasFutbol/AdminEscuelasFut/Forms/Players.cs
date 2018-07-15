@@ -24,11 +24,12 @@ namespace AdminEscuelasFut
 
         public void showPlayersTraingins()
         {
-          playerTrainingsTool = new PlayerTrainnings();
-          playerTrainingsTool.ShowDialog();
+            playerTrainingsTool = new PlayerTrainnings();            
+            playerTrainingsTool.setCurrentArgs(txbCedula.Text, cboEscuelas.SelectedItem.ToString());
+            playerTrainingsTool.ShowDialog();
         }
         private void menuItemConsultarEntren_Click(object sender, EventArgs e)
-        {
+        {            
             showPlayersTraingins();
         }
 
@@ -118,7 +119,7 @@ namespace AdminEscuelasFut
         private void dgtvPlayersInfo_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             cleanInput();
-            if (e.RowIndex >= 0 && e.RowIndex < dgtvPlayersInfo.RowCount -1)
+            if (e.RowIndex >= 0 && e.RowIndex < dgtvPlayersInfo.RowCount)
             {
                 List<String> buffer = new List<string>();
                 Utilities.readCurrentRowFromDataGridView(dgtvPlayersInfo, e.RowIndex, dgtvPlayersInfo.ColumnCount, buffer);
@@ -178,14 +179,9 @@ namespace AdminEscuelasFut
         {
             Utilities.validateNumbers(sender, e, false);
         }
-
-        private void pruebaProcAlmacenadoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            playerController.probarProcedimientoAlmacenado( dtpFechaIngreso.Value.ToString("yyyy-MM-dd") );
-            playerController.fillPlayerDataGridView(dgtvPlayersInfo, null);
-        }
         private void cleanInput()
         {
+            txbCedula.Text = "";
             txtCedulaEncargado.Text = "";
             txbNombre.Text = "";
             txbPrimerApellidoJug.Text = "";
