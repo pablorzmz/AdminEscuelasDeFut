@@ -37,7 +37,6 @@
             this.menuItemConsultarEntren = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grbDatosEncargado = new System.Windows.Forms.GroupBox();
-            this.txbSegundoApellidoEncargado = new System.Windows.Forms.TextBox();
             this.btnConsultarCedEncar = new System.Windows.Forms.Button();
             this.dtpFechaIngreso = new System.Windows.Forms.DateTimePicker();
             this.txbPrimerApellidoEncargado = new System.Windows.Forms.TextBox();
@@ -46,11 +45,12 @@
             this.txtCedulaEncargado = new System.Windows.Forms.TextBox();
             this.txbNombreEncargado = new System.Windows.Forms.TextBox();
             this.lbPrimerApellidoDEncargado = new System.Windows.Forms.Label();
-            this.lbTelefonoDEncargado = new System.Windows.Forms.Label();
-            this.txbTelefonoDEncargado = new System.Windows.Forms.TextBox();
+            this.txbSegundoApellidoEncargado = new System.Windows.Forms.TextBox();
             this.lbNombreDEncargado = new System.Windows.Forms.Label();
             this.lbCedulaDEncargado = new System.Windows.Forms.Label();
             this.grbDatosJugador = new System.Windows.Forms.GroupBox();
+            this.cboEscuelas = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txbTelefonoJug2 = new System.Windows.Forms.TextBox();
             this.cboNiveles = new System.Windows.Forms.ComboBox();
@@ -75,9 +75,6 @@
             this.btnBorrar = new System.Windows.Forms.Button();
             this.dgtvPlayersInfo = new System.Windows.Forms.DataGridView();
             this.btnConsultar = new System.Windows.Forms.Button();
-            this.cboEscuelas = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pruebaProcAlmacenadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menPlayers.SuspendLayout();
             this.grbDatosEncargado.SuspendLayout();
             this.grbDatosJugador.SuspendLayout();
@@ -91,8 +88,7 @@
             this.menPlayers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.herramientasToolStripMenuItem,
-            this.ayudaToolStripMenuItem,
-            this.pruebaProcAlmacenadoToolStripMenuItem});
+            this.ayudaToolStripMenuItem});
             this.menPlayers.Location = new System.Drawing.Point(0, 0);
             this.menPlayers.Name = "menPlayers";
             this.menPlayers.Size = new System.Drawing.Size(690, 24);
@@ -139,7 +135,6 @@
             // 
             // grbDatosEncargado
             // 
-            this.grbDatosEncargado.Controls.Add(this.txbSegundoApellidoEncargado);
             this.grbDatosEncargado.Controls.Add(this.btnConsultarCedEncar);
             this.grbDatosEncargado.Controls.Add(this.dtpFechaIngreso);
             this.grbDatosEncargado.Controls.Add(this.txbPrimerApellidoEncargado);
@@ -148,8 +143,7 @@
             this.grbDatosEncargado.Controls.Add(this.txtCedulaEncargado);
             this.grbDatosEncargado.Controls.Add(this.txbNombreEncargado);
             this.grbDatosEncargado.Controls.Add(this.lbPrimerApellidoDEncargado);
-            this.grbDatosEncargado.Controls.Add(this.lbTelefonoDEncargado);
-            this.grbDatosEncargado.Controls.Add(this.txbTelefonoDEncargado);
+            this.grbDatosEncargado.Controls.Add(this.txbSegundoApellidoEncargado);
             this.grbDatosEncargado.Controls.Add(this.lbNombreDEncargado);
             this.grbDatosEncargado.Controls.Add(this.lbCedulaDEncargado);
             this.grbDatosEncargado.Location = new System.Drawing.Point(14, 223);
@@ -158,15 +152,6 @@
             this.grbDatosEncargado.TabIndex = 4;
             this.grbDatosEncargado.TabStop = false;
             this.grbDatosEncargado.Text = "Datos del encargado";
-            // 
-            // txbSegundoApellidoEncargado
-            // 
-            this.txbSegundoApellidoEncargado.Location = new System.Drawing.Point(89, 77);
-            this.txbSegundoApellidoEncargado.MaxLength = 8;
-            this.txbSegundoApellidoEncargado.Name = "txbSegundoApellidoEncargado";
-            this.txbSegundoApellidoEncargado.Size = new System.Drawing.Size(258, 20);
-            this.txbSegundoApellidoEncargado.TabIndex = 21;
-            this.txbSegundoApellidoEncargado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSegundoApellidoEncargado_KeyPress);
             // 
             // btnConsultarCedEncar
             // 
@@ -187,9 +172,9 @@
             // 
             this.dtpFechaIngreso.CalendarTitleBackColor = System.Drawing.Color.AliceBlue;
             this.dtpFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaIngreso.Location = new System.Drawing.Point(464, 76);
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(110, 80);
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
-            this.dtpFechaIngreso.Size = new System.Drawing.Size(201, 20);
+            this.dtpFechaIngreso.Size = new System.Drawing.Size(238, 20);
             this.dtpFechaIngreso.TabIndex = 17;
             // 
             // txbPrimerApellidoEncargado
@@ -204,7 +189,7 @@
             // lbFechaIngreso
             // 
             this.lbFechaIngreso.AutoSize = true;
-            this.lbFechaIngreso.Location = new System.Drawing.Point(368, 77);
+            this.lbFechaIngreso.Location = new System.Drawing.Point(14, 84);
             this.lbFechaIngreso.Name = "lbFechaIngreso";
             this.lbFechaIngreso.Size = new System.Drawing.Size(90, 13);
             this.lbFechaIngreso.TabIndex = 14;
@@ -246,23 +231,14 @@
             this.lbPrimerApellidoDEncargado.TabIndex = 20;
             this.lbPrimerApellidoDEncargado.Text = "Primer Apellido";
             // 
-            // lbTelefonoDEncargado
+            // txbSegundoApellidoEncargado
             // 
-            this.lbTelefonoDEncargado.AutoSize = true;
-            this.lbTelefonoDEncargado.Location = new System.Drawing.Point(14, 82);
-            this.lbTelefonoDEncargado.Name = "lbTelefonoDEncargado";
-            this.lbTelefonoDEncargado.Size = new System.Drawing.Size(49, 13);
-            this.lbTelefonoDEncargado.TabIndex = 10;
-            this.lbTelefonoDEncargado.Text = "Teléfono";
-            // 
-            // txbTelefonoDEncargado
-            // 
-            this.txbTelefonoDEncargado.Location = new System.Drawing.Point(461, 47);
-            this.txbTelefonoDEncargado.MaxLength = 15;
-            this.txbTelefonoDEncargado.Name = "txbTelefonoDEncargado";
-            this.txbTelefonoDEncargado.Size = new System.Drawing.Size(204, 20);
-            this.txbTelefonoDEncargado.TabIndex = 16;
-            this.txbTelefonoDEncargado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbTelefonoDEncargado_KeyPress);
+            this.txbSegundoApellidoEncargado.Location = new System.Drawing.Point(461, 47);
+            this.txbSegundoApellidoEncargado.MaxLength = 15;
+            this.txbSegundoApellidoEncargado.Name = "txbSegundoApellidoEncargado";
+            this.txbSegundoApellidoEncargado.Size = new System.Drawing.Size(204, 20);
+            this.txbSegundoApellidoEncargado.TabIndex = 16;
+            this.txbSegundoApellidoEncargado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbTelefonoDEncargado_KeyPress);
             // 
             // lbNombreDEncargado
             // 
@@ -312,6 +288,24 @@
             this.grbDatosJugador.TabIndex = 0;
             this.grbDatosJugador.TabStop = false;
             this.grbDatosJugador.Text = "Datos personales del jugador";
+            // 
+            // cboEscuelas
+            // 
+            this.cboEscuelas.BackColor = System.Drawing.Color.AliceBlue;
+            this.cboEscuelas.FormattingEnabled = true;
+            this.cboEscuelas.Location = new System.Drawing.Point(480, 140);
+            this.cboEscuelas.Name = "cboEscuelas";
+            this.cboEscuelas.Size = new System.Drawing.Size(188, 21);
+            this.cboEscuelas.TabIndex = 23;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(371, 144);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Escuela";
             // 
             // label1
             // 
@@ -381,7 +375,6 @@
             this.lbTeléfono.Size = new System.Drawing.Size(58, 13);
             this.lbTeléfono.TabIndex = 9;
             this.lbTeléfono.Text = "Teléfono 1";
-            this.lbTeléfono.Click += new System.EventHandler(this.lbTeléfono_Click);
             // 
             // txbCedula
             // 
@@ -520,6 +513,7 @@
             this.btnActualizar.TabIndex = 6;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnBorrar
             // 
@@ -538,6 +532,10 @@
             // 
             // dgtvPlayersInfo
             // 
+            this.dgtvPlayersInfo.AllowUserToAddRows = false;
+            this.dgtvPlayersInfo.AllowUserToDeleteRows = false;
+            this.dgtvPlayersInfo.AllowUserToResizeColumns = false;
+            this.dgtvPlayersInfo.AllowUserToResizeRows = false;
             this.dgtvPlayersInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgtvPlayersInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -553,7 +551,7 @@
             this.dgtvPlayersInfo.Name = "dgtvPlayersInfo";
             this.dgtvPlayersInfo.Size = new System.Drawing.Size(690, 199);
             this.dgtvPlayersInfo.TabIndex = 18;
-            this.dgtvPlayersInfo.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgtvPlayersInfo_CellMouseClick);
+            this.dgtvPlayersInfo.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgtvPlayersInfo_CellMouseDoubleClick);
             // 
             // btnConsultar
             // 
@@ -570,31 +568,6 @@
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
-            // 
-            // cboEscuelas
-            // 
-            this.cboEscuelas.BackColor = System.Drawing.Color.AliceBlue;
-            this.cboEscuelas.FormattingEnabled = true;
-            this.cboEscuelas.Location = new System.Drawing.Point(480, 140);
-            this.cboEscuelas.Name = "cboEscuelas";
-            this.cboEscuelas.Size = new System.Drawing.Size(188, 21);
-            this.cboEscuelas.TabIndex = 23;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(371, 144);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 13);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Escuela";
-            // 
-            // pruebaProcAlmacenadoToolStripMenuItem
-            // 
-            this.pruebaProcAlmacenadoToolStripMenuItem.Name = "pruebaProcAlmacenadoToolStripMenuItem";
-            this.pruebaProcAlmacenadoToolStripMenuItem.Size = new System.Drawing.Size(151, 20);
-            this.pruebaProcAlmacenadoToolStripMenuItem.Text = "Prueba proc almacenado";
-            this.pruebaProcAlmacenadoToolStripMenuItem.Click += new System.EventHandler(this.pruebaProcAlmacenadoToolStripMenuItem_Click);
             // 
             // Players
             // 
@@ -661,13 +634,11 @@
         private System.Windows.Forms.Label lbCedulaDEncargado;
         private System.Windows.Forms.TextBox txtCedulaEncargado;
         private System.Windows.Forms.TextBox txbNombreEncargado;
-        private System.Windows.Forms.TextBox txbTelefonoDEncargado;
-        private System.Windows.Forms.Label lbTelefonoDEncargado;
+        private System.Windows.Forms.TextBox txbSegundoApellidoEncargado;
         private System.Windows.Forms.Label lbNombreDEncargado;
         private System.Windows.Forms.Label lbFechaIngreso;
         private System.Windows.Forms.DateTimePicker dtpFechaIngreso;
         private System.Windows.Forms.DataGridView dgtvPlayersInfo;
-        private System.Windows.Forms.TextBox txbSegundoApellidoEncargado;
         private System.Windows.Forms.Button btnConsultarCedEncar;
         private System.Windows.Forms.TextBox txbPrimerApellidoEncargado;
         private System.Windows.Forms.Label lbSegundoApellidoDEncargado;
@@ -678,6 +649,5 @@
         private System.Windows.Forms.TextBox txbTelefonoJug2;
         private System.Windows.Forms.ComboBox cboEscuelas;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ToolStripMenuItem pruebaProcAlmacenadoToolStripMenuItem;
     }
 }

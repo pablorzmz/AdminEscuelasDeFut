@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlayerTrainnings));
             this.menEntrenJugadores = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,8 +39,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dgvPlayerTraining = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.cboFechasEntrenamientos = new System.Windows.Forms.ComboBox();
+            this.cboEscuelas = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
@@ -58,8 +61,7 @@
             this.ayudaToolStripMenuItem});
             this.menEntrenJugadores.Location = new System.Drawing.Point(0, 0);
             this.menEntrenJugadores.Name = "menEntrenJugadores";
-            this.menEntrenJugadores.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menEntrenJugadores.Size = new System.Drawing.Size(728, 28);
+            this.menEntrenJugadores.Size = new System.Drawing.Size(546, 24);
             this.menEntrenJugadores.TabIndex = 4;
             this.menEntrenJugadores.Text = "menuPrincipal";
             // 
@@ -68,38 +70,39 @@
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(113, 26);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
             // txtIDPlayerTraining
             // 
-            this.txtIDPlayerTraining.Location = new System.Drawing.Point(71, 31);
-            this.txtIDPlayerTraining.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtIDPlayerTraining.Location = new System.Drawing.Point(53, 28);
+            this.txtIDPlayerTraining.Margin = new System.Windows.Forms.Padding(2);
             this.txtIDPlayerTraining.MaxLength = 9;
             this.txtIDPlayerTraining.Name = "txtIDPlayerTraining";
-            this.txtIDPlayerTraining.Size = new System.Drawing.Size(488, 22);
+            this.txtIDPlayerTraining.Size = new System.Drawing.Size(367, 20);
             this.txtIDPlayerTraining.TabIndex = 39;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.label4.Location = new System.Drawing.Point(15, 76);
+            this.label4.Location = new System.Drawing.Point(10, 92);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 17);
+            this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 33;
             this.label4.Text = "Fecha";
             // 
@@ -107,38 +110,78 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.label2.Location = new System.Drawing.Point(12, 34);
+            this.label2.Location = new System.Drawing.Point(9, 31);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 17);
+            this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 32;
             this.label2.Text = "Cédula";
             // 
             // dgvPlayerTraining
             // 
+            this.dgvPlayerTraining.AllowUserToAddRows = false;
+            this.dgvPlayerTraining.AllowUserToDeleteRows = false;
+            this.dgvPlayerTraining.AllowUserToResizeColumns = false;
+            this.dgvPlayerTraining.AllowUserToResizeRows = false;
             this.dgvPlayerTraining.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPlayerTraining.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPlayerTraining.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvPlayerTraining.Location = new System.Drawing.Point(0, 220);
-            this.dgvPlayerTraining.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvPlayerTraining.Location = new System.Drawing.Point(0, 195);
+            this.dgvPlayerTraining.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPlayerTraining.Name = "dgvPlayerTraining";
             this.dgvPlayerTraining.RowTemplate.Height = 24;
-            this.dgvPlayerTraining.Size = new System.Drawing.Size(728, 230);
+            this.dgvPlayerTraining.Size = new System.Drawing.Size(546, 187);
             this.dgvPlayerTraining.TabIndex = 31;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.cboFechasEntrenamientos);
+            this.groupBox1.Controls.Add(this.cboEscuelas);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.txtIDPlayerTraining);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(7, 42);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(5, 34);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(721, 129);
+            this.groupBox1.Size = new System.Drawing.Size(541, 123);
             this.groupBox1.TabIndex = 40;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información de entrenamientos de jugadores";
+            // 
+            // cboFechasEntrenamientos
+            // 
+            this.cboFechasEntrenamientos.BackColor = System.Drawing.Color.AliceBlue;
+            this.cboFechasEntrenamientos.FormattingEnabled = true;
+            this.cboFechasEntrenamientos.Location = new System.Drawing.Point(53, 89);
+            this.cboFechasEntrenamientos.Name = "cboFechasEntrenamientos";
+            this.cboFechasEntrenamientos.Size = new System.Drawing.Size(473, 21);
+            this.cboFechasEntrenamientos.TabIndex = 76;
+            // 
+            // cboEscuelas
+            // 
+            this.cboEscuelas.BackColor = System.Drawing.Color.AliceBlue;
+            this.cboEscuelas.FormattingEnabled = true;
+            this.cboEscuelas.Location = new System.Drawing.Point(53, 56);
+            this.cboEscuelas.Name = "cboEscuelas";
+            this.cboEscuelas.Size = new System.Drawing.Size(473, 21);
+            this.cboEscuelas.TabIndex = 75;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 59);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.TabIndex = 74;
+            this.label3.Text = "Escuela";
             // 
             // btnBuscar
             // 
@@ -148,22 +191,12 @@
             this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Location = new System.Drawing.Point(567, 31);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscar.Location = new System.Drawing.Point(425, 28);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(135, 25);
+            this.btnBuscar.Size = new System.Drawing.Size(101, 20);
             this.btnBuscar.TabIndex = 73;
             this.btnBuscar.Text = "Consultar cédula";
             this.btnBuscar.UseVisualStyleBackColor = false;
-            // 
-            // cboFechasEntrenamientos
-            // 
-            this.cboFechasEntrenamientos.FormattingEnabled = true;
-            this.cboFechasEntrenamientos.Location = new System.Drawing.Point(71, 70);
-            this.cboFechasEntrenamientos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cboFechasEntrenamientos.Name = "cboFechasEntrenamientos";
-            this.cboFechasEntrenamientos.Size = new System.Drawing.Size(629, 24);
-            this.cboFechasEntrenamientos.TabIndex = 40;
             // 
             // btnConsultar
             // 
@@ -173,13 +206,13 @@
             this.btnConsultar.FlatAppearance.BorderSize = 0;
             this.btnConsultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultar.Location = new System.Drawing.Point(497, 178);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConsultar.Location = new System.Drawing.Point(378, 166);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(100, 28);
+            this.btnConsultar.Size = new System.Drawing.Size(75, 23);
             this.btnConsultar.TabIndex = 44;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // btnRegistrar
             // 
@@ -189,10 +222,9 @@
             this.btnRegistrar.FlatAppearance.BorderSize = 0;
             this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrar.Location = new System.Drawing.Point(276, 178);
-            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegistrar.Location = new System.Drawing.Point(216, 166);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(100, 28);
+            this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
             this.btnRegistrar.TabIndex = 41;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
@@ -205,10 +237,9 @@
             this.btnActualizar.FlatAppearance.BorderSize = 0;
             this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Location = new System.Drawing.Point(385, 178);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnActualizar.Location = new System.Drawing.Point(297, 166);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(100, 28);
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 42;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -221,19 +252,18 @@
             this.btnBorrar.FlatAppearance.BorderSize = 0;
             this.btnBorrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBorrar.Location = new System.Drawing.Point(608, 178);
-            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBorrar.Location = new System.Drawing.Point(459, 166);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(100, 28);
+            this.btnBorrar.Size = new System.Drawing.Size(75, 23);
             this.btnBorrar.TabIndex = 43;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = false;
             // 
             // PlayerTrainnings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 450);
+            this.ClientSize = new System.Drawing.Size(546, 382);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.btnActualizar);
@@ -243,11 +273,10 @@
             this.Controls.Add(this.menEntrenJugadores);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "PlayerTrainnings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Entrenamientos de jugadores";
+            this.Text = "Entrenamientos del Jugador";
             this.Load += new System.EventHandler(this.PlayerTrainnings_Load);
             this.menEntrenJugadores.ResumeLayout(false);
             this.menEntrenJugadores.PerformLayout();
@@ -270,11 +299,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvPlayerTraining;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cboFechasEntrenamientos;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnBorrar;
+        private System.Windows.Forms.ComboBox cboFechasEntrenamientos;
+        private System.Windows.Forms.ComboBox cboEscuelas;
+        private System.Windows.Forms.Label label3;
     }
 }

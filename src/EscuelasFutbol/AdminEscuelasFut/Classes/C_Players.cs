@@ -8,10 +8,13 @@ namespace AdminEscuelasFut
     class C_Players
     {
         private DataAccess dataAccess;
+        private DataTable dataTableTelephones;
 
         public C_Players()
         {
             dataAccess = new DataAccess();
+            dataTableTelephones = null;
+
         }
 
         public void fillLevesComboBox( ComboBox cboNiveles )
@@ -64,30 +67,104 @@ namespace AdminEscuelasFut
                 "FROM " +
                 "   TelefonoP " +
                 "WHERE Cedula = '" + cedJugador  +"';";
-            DataTable dataTable = dataAccess.getTableFromQuery(queryTelephoneNumbers);
+            dataTableTelephones = dataAccess.getTableFromQuery(queryTelephoneNumbers);
 
-            if (dataTable.Rows.Count == 2)
+            if (dataTableTelephones.Rows.Count == 2)
             {
-                tel1.Text = dataTable.Rows[0]["Telefono"].ToString();
-                tel2.Text = dataTable.Rows[1]["Telefono"].ToString();
+                tel1.Text = dataTableTelephones.Rows[0]["Telefono"].ToString();
+                tel2.Text = dataTableTelephones.Rows[1]["Telefono"].ToString();
             }
-            else if (dataTable.Rows.Count == 1)
+            else if (dataTableTelephones.Rows.Count == 1)
             {
-                tel1.Text = dataTable.Rows[0]["Telefono"].ToString();
+                tel1.Text = dataTableTelephones.Rows[0]["Telefono"].ToString();
             }
 
         }
-        public int probarProcedimientoAlmacenado(String fecha)
+        public int updatePlayerInformaction(List<String> args)
         {
-            DataAccess.storedProcData datos =new DataAccess.storedProcData();
-            datos.storedProcParam = "@fecha";
-            datos.storedProcParamType = SqlDbType.Date;
-            datos.userParams = fecha;
+            if (dataTableTelephones.Rows.Count == 2)
+            {
+                //"@ViejoTelefono1Jugador"
+                args.Add(dataTableTelephones.Rows[0]["Telefono"].ToString());
+                //"@ViejoTelefono2Jugador"
+                args.Add(dataTableTelephones.Rows[1]["Telefono"].ToString());
 
+            }
+            else if (dataTableTelephones.Rows.Count == 1)
+            {
+                //"@ViejoTelefono1Jugador"
+                args.Add(dataTableTelephones.Rows[0]["Telefono"].ToString());
+                //"@ViejoTelefono2Jugador"
+                args.Add("");
+            }
+            else
+            {
+                //Se estan agregando nuevos telefonos, hay que insertarlos con un 
+                //procedimiento almacenado
+            }
+
+            String[] procParams =
+              {
+              "@NuevaCedJugador"
+              ,"@ViejaCedJugador"
+              ,"@Edad"
+              ,"@Sexo"
+              ,"@FechaNacimiento"
+              ,"@NuevaCedEncargado"
+              ,"@ViejaCedEncargado"
+              ,"@FechaIngreso"
+              ,"@NombreJug"
+              ,"@Apellido1Jug"
+              ,"@Apellido2Jug"
+              ,"@NombreEncargado"
+              ,"@Apellido1Encar"
+              ,"@Apellido2Encar"
+              ,"@NomEscuela"
+              ,"@Nivel"
+              ,"@NuevoTelefono1Jugador"
+              ,"@NuevoTelefono2Jugador"
+              ,"@ViejoTelefono1Jugador"
+              ,"@ViejoTelefono2Jugador"
+             };
+            SqlDbType[] dataTypes =
+            {
+                SqlDbType.Char
+                ,SqlDbType.Char
+                ,SqlDbType.TinyInt
+                ,SqlDbType.Char
+                ,SqlDbType.Date
+                ,SqlDbType.Char
+                ,SqlDbType.Char
+                ,SqlDbType.Date
+                ,SqlDbType.VarChar
+                ,SqlDbType.VarChar
+                ,SqlDbType.VarChar
+                ,SqlDbType.VarChar
+                ,SqlDbType.VarChar
+                ,SqlDbType.VarChar
+                ,SqlDbType.VarChar
+                ,SqlDbType.TinyInt
+                ,SqlDbType.VarChar
+                ,SqlDbType.VarChar
+                ,SqlDbType.VarChar
+                ,SqlDbType.VarChar
+            };
+            /*Se declara la estructura para los parámetros*/
             List<DataAccess.storedProcData> parameters = new List<DataAccess.storedProcData>();
-            parameters.Add(datos);
+            DataAccess.storedProcData paramStruct;
 
-            return dataAccess.executeStoreProcedure(parameters, "fechaNacimientoGeneral");      
+            /*Se llena la estrucutra con los parámetros*/
+            for (int index = 0; index < args.Count; ++index)
+            {
+                paramStruct = new DataAccess.storedProcData();
+                paramStruct.storedProcParam = procParams[index];
+                paramStruct.storedProcParamType = dataTypes[index];
+                paramStruct.userParams = args[index];
+                //MessageBox.Show("Parametro proc: " + procParams[index] +  ", Tipo: " + dataTypes[index].ToString() + ", Valor otorgado: " + args[index]);
+                parameters.Add(paramStruct);
+            }
+
+            return dataAccess.executeStoreProcedure(parameters, "actualizarJugador");
         }
     }
 }
