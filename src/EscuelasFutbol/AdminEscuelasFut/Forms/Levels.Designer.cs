@@ -126,6 +126,7 @@
             this.dgtvLevelInfo.Name = "dgtvLevelInfo";
             this.dgtvLevelInfo.Size = new System.Drawing.Size(751, 359);
             this.dgtvLevelInfo.TabIndex = 9;
+            this.dgtvLevelInfo.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgtvLevelInfo_CellMouseDoubleClick);
             // 
             // txbEdadFin
             // 
@@ -134,7 +135,7 @@
             this.txbEdadFin.MaxLength = 2;
             this.txbEdadFin.Name = "txbEdadFin";
             this.txbEdadFin.Size = new System.Drawing.Size(611, 22);
-            this.txbEdadFin.TabIndex = 10;
+            this.txbEdadFin.TabIndex = 3;
             this.txbEdadFin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbEdadFin_KeyPress);
             // 
             // txbEdadInicio
@@ -144,7 +145,7 @@
             this.txbEdadInicio.MaxLength = 2;
             this.txbEdadInicio.Name = "txbEdadInicio";
             this.txbEdadInicio.Size = new System.Drawing.Size(611, 22);
-            this.txbEdadInicio.TabIndex = 11;
+            this.txbEdadInicio.TabIndex = 2;
             this.txbEdadInicio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbEdadInicio_KeyPress);
             // 
             // txbNivel
@@ -154,7 +155,7 @@
             this.txbNivel.MaxLength = 2;
             this.txbNivel.Name = "txbNivel";
             this.txbNivel.Size = new System.Drawing.Size(611, 22);
-            this.txbNivel.TabIndex = 12;
+            this.txbNivel.TabIndex = 1;
             this.txbNivel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbNivel_KeyPress);
             // 
             // groupBox1
@@ -186,7 +187,7 @@
             this.btnConsultar.Margin = new System.Windows.Forms.Padding(4);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(100, 28);
-            this.btnConsultar.TabIndex = 24;
+            this.btnConsultar.TabIndex = 6;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
@@ -203,9 +204,10 @@
             this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(100, 28);
-            this.btnRegistrar.TabIndex = 21;
+            this.btnRegistrar.TabIndex = 4;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // btnActualizar
             // 
@@ -219,7 +221,7 @@
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(100, 28);
-            this.btnActualizar.TabIndex = 22;
+            this.btnActualizar.TabIndex = 5;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
             // 
@@ -235,9 +237,10 @@
             this.btnBorrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(100, 28);
-            this.btnBorrar.TabIndex = 23;
+            this.btnBorrar.TabIndex = 7;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = false;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // Levels
             // 

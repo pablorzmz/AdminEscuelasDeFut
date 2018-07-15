@@ -43,5 +43,68 @@ namespace AdminEscuelasFut
             /*1*/parameters.Add(txtTelephoneAdministerInstallation.Text);
             headQuartersController.fillHeadQuartersDataGridView(dgvAdministerInstallation, parameters);
         }
+
+
+        private void dgvAdministerInstallation_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            cleanInput();
+            if (e.RowIndex >= 0 && e.RowIndex < dgvAdministerInstallation.RowCount - 1)
+            {
+                List<String> buffer = new List<string>();
+                Utilities.readCurrentRowFromDataGridView(dgvAdministerInstallation, e.RowIndex, dgvAdministerInstallation.ColumnCount, buffer);
+                txtAddressAdministerInstallation.Text = buffer[0];
+                txtTelephoneAdministerInstallation.Text = buffer[1];
+
+            }
+        }
+
+        private void cleanInput()
+        {
+            txtAddressAdministerInstallation.Text = "";
+            txtTelephoneAdministerInstallation.Text = "";
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            if (allFieldsFilled())
+            {
+                int error = headQuartersController.insertHeadQuarter(txtAddressAdministerInstallation.Text, txtTelephoneAdministerInstallation.Text);
+                Console.WriteLine("Se retorna insert " + error);
+                headQuartersController.fillHeadQuartersDataGridView(dgvAdministerInstallation, null);
+            }
+            else
+            {
+                //mensaje de advertencia para que rellene los campos
+            }
+            
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            if (txtAddressAdministerInstallation.Text != "")
+            {
+                int error = headQuartersController.deleteHeadQuarter(txtAddressAdministerInstallation.Text);
+                Console.WriteLine("Se retorna delete " + error);
+                headQuartersController.fillHeadQuartersDataGridView(dgvAdministerInstallation, null);
+                cleanInput();
+            }
+            else
+            {
+                //mensaje de error
+                //Diciendo que hacen falta los niveles
+            }
+        }
+
+        private bool allFieldsFilled()
+        {
+            if (txtAddressAdministerInstallation.Text != "")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

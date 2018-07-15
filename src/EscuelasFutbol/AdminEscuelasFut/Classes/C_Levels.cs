@@ -12,11 +12,17 @@ namespace AdminEscuelasFut.Classes
     {
         private DataAccess dataAccess;
 
+        /**
+         * class constructor
+         **/
         public C_Levels()
         {
             dataAccess = new DataAccess();
         }
-     
+
+        /**
+         * Fill the DataGridView with the data from the table of levels of the database.
+         **/
         public void fillLevelsDataGridView(DataGridView dgtvLevelInfo, List<String> parameters)
         {
             const String loadDefaultQuery = "SELECT * FROM Nivel";
@@ -43,11 +49,58 @@ namespace AdminEscuelasFut.Classes
 
             BindingSource bindingSource = new BindingSource();
             bindingSource.DataSource = dataTable;
+            
 
-            //dgtvLevelInfo.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dgtvLevelInfo.DataSource = bindingSource;
             dgtvLevelInfo.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgtvLevelInfo.ReadOnly = true;
+        }
+
+
+        /**
+         * Insert one level from the database
+         **/
+        public int insertLevel(String numLevel, String minimumAge, String maximumAge)
+        {
+            DataAccess.storedProcData datos = new DataAccess.storedProcData();
+            List<DataAccess.storedProcData> parameters = new List<DataAccess.storedProcData>();
+
+            //First parameter
+            datos.storedProcParam = "@numero";
+            datos.storedProcParamType = SqlDbType.TinyInt;
+            datos.userParams = numLevel;
+            parameters.Add(datos);
+
+            //Second parameter
+            datos.storedProcParam = "@edadInicio";
+            datos.storedProcParamType = SqlDbType.TinyInt;
+            datos.userParams = minimumAge;
+            parameters.Add(datos);
+
+            //Third parameter
+            datos.storedProcParam = "@edadFin";
+            datos.storedProcParamType = SqlDbType.TinyInt;
+            datos.userParams = maximumAge;
+            parameters.Add(datos);
+
+            return dataAccess.executeStoreProcedure(parameters, "insertarNivel");
+        }
+
+        /**
+         * Remove one level from the database
+         **/
+        public int deleteLevel(String numLevel)
+        {
+            DataAccess.storedProcData datos = new DataAccess.storedProcData();
+            List<DataAccess.storedProcData> parameters = new List<DataAccess.storedProcData>();
+
+            //First parameter
+            datos.storedProcParam = "@numero";
+            datos.storedProcParamType = SqlDbType.TinyInt;
+            datos.userParams = numLevel;
+            parameters.Add(datos);
+
+            return dataAccess.executeStoreProcedure(parameters, "eliminarNivel");
         }
     }
 }

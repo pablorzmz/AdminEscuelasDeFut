@@ -46,6 +46,10 @@ namespace AdminEscuelasFut
             Utilities.validateNumbers(sender, e, false);
         }
 
+        /**
+         * 
+         * 
+         **/
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             List<String> parameters = new List<String>();
@@ -53,6 +57,75 @@ namespace AdminEscuelasFut
             /*1*/parameters.Add(txbEdadInicio.Text);
             /*2*/parameters.Add(txbEdadFin.Text);
             levelController.fillLevelsDataGridView(dgtvLevelInfo, parameters);
+        }
+        
+       
+        
+        private void dgtvLevelInfo_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            cleanInput();
+            if (e.RowIndex >= 0 && e.RowIndex < dgtvLevelInfo.RowCount - 1)
+            {
+                List<String> buffer = new List<string>();
+                Utilities.readCurrentRowFromDataGridView(dgtvLevelInfo, e.RowIndex, dgtvLevelInfo.ColumnCount, buffer);
+                txbNivel.Text = buffer[0];
+                txbEdadInicio.Text = buffer[1];
+                txbEdadFin.Text = buffer[2];
+
+            }
+        }
+
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            if (allFieldsFilled())
+            {
+                int error = levelController.insertLevel(txbNivel.Text, txbEdadInicio.Text, txbEdadFin.Text);
+                Console.WriteLine("Se retorna insert " + error);
+                levelController.fillLevelsDataGridView(dgtvLevelInfo, null);
+            }
+            else
+            {
+                //mensaje de advertencia para que llene los campos
+            }
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            if( txbNivel.Text != "")
+            {
+                int error = levelController.deleteLevel(txbNivel.Text);
+                Console.WriteLine("Se retorna delete " + error);
+                levelController.fillLevelsDataGridView(dgtvLevelInfo, null);
+                cleanInput();
+            }
+            else
+            {
+                //mensaje de error
+                //Diciendo que hacen falta los niveles
+            }
+        }
+
+        /**
+         * clean all text fields
+         **/
+        private void cleanInput()
+        {
+            txbNivel.Text = "";
+            txbEdadInicio.Text = "";
+            txbEdadFin.Text = "";
+        }
+
+        private bool allFieldsFilled()
+        {
+            if(txbNivel.Text != "" && txbEdadInicio.Text != "" && txbEdadFin.Text != "")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

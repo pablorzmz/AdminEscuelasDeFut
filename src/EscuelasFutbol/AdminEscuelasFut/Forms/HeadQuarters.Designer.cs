@@ -93,7 +93,8 @@
             this.dgvAdministerInstallation.Name = "dgvAdministerInstallation";
             this.dgvAdministerInstallation.RowTemplate.Height = 24;
             this.dgvAdministerInstallation.Size = new System.Drawing.Size(631, 215);
-            this.dgvAdministerInstallation.TabIndex = 38;
+            this.dgvAdministerInstallation.TabIndex = 7;
+            this.dgvAdministerInstallation.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvAdministerInstallation_CellMouseDoubleClick);
             // 
             // txtAddressAdministerInstallation
             // 
@@ -102,7 +103,7 @@
             this.txtAddressAdministerInstallation.MaxLength = 30;
             this.txtAddressAdministerInstallation.Name = "txtAddressAdministerInstallation";
             this.txtAddressAdministerInstallation.Size = new System.Drawing.Size(511, 22);
-            this.txtAddressAdministerInstallation.TabIndex = 43;
+            this.txtAddressAdministerInstallation.TabIndex = 1;
             this.txtAddressAdministerInstallation.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddressAdministerInstallation_KeyPress);
             // 
             // txtTelephoneAdministerInstallation
@@ -112,7 +113,7 @@
             this.txtTelephoneAdministerInstallation.MaxLength = 8;
             this.txtTelephoneAdministerInstallation.Name = "txtTelephoneAdministerInstallation";
             this.txtTelephoneAdministerInstallation.Size = new System.Drawing.Size(511, 22);
-            this.txtTelephoneAdministerInstallation.TabIndex = 44;
+            this.txtTelephoneAdministerInstallation.TabIndex = 1;
             // 
             // label1
             // 
@@ -159,7 +160,7 @@
             this.btnConsultar.Margin = new System.Windows.Forms.Padding(4);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(100, 28);
-            this.btnConsultar.TabIndex = 51;
+            this.btnConsultar.TabIndex = 5;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
@@ -176,9 +177,10 @@
             this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(100, 28);
-            this.btnRegistrar.TabIndex = 48;
+            this.btnRegistrar.TabIndex = 3;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // btnActualizar
             // 
@@ -192,7 +194,7 @@
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(100, 28);
-            this.btnActualizar.TabIndex = 49;
+            this.btnActualizar.TabIndex = 4;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
             // 
@@ -208,9 +210,10 @@
             this.btnBorrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(100, 28);
-            this.btnBorrar.TabIndex = 50;
+            this.btnBorrar.TabIndex = 6;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = false;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // HeadQuarters
             // 

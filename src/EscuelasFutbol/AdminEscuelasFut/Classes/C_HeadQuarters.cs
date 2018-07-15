@@ -46,5 +46,39 @@ namespace AdminEscuelasFut.Classes
             dgtvHeadQuarterInfo.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgtvHeadQuarterInfo.ReadOnly = true;
         }
+
+        public int insertHeadQuarter(String address, String telephone)
+        {
+            DataAccess.storedProcData datos = new DataAccess.storedProcData();
+            List<DataAccess.storedProcData> parameters = new List<DataAccess.storedProcData>();
+
+            //First parameter
+            datos.storedProcParam = "@Direccion";
+            datos.storedProcParamType = SqlDbType.VarChar;
+            datos.userParams = address;
+            parameters.Add(datos);
+
+            //Second parameter
+            datos.storedProcParam = "@Telefono";
+            datos.storedProcParamType = SqlDbType.VarChar;
+            datos.userParams = telephone;
+            parameters.Add(datos);
+
+            return dataAccess.executeStoreProcedure(parameters, "Registrar_Instalacion");
+        }
+
+        public int deleteHeadQuarter(String address)
+        {
+            DataAccess.storedProcData datos = new DataAccess.storedProcData();
+            List<DataAccess.storedProcData> parameters = new List<DataAccess.storedProcData>();
+
+            //First parameter
+            datos.storedProcParam = "@direccion";
+            datos.storedProcParamType = SqlDbType.VarChar;
+            datos.userParams = address;
+            parameters.Add(datos);
+
+            return dataAccess.executeStoreProcedure(parameters, "eliminarInstalacion");
+        }
     }
 }
