@@ -11,8 +11,8 @@ namespace AdminEscuelasFut
 {
     class Connection
     {
-        private const String user = "B67839";
-        private const String password = "LGerald1497.";
+        private const String user = "";
+        private const String password = "";
         private const String database = "DB_ERROR404";
         private const String connectionString = "Data Source=10.1.4.55;User ID=" + user + ";Password=" + password + "; Initial Catalog=" + database + "; Integrated Security=false";
         private SqlConnection sqlConnection;
