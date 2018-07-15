@@ -117,6 +117,7 @@ namespace AdminEscuelasFut
 
         private void dgtvPlayersInfo_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            cleanInput();
             if (e.RowIndex >= 0 && e.RowIndex < dgtvPlayersInfo.RowCount -1)
             {
                 List<String> buffer = new List<string>();
@@ -154,6 +155,7 @@ namespace AdminEscuelasFut
                 }
 
                 cboNiveles.SelectedIndex = nivel;
+                playerController.fillPlayerTelephoneInfo(buffer[0], txbTelefonoJug1, txbTelefonoJug2);
             }
         }
 
@@ -181,6 +183,19 @@ namespace AdminEscuelasFut
         {
             playerController.probarProcedimientoAlmacenado( dtpFechaIngreso.Value.ToString("yyyy-MM-dd") );
             playerController.fillPlayerDataGridView(dgtvPlayersInfo, null);
+        }
+        private void cleanInput()
+        {
+            txtCedulaEncargado.Text = "";
+            txbNombre.Text = "";
+            txbPrimerApellidoJug.Text = "";
+            txbSegundoApellidoJug.Text = "";
+            txbTelefonoJug1.Text = "";
+            txbTelefonoJug2.Text = "";
+            txbNombreEncargado.Text = "";
+            txbPrimerApellidoEncargado.Text = "";
+            txbSegundoApellidoEncargado.Text = "";
+            txbTelefonoDEncargado.Text = "";
         }
     }
 }

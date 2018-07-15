@@ -56,6 +56,27 @@ namespace AdminEscuelasFut
             dtgvPlayers.ReadOnly = true;
         }
 
+        public void fillPlayerTelephoneInfo( String cedJugador, TextBox tel1, TextBox tel2 )
+        {
+            String queryTelephoneNumbers = 
+                "SELECT " +
+                "   Telefono " +
+                "FROM " +
+                "   TelefonoP " +
+                "WHERE Cedula = '" + cedJugador  +"';";
+            DataTable dataTable = dataAccess.getTableFromQuery(queryTelephoneNumbers);
+
+            if (dataTable.Rows.Count == 2)
+            {
+                tel1.Text = dataTable.Rows[0]["Telefono"].ToString();
+                tel2.Text = dataTable.Rows[1]["Telefono"].ToString();
+            }
+            else if (dataTable.Rows.Count == 1)
+            {
+                tel1.Text = dataTable.Rows[0]["Telefono"].ToString();
+            }
+
+        }
         public int probarProcedimientoAlmacenado(String fecha)
         {
             DataAccess.storedProcData datos =new DataAccess.storedProcData();
