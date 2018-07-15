@@ -13,15 +13,17 @@ namespace AdminEscuelasFut
     public partial class Pays : Form
     {
         private  PlayerPaysRegister playerPaysRegister;
+        private C_Pays paysController;
         private  PlayerPaysQuery playerPaysQuery;
         public Pays()
         {
             InitializeComponent();
+            paysController = new C_Pays();
         }
 
         private void Pays_Load(object sender, EventArgs e)
         {
- 
+            paysController.fillSchoolsComboBox(this.cboEscuelas);
         }
 
         public  void showPlayersPaysRegister()
@@ -130,6 +132,29 @@ namespace AdminEscuelasFut
         private void txtReceiptNumberRPaymentPlayer_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.validateNumbers(sender, e, false);
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            List<String> parameters = new List<String>();
+            /*0*/ parameters.Add(txtIDRPaymentPlayer.Text);
+            /*1*/ parameters.Add(txtReceiptNumberRPaymentPlayer.Text);
+            /*2*/ parameters.Add(cboEscuelas.SelectedItem.ToString());
+            paysController.fillPaysDataGridView(dgvPagosJugador, parameters);
+        }
+
+        private void dgvPagosJugador_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dgvPagosJugador.RowCount - 1)
+            {
+                List<String> buffer = new List<string>();
+                Utilities.readCurrentRowFromDataGridView(dgvPagosJugador, e.RowIndex, dgvPagosJugador.ColumnCount, buffer);
+                txtIDRPaymentPlayer.Text = buffer[1];
+                txtReceiptNumberRPaymentPlayer.Text = buffer[2];
+                txtNameRPaymentPlayer.Text = buffer[0];
+                txtAmountRPaymentPlayer.Text = buffer[4];
+                cboEscuelas.SelectedItem = buffer[6];
+            }
         }
     }
 }

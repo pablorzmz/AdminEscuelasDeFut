@@ -40,6 +40,8 @@
             this.dgvPagosJugador = new System.Windows.Forms.DataGridView();
             this.btnRegisterRPaymentPlayer = new System.Windows.Forms.Button();
             this.goBoxInfoPagosJugador = new System.Windows.Forms.GroupBox();
+            this.cboEscuelas = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dtpFechaMatricula = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaFinMensualidad = new System.Windows.Forms.DateTimePicker();
@@ -58,8 +60,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.cboEscuelas = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.menPays.SuspendLayout();
             this.tabCPagosGeneral.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -139,7 +139,7 @@
             this.tabPage1.Controls.Add(this.goBoxInfoPagosJugador);
             this.tabPage1.Location = new System.Drawing.Point(154, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(646, 482);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Pagos jugadores";
@@ -158,17 +158,15 @@
             this.btnConsultar.TabIndex = 11;
             this.btnConsultar.Text = "Consultar pago";
             this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // dgvPagosJugador
             // 
-            this.dgvPagosJugador.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.dgvPagosJugador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPagosJugador.Location = new System.Drawing.Point(7, 218);
-            this.dgvPagosJugador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvPagosJugador.Location = new System.Drawing.Point(7, 224);
             this.dgvPagosJugador.Name = "dgvPagosJugador";
-            this.dgvPagosJugador.RowTemplate.Height = 24;
-            this.dgvPagosJugador.Size = new System.Drawing.Size(637, 322);
-            this.dgvPagosJugador.TabIndex = 73;
+            this.dgvPagosJugador.Size = new System.Drawing.Size(633, 250);
+            this.dgvPagosJugador.TabIndex = 12;
+            this.dgvPagosJugador.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPagosJugador_CellMouseClick);
             // 
             // btnRegisterRPaymentPlayer
             // 
@@ -211,6 +209,24 @@
             this.goBoxInfoPagosJugador.TabStop = false;
             this.goBoxInfoPagosJugador.Text = "Datos del pago";
             // 
+            // cboEscuelas
+            // 
+            this.cboEscuelas.BackColor = System.Drawing.Color.AliceBlue;
+            this.cboEscuelas.FormattingEnabled = true;
+            this.cboEscuelas.Location = new System.Drawing.Point(396, 94);
+            this.cboEscuelas.Name = "cboEscuelas";
+            this.cboEscuelas.Size = new System.Drawing.Size(231, 21);
+            this.cboEscuelas.TabIndex = 64;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(350, 99);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(45, 13);
+            this.label6.TabIndex = 63;
+            this.label6.Text = "Escuela";
+            // 
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -231,7 +247,7 @@
             this.dtpFechaMatricula.Enabled = false;
             this.dtpFechaMatricula.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaMatricula.Location = new System.Drawing.Point(97, 119);
-            this.dtpFechaMatricula.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaMatricula.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaMatricula.Name = "dtpFechaMatricula";
             this.dtpFechaMatricula.Size = new System.Drawing.Size(93, 20);
             this.dtpFechaMatricula.TabIndex = 10;
@@ -241,17 +257,18 @@
             this.dtpFechaFinMensualidad.Enabled = false;
             this.dtpFechaFinMensualidad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaFinMensualidad.Location = new System.Drawing.Point(241, 88);
-            this.dtpFechaFinMensualidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaFinMensualidad.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaFinMensualidad.Name = "dtpFechaFinMensualidad";
             this.dtpFechaFinMensualidad.Size = new System.Drawing.Size(96, 20);
             this.dtpFechaFinMensualidad.TabIndex = 8;
             // 
             // dtpFechaInicMensualidad
             // 
+            this.dtpFechaInicMensualidad.CustomFormat = "";
             this.dtpFechaInicMensualidad.Enabled = false;
             this.dtpFechaInicMensualidad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaInicMensualidad.Location = new System.Drawing.Point(97, 88);
-            this.dtpFechaInicMensualidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFechaInicMensualidad.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaInicMensualidad.Name = "dtpFechaInicMensualidad";
             this.dtpFechaInicMensualidad.Size = new System.Drawing.Size(93, 20);
             this.dtpFechaInicMensualidad.TabIndex = 7;
@@ -259,7 +276,7 @@
             // txtIDRPaymentPlayer
             // 
             this.txtIDRPaymentPlayer.Location = new System.Drawing.Point(394, 24);
-            this.txtIDRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIDRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
             this.txtIDRPaymentPlayer.MaxLength = 9;
             this.txtIDRPaymentPlayer.Name = "txtIDRPaymentPlayer";
             this.txtIDRPaymentPlayer.Size = new System.Drawing.Size(126, 20);
@@ -277,18 +294,16 @@
             // 
             // txtNameRPaymentPlayer
             // 
-            this.txtNameRPaymentPlayer.Location = new System.Drawing.Point(68, 22);
-            this.txtNameRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNameRPaymentPlayer.Location = new System.Drawing.Point(68, 24);
             this.txtNameRPaymentPlayer.Name = "txtNameRPaymentPlayer";
-            this.txtNameRPaymentPlayer.Size = new System.Drawing.Size(269, 20);
-            this.txtNameRPaymentPlayer.TabIndex = 1;
-            this.txtNameRPaymentPlayer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameRPaymentPlayer_KeyPress);
+            this.txtNameRPaymentPlayer.Size = new System.Drawing.Size(100, 20);
+            this.txtNameRPaymentPlayer.TabIndex = 65;
             // 
             // ckbxMonthlyRPaymentPlayer
             // 
             this.ckbxMonthlyRPaymentPlayer.AutoSize = true;
             this.ckbxMonthlyRPaymentPlayer.Location = new System.Drawing.Point(8, 91);
-            this.ckbxMonthlyRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ckbxMonthlyRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
             this.ckbxMonthlyRPaymentPlayer.Name = "ckbxMonthlyRPaymentPlayer";
             this.ckbxMonthlyRPaymentPlayer.Size = new System.Drawing.Size(86, 17);
             this.ckbxMonthlyRPaymentPlayer.TabIndex = 6;
@@ -310,7 +325,7 @@
             // 
             this.chbxAnnuityRPaymentPlayer.AutoSize = true;
             this.chbxAnnuityRPaymentPlayer.Location = new System.Drawing.Point(8, 122);
-            this.chbxAnnuityRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chbxAnnuityRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
             this.chbxAnnuityRPaymentPlayer.Name = "chbxAnnuityRPaymentPlayer";
             this.chbxAnnuityRPaymentPlayer.Size = new System.Drawing.Size(71, 17);
             this.chbxAnnuityRPaymentPlayer.TabIndex = 9;
@@ -341,7 +356,7 @@
             // txtReceiptNumberRPaymentPlayer
             // 
             this.txtReceiptNumberRPaymentPlayer.Location = new System.Drawing.Point(68, 55);
-            this.txtReceiptNumberRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtReceiptNumberRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
             this.txtReceiptNumberRPaymentPlayer.MaxLength = 5;
             this.txtReceiptNumberRPaymentPlayer.Name = "txtReceiptNumberRPaymentPlayer";
             this.txtReceiptNumberRPaymentPlayer.Size = new System.Drawing.Size(269, 20);
@@ -351,7 +366,7 @@
             // txtAmountRPaymentPlayer
             // 
             this.txtAmountRPaymentPlayer.Location = new System.Drawing.Point(394, 55);
-            this.txtAmountRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAmountRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
             this.txtAmountRPaymentPlayer.Name = "txtAmountRPaymentPlayer";
             this.txtAmountRPaymentPlayer.Size = new System.Drawing.Size(232, 20);
             this.txtAmountRPaymentPlayer.TabIndex = 5;
@@ -371,8 +386,8 @@
             // 
             this.tabPage2.Location = new System.Drawing.Point(154, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage2.Size = new System.Drawing.Size(646, 484);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(646, 482);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Pagos instalaciones";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -381,8 +396,8 @@
             // 
             this.tabPage3.Location = new System.Drawing.Point(154, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage3.Size = new System.Drawing.Size(646, 484);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(646, 482);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Pagos entrenadores";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -391,28 +406,10 @@
             // 
             this.tabPage4.Location = new System.Drawing.Point(154, 4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(646, 484);
+            this.tabPage4.Size = new System.Drawing.Size(646, 482);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Pagos equipamientos";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // cboEscuelas
-            // 
-            this.cboEscuelas.BackColor = System.Drawing.Color.AliceBlue;
-            this.cboEscuelas.FormattingEnabled = true;
-            this.cboEscuelas.Location = new System.Drawing.Point(396, 94);
-            this.cboEscuelas.Name = "cboEscuelas";
-            this.cboEscuelas.Size = new System.Drawing.Size(231, 21);
-            this.cboEscuelas.TabIndex = 64;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(350, 99);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 13);
-            this.label6.TabIndex = 63;
-            this.label6.Text = "Escuela";
             // 
             // Pays
             // 
