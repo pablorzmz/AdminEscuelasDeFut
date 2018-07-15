@@ -39,14 +39,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dgvPlayerTraining = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboFechasEntrenamientos = new System.Windows.Forms.ComboBox();
+            this.cboEscuelas = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
-            this.cboEscuelas = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cboFechasEntrenamientos = new System.Windows.Forms.ComboBox();
             this.menEntrenJugadores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlayerTraining)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -89,7 +89,7 @@
             // txtIDPlayerTraining
             // 
             this.txtIDPlayerTraining.Location = new System.Drawing.Point(53, 28);
-            this.txtIDPlayerTraining.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIDPlayerTraining.Margin = new System.Windows.Forms.Padding(2);
             this.txtIDPlayerTraining.MaxLength = 9;
             this.txtIDPlayerTraining.Name = "txtIDPlayerTraining";
             this.txtIDPlayerTraining.Size = new System.Drawing.Size(367, 20);
@@ -121,7 +121,6 @@
             // 
             this.dgvPlayerTraining.AllowUserToAddRows = false;
             this.dgvPlayerTraining.AllowUserToDeleteRows = false;
-            this.dgvPlayerTraining.AllowUserToOrderColumns = true;
             this.dgvPlayerTraining.AllowUserToResizeColumns = false;
             this.dgvPlayerTraining.AllowUserToResizeRows = false;
             this.dgvPlayerTraining.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -135,7 +134,7 @@
             this.dgvPlayerTraining.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPlayerTraining.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvPlayerTraining.Location = new System.Drawing.Point(0, 195);
-            this.dgvPlayerTraining.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvPlayerTraining.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPlayerTraining.Name = "dgvPlayerTraining";
             this.dgvPlayerTraining.RowTemplate.Height = 24;
             this.dgvPlayerTraining.Size = new System.Drawing.Size(546, 187);
@@ -156,6 +155,33 @@
             this.groupBox1.TabIndex = 40;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información de entrenamientos de jugadores";
+            // 
+            // cboFechasEntrenamientos
+            // 
+            this.cboFechasEntrenamientos.BackColor = System.Drawing.Color.AliceBlue;
+            this.cboFechasEntrenamientos.FormattingEnabled = true;
+            this.cboFechasEntrenamientos.Location = new System.Drawing.Point(53, 89);
+            this.cboFechasEntrenamientos.Name = "cboFechasEntrenamientos";
+            this.cboFechasEntrenamientos.Size = new System.Drawing.Size(473, 21);
+            this.cboFechasEntrenamientos.TabIndex = 76;
+            // 
+            // cboEscuelas
+            // 
+            this.cboEscuelas.BackColor = System.Drawing.Color.AliceBlue;
+            this.cboEscuelas.FormattingEnabled = true;
+            this.cboEscuelas.Location = new System.Drawing.Point(53, 56);
+            this.cboEscuelas.Name = "cboEscuelas";
+            this.cboEscuelas.Size = new System.Drawing.Size(473, 21);
+            this.cboEscuelas.TabIndex = 75;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 59);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.TabIndex = 74;
+            this.label3.Text = "Escuela";
             // 
             // btnBuscar
             // 
@@ -186,6 +212,7 @@
             this.btnConsultar.TabIndex = 44;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // btnRegistrar
             // 
@@ -232,33 +259,6 @@
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = false;
             // 
-            // cboEscuelas
-            // 
-            this.cboEscuelas.BackColor = System.Drawing.Color.AliceBlue;
-            this.cboEscuelas.FormattingEnabled = true;
-            this.cboEscuelas.Location = new System.Drawing.Point(53, 56);
-            this.cboEscuelas.Name = "cboEscuelas";
-            this.cboEscuelas.Size = new System.Drawing.Size(473, 21);
-            this.cboEscuelas.TabIndex = 75;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 59);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 13);
-            this.label3.TabIndex = 74;
-            this.label3.Text = "Escuela";
-            // 
-            // cboFechasEntrenamientos
-            // 
-            this.cboFechasEntrenamientos.BackColor = System.Drawing.Color.AliceBlue;
-            this.cboFechasEntrenamientos.FormattingEnabled = true;
-            this.cboFechasEntrenamientos.Location = new System.Drawing.Point(53, 89);
-            this.cboFechasEntrenamientos.Name = "cboFechasEntrenamientos";
-            this.cboFechasEntrenamientos.Size = new System.Drawing.Size(473, 21);
-            this.cboFechasEntrenamientos.TabIndex = 76;
-            // 
             // PlayerTrainnings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,7 +276,7 @@
             this.MaximizeBox = false;
             this.Name = "PlayerTrainnings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Entrenamientos de jugadores";
+            this.Text = "Entrenamientos del Jugador";
             this.Load += new System.EventHandler(this.PlayerTrainnings_Load);
             this.menEntrenJugadores.ResumeLayout(false);
             this.menEntrenJugadores.PerformLayout();

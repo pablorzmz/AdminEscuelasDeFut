@@ -57,5 +57,29 @@ namespace AdminEscuelasFut
         {
             this.Close();
         }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            if (cboFechasEntrenamientos.SelectedIndex != 0)
+            {
+                List<String> parameters = new List<string>();
+                if (txtIDPlayerTraining.Text == "")
+                {
+                    parameters.Add("-1");
+                    parameters.Add("");
+                    parameters.Add("");
+                    playerTrainingController.fillPlayerDataGridView(dgvPlayerTraining, null);
+                }                
+                else
+                {
+                    parameters.Add(txtIDPlayerTraining.Text);
+                    DateTime t1 = Convert.ToDateTime(cboFechasEntrenamientos.SelectedItem.ToString());
+                    parameters.Add(t1.ToString("yyyy-MM-dd"));
+                    parameters.Add(cboEscuelas.SelectedItem.ToString());
+                    playerTrainingController.fillPlayerDataGridView(dgvPlayerTraining, parameters);
+
+                }                
+            }            
+        }
     }
 }

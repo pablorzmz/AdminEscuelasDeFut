@@ -23,8 +23,8 @@ namespace AdminEscuelasFut
             {
                 filterQuery =
                 "SELECT * FROM VerEntrenamientosJugador WHERE " +
-                    "([Cédula] like '%" + parameters[0] + "%' OR " +
-                    "[Fecha] like '%" + parameters[1] + "%') AND " +
+                    "[Cédula] like '%" + parameters[0] + "%' AND " +
+                    "[Fecha] = '" + parameters[1] + "' AND " +
                     "[Escuela] = '" + parameters[2] + "'" +
                     "";
             }

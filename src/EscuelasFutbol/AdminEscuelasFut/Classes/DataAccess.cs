@@ -72,7 +72,7 @@ namespace AdminEscuelasFut
         }
         public struct storedProcData
         {
-            public String storedProcParam;            
+            public String storedProcParam;
             public SqlDbType storedProcParamType;
             public String userParams;
         }
