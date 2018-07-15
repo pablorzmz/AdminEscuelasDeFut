@@ -23,9 +23,9 @@ namespace AdminEscuelasFut
             {
                 filterQuery =
                 "SELECT * FROM VerEntrenamientosJugador WHERE " +
-                    "[Cédula] like '%" + parameters[0] + "%' AND " +
-                    "[Fecha] = '" + parameters[1] + "' AND " +
-                    "[Escuela] = '" + parameters[2] + "'" +
+                    "([Cédula] like '%" + parameters[0] + "%' AND " +
+                    "[Fecha] like '%" + parameters[1] + "%') AND " +
+                    "[Escuela] like '%" + parameters[2] + "%'" +
                     "";
             }
             DataTable dataTable = null;
@@ -54,6 +54,10 @@ namespace AdminEscuelasFut
         public void fillComboBoxFechasEntren(ComboBox cboFechasEntren)
         {
             dataAccess.fillComboBox(cboFechasEntren, "SELECT Fecha FROM Entrenamiento ORDER BY Fecha DESC", "Elija una Fecha");
+        }
+        public void fillComboBoxCedula( ComboBox cboCedulas )
+        {
+            dataAccess.fillComboBox(cboCedulas, "SELECT CedJugador From Jugador", "Buscar cédula");
         }
     }    
 }

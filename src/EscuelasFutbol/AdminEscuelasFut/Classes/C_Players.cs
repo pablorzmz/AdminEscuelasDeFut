@@ -82,6 +82,9 @@ namespace AdminEscuelasFut
         }
         public int updatePlayerInformaction(List<String> args)
         {
+            List<DataAccess.storedProcData> newTelephones = new List<DataAccess.storedProcData>();
+            DataAccess.storedProcData param;
+
             if (dataTableTelephones.Rows.Count == 2)
             {
                 //"@ViejoTelefono1Jugador"
@@ -96,11 +99,50 @@ namespace AdminEscuelasFut
                 args.Add(dataTableTelephones.Rows[0]["Telefono"].ToString());
                 //"@ViejoTelefono2Jugador"
                 args.Add("");
+
+                param = new DataAccess.storedProcData();
+                param.storedProcParam = "@CedJugador";
+                param.storedProcParamType = SqlDbType.NVarChar;
+                param.userParams = args[0];
+                newTelephones.Add(param);
+
+                param = new DataAccess.storedProcData();
+                param.storedProcParam = "@Telefono1";
+                param.storedProcParamType = SqlDbType.NVarChar;
+                param.userParams = "-1";
+                newTelephones.Add(param);
+                
+                param = new DataAccess.storedProcData();
+                param.storedProcParam = "@Telefono2";
+                param.storedProcParamType = SqlDbType.NVarChar;
+                param.userParams = args[17];
+                newTelephones.Add(param);
+
+                dataAccess.executeStoreProcedure(newTelephones, "agregarTelefonoJugadorExistente");
             }
             else
             {
                 //Se estan agregando nuevos telefonos, hay que insertarlos con un 
                 //procedimiento almacenado
+                param = new DataAccess.storedProcData();
+                param.storedProcParam = "@CedJugador";
+                param.storedProcParamType = SqlDbType.NVarChar;
+                param.userParams = args[0];
+                newTelephones.Add(param);
+
+                param = new DataAccess.storedProcData();
+                param.storedProcParam = "@Telefono1";
+                param.storedProcParamType = SqlDbType.NVarChar;
+                param.userParams = args[16];
+                newTelephones.Add(param);
+
+                param = new DataAccess.storedProcData();
+                param.storedProcParam = "@Telefono2";
+                param.storedProcParamType = SqlDbType.NVarChar;
+                param.userParams = args[17];
+                newTelephones.Add(param);
+
+                dataAccess.executeStoreProcedure(newTelephones, "agregarTelefonoJugadorExistente");
             }
 
             String[] procParams =

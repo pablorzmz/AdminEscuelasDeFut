@@ -33,11 +33,17 @@ namespace AdminEscuelasFut
         private void PlayerTrainnings_Load(object sender, EventArgs e)
         {
             this.MinimumSize = this.Size;
-            this.MaximumSize = new Size(this.Width + 100, this.Height + 100);            
+            this.MaximumSize = new Size(this.Width + 100, this.Height + 100);
             playerTrainingController.fillComboBoxEscuelas(this.cboEscuelas);
             playerTrainingController.fillComboBoxFechasEntren(cboFechasEntrenamientos);
+            playerTrainingController.fillComboBoxCedula(this.cboCedulas);
             this.txtIDPlayerTraining.Text = this.cedula;
             this.cboEscuelas.SelectedItem = this.escuela;
+            for (int index = 1; index < cboFechasEntrenamientos.Items.Count; ++ index )
+            {
+                cboFechasEntrenamientos.Items[index] =
+                    Convert.ToDateTime(cboFechasEntrenamientos.Items[index]).ToString("dd/MM/yyyy");
+            }
             if (this.escuela == "Elija una Escuela")
             {
                 playerTrainingController.fillPlayerDataGridView(this.dgvPlayerTraining, null);
@@ -80,6 +86,25 @@ namespace AdminEscuelasFut
 
                 }                
             }            
+        }
+
+        private void cboCedulas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboCedulas.SelectedIndex != 0)
+            {
+                txtIDPlayerTraining.Text = cboCedulas.SelectedItem.ToString();
+            }
+        }
+
+        private void dgvPlayerTraining_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            List<String> buffer = new List<string>();
+            Utilities.readCurrentRowFromDataGridView(dgvPlayerTraining, e.RowIndex, dgvPlayerTraining.ColumnCount, buffer);
+            this.cboEscuelas.SelectedItem = buffer[0];
+            this.cboCedulas.SelectedItem = buffer[1];
+            this.txtIDPlayerTraining.Text = buffer[1];
+            DateTime t = Convert.ToDateTime(buffer[4]);
+            this.cboFechasEntrenamientos.SelectedItem = t.ToString("dd/MM/yyyy");
         }
     }
 }
