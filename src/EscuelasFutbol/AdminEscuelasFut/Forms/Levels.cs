@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdminEscuelasFut.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,17 @@ namespace AdminEscuelasFut
 {
     public partial class Levels : Form
     {
+        private C_Levels levelController;
+
         public Levels()
         {
             InitializeComponent();
+            levelController = new C_Levels();
         }
 
         private void Levels_Load(object sender, EventArgs e)
         {
-
+            levelController.fillLevelsDataGridView(dgtvLevelInfo, null);
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -40,6 +44,15 @@ namespace AdminEscuelasFut
         private void txbEdadFin_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.validateNumbers(sender, e, false);
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            List<String> parameters = new List<String>();
+            /*0*/parameters.Add(txbNivel.Text);
+            /*1*/parameters.Add(txbEdadInicio.Text);
+            /*2*/parameters.Add(txbEdadFin.Text);
+            levelController.fillLevelsDataGridView(dgtvLevelInfo, parameters);
         }
     }
 }

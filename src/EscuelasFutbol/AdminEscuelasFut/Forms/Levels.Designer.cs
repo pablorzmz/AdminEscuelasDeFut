@@ -36,7 +36,7 @@
             this.lbNivel = new System.Windows.Forms.Label();
             this.lbEdadFin = new System.Windows.Forms.Label();
             this.lbEdadInicio = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgtvLevelInfo = new System.Windows.Forms.DataGridView();
             this.txbEdadFin = new System.Windows.Forms.TextBox();
             this.txbEdadInicio = new System.Windows.Forms.TextBox();
             this.txbNivel = new System.Windows.Forms.TextBox();
@@ -46,7 +46,7 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.menLevels.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgtvLevelInfo)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,15 +116,16 @@
             this.lbEdadInicio.TabIndex = 7;
             this.lbEdadInicio.Text = "Edad  Inicio";
             // 
-            // dataGridView1
+            // dgtvLevelInfo
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 274);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(751, 359);
-            this.dataGridView1.TabIndex = 9;
+            this.dgtvLevelInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgtvLevelInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgtvLevelInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgtvLevelInfo.Location = new System.Drawing.Point(0, 274);
+            this.dgtvLevelInfo.Margin = new System.Windows.Forms.Padding(4);
+            this.dgtvLevelInfo.Name = "dgtvLevelInfo";
+            this.dgtvLevelInfo.Size = new System.Drawing.Size(751, 359);
+            this.dgtvLevelInfo.TabIndex = 9;
             // 
             // txbEdadFin
             // 
@@ -188,6 +189,7 @@
             this.btnConsultar.TabIndex = 24;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // btnRegistrar
             // 
@@ -247,7 +249,7 @@
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgtvLevelInfo);
             this.Controls.Add(this.menLevels);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -259,7 +261,7 @@
             this.Load += new System.EventHandler(this.Levels_Load);
             this.menLevels.ResumeLayout(false);
             this.menLevels.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgtvLevelInfo)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -276,7 +278,7 @@
         private System.Windows.Forms.Label lbNivel;
         private System.Windows.Forms.Label lbEdadFin;
         private System.Windows.Forms.Label lbEdadInicio;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgtvLevelInfo;
         private System.Windows.Forms.TextBox txbEdadFin;
         private System.Windows.Forms.TextBox txbEdadInicio;
         private System.Windows.Forms.TextBox txbNivel;

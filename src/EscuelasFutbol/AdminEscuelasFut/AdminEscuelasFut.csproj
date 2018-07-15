@@ -65,6 +65,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Connection.cs" />
+    <Compile Include="Classes\C_HeadQuarters.cs" />
+    <Compile Include="Classes\C_Levels.cs" />
     <Compile Include="Classes\C_Pays.cs" />
     <Compile Include="Classes\DataAccess.cs" />
     <Compile Include="Classes\C_Players.cs" />

@@ -85,6 +85,7 @@
             // 
             // dgvAdministerInstallation
             // 
+            this.dgvAdministerInstallation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAdministerInstallation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAdministerInstallation.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvAdministerInstallation.Location = new System.Drawing.Point(0, 213);
@@ -161,6 +162,7 @@
             this.btnConsultar.TabIndex = 51;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // btnRegistrar
             // 
