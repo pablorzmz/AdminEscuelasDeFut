@@ -24,9 +24,9 @@ namespace AdminEscuelasFut.Classes
             if (parameters != null)
             {
                 filterQuery =
-                "SELECT * FROM Instalacion WHERE " +
-                    "(Numero like '%" + parameters[0] + "%' AND " +
-                    "EdadInicio like '%" + parameters[1] + "%') AND" +
+                "SELECT * FROM Nivel WHERE " +
+                    "Numero like '%" + parameters[0] + "%' AND " +
+                    "EdadInicio like '%" + parameters[1] + "%' AND" +
                     " EdadFin like '%" + parameters[2] + "%'";
 
 
