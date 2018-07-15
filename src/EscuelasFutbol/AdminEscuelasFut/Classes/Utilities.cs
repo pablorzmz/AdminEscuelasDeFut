@@ -43,7 +43,7 @@ namespace AdminEscuelasFut
         {
             if (char.IsLetter(e.KeyChar) == false )
             {
-                if (e.KeyChar != 8)
+                if (e.KeyChar != 8 && e.KeyChar != ' ' )
                 {
                     e.Handled = true;
                     return;
