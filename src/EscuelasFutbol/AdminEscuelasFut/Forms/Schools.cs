@@ -99,6 +99,7 @@ namespace AdminEscuelasFut
                 txtNameSchoolM.Text = buffer[0];
                 txtPlaceSchoolM.Text = buffer[1];
                 cmbDirrInstalacion.SelectedItem = buffer[2];
+                schoolController.fillSchoolTelephoneInfo(buffer[0], txtTelephoneSchoolM, txtTelephoneSchoo2M);
             }
         }
 
@@ -110,6 +111,89 @@ namespace AdminEscuelasFut
         private void txtTelephoneSchoo2M_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.validateNumbers(sender, e, false);
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            /*Asumiento que ya el ususario confirmo que quiere actualizar la información*/
+            /*Y se validó que todo sea del mismo tamaño que debería ser*/
+            if (txtNameSchoolM.Text == "")
+            {
+                MessageBox.Show("Nombre de la Escuela inválido");
+                txtNameSchoolM.Focus();
+            }
+            if (txtPlaceSchoolM.Text == "")
+            {
+                MessageBox.Show("Nombre del Lugar inválido");
+                txtPlaceSchoolM.Focus();
+            }
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            bool error = false;
+            if (txtNameSchoolM.Text == "")
+            {
+                MessageBox.Show("Nombre de la Escuela inválido");
+                txtNameSchoolM.Focus();
+                error = true;
+            }
+            if (txtPlaceSchoolM.Text == "")
+            {
+                MessageBox.Show("Lugar inválido");
+                txtNameSchoolM.Focus();
+                error = true;
+            }
+            if (!error)
+            {
+                List<String> args = new List<string>();
+                args.Add(txtNameSchoolM.Text.ToString());
+                args.Add(txtPlaceSchoolM.Text.ToString());
+                if (cmbDirrInstalacion.SelectedItem.ToString().Equals("Elija una Instalacion")) {
+                    args.Add("");
+                }
+                else
+                {
+                    args.Add(cmbDirrInstalacion.SelectedItem.ToString());
+                }
+                args.Add(txtTelephoneSchoolM.Text.ToString());
+                args.Add(txtTelephoneSchoo2M.Text.ToString());
+                int result = schoolController.insertSchool(args);
+                if (result == 0)
+                {
+                    MessageBox.Show("Agregado Exitoso");
+                    cleanInput();
+                    schoolController.fillSchoolsDataGridView(dgvSchoolM, null);
+                }
+                else
+                {
+                    MessageBox.Show("Error número: " + result.ToString());
+                }
+            }
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            if (txtNameSchoolM.Text == "")
+            {
+                MessageBox.Show("Nombre de la Escuela inválido");
+                txtNameSchoolM.Focus();
+            }
+            else {
+                List<String> args = new List<string>();
+                args.Add(txtNameSchoolM.Text.ToString());
+                int result = schoolController.deleteSchool(args);
+                if (result == 0)
+                {
+                    MessageBox.Show("Borrado Exitoso");
+                    cleanInput();
+                    schoolController.fillSchoolsDataGridView(dgvSchoolM, null);
+                }
+                else
+                {
+                    MessageBox.Show("Error número: " + result.ToString());
+                }
+            }
         }
     }
 }

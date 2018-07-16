@@ -68,5 +68,78 @@ namespace AdminEscuelasFut
                 cmbSchoolLevel.SelectedItem = buffer[1];
             }
         }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            bool error = false;
+            if (cmbSchoolName.SelectedIndex == 0)
+            {
+                MessageBox.Show("Debe Seleccionar una Escuela válida");
+                cmbSchoolName.Focus();
+                error = true;
+            }
+            if (cmbSchoolLevel.SelectedIndex == 0)
+            {
+                MessageBox.Show("Debe Seleccionar un Nivel válido");
+                cmbSchoolLevel.Focus();
+                error = true;
+            }
+            if (!error)
+            {
+                List<String> args = new List<string>();
+                args.Add(cmbSchoolName.SelectedItem.ToString());
+                args.Add(cmbSchoolLevel.SelectedItem.ToString());
+                int result = schoolLevelsController.insertSchoolLevels(args);
+                if (result == 0)
+                {
+                    MessageBox.Show("Insercion Exitosa");
+                    cleanInput();
+                    schoolLevelsController.fillSchoolsLevelsDataGridView(dgvSchoolLevels, null);
+                }
+                else
+                {
+                    MessageBox.Show("Error número: " + result.ToString());
+                }
+            }
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            bool error = false;
+            if (cmbSchoolName.SelectedIndex == 0)
+            {
+                MessageBox.Show("Debe Seleccionar una Escuela válida");
+                cmbSchoolName.Focus();
+                error = true;
+            }
+            if (cmbSchoolLevel.SelectedIndex == 0)
+            {
+                MessageBox.Show("Debe Seleccionar un Nivel válido");
+                cmbSchoolLevel.Focus();
+                error = true;
+            }
+            if (!error)
+            {
+                List<String> args = new List<string>();
+                args.Add(cmbSchoolName.SelectedItem.ToString());
+                args.Add(cmbSchoolLevel.SelectedItem.ToString());
+                int result = schoolLevelsController.deleteSchoolLevels(args);
+                if (result == 0)
+                {
+                    MessageBox.Show("Borrado Exitoso");
+                    cleanInput();
+                    schoolLevelsController.fillSchoolsLevelsDataGridView(dgvSchoolLevels, null);
+                }
+                else
+                {
+                    MessageBox.Show("Error número: " + result.ToString());
+                }
+            }
+        }
     }
 }
