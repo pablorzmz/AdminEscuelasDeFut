@@ -15,6 +15,8 @@ namespace AdminEscuelasFut
         private  PlayerPaysRegister playerPaysRegister;
         private C_Pays paysController;
         private  PlayerPaysQuery playerPaysQuery;
+        private DataAccess dataAccess;
+
         public Pays()
         {
             InitializeComponent();
@@ -24,6 +26,17 @@ namespace AdminEscuelasFut
         private void Pays_Load(object sender, EventArgs e)
         {
             paysController.fillSchoolsComboBox(this.cboEscuelas);
+            paysController.fillMonthsComboBox(this.cmbInitalMonth, 'I');
+            paysController.fillMonthsComboBox(this.cmbFinalMonth, 'F');
+        }
+
+        private void cleanInput()
+        {
+            txtAmountRPaymentPlayer.Text = "";
+            txtIDRPaymentPlayer.Text = "";
+            txtNameRPaymentPlayer.Text = "";
+            txtReceiptNumberRPaymentPlayer.Text = "";
+            txbDetail.Text = "";
         }
 
         public  void showPlayersPaysRegister()
@@ -95,26 +108,26 @@ namespace AdminEscuelasFut
         {
             if (ckbxMonthlyRPaymentPlayer.Checked)
             {
-                dtpFechaFinMensualidad.Enabled = true;
-                dtpFechaInicMensualidad.Enabled = true;
+                cmbInitalMonth.Enabled = true;
+                cmbFinalMonth.Enabled = true;
             }
             else
             {
-                dtpFechaFinMensualidad.Enabled = false;
-                dtpFechaInicMensualidad.Enabled = false;
+                cmbInitalMonth.Enabled = false;
+                cmbFinalMonth.Enabled = false;
             }
         }
 
         private void chbxAnnuityRPaymentPlayer_CheckedChanged(object sender, EventArgs e)
         {
-            if (chbxAnnuityRPaymentPlayer.Checked)
+            /*if (chbxAnnuityRPaymentPlayer.Checked)
             {
                 dtpFechaMatricula.Enabled = true;
             }
             else
             {
                 dtpFechaMatricula.Enabled = false;
-            }
+            }*/
         }
 
         private void txtNameRPaymentPlayer_KeyPress(object sender, KeyPressEventArgs e)
@@ -145,15 +158,123 @@ namespace AdminEscuelasFut
 
         private void dgvPagosJugador_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < dgvPagosJugador.RowCount - 1)
+
+            List<String> buffer = new List<string>();
+            Utilities.readCurrentRowFromDataGridView(dgvPagosJugador, e.RowIndex, dgvPagosJugador.ColumnCount, buffer);
+            if (buffer.Count < 6) {
+                if (e.RowIndex >= 0 && e.RowIndex < dgvPagosJugador.RowCount - 1)
+                {
+                    txtIDRPaymentPlayer.Text = buffer[0];
+                }
+            } else {
+                if (e.RowIndex >= 0 && e.RowIndex < dgvPagosJugador.RowCount - 1)
+                {
+                    txtIDRPaymentPlayer.Text = buffer[1];
+                    txtReceiptNumberRPaymentPlayer.Text = buffer[2];
+                    txtNameRPaymentPlayer.Text = buffer[0];
+                    txtAmountRPaymentPlayer.Text = buffer[4];
+                    cboEscuelas.SelectedItem = buffer[6];
+                }
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            paysController.fillIDPlayerDataGridView(dgvPagosJugador);
+        }
+
+        private void btnRegisterRPaymentPlayer_Click(object sender, EventArgs e)
+        {
+            if (cboEscuelas.SelectedIndex == 0)
             {
-                List<String> buffer = new List<string>();
-                Utilities.readCurrentRowFromDataGridView(dgvPagosJugador, e.RowIndex, dgvPagosJugador.ColumnCount, buffer);
-                txtIDRPaymentPlayer.Text = buffer[1];
-                txtReceiptNumberRPaymentPlayer.Text = buffer[2];
-                txtNameRPaymentPlayer.Text = buffer[0];
-                txtAmountRPaymentPlayer.Text = buffer[4];
-                cboEscuelas.SelectedItem = buffer[6];
+                MessageBox.Show("El valor para la escuela del jugador es inválido");
+                cboEscuelas.Focus();
+            }
+            else if (txtReceiptNumberRPaymentPlayer.Text == "")
+            {
+                MessageBox.Show("El valor para el numero de recibo es inválido");
+                txtReceiptNumberRPaymentPlayer.Focus();
+            }
+            else if (txtAmountRPaymentPlayer.Text == "")
+            {
+                MessageBox.Show("El valor para el monto es invalido");
+                txtAmountRPaymentPlayer.Focus();
+
+            }
+            else if (ckbxMonthlyRPaymentPlayer.CheckState == CheckState.Unchecked && chbxAnnuityRPaymentPlayer.CheckState == CheckState.Unchecked)
+            {
+                MessageBox.Show("Debe seleccionar, al menos, un tipo de pago");
+                ckbxMonthlyRPaymentPlayer.Focus();
+                chbxAnnuityRPaymentPlayer.Focus();
+            }
+            else if (txtIDRPaymentPlayer.Text == "")
+            {
+                MessageBox.Show("El valor para la cedula del jugador es invalido");
+                txtIDRPaymentPlayer.Focus();
+            }else if (ckbxMonthlyRPaymentPlayer.CheckState == CheckState.Checked && (cmbInitalMonth.SelectedIndex == 0 || cmbFinalMonth.SelectedIndex == 0))
+            {
+                MessageBox.Show("Debe seleccionar mes de inicio y mes final");
+                cmbInitalMonth.Focus();
+                cmbFinalMonth.Focus();
+            }
+            else
+            {
+                MessageBox.Show("Datos válidos");
+                List<String> args = new List<string>();
+
+                if (ckbxMonthlyRPaymentPlayer.CheckState == CheckState.Checked || chbxAnnuityRPaymentPlayer.CheckState == CheckState.Checked)
+                {
+                    /*0*/
+                    args.Add(cboEscuelas.SelectedItem.ToString());
+                    /*1*/
+                    args.Add(txtReceiptNumberRPaymentPlayer.Text);
+                    /*2*/
+                    args.Add(dtpFechaMatricula.Value.ToString("yyyy-MM-dd"));
+                    /*3*/
+                    args.Add(txtAmountRPaymentPlayer.Text);
+                    /*4*/
+                    args.Add(txbDetail.Text);
+                    /*5*/
+                    args.Add(txtIDRPaymentPlayer.Text);
+
+                    if (ckbxMonthlyRPaymentPlayer.CheckState == CheckState.Checked && chbxAnnuityRPaymentPlayer.CheckState == CheckState.Checked)
+                    {
+                        args.Add("2");
+                    }
+                    else if (ckbxMonthlyRPaymentPlayer.CheckState == CheckState.Checked && chbxAnnuityRPaymentPlayer.CheckState == CheckState.Unchecked)
+                    {
+                        args.Add("1");
+                    }
+                    else
+                    {
+                        args.Add("0");
+
+                    }
+                    int result = paysController.insertNewPay(args);
+
+                    if (result == 0)
+                    {
+                        if (ckbxMonthlyRPaymentPlayer.CheckState == CheckState.Checked)
+                        {
+                            string initialMonth = cmbInitalMonth.Text;
+                            string finalMonth = cmbFinalMonth.Text;
+                            args.Clear();
+                            /*0*/
+                            args.Add(cboEscuelas.SelectedItem.ToString());
+                            /*1*/
+                            args.Add(txtReceiptNumberRPaymentPlayer.Text);
+                            int year = dtpFechaMatricula.Value.Year;
+                            paysController.insertNewMonthPay(args, initialMonth, finalMonth, year);
+                        }
+                        cleanInput();
+                        paysController.fillPaysDataGridView(dgvPagosJugador, null);
+                        MessageBox.Show("Pago registrados correctamente");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error(" + result + ") al registrar pago");
+                    }
+                }
             }
         }
     }

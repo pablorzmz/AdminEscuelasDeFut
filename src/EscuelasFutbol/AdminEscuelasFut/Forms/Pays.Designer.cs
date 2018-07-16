@@ -40,12 +40,12 @@
             this.dgvPagosJugador = new System.Windows.Forms.DataGridView();
             this.btnRegisterRPaymentPlayer = new System.Windows.Forms.Button();
             this.goBoxInfoPagosJugador = new System.Windows.Forms.GroupBox();
+            this.txbDetail = new System.Windows.Forms.TextBox();
+            this.lblDetail = new System.Windows.Forms.Label();
             this.cboEscuelas = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dtpFechaMatricula = new System.Windows.Forms.DateTimePicker();
-            this.dtpFechaFinMensualidad = new System.Windows.Forms.DateTimePicker();
-            this.dtpFechaInicMensualidad = new System.Windows.Forms.DateTimePicker();
             this.txtIDRPaymentPlayer = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtNameRPaymentPlayer = new System.Windows.Forms.TextBox();
@@ -60,6 +60,9 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.cmbInitalMonth = new System.Windows.Forms.ComboBox();
+            this.cmbFinalMonth = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.menPays.SuspendLayout();
             this.tabCPagosGeneral.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -182,15 +185,19 @@
             this.btnRegisterRPaymentPlayer.TabIndex = 11;
             this.btnRegisterRPaymentPlayer.Text = "Registrar pago";
             this.btnRegisterRPaymentPlayer.UseVisualStyleBackColor = false;
+            this.btnRegisterRPaymentPlayer.Click += new System.EventHandler(this.btnRegisterRPaymentPlayer_Click);
             // 
             // goBoxInfoPagosJugador
             // 
+            this.goBoxInfoPagosJugador.Controls.Add(this.label7);
+            this.goBoxInfoPagosJugador.Controls.Add(this.cmbFinalMonth);
+            this.goBoxInfoPagosJugador.Controls.Add(this.cmbInitalMonth);
+            this.goBoxInfoPagosJugador.Controls.Add(this.txbDetail);
+            this.goBoxInfoPagosJugador.Controls.Add(this.lblDetail);
             this.goBoxInfoPagosJugador.Controls.Add(this.cboEscuelas);
             this.goBoxInfoPagosJugador.Controls.Add(this.label6);
             this.goBoxInfoPagosJugador.Controls.Add(this.btnBuscar);
             this.goBoxInfoPagosJugador.Controls.Add(this.dtpFechaMatricula);
-            this.goBoxInfoPagosJugador.Controls.Add(this.dtpFechaFinMensualidad);
-            this.goBoxInfoPagosJugador.Controls.Add(this.dtpFechaInicMensualidad);
             this.goBoxInfoPagosJugador.Controls.Add(this.txtIDRPaymentPlayer);
             this.goBoxInfoPagosJugador.Controls.Add(this.label5);
             this.goBoxInfoPagosJugador.Controls.Add(this.txtNameRPaymentPlayer);
@@ -208,6 +215,25 @@
             this.goBoxInfoPagosJugador.TabIndex = 67;
             this.goBoxInfoPagosJugador.TabStop = false;
             this.goBoxInfoPagosJugador.Text = "Datos del pago";
+            // 
+            // txbDetail
+            // 
+            this.txbDetail.Location = new System.Drawing.Point(241, 132);
+            this.txbDetail.Margin = new System.Windows.Forms.Padding(2);
+            this.txbDetail.MaxLength = 5;
+            this.txbDetail.Name = "txbDetail";
+            this.txbDetail.Size = new System.Drawing.Size(386, 20);
+            this.txbDetail.TabIndex = 67;
+            // 
+            // lblDetail
+            // 
+            this.lblDetail.AutoSize = true;
+            this.lblDetail.Location = new System.Drawing.Point(194, 139);
+            this.lblDetail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDetail.Name = "lblDetail";
+            this.lblDetail.Size = new System.Drawing.Size(40, 13);
+            this.lblDetail.TabIndex = 66;
+            this.lblDetail.Text = "Detalle";
             // 
             // cboEscuelas
             // 
@@ -241,37 +267,17 @@
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Consultar cédula";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // dtpFechaMatricula
             // 
-            this.dtpFechaMatricula.Enabled = false;
+            this.dtpFechaMatricula.Enabled = true;
             this.dtpFechaMatricula.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaMatricula.Location = new System.Drawing.Point(97, 119);
+            this.dtpFechaMatricula.Location = new System.Drawing.Point(241, 22);
             this.dtpFechaMatricula.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaMatricula.Name = "dtpFechaMatricula";
             this.dtpFechaMatricula.Size = new System.Drawing.Size(93, 20);
             this.dtpFechaMatricula.TabIndex = 10;
-            // 
-            // dtpFechaFinMensualidad
-            // 
-            this.dtpFechaFinMensualidad.Enabled = false;
-            this.dtpFechaFinMensualidad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaFinMensualidad.Location = new System.Drawing.Point(241, 88);
-            this.dtpFechaFinMensualidad.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpFechaFinMensualidad.Name = "dtpFechaFinMensualidad";
-            this.dtpFechaFinMensualidad.Size = new System.Drawing.Size(96, 20);
-            this.dtpFechaFinMensualidad.TabIndex = 8;
-            // 
-            // dtpFechaInicMensualidad
-            // 
-            this.dtpFechaInicMensualidad.CustomFormat = "";
-            this.dtpFechaInicMensualidad.Enabled = false;
-            this.dtpFechaInicMensualidad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaInicMensualidad.Location = new System.Drawing.Point(97, 88);
-            this.dtpFechaInicMensualidad.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpFechaInicMensualidad.Name = "dtpFechaInicMensualidad";
-            this.dtpFechaInicMensualidad.Size = new System.Drawing.Size(93, 20);
-            this.dtpFechaInicMensualidad.TabIndex = 7;
             // 
             // txtIDRPaymentPlayer
             // 
@@ -285,7 +291,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(204, 91);
+            this.label5.Location = new System.Drawing.Point(201, 98);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(33, 13);
@@ -302,7 +308,7 @@
             // ckbxMonthlyRPaymentPlayer
             // 
             this.ckbxMonthlyRPaymentPlayer.AutoSize = true;
-            this.ckbxMonthlyRPaymentPlayer.Location = new System.Drawing.Point(8, 91);
+            this.ckbxMonthlyRPaymentPlayer.Location = new System.Drawing.Point(5, 98);
             this.ckbxMonthlyRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
             this.ckbxMonthlyRPaymentPlayer.Name = "ckbxMonthlyRPaymentPlayer";
             this.ckbxMonthlyRPaymentPlayer.Size = new System.Drawing.Size(86, 17);
@@ -324,7 +330,7 @@
             // chbxAnnuityRPaymentPlayer
             // 
             this.chbxAnnuityRPaymentPlayer.AutoSize = true;
-            this.chbxAnnuityRPaymentPlayer.Location = new System.Drawing.Point(8, 122);
+            this.chbxAnnuityRPaymentPlayer.Location = new System.Drawing.Point(5, 132);
             this.chbxAnnuityRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
             this.chbxAnnuityRPaymentPlayer.Name = "chbxAnnuityRPaymentPlayer";
             this.chbxAnnuityRPaymentPlayer.Size = new System.Drawing.Size(71, 17);
@@ -411,6 +417,34 @@
             this.tabPage4.Text = "Pagos equipamientos";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // cmbInitalMonth
+            // 
+            this.cmbInitalMonth.BackColor = System.Drawing.Color.AliceBlue;
+            this.cmbInitalMonth.FormattingEnabled = true;
+            this.cmbInitalMonth.Location = new System.Drawing.Point(94, 95);
+            this.cmbInitalMonth.Name = "cmbInitalMonth";
+            this.cmbInitalMonth.Size = new System.Drawing.Size(93, 21);
+            this.cmbInitalMonth.TabIndex = 68;
+            // 
+            // cmbFinalMonth
+            // 
+            this.cmbFinalMonth.BackColor = System.Drawing.Color.AliceBlue;
+            this.cmbFinalMonth.FormattingEnabled = true;
+            this.cmbFinalMonth.Location = new System.Drawing.Point(241, 94);
+            this.cmbFinalMonth.Name = "cmbFinalMonth";
+            this.cmbFinalMonth.Size = new System.Drawing.Size(93, 21);
+            this.cmbFinalMonth.TabIndex = 69;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(190, 27);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(37, 13);
+            this.label7.TabIndex = 70;
+            this.label7.Text = "Fecha";
+            // 
             // Pays
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -454,10 +488,7 @@
         private System.Windows.Forms.GroupBox goBoxInfoPagosJugador;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DateTimePicker dtpFechaMatricula;
-        private System.Windows.Forms.DateTimePicker dtpFechaFinMensualidad;
-        private System.Windows.Forms.DateTimePicker dtpFechaInicMensualidad;
         private System.Windows.Forms.TextBox txtIDRPaymentPlayer;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNameRPaymentPlayer;
         private System.Windows.Forms.CheckBox ckbxMonthlyRPaymentPlayer;
         private System.Windows.Forms.Label label1;
@@ -472,5 +503,11 @@
         private System.Windows.Forms.DataGridView dgvPagosJugador;
         private System.Windows.Forms.ComboBox cboEscuelas;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txbDetail;
+        private System.Windows.Forms.Label lblDetail;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbFinalMonth;
+        private System.Windows.Forms.ComboBox cmbInitalMonth;
+        private System.Windows.Forms.Label label7;
     }
 }

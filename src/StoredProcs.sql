@@ -117,6 +117,16 @@ CREATE PROCEDURE Registrar_Escuela
 	AS
 		INSERT INTO Escuela VALUES (@Nombre, @Lugar, @Direccion);
 GO
+
+GO
+CREATE PROCEDURE InsertarPagoMes
+		@escuela varchar(30),
+		@numRecibo varchar(5),
+		@mes char(3),
+		@ano char(4)
+		AS
+			INSERT INTO Mes VALUES (@escuela, @numRecibo, @mes, @ano);
+GO
 /* Para el borrado de datos */
 
 1- /* Eliminar un jugador de la base de datos */
