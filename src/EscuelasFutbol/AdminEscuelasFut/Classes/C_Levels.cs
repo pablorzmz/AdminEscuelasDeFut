@@ -102,5 +102,41 @@ namespace AdminEscuelasFut.Classes
 
             return dataAccess.executeStoreProcedure(parameters, "eliminarNivel");
         }
+
+        /**
+         * Remove one level from the database
+         **/
+        public int updateLevel(String oldLevelNumber, String newLevelNumber, String minimumAge, String maximumAge)
+        {
+            DataAccess.storedProcData datos = new DataAccess.storedProcData();
+            List<DataAccess.storedProcData> parameters = new List<DataAccess.storedProcData>();
+
+            //First parameter
+            datos.storedProcParam = "@numeroV";
+            datos.storedProcParamType = SqlDbType.TinyInt;
+            datos.userParams = oldLevelNumber;
+            parameters.Add(datos);
+
+            //First parameter
+            datos.storedProcParam = "@numeroN";
+            datos.storedProcParamType = SqlDbType.TinyInt;
+            datos.userParams = newLevelNumber;
+            parameters.Add(datos);
+
+
+            //Second parameter
+            datos.storedProcParam = "@edadInicio";
+            datos.storedProcParamType = SqlDbType.TinyInt;
+            datos.userParams = minimumAge;
+            parameters.Add(datos);
+
+            //Third parameter
+            datos.storedProcParam = "@edadFin";
+            datos.storedProcParamType = SqlDbType.TinyInt;
+            datos.userParams = maximumAge;
+            parameters.Add(datos);
+
+            return dataAccess.executeStoreProcedure(parameters, "actualizarNivel");
+        }
     }
 }

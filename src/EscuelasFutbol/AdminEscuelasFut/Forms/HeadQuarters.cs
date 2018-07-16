@@ -14,6 +14,7 @@ namespace AdminEscuelasFut
     public partial class HeadQuarters : Form
     {
         private C_HeadQuarters headQuartersController;
+        String dataTemp;
 
         public HeadQuarters()
         {
@@ -105,6 +106,24 @@ namespace AdminEscuelasFut
             {
                 return false;
             }
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            if (allFieldsFilled())
+            {
+                dataTemp = txtAddressAdministerInstallation.Text;
+                btnActualizar.Enabled = false;
+                btnGuardar.Visible = true;
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            headQuartersController.updateHeadQuarter(dataTemp, txtAddressAdministerInstallation.Text, txtTelephoneAdministerInstallation.Text);
+            headQuartersController.fillHeadQuartersDataGridView(dgvAdministerInstallation, null);
+            btnActualizar.Enabled = true;
+            btnGuardar.Visible = false;
         }
     }
 }

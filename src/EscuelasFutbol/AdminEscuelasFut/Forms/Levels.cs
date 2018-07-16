@@ -14,6 +14,7 @@ namespace AdminEscuelasFut
     public partial class Levels : Form
     {
         private C_Levels levelController;
+        private String dataTemp;
 
         public Levels()
         {
@@ -126,6 +127,24 @@ namespace AdminEscuelasFut
             {
                 return false;
             }
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            if (allFieldsFilled())
+            {
+                dataTemp = txbNivel.Text;
+                btnActualizar.Enabled = false;
+                btnGuardar.Visible = true;
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            btnActualizar.Enabled = true;
+            levelController.updateLevel(dataTemp, txbNivel.Text, txbEdadInicio.Text, txbEdadFin.Text);
+            levelController.fillLevelsDataGridView(dgtvLevelInfo, null);
+            btnGuardar.Visible = false;
         }
     }
 }

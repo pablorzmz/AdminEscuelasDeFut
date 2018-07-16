@@ -80,5 +80,31 @@ namespace AdminEscuelasFut.Classes
 
             return dataAccess.executeStoreProcedure(parameters, "eliminarInstalacion");
         }
+
+        public int updateHeadQuarter(String oldAddress, String newAddress, String telephone)
+        {
+            DataAccess.storedProcData datos = new DataAccess.storedProcData();
+            List<DataAccess.storedProcData> parameters = new List<DataAccess.storedProcData>();
+
+            //First parameter
+            datos.storedProcParam = "@DireccionV";
+            datos.storedProcParamType = SqlDbType.VarChar;
+            datos.userParams = oldAddress;
+            parameters.Add(datos);
+
+            //First parameter
+            datos.storedProcParam = "@DireccionN";
+            datos.storedProcParamType = SqlDbType.VarChar;
+            datos.userParams = newAddress;
+            parameters.Add(datos);
+
+            //Second parameter
+            datos.storedProcParam = "@Telefono";
+            datos.storedProcParamType = SqlDbType.VarChar;
+            datos.userParams = telephone;
+            parameters.Add(datos);
+
+            return dataAccess.executeStoreProcedure(parameters, "actualizarInstalacion");
+        }
     }
 }
