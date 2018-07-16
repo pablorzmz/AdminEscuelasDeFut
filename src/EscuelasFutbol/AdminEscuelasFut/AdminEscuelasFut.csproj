@@ -71,6 +71,7 @@
     <Compile Include="Classes\C_PlayerTrainnings.cs" />
     <Compile Include="Classes\C_SchoolLevels.cs" />
     <Compile Include="Classes\C_Schools.cs" />
+    <Compile Include="Classes\C_Trainings.cs" />
     <Compile Include="Classes\DataAccess.cs" />
     <Compile Include="Classes\C_Players.cs" />
     <Compile Include="Classes\Utilities.cs" />
