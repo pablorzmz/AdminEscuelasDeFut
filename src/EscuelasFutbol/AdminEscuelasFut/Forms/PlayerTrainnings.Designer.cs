@@ -39,10 +39,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dgvPlayerTraining = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboCedulas = new System.Windows.Forms.ComboBox();
             this.cboFechasEntrenamientos = new System.Windows.Forms.ComboBox();
             this.cboEscuelas = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
@@ -92,7 +92,7 @@
             this.txtIDPlayerTraining.Margin = new System.Windows.Forms.Padding(2);
             this.txtIDPlayerTraining.MaxLength = 9;
             this.txtIDPlayerTraining.Name = "txtIDPlayerTraining";
-            this.txtIDPlayerTraining.Size = new System.Drawing.Size(367, 20);
+            this.txtIDPlayerTraining.Size = new System.Drawing.Size(328, 20);
             this.txtIDPlayerTraining.TabIndex = 39;
             // 
             // label4
@@ -139,13 +139,14 @@
             this.dgvPlayerTraining.RowTemplate.Height = 24;
             this.dgvPlayerTraining.Size = new System.Drawing.Size(546, 187);
             this.dgvPlayerTraining.TabIndex = 31;
+            this.dgvPlayerTraining.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlayerTraining_CellDoubleClick);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cboCedulas);
             this.groupBox1.Controls.Add(this.cboFechasEntrenamientos);
             this.groupBox1.Controls.Add(this.cboEscuelas);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.txtIDPlayerTraining);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
@@ -155,6 +156,16 @@
             this.groupBox1.TabIndex = 40;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información de entrenamientos de jugadores";
+            // 
+            // cboCedulas
+            // 
+            this.cboCedulas.BackColor = System.Drawing.Color.AliceBlue;
+            this.cboCedulas.FormattingEnabled = true;
+            this.cboCedulas.Location = new System.Drawing.Point(386, 27);
+            this.cboCedulas.Name = "cboCedulas";
+            this.cboCedulas.Size = new System.Drawing.Size(140, 21);
+            this.cboCedulas.TabIndex = 77;
+            this.cboCedulas.SelectedIndexChanged += new System.EventHandler(this.cboCedulas_SelectedIndexChanged);
             // 
             // cboFechasEntrenamientos
             // 
@@ -182,21 +193,6 @@
             this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 74;
             this.label3.Text = "Escuela";
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Location = new System.Drawing.Point(425, 28);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(101, 20);
-            this.btnBuscar.TabIndex = 73;
-            this.btnBuscar.Text = "Consultar cédula";
-            this.btnBuscar.UseVisualStyleBackColor = false;
             // 
             // btnConsultar
             // 
@@ -228,6 +224,7 @@
             this.btnRegistrar.TabIndex = 41;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // btnActualizar
             // 
@@ -243,6 +240,7 @@
             this.btnActualizar.TabIndex = 42;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnBorrar
             // 
@@ -258,6 +256,7 @@
             this.btnBorrar.TabIndex = 43;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = false;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // PlayerTrainnings
             // 
@@ -299,7 +298,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvPlayerTraining;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Button btnActualizar;
@@ -307,5 +305,6 @@
         private System.Windows.Forms.ComboBox cboFechasEntrenamientos;
         private System.Windows.Forms.ComboBox cboEscuelas;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cboCedulas;
     }
 }
