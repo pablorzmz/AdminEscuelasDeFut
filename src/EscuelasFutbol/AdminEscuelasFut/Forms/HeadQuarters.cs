@@ -113,8 +113,7 @@ namespace AdminEscuelasFut
             if (allFieldsFilled())
             {
                 dataTemp = txtAddressAdministerInstallation.Text;
-                btnActualizar.Enabled = false;
-                btnGuardar.Visible = true;
+                setVisibleBtn(false);
             }
         }
 
@@ -122,8 +121,24 @@ namespace AdminEscuelasFut
         {
             headQuartersController.updateHeadQuarter(dataTemp, txtAddressAdministerInstallation.Text, txtTelephoneAdministerInstallation.Text);
             headQuartersController.fillHeadQuartersDataGridView(dgvAdministerInstallation, null);
-            btnActualizar.Enabled = true;
-            btnGuardar.Visible = false;
+            setVisibleBtn(true);
+        }
+
+        public void setVisibleBtn(bool visible)
+        {
+            btnBorrar.Visible = visible;
+            btnConsultar.Visible = visible;
+            btnRegistrar.Visible = visible;
+            btnActualizar.Visible = visible;
+
+            btnGuardar.Visible = !visible;
+            btnDescartar.Visible = !visible;
+        }
+
+        private void btnDescartar_Click(object sender, EventArgs e)
+        {
+            setVisibleBtn(true);
+            cleanInput();
         }
     }
 }

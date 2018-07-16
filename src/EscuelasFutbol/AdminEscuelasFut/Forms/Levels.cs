@@ -134,17 +134,32 @@ namespace AdminEscuelasFut
             if (allFieldsFilled())
             {
                 dataTemp = txbNivel.Text;
-                btnActualizar.Enabled = false;
-                btnGuardar.Visible = true;
+                setVisibleBtn(false);
             }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            btnActualizar.Enabled = true;
             levelController.updateLevel(dataTemp, txbNivel.Text, txbEdadInicio.Text, txbEdadFin.Text);
             levelController.fillLevelsDataGridView(dgtvLevelInfo, null);
-            btnGuardar.Visible = false;
+            setVisibleBtn(true);
+        }
+
+        public void setVisibleBtn(bool visible)
+        {
+            btnBorrar.Visible = visible;
+            btnConsultar.Visible = visible;
+            btnRegistrar.Visible = visible;
+            btnActualizar.Visible = visible;
+
+            btnGuardar.Visible = !visible;
+            btnDescartar.Visible = !visible;
+        }
+
+        private void btnDescartar_Click(object sender, EventArgs e)
+        {
+            setVisibleBtn(true);
+            cleanInput();
         }
     }
 }

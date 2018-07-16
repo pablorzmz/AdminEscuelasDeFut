@@ -50,8 +50,7 @@ namespace AdminEscuelasFut
 
             BindingSource bindingSource = new BindingSource();
             bindingSource.DataSource = dataTable;
-
-            dgvSchoolLevels.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+            
             dgvSchoolLevels.DataSource = bindingSource;
             dgvSchoolLevels.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvSchoolLevels.ReadOnly = true;
@@ -60,15 +59,15 @@ namespace AdminEscuelasFut
         public int updateSchoolLevelsInfo( List<String> args ) {
             String[] procParams =
               {
-              "@nombreEsc"
-              ,"@numNivelViejo"
+                "@numNivelViejo"
               ,"@numNivelNuevo"
+              ,"@nombreEsc"
              };
             SqlDbType[] dataTypes =
             {
-                SqlDbType.Char
+                SqlDbType.TinyInt
                 ,SqlDbType.TinyInt
-                ,SqlDbType.TinyInt
+                ,SqlDbType.VarChar
             };
             /*Se declara la estructura para los parámetros*/
             List<DataAccess.storedProcData> parameters = new List<DataAccess.storedProcData>();

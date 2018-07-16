@@ -47,8 +47,7 @@ namespace AdminEscuelasFut
 
             BindingSource bindingSource = new BindingSource();
             bindingSource.DataSource = dataTable;
-
-            dgvSchoolM.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+            
             dgvSchoolM.DataSource = bindingSource;
             dgvSchoolM.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvSchoolM.ReadOnly = true;
@@ -80,12 +79,12 @@ namespace AdminEscuelasFut
             String[] procParams =
               {
                 "@nombreEscViejo"
-                ,"@nombreEscNuevo"
-                ,"@Lugar varchar"
-                ,"@Direccion"
                 ,"@tel1Viejo"
-                ,"@tel1Nuevo"
                 ,"@tel2Viejo"
+                ,"@nombreEscNuevo"
+                ,"@Lugar"
+                ,"@Direccion"
+                ,"@tel1Nuevo"
                 ,"@tel2Nuevo"
              };
             SqlDbType[] dataTypes =
@@ -180,5 +179,7 @@ namespace AdminEscuelasFut
 
             return dataAccess.executeStoreProcedure(parameters, "eliminarEscuela");
         }
+
+
     }
 }

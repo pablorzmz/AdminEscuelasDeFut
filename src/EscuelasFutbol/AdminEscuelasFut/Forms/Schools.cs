@@ -15,10 +15,13 @@ namespace AdminEscuelasFut
         private HeadQuarters headQuatersModule;
         private SchoolLevels schoolLevesManagement;
         private C_Schools schoolController;
+        private List<String> dataTemp;
+
         public Schools()
         {
             InitializeComponent();
             schoolController = new C_Schools();
+            dataTemp = new List<string>();
         }
 
         public void showHeadQuaderModule()
@@ -117,16 +120,27 @@ namespace AdminEscuelasFut
         {
             /*Asumiento que ya el ususario confirmo que quiere actualizar la información*/
             /*Y se validó que todo sea del mismo tamaño que debería ser*/
+            bool error = false;
             if (txtNameSchoolM.Text == "")
             {
                 MessageBox.Show("Nombre de la Escuela inválido");
                 txtNameSchoolM.Focus();
+                error = true;
             }
             if (txtPlaceSchoolM.Text == "")
             {
                 MessageBox.Show("Nombre del Lugar inválido");
                 txtPlaceSchoolM.Focus();
+                error = true;
             }
+            if(!error)
+            {
+                dataTemp.Add(txtNameSchoolM.Text);
+                dataTemp.Add(txtTelephoneSchoolM.Text);
+                dataTemp.Add(txtTelephoneSchoo2M.Text);
+                setVisibleBtn(false);
+            }
+
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -194,6 +208,38 @@ namespace AdminEscuelasFut
                     MessageBox.Show("Error número: " + result.ToString());
                 }
             }
+        }
+
+        public void setVisibleBtn(bool visible)
+        {
+            btnBorrar.Visible = visible;
+            btnConsultar.Visible = visible;
+            btnRegistrar.Visible = visible;
+            btnActualizar.Visible = visible;
+
+            btnGuardar.Visible = !visible;
+            btnDescartar.Visible = !visible;
+        }
+
+        private void btnDescartar_Click(object sender, EventArgs e)
+        {
+            cleanInput();
+            setVisibleBtn(true);
+            dataTemp.Clear();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            dataTemp.Add(txtNameSchoolM.Text);
+            dataTemp.Add(txtPlaceSchoolM.Text);
+            dataTemp.Add(cmbDirrInstalacion.SelectedItem.ToString());
+            dataTemp.Add(txtTelephoneSchoolM.Text);
+            dataTemp.Add(txtTelephoneSchoo2M.Text);
+            schoolController.updateSchoolInfo(dataTemp);
+
+            setVisibleBtn(true);
+            dataTemp.Clear();
+            schoolController.fillSchoolsDataGridView(dgvSchoolM, null);
         }
     }
 }

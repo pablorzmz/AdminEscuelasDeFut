@@ -13,11 +13,13 @@ namespace AdminEscuelasFut
     public partial class SchoolLevels : Form
     {
         private C_SchoolLevels schoolLevelsController;
+        private List<String> dataTemp;
+
         public SchoolLevels()
         {
             InitializeComponent();
             schoolLevelsController = new C_SchoolLevels();
-
+            dataTemp = new List<string>();
         }
 
         private void SchoolLevels_Load(object sender, EventArgs e)
@@ -65,13 +67,9 @@ namespace AdminEscuelasFut
                 List<String> buffer = new List<string>();
                 Utilities.readCurrentRowFromDataGridView(dgvSchoolLevels, e.RowIndex, dgvSchoolLevels.ColumnCount, buffer);
                 cmbSchoolName.SelectedItem = buffer[0];
-                cmbSchoolLevel.SelectedItem = buffer[1];
+                int levelNumber = int.Parse(buffer[1]);
+                cmbSchoolLevel.SelectedIndex = levelNumber;
             }
-        }
-
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -141,5 +139,43 @@ namespace AdminEscuelasFut
                 }
             }
         }
+
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            setVisibleBtn(false);
+            dataTemp.Add(cmbSchoolLevel.SelectedItem.ToString());
+        }
+
+        public void setVisibleBtn(bool visible)
+        {
+            btnBorrar.Visible = visible;
+            btnConsultar.Visible = visible;
+            btnRegistrar.Visible = visible;
+            btnActualizar.Visible = visible;
+
+            btnGuardar.Visible = !visible;
+            btnDescartar.Visible = !visible;
+            cmbSchoolName.Enabled = visible;
+        }
+
+        private void btnDescartar_Click(object sender, EventArgs e)
+        {
+            cleanInput();
+            setVisibleBtn(true);
+            dataTemp.Clear();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            dataTemp.Add(cmbSchoolLevel.SelectedItem.ToString());
+            dataTemp.Add(cmbSchoolName.SelectedItem.ToString());
+            schoolLevelsController.updateSchoolLevelsInfo(dataTemp);
+            schoolLevelsController.fillSchoolsLevelsDataGridView(dgvSchoolLevels, null);
+            dataTemp.Clear();
+            setVisibleBtn(true);
+        }
+
+        
     }
 }

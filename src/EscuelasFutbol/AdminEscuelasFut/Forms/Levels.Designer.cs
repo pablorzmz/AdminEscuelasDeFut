@@ -46,6 +46,7 @@
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
+            this.btnDescartar = new System.Windows.Forms.Button();
             this.menLevels.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgtvLevelInfo)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -263,11 +264,30 @@
             this.btnBorrar.UseVisualStyleBackColor = false;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
+            // btnDescartar
+            // 
+            this.btnDescartar.BackColor = System.Drawing.Color.White;
+            this.btnDescartar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDescartar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnDescartar.FlatAppearance.BorderSize = 0;
+            this.btnDescartar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnDescartar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDescartar.Location = new System.Drawing.Point(155, 228);
+            this.btnDescartar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDescartar.Name = "btnDescartar";
+            this.btnDescartar.Size = new System.Drawing.Size(141, 34);
+            this.btnDescartar.TabIndex = 20;
+            this.btnDescartar.Text = "Descartar cambios";
+            this.btnDescartar.UseVisualStyleBackColor = false;
+            this.btnDescartar.Visible = false;
+            this.btnDescartar.Click += new System.EventHandler(this.btnDescartar_Click);
+            // 
             // Levels
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(751, 633);
+            this.Controls.Add(this.btnDescartar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.btnRegistrar);
@@ -313,5 +333,6 @@
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnDescartar;
     }
 }
