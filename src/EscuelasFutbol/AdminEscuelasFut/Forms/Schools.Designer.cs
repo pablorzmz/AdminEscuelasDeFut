@@ -45,13 +45,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbDirrInstalacion = new System.Windows.Forms.ComboBox();
             this.txtTelephoneSchoo2M = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
-            this.cmbDirrInstalacion = new System.Windows.Forms.ComboBox();
             this.menSchools.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchoolM)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -142,7 +142,7 @@
             // txtNameSchoolM
             // 
             this.txtNameSchoolM.Location = new System.Drawing.Point(73, 26);
-            this.txtNameSchoolM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNameSchoolM.Margin = new System.Windows.Forms.Padding(2);
             this.txtNameSchoolM.MaxLength = 30;
             this.txtNameSchoolM.Name = "txtNameSchoolM";
             this.txtNameSchoolM.Size = new System.Drawing.Size(405, 20);
@@ -152,7 +152,7 @@
             // txtTelephoneSchoolM
             // 
             this.txtTelephoneSchoolM.Location = new System.Drawing.Point(73, 105);
-            this.txtTelephoneSchoolM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTelephoneSchoolM.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelephoneSchoolM.MaxLength = 8;
             this.txtTelephoneSchoolM.Name = "txtTelephoneSchoolM";
             this.txtTelephoneSchoolM.Size = new System.Drawing.Size(405, 20);
@@ -162,7 +162,7 @@
             // txtPlaceSchoolM
             // 
             this.txtPlaceSchoolM.Location = new System.Drawing.Point(73, 53);
-            this.txtPlaceSchoolM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPlaceSchoolM.Margin = new System.Windows.Forms.Padding(2);
             this.txtPlaceSchoolM.MaxLength = 30;
             this.txtPlaceSchoolM.Name = "txtPlaceSchoolM";
             this.txtPlaceSchoolM.Size = new System.Drawing.Size(405, 20);
@@ -174,7 +174,7 @@
             this.dgvSchoolM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSchoolM.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvSchoolM.Location = new System.Drawing.Point(0, 248);
-            this.dgvSchoolM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvSchoolM.Margin = new System.Windows.Forms.Padding(2);
             this.dgvSchoolM.Name = "dgvSchoolM";
             this.dgvSchoolM.RowTemplate.Height = 24;
             this.dgvSchoolM.Size = new System.Drawing.Size(507, 266);
@@ -220,10 +220,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información de las escuelas";
             // 
+            // cmbDirrInstalacion
+            // 
+            this.cmbDirrInstalacion.BackColor = System.Drawing.Color.AliceBlue;
+            this.cmbDirrInstalacion.FormattingEnabled = true;
+            this.cmbDirrInstalacion.Location = new System.Drawing.Point(73, 77);
+            this.cmbDirrInstalacion.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbDirrInstalacion.Name = "cmbDirrInstalacion";
+            this.cmbDirrInstalacion.Size = new System.Drawing.Size(405, 21);
+            this.cmbDirrInstalacion.TabIndex = 40;
+            // 
             // txtTelephoneSchoo2M
             // 
             this.txtTelephoneSchoo2M.Location = new System.Drawing.Point(73, 133);
-            this.txtTelephoneSchoo2M.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTelephoneSchoo2M.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelephoneSchoo2M.MaxLength = 8;
             this.txtTelephoneSchoo2M.Name = "txtTelephoneSchoo2M";
             this.txtTelephoneSchoo2M.Size = new System.Drawing.Size(405, 20);
@@ -271,6 +281,7 @@
             this.btnRegistrar.TabIndex = 29;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // btnActualizar
             // 
@@ -286,6 +297,7 @@
             this.btnActualizar.TabIndex = 30;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnBorrar
             // 
@@ -301,16 +313,7 @@
             this.btnBorrar.TabIndex = 31;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = false;
-            // 
-            // cmbDirrInstalacion
-            // 
-            this.cmbDirrInstalacion.BackColor = System.Drawing.Color.AliceBlue;
-            this.cmbDirrInstalacion.FormattingEnabled = true;
-            this.cmbDirrInstalacion.Location = new System.Drawing.Point(73, 77);
-            this.cmbDirrInstalacion.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbDirrInstalacion.Name = "cmbDirrInstalacion";
-            this.cmbDirrInstalacion.Size = new System.Drawing.Size(405, 21);
-            this.cmbDirrInstalacion.TabIndex = 40;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // Schools
             // 

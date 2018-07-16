@@ -56,5 +56,95 @@ namespace AdminEscuelasFut
             dgvSchoolLevels.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvSchoolLevels.ReadOnly = true;
         }
+
+        public int updateSchoolLevelsInfo( List<String> args ) {
+            String[] procParams =
+              {
+              "@nombreEsc"
+              ,"@numNivelViejo"
+              ,"@numNivelNuevo"
+             };
+            SqlDbType[] dataTypes =
+            {
+                SqlDbType.Char
+                ,SqlDbType.TinyInt
+                ,SqlDbType.TinyInt
+            };
+            /*Se declara la estructura para los parámetros*/
+            List<DataAccess.storedProcData> parameters = new List<DataAccess.storedProcData>();
+            DataAccess.storedProcData paramStruct;
+
+            /*Se llena la estrucutra con los parámetros*/
+            for (int index = 0; index < args.Count; ++index)
+            {
+                paramStruct = new DataAccess.storedProcData();
+                paramStruct.storedProcParam = procParams[index];
+                paramStruct.storedProcParamType = dataTypes[index];
+                paramStruct.userParams = args[index];
+                //MessageBox.Show("Parametro proc: " + procParams[index] +  ", Tipo: " + dataTypes[index].ToString() + ", Valor otorgado: " + args[index]);
+                parameters.Add(paramStruct);
+            }
+
+            return dataAccess.executeStoreProcedure(parameters, "ActualizarNivelesDeEscuela");
+        }
+
+        public int insertSchoolLevels( List<String> args ) {
+            String[] procParams =
+              {
+              "@nombreEsc"
+              ,"@numNivel"
+             };
+            SqlDbType[] dataTypes =
+            {
+                SqlDbType.Char
+                ,SqlDbType.TinyInt
+            };
+            /*Se declara la estructura para los parámetros*/
+            List<DataAccess.storedProcData> parameters = new List<DataAccess.storedProcData>();
+            DataAccess.storedProcData paramStruct;
+
+            /*Se llena la estrucutra con los parámetros*/
+            for (int index = 0; index < args.Count; ++index)
+            {
+                paramStruct = new DataAccess.storedProcData();
+                paramStruct.storedProcParam = procParams[index];
+                paramStruct.storedProcParamType = dataTypes[index];
+                paramStruct.userParams = args[index];
+                //MessageBox.Show("Parametro proc: " + procParams[index] +  ", Tipo: " + dataTypes[index].ToString() + ", Valor otorgado: " + args[index]);
+                parameters.Add(paramStruct);
+            }
+
+            return dataAccess.executeStoreProcedure(parameters, "insertarNivelesAEscuela");
+        }
+
+        public int deleteSchoolLevels(List<String> args)
+        {
+            String[] procParams =
+              {
+              "@nombreEsc"
+              ,"@numNivel"
+             };
+            SqlDbType[] dataTypes =
+            {
+                SqlDbType.Char
+                ,SqlDbType.TinyInt
+            };
+            /*Se declara la estructura para los parámetros*/
+            List<DataAccess.storedProcData> parameters = new List<DataAccess.storedProcData>();
+            DataAccess.storedProcData paramStruct;
+
+            /*Se llena la estrucutra con los parámetros*/
+            for (int index = 0; index < args.Count; ++index)
+            {
+                paramStruct = new DataAccess.storedProcData();
+                paramStruct.storedProcParam = procParams[index];
+                paramStruct.storedProcParamType = dataTypes[index];
+                paramStruct.userParams = args[index];
+                //MessageBox.Show("Parametro proc: " + procParams[index] +  ", Tipo: " + dataTypes[index].ToString() + ", Valor otorgado: " + args[index]);
+                parameters.Add(paramStruct);
+            }
+
+            return dataAccess.executeStoreProcedure(parameters, "eliminarNivelesDeEscuela");
+        }
     }
 }
