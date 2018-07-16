@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 
 namespace AdminEscuelasFut
@@ -43,9 +44,19 @@ namespace AdminEscuelasFut
             dgtvPlayersInfo.Columns[12].Visible = false;
             dgtvPlayersInfo.Columns[13].Visible = false;                        
         }
+        private void exitForm()
+        {
+            bool r = Utilities.showQuestionMessage("¿Desea salir del módulo de jugadores?",
+                          "Módulo de jugadores");
+            if (r)
+            {
+                this.Close();
+            }            
+        }
+
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            exitForm();
         }
         private void txtCedulaEncargado_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -201,6 +212,29 @@ namespace AdminEscuelasFut
                     args.Add(txbTelefonoJug1.Text);
                     //"@NuevoTelefono2Jugador"
                     args.Add(txbTelefonoJug2.Text);
+                    /*Los telefonos viejos se buscan en el data table correspondiente
+                     GERALD esto no es eficiente por aquello jaja*/
+                    DataTable telephones = playerController.telephoneTable();
+                    if (telephones.Rows.Count == 1)
+                    {
+                        //@ViejoTelefono1Jugador
+                        args.Add(telephones.Rows[0]["Telefono"].ToString());
+                        //@ViejoTelefono2Jugador
+                        args.Add("");
+                    }
+                    else if (telephones.Rows.Count == 2)
+                    {
+                        //@ViejoTelefono1Jugador
+                        args.Add(telephones.Rows[0]["Telefono"].ToString());
+                        //@ViejoTelefono2Jugador
+                        args.Add(telephones.Rows[1]["Telefono"].ToString());
+                    }
+                    else
+                    {
+                        // En el procedimiento almacenado se insertan, se mandan vacíos
+                        args.Add("");
+                        args.Add("");
+                    }
                     int result = playerController.updatePlayerInformaction(args);
                     if (result == 0)
                     {
@@ -280,89 +314,96 @@ namespace AdminEscuelasFut
         {
             if (txbCedula.Text == "")
             {
-                MessageBox.Show("El valor para la cédula del jugador es inválido");
+                Utilities.showWarningMessage("El valor para la cédula del jugador es " +
+                    "inválido.","Datos de entrada inválidos para el número de cédula");                
                 txbCedula.Focus();
             }
             else if (txbNombre.Text == "")
             {
-                MessageBox.Show("El valor para el Nombre del jugador es inválido");
+                Utilities.showWarningMessage("El valor para el nombre del jugador es " +
+                        "inválido.", "Datos de entrada inválidos para el nombre");                
                 txbNombre.Focus();
             }
             else if (txbPrimerApellidoJug.Text == "")
             {
-                MessageBox.Show("El valor para el primer apellido del jugador es inválido");
+                Utilities.showWarningMessage("El valor para el primer apellido del jugador es " +
+                       "inválido.", "Datos de entrada inválidos para el primer apellido");                
                 txbPrimerApellidoJug.Focus();
             }
             else if (txbSegundoApellidoJug.Text == "")
             {
-                MessageBox.Show("El valor para el segundo apellido del jugador es inválido");
+                Utilities.showWarningMessage("El valor para el segundo apellido del jugador es " +
+                       "inválido.", "Datos de entrada inválidos para el segundo apellido");
                 txbSegundoApellidoJug.Focus();
             }
             else if (cboEscuelas.SelectedIndex == 0)
             {
-                MessageBox.Show("El valor para la escuela del jugador es inválido");
+                Utilities.showWarningMessage("El valor para la escuela es " +
+                       "inválido.", "Datos de entrada inválidos para la escuela del jugador");                
                 cboEscuelas.Focus();
             }
             else if (txtCedulaEncargado.Text == "")
             {
-                MessageBox.Show("El valor para la cédula del encargado es inválido");
+                Utilities.showWarningMessage("El valor para la cédula del encargado es " +
+                       "inválido.", "Datos de entrada inválidos para la cédula del encargado");                
                 txtCedulaEncargado.Focus();
-            }
-            else if (txbPrimerApellidoEncargado.Text == "")
-            {
-                MessageBox.Show("El valor para el primer apellido del encargado es inválido");
-                txbPrimerApellidoEncargado.Focus();
-            }
-            else if (txbSegundoApellidoEncargado.Text == "")
-            {
-                MessageBox.Show("El valor para el segundo apellido del encargado es inválido");
-                txbSegundoApellidoEncargado.Focus();
             }
             else
             {
-                MessageBox.Show("Datos válidos");
-                List<String> args = new List<string>();
-                //@nombreJ
-                args.Add(txbNombre.Text);
-                //,@Apellido1J
-                args.Add(txbPrimerApellidoJug.Text);
-                //,@tel1J
-                args.Add(txbTelefonoJug1.Text);
-                //,@tel2J
-                args.Add(txbTelefonoJug2.Text);
-                //,@cedulaJ
-                args.Add(txbCedula.Text);
-                //,@Apellido2J
-                args.Add(txbSegundoApellidoJug.Text);
-                //,@fechaNac
-                args.Add(dtpFechaDeNacimiento.Value.ToString("yyyy-MM-dd"));
-                //,@sexo
-                args.Add(sexValue);
-                //,@escuela
-                args.Add(cboEscuelas.SelectedItem.ToString());
-                //,@nombreE
-                args.Add(txbNombreEncargado.Text);
-                //,@Apellido1E
-                args.Add(txbPrimerApellidoEncargado.Text);
-                //,@fechaIngreso
-                args.Add(dtpFechaIngreso.Value.ToString("yyyy-MM-dd"));
-                //,@cedulaE
-                args.Add(txtCedulaEncargado.Text);
-                //,@Apellido2E
-                args.Add(txbSegundoApellidoEncargado.Text);
-
-                int result = playerController.insertNewPlayer(args);
-
-                if (result == 0)
+                bool r = Utilities.showQuestionMessage("¿Desea insertar el nuevo registro del jugador: " +
+                    "Cédula: " + txbCedula.Text + ", Nombre: " + txbNombre.Text + " en la base de datos?", "Insertar nuevo jugador");
+                if (r)
                 {
-                    MessageBox.Show("Jugador registrado con éxito");
-                    cleanInput();
-                    playerController.fillPlayerDataGridView(dgtvPlayersInfo, null);
-                }
-                else
-                {
-                    MessageBox.Show("Error(" + result + ") al registrar el jugador");
-                }
+                    List<String> args = new List<string>();
+                    //@nombreJ
+                    args.Add(txbNombre.Text);
+                    //,@Apellido1J
+                    args.Add(txbPrimerApellidoJug.Text);
+                    //,@tel1J
+                    args.Add(txbTelefonoJug1.Text);
+                    //,@tel2J
+                    args.Add(txbTelefonoJug2.Text);
+                    //,@cedulaJ
+                    args.Add(txbCedula.Text);
+                    //,@Apellido2J
+                    args.Add(txbSegundoApellidoJug.Text);
+                    //,@fechaNac
+                    args.Add(dtpFechaDeNacimiento.Value.ToString("yyyy-MM-dd"));
+                    //,@sexo
+                    args.Add(sexValue);
+                    //,@escuela
+                    args.Add(cboEscuelas.SelectedItem.ToString());
+                    //,@nombreE
+                    args.Add(txbNombreEncargado.Text);
+                    //,@Apellido1E
+                    args.Add(txbPrimerApellidoEncargado.Text);
+                    //,@fechaIngreso
+                    args.Add(dtpFechaIngreso.Value.ToString("yyyy-MM-dd"));
+                    //,@cedulaE
+                    args.Add(txtCedulaEncargado.Text);
+                    //,@Apellido2E
+                    args.Add(txbSegundoApellidoEncargado.Text);
+
+                    int result = playerController.insertNewPlayer(args);
+
+                    if (result == 0)
+                    {
+                        Utilities.showInformationMessage("El jugador fue registrado con éxito", "Éxito al registrar");
+                        cleanInput();
+                        playerController.fillPlayerDataGridView(dgtvPlayersInfo, null);
+                    }
+                    else
+                    {
+                        if (result == Utilities.DUPLICATED_KEY)
+                        {
+                            Utilities.showErrorMessage("El registro que desea insertar ya se encuentra en la base de datos", "No se pudo registrar el jugador");
+                        }
+                        else
+                        {
+                            Utilities.showErrorMessage("Error(" + result + ") al registrar el jugador", "Excepción al registrar jugador");
+                        }                        
+                    }
+                }                
             }
         }
 
@@ -370,24 +411,46 @@ namespace AdminEscuelasFut
         {
             if (txbCedula.Text == "")
             {
-                MessageBox.Show("Valor para la cédula del jugador invalida");
+                Utilities.showErrorMessage("El valor proporcionado para la cédula" +
+                    " del jugador es inválido", "Campo de cédula inválido");
+                txbCedula.Focus();
             }
             else
             {
-                List<String> args = new List<string>();
-                args.Add(txbCedula.Text);
-                int result = playerController.deletePlayer(args);
-                if (result == 0)
+                bool deletePlayers = Utilities.showQuestionMessage("¿Desea " +
+                    "borrar al jugador con cédula "+ txbCedula.Text 
+                    +" de la base de datos? La operación es irreversible.","Borrar un jugador del sistema");
+                if (deletePlayers)
                 {
-                    MessageBox.Show("Jugador borrado con éxito");
-                    cleanInput();
-                    playerController.fillPlayerDataGridView(dgtvPlayersInfo, null);
-                }
-                else
-                {
-                    MessageBox.Show("Error al borrar el jugador");
+                    List<String> args = new List<string>();
+                    args.Add(txbCedula.Text);
+                    int result = playerController.deletePlayer(args);
+                    if (result == 0)
+                    {
+                        Utilities.showInformationMessage("Jugador eliminado con éxito", "Borrado del jugador completado");                        
+                        cleanInput();
+                        playerController.fillPlayerDataGridView(dgtvPlayersInfo, null);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al borrar el jugador: " + result.ToString());
+                    }
+
                 }
             }
+        }
+        private void Players_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            bool r = Utilities.showQuestionMessage("¿Desea salir del módulo de jugadores?",
+               "Módulo de jugadores");
+            if (!r)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void Players_FormClosed(object sender, FormClosedEventArgs e)
+        {            
         }
     }
 }

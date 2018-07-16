@@ -9,6 +9,7 @@ namespace AdminEscuelasFut
 {
     class Utilities
     {
+        public static int DUPLICATED_KEY = 2627;
         /*
          * @todo Control just numeric chars in text file
          * @param sender: sender object from event
