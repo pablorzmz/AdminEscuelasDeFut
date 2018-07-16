@@ -10,8 +10,10 @@ namespace AdminEscuelasFut
     class Utilities
     {
         /*
-         *Se llama en el evento KeyPressed de los componentes.
-         * Es para controlar solo valores numéricos enteros o decimales.
+         * @todo Control just numeric chars in text file
+         * @param sender: sender object from event
+         * @param e: keypreseed event from object
+         * @param decimal: allow of not decimal values
         */        
         public static void validateNumbers(object sender, KeyPressEventArgs e, bool decimals)
         {
@@ -39,6 +41,11 @@ namespace AdminEscuelasFut
             }
         }
 
+        /*
+        * @todo: Control injection in textfiles 
+        * @param sender:  sender objecto from event
+        * @ e: event keypressed from object
+        */
         public static void controlSQLInjection( object sender, KeyPressEventArgs e )
         {
             if (char.IsLetter(e.KeyChar) == false )
@@ -81,6 +88,13 @@ namespace AdminEscuelasFut
             */
         }
 
+        /*
+        * @todo: Fill a buffer with a datagridviewrow content
+        * @param dgtv:  datagridview object for reading
+        * @param rowIndex: row index for reading
+        * @param amountOfColumns: amount of datagridview columns
+        * @param buffer: list of String to fill with row content
+        */
         public static void readCurrentRowFromDataGridView( DataGridView dgtv, int rowIndex,int amountOfColumns, List<String> buffer )
         {
             DataGridViewRow row = dgtv.Rows[rowIndex];
@@ -89,6 +103,47 @@ namespace AdminEscuelasFut
             {
                 value = row.Cells[c].Value.ToString();
                 buffer.Add( value );
+            }
+        }
+        /*
+         * @param messageContent: The message to show to user
+         * @param messageHeader: Header to show on top in dialog message
+         */
+        public static void showInformationMessage( String messageContent, String messageHeader)
+        {
+            MessageBox.Show(messageContent, messageHeader, MessageBoxButtons.OK,MessageBoxIcon.Information);
+        }
+        /*
+         * @param messageContent: The message to show to user
+         * @param messageHeader: Header to show on top in dialog message
+        */
+        public static void showErrorMessage(String messageContent, String messageHeader)
+        {
+            MessageBox.Show(messageContent, messageHeader, MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        /*
+         * @param messageContent: The message to show to user
+         * @param messageHeader: Header to show on top in dialog message
+        */
+        public static void showWarningMessage(String messageContent, String messageHeader)
+        {
+            MessageBox.Show(messageContent, messageHeader, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+        /*
+         * @param messageContent: The message to show to user
+         * @param messageHeader: Header to show on top in dialog message
+         * @return: Return true, if user picked Yes, false otherwise
+        */
+        public static bool showQuestionMessage(String messageContent, String messageHeader)
+        {
+            DialogResult result = MessageBox.Show(messageContent, messageHeader, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }
