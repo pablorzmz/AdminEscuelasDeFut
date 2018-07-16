@@ -14,6 +14,8 @@ namespace AdminEscuelasFut
     {
         private C_Trainings trainingsController;
         private DataGridViewRow currentRow;
+        private String dataTemp;
+
         public Trainings()
         {
             InitializeComponent();
@@ -79,21 +81,8 @@ namespace AdminEscuelasFut
             }
             else
             {
-                List<String> args = new List<string>();
-                args.Add(currentRow.Cells["Fecha"].Value.ToString());
-                args.Add(dtpDateTrainingM.Value.ToString("yyyy-MM-dd"));
-                args.Add(txtHourTrainingM.Text);
-                int result = trainingsController.updateTraining(args);
-                if (result == 0)
-                {
-                    MessageBox.Show("Entrenamiento actualizado con éxito");
-                    this.txtHourTrainingM.Text = "  :  :";
-                    trainingsController.filldataGridViewTrainings(dgvTrainingM, null);
-                }
-                else
-                {
-                    MessageBox.Show("Error al actualizar entrenamiento");
-                }
+                dataTemp = dtpDateTrainingM.Value.ToString("yyyy-MM-dd");
+                setVisibleBtn(false);
             }
         }
 
@@ -140,6 +129,51 @@ namespace AdminEscuelasFut
             {
                 MessageBox.Show("Error al borrar entrenamiento");
             }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            List<String> args = new List<string>();
+            args.Add(dataTemp);
+            args.Add(dtpDateTrainingM.Value.ToString("yyyy-MM-dd"));
+            args.Add(txtHourTrainingM.Text);
+            int result = trainingsController.updateTraining(args);
+            if (result == 0)
+            {
+                MessageBox.Show("Entrenamiento actualizado con éxito");
+                trainingsController.filldataGridViewTrainings(dgvTrainingM, null);
+                setVisibleBtn(true);
+                cleanInput();
+
+            }
+            else
+            {
+                MessageBox.Show("Error al actualizar entrenamiento");
+            }
+
+        }
+
+        public void setVisibleBtn(bool visible)
+        {
+            btnBorrar.Visible = visible;
+            btnConsultar.Visible = visible;
+            btnRegistrar.Visible = visible;
+            btnActualizar.Visible = visible;
+            dgvTrainingM.Enabled = visible;
+
+            btnGuardar.Visible = !visible;
+            btnDescartar.Visible = !visible;
+        }
+
+        private void btnDescartar_Click(object sender, EventArgs e)
+        {
+            cleanInput();
+            setVisibleBtn(true);
+        }
+
+        private void cleanInput()
+        {
+            this.txtHourTrainingM.Text = "  :  :";
         }
     }
 }

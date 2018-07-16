@@ -217,6 +217,8 @@ namespace AdminEscuelasFut
             btnRegistrar.Visible = visible;
             btnActualizar.Visible = visible;
 
+            dgvSchoolM.Enabled = visible;
+
             btnGuardar.Visible = !visible;
             btnDescartar.Visible = !visible;
         }

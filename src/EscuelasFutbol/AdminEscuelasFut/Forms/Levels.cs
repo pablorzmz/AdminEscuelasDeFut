@@ -152,6 +152,8 @@ namespace AdminEscuelasFut
             btnRegistrar.Visible = visible;
             btnActualizar.Visible = visible;
 
+            dgtvLevelInfo.Enabled = visible;
+
             btnGuardar.Visible = !visible;
             btnDescartar.Visible = !visible;
         }

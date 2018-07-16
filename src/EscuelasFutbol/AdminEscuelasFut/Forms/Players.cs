@@ -11,12 +11,14 @@ namespace AdminEscuelasFut
         private C_Players playerController;
         private String sexValue;
         private DataGridViewRow currentRow;
+        private List<String> dataTemp;
         public Players()
         {
             InitializeComponent();
             playerController = new C_Players();
             sexValue = "m";
             currentRow = null;
+            dataTemp = new List<string>();
         }
 
         public void showPlayersTraingins()
@@ -29,6 +31,7 @@ namespace AdminEscuelasFut
         {            
             showPlayersTraingins();
         }
+
         private void Players_Load(object sender, EventArgs e)
         {
             /* Fill combo box with user levels*/
@@ -140,120 +143,7 @@ namespace AdminEscuelasFut
             txbSegundoApellidoEncargado.Text = "";
         }
 
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-            /*Asumiento que ya el ususario confirmo que quiere actualizar la información*/
-            /*Y se validó que todo sea del mismo tamaño que debería ser*/
-            if (cboEscuelas.SelectedIndex == 0)
-            {
-                MessageBox.Show("Debe Seleccionar una escuela válida");
-                cboEscuelas.Focus();
-            }
-            else if (cboNiveles.SelectedIndex == 0)
-            {
-                MessageBox.Show("Debe Seleccionar un nivel válido");
-                cboNiveles.Focus();
-            }
-            else if (txbCedula.Text == "")
-            {
-                MessageBox.Show("Número de cédula Jugador inválido");
-                txbCedula.Focus();
-            }
-            else if (txtCedulaEncargado.Text == "")
-            {
-                MessageBox.Show("Número de cédula de encargado inválido");
-                txtCedulaEncargado.Focus();
-            }            
-            else if (dgtvPlayersInfo.Rows.Count == 0 || currentRow == null)
-            {
-                MessageBox.Show("Debe consultar al menos un dato del la tabla de registro para actualizar");
-            }
-            else
-            {
-                if (currentRow != null)
-                {
-                    /*Y que el nombre de la escuela no sea item 0 ni nivel item 0*/
-                    List<String> args = new List<string>();
-                    //"@NuevaCedJugador"
-                    args.Add(txbCedula.Text);
-                    //"@ViejaCedJugador"
-                    args.Add(currentRow.Cells["N° Cédula"].Value.ToString());
-                    //"@Edad"
-                    DateTime currentTime = DateTime.Now;
-                    int edad = currentTime.Year - dtpFechaDeNacimiento.Value.Year;
-                    args.Add(edad.ToString());
-                    //"@Sexo"
-                    args.Add(sexValue);
-                    //"@FechaNacimiento"
-                    args.Add(dtpFechaDeNacimiento.Value.ToString("yyyy-MM-dd"));
-                    //"@NuevaCedEncargado"
-                    args.Add(txtCedulaEncargado.Text);
-                    //"@ViejaCedEncargado"
-                    // args.Add(currentRow.Cells["N° Cédula Encargado"].Value.ToString());
-                    //"@FechaIngreso"
-                    args.Add(dtpFechaIngreso.Value.ToString("yyyy-MM-dd"));
-                    //"@NombreJug"
-                    args.Add(txbNombre.Text);
-                    //"@Apellido1Jug"
-                    args.Add(txbPrimerApellidoJug.Text);
-                    //"@Apellido2Jug"
-                    args.Add(txbSegundoApellidoJug.Text);
-                    //"@NombreEncargado"
-                    args.Add(txbNombreEncargado.Text);
-                    //"@Apellido1Encar"
-                    args.Add(txbPrimerApellidoEncargado.Text);
-                    //"@Apellido2Encar"
-                    args.Add(txbSegundoApellidoEncargado.Text);
-                    //"@NomEscuela"
-                    args.Add(cboEscuelas.SelectedItem.ToString());
-                    //"@Nivel"
-                    args.Add(cboNiveles.SelectedItem.ToString());
-                    //"@NuevoTelefono1Jugador"
-                    args.Add(txbTelefonoJug1.Text);
-                    //"@NuevoTelefono2Jugador"
-                    args.Add(txbTelefonoJug2.Text);
-                    /*Los telefonos viejos se buscan en el data table correspondiente
-                     GERALD esto no es eficiente por aquello jaja*/
-                    DataTable telephones = playerController.telephoneTable();
-                    if (telephones.Rows.Count == 1)
-                    {
-                        //@ViejoTelefono1Jugador
-                        args.Add(telephones.Rows[0]["Telefono"].ToString());
-                        //@ViejoTelefono2Jugador
-                        args.Add("");
-                    }
-                    else if (telephones.Rows.Count == 2)
-                    {
-                        //@ViejoTelefono1Jugador
-                        args.Add(telephones.Rows[0]["Telefono"].ToString());
-                        //@ViejoTelefono2Jugador
-                        args.Add(telephones.Rows[1]["Telefono"].ToString());
-                    }
-                    else
-                    {
-                        // En el procedimiento almacenado se insertan, se mandan vacíos
-                        args.Add("");
-                        args.Add("");
-                    }
-                    int result = playerController.updatePlayerInformaction(args);
-                    if (result == 0)
-                    {
-                        MessageBox.Show("Actualización Exitosa");
-                        currentRow = null;
-                        cleanInput();
-                        playerController.fillPlayerDataGridView(dgtvPlayersInfo, null);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error número: " + result.ToString());
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Para actualizar debe seleccionar una fila de tabla de jugadores");
-                }
-            }
-        }
+       
 
         private void dgtvPlayersInfo_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -452,6 +342,130 @@ namespace AdminEscuelasFut
         private void Players_FormClosed(object sender, FormClosedEventArgs e)
         {            
         }
+
+        public void setVisibleBtn(bool visible)
+        {
+            btnBorrar.Visible = visible;
+            btnConsultar.Visible = visible;
+            btnRegistrar.Visible = visible;
+            btnActualizar.Visible = visible;
+            dgtvPlayersInfo.Enabled = visible;
+
+            btnGuardar.Visible = !visible;
+            btnDescartar.Visible = !visible;
+            
+        }
+
+        private void btnDescartar_Click(object sender, EventArgs e)
+        {
+            dataTemp.Clear();
+            setVisibleBtn(true);
+            cleanInput();
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            setVisibleBtn(false);
+            dataTemp.Clear();
+            dataTemp.Add(txbCedula.Text);
+            dataTemp.Add(txbTelefonoJug1.Text);
+            dataTemp.Add(txbTelefonoJug2.Text);
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+             //"@NuevaCedJugador"
+             dataTemp.Add(txbCedula.Text);
+             //"@Edad"
+             DateTime currentTime = DateTime.Now;
+             int edad = currentTime.Year - dtpFechaDeNacimiento.Value.Year;
+            dataTemp.Add(edad.ToString());
+            //"@Sexo"
+            dataTemp.Add(getSexo());
+            //"@FechaNacimiento"
+            dataTemp.Add(dtpFechaDeNacimiento.Value.ToString("yyyy-MM-dd"));
+            //"@NuevaCedEncargado"
+            dataTemp.Add(txtCedulaEncargado.Text);
+            //"@ViejaCedEncargado"
+            // args.Add(currentRow.Cells["N° Cédula Encargado"].Value.ToString());
+            //"@FechaIngreso"
+            dataTemp.Add(dtpFechaIngreso.Value.ToString("yyyy-MM-dd"));
+            //"@NombreJug"
+            dataTemp.Add(txbNombre.Text);
+            //"@Apellido1Jug"
+            dataTemp.Add(txbPrimerApellidoJug.Text);
+            //"@Apellido2Jug"
+            dataTemp.Add(txbSegundoApellidoJug.Text);
+            //"@NombreEncargado"
+            dataTemp.Add(txbNombreEncargado.Text);
+            //"@Apellido1Encar"
+            dataTemp.Add(txbPrimerApellidoEncargado.Text);
+            //"@Apellido2Encar"
+            dataTemp.Add(txbSegundoApellidoEncargado.Text);
+            //"@NomEscuela"
+            dataTemp.Add(cboEscuelas.SelectedItem.ToString());
+            //"@Nivel"
+            dataTemp.Add(cboNiveles.SelectedItem.ToString());
+            //"@NuevoTelefono1Jugador"
+            dataTemp.Add(txbTelefonoJug1.Text);
+            //"@NuevoTelefono2Jugador"
+            dataTemp.Add(txbTelefonoJug2.Text);
+             
+             int result = playerController.updatePlayerInformaction(dataTemp);
+             if (result == 0)
+             {
+                 MessageBox.Show("Actualización Exitosa");
+                 currentRow = null;
+                 cleanInput();
+                 playerController.fillPlayerDataGridView(dgtvPlayersInfo, null);
+             }
+             else
+             {
+                 MessageBox.Show("Error número: " + result.ToString());
+             }
+            dataTemp.Clear();
+            setVisibleBtn(true);
+        }
+
+        private bool validate()
+        {
+            /*Asumiento que ya el ususario confirmo que quiere actualizar la información*/
+            /*Y se validó que todo sea del mismo tamaño que debería ser*/
+            if (cboEscuelas.SelectedIndex == 0)
+            {
+                MessageBox.Show("Debe Seleccionar una escuela válida");
+                cboEscuelas.Focus();
+            }
+            else if (cboNiveles.SelectedIndex == 0)
+            {
+                MessageBox.Show("Debe Seleccionar un nivel válido");
+                cboNiveles.Focus();
+            }
+            else if (txbCedula.Text == "")
+            {
+                MessageBox.Show("Número de cédula Jugador inválido");
+                txbCedula.Focus();
+            }
+            else if (txtCedulaEncargado.Text == "")
+            {
+                MessageBox.Show("Número de cédula de encargado inválido");
+                txtCedulaEncargado.Focus();
+            }
+            else if (dgtvPlayersInfo.Rows.Count == 0 || currentRow == null)
+            {
+                MessageBox.Show("Debe consultar al menos un dato del la tabla de registro para actualizar");
+            }
+            return true;
+        }
+
+        private String getSexo()
+        {
+            if (rbtnHombre.Checked)
+                return "m";
+            else
+                return "f";
+        }
+        
     }
 }
 

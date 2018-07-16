@@ -100,13 +100,14 @@ namespace AdminEscuelasFut
             DataAccess.storedProcData param;
             String[] procParams =
               {
-              "@NuevaCedJugador"
-              ,"@ViejaCedJugador"
+              "@ViejaCedJugador"
+              ,"@ViejoTelefono1Jugador"
+              ,"@ViejoTelefono2Jugador"
+              ,"@NuevaCedJugador"
               ,"@Edad"
               ,"@Sexo"
               ,"@FechaNacimiento"
               ,"@NuevaCedEncargado"
-              //,"@ViejaCedEncargado"
               ,"@FechaIngreso"
               ,"@NombreJug"
               ,"@Apellido1Jug"
@@ -118,18 +119,17 @@ namespace AdminEscuelasFut
               ,"@Nivel"
               ,"@NuevoTelefono1Jugador"
               ,"@NuevoTelefono2Jugador"
-              ,"@ViejoTelefono1Jugador"
-              ,"@ViejoTelefono2Jugador"
              };
             SqlDbType[] dataTypes =
             {
                 SqlDbType.Char
+                ,SqlDbType.VarChar
+                ,SqlDbType.VarChar
                 ,SqlDbType.Char
                 ,SqlDbType.TinyInt
                 ,SqlDbType.Char
                 ,SqlDbType.Date
                 ,SqlDbType.Char
-                //,SqlDbType.Char
                 ,SqlDbType.Date
                 ,SqlDbType.VarChar
                 ,SqlDbType.VarChar
@@ -139,8 +139,6 @@ namespace AdminEscuelasFut
                 ,SqlDbType.VarChar
                 ,SqlDbType.VarChar
                 ,SqlDbType.TinyInt
-                ,SqlDbType.VarChar
-                ,SqlDbType.VarChar
                 ,SqlDbType.VarChar
                 ,SqlDbType.VarChar
             };
