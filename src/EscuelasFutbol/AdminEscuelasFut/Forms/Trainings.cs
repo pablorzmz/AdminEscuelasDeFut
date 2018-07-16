@@ -12,18 +12,18 @@ namespace AdminEscuelasFut
 {
     public partial class Trainings : Form
     {
-        //private C_Trainings trainingsController;
+        private C_Trainings trainingsController;
         private DataGridViewRow currentRow;
         public Trainings()
         {
             InitializeComponent();
-            //trainingsController = new C_Trainings();
+            trainingsController = new C_Trainings();
             currentRow = null;
         }
 
         private void Trainings_Load(object sender, EventArgs e)
         {
-            //trainingsController.filldataGridViewTrainings(this.dgvTrainingM,null);
+            trainingsController.filldataGridViewTrainings(this.dgvTrainingM,null);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -56,11 +56,11 @@ namespace AdminEscuelasFut
             args.Add(txtHourTrainingM.Text);
             if (args[1] == "  :  :")
             {
-                //trainingsController.filldataGridViewTrainings(dgvTrainingM, null);
+                trainingsController.filldataGridViewTrainings(dgvTrainingM, null);
             }
             else
             {
-                //trainingsController.filldataGridViewTrainings(dgvTrainingM, args);
+                trainingsController.filldataGridViewTrainings(dgvTrainingM, args);
             }
             
         }
@@ -83,13 +83,12 @@ namespace AdminEscuelasFut
                 args.Add(currentRow.Cells["Fecha"].Value.ToString());
                 args.Add(dtpDateTrainingM.Value.ToString("yyyy-MM-dd"));
                 args.Add(txtHourTrainingM.Text);
-                //int result = trainingsController.updateTraining(args);
-                int result = 0;
+                int result = trainingsController.updateTraining(args);
                 if (result == 0)
                 {
                     MessageBox.Show("Entrenamiento actualizado con éxito");
                     this.txtHourTrainingM.Text = "  :  :";
-                    //trainingsController.filldataGridViewTrainings(dgvTrainingM, null);
+                    trainingsController.filldataGridViewTrainings(dgvTrainingM, null);
                 }
                 else
                 {
@@ -111,13 +110,12 @@ namespace AdminEscuelasFut
                 List<String> args = new List<string>();
                 args.Add(dtpDateTrainingM.Value.ToString("yyyy-MM-dd"));
                 args.Add(txtHourTrainingM.Text);
-                //int result = trainingsController.insertNewTraining(args);
-                int result = 0;
+                int result = trainingsController.insertNewTraining(args);
                 if (result == 0)
                 {
                     MessageBox.Show("Entrenamiento registrado con éxito");
                     this.txtHourTrainingM.Text = "  :  :";
-                   // trainingsController.filldataGridViewTrainings(dgvTrainingM, null);
+                    trainingsController.filldataGridViewTrainings(dgvTrainingM, null);
                 }
                 else
                 {
@@ -131,13 +129,12 @@ namespace AdminEscuelasFut
             List<String> args = new List<string>();
             args.Add(dtpDateTrainingM.Value.ToString("yyyy-MM-dd"));
 
-            // int result = trainingsController.deleteTraining(args);
-            int result = 0;
+            int result = trainingsController.deleteTraining(args);
             if (result == 0)
             {
                 MessageBox.Show("Entrenamiento borrado con éxito");
                 this.txtHourTrainingM.Text = "  :  :";
-             //   trainingsController.filldataGridViewTrainings(dgvTrainingM, null);
+                trainingsController.filldataGridViewTrainings(dgvTrainingM, null);
             }
             else
             {
