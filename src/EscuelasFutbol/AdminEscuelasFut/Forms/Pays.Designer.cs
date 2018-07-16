@@ -40,6 +40,9 @@
             this.dgvPagosJugador = new System.Windows.Forms.DataGridView();
             this.btnRegisterRPaymentPlayer = new System.Windows.Forms.Button();
             this.goBoxInfoPagosJugador = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmbFinalMonth = new System.Windows.Forms.ComboBox();
+            this.cmbInitalMonth = new System.Windows.Forms.ComboBox();
             this.txbDetail = new System.Windows.Forms.TextBox();
             this.lblDetail = new System.Windows.Forms.Label();
             this.cboEscuelas = new System.Windows.Forms.ComboBox();
@@ -60,9 +63,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.cmbInitalMonth = new System.Windows.Forms.ComboBox();
-            this.cmbFinalMonth = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.menPays.SuspendLayout();
             this.tabCPagosGeneral.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -216,6 +216,34 @@
             this.goBoxInfoPagosJugador.TabStop = false;
             this.goBoxInfoPagosJugador.Text = "Datos del pago";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(190, 27);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(37, 13);
+            this.label7.TabIndex = 70;
+            this.label7.Text = "Fecha";
+            // 
+            // cmbFinalMonth
+            // 
+            this.cmbFinalMonth.BackColor = System.Drawing.Color.AliceBlue;
+            this.cmbFinalMonth.FormattingEnabled = false;
+            this.cmbFinalMonth.Location = new System.Drawing.Point(241, 94);
+            this.cmbFinalMonth.Name = "cmbFinalMonth";
+            this.cmbFinalMonth.Size = new System.Drawing.Size(93, 21);
+            this.cmbFinalMonth.TabIndex = 69;
+            // 
+            // cmbInitalMonth
+            // 
+            this.cmbInitalMonth.BackColor = System.Drawing.Color.AliceBlue;
+            this.cmbInitalMonth.FormattingEnabled = false;
+            this.cmbInitalMonth.Location = new System.Drawing.Point(94, 95);
+            this.cmbInitalMonth.Name = "cmbInitalMonth";
+            this.cmbInitalMonth.Size = new System.Drawing.Size(93, 21);
+            this.cmbInitalMonth.TabIndex = 68;
+            // 
             // txbDetail
             // 
             this.txbDetail.Location = new System.Drawing.Point(241, 132);
@@ -271,7 +299,6 @@
             // 
             // dtpFechaMatricula
             // 
-            this.dtpFechaMatricula.Enabled = true;
             this.dtpFechaMatricula.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaMatricula.Location = new System.Drawing.Point(241, 22);
             this.dtpFechaMatricula.Margin = new System.Windows.Forms.Padding(2);
@@ -417,34 +444,6 @@
             this.tabPage4.Text = "Pagos equipamientos";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // cmbInitalMonth
-            // 
-            this.cmbInitalMonth.BackColor = System.Drawing.Color.AliceBlue;
-            this.cmbInitalMonth.FormattingEnabled = true;
-            this.cmbInitalMonth.Location = new System.Drawing.Point(94, 95);
-            this.cmbInitalMonth.Name = "cmbInitalMonth";
-            this.cmbInitalMonth.Size = new System.Drawing.Size(93, 21);
-            this.cmbInitalMonth.TabIndex = 68;
-            // 
-            // cmbFinalMonth
-            // 
-            this.cmbFinalMonth.BackColor = System.Drawing.Color.AliceBlue;
-            this.cmbFinalMonth.FormattingEnabled = true;
-            this.cmbFinalMonth.Location = new System.Drawing.Point(241, 94);
-            this.cmbFinalMonth.Name = "cmbFinalMonth";
-            this.cmbFinalMonth.Size = new System.Drawing.Size(93, 21);
-            this.cmbFinalMonth.TabIndex = 69;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(190, 27);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(37, 13);
-            this.label7.TabIndex = 70;
-            this.label7.Text = "Fecha";
-            // 
             // Pays
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -460,6 +459,7 @@
             this.Name = "Pays";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Módulo de Pagos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Pays_FormClosing);
             this.Load += new System.EventHandler(this.Pays_Load);
             this.menPays.ResumeLayout(false);
             this.menPays.PerformLayout();

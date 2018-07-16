@@ -219,62 +219,82 @@ namespace AdminEscuelasFut
             }
             else
             {
-                MessageBox.Show("Datos válidos");
-                List<String> args = new List<string>();
-
-                if (ckbxMonthlyRPaymentPlayer.CheckState == CheckState.Checked || chbxAnnuityRPaymentPlayer.CheckState == CheckState.Checked)
+                bool r = Utilities.showQuestionMessage("¿Desea insertar el nuevo registro del pago: " +
+                       "\nCédula: " + txtIDRPaymentPlayer.Text + "\nRecibo: " + txtReceiptNumberRPaymentPlayer.Text + "\nMonto: " + txtAmountRPaymentPlayer.Text, "Insertar nuevo pago");
+                if (r)
                 {
-                    /*0*/
-                    args.Add(cboEscuelas.SelectedItem.ToString());
-                    /*1*/
-                    args.Add(txtReceiptNumberRPaymentPlayer.Text);
-                    /*2*/
-                    args.Add(dtpFechaMatricula.Value.ToString("yyyy-MM-dd"));
-                    /*3*/
-                    args.Add(txtAmountRPaymentPlayer.Text);
-                    /*4*/
-                    args.Add(txbDetail.Text);
-                    /*5*/
-                    args.Add(txtIDRPaymentPlayer.Text);
+                    MessageBox.Show("Datos válidos");
+                    List<String> args = new List<string>();
 
-                    if (ckbxMonthlyRPaymentPlayer.CheckState == CheckState.Checked && chbxAnnuityRPaymentPlayer.CheckState == CheckState.Checked)
+                    if (ckbxMonthlyRPaymentPlayer.CheckState == CheckState.Checked || chbxAnnuityRPaymentPlayer.CheckState == CheckState.Checked)
                     {
-                        args.Add("2");
-                    }
-                    else if (ckbxMonthlyRPaymentPlayer.CheckState == CheckState.Checked && chbxAnnuityRPaymentPlayer.CheckState == CheckState.Unchecked)
-                    {
-                        args.Add("1");
-                    }
-                    else
-                    {
-                        args.Add("0");
+                        /*0*/
+                        args.Add(cboEscuelas.SelectedItem.ToString());
+                        /*1*/
+                        args.Add(txtReceiptNumberRPaymentPlayer.Text);
+                        /*2*/
+                        args.Add(dtpFechaMatricula.Value.ToString("yyyy-MM-dd"));
+                        /*3*/
+                        args.Add(txtAmountRPaymentPlayer.Text);
+                        /*4*/
+                        args.Add(txbDetail.Text);
+                        /*5*/
+                        args.Add(txtIDRPaymentPlayer.Text);
 
-                    }
-                    int result = paysController.insertNewPay(args);
-
-                    if (result == 0)
-                    {
-                        if (ckbxMonthlyRPaymentPlayer.CheckState == CheckState.Checked)
+                        if (ckbxMonthlyRPaymentPlayer.CheckState == CheckState.Checked && chbxAnnuityRPaymentPlayer.CheckState == CheckState.Checked)
                         {
-                            string initialMonth = cmbInitalMonth.Text;
-                            string finalMonth = cmbFinalMonth.Text;
-                            args.Clear();
-                            /*0*/
-                            args.Add(cboEscuelas.SelectedItem.ToString());
-                            /*1*/
-                            args.Add(txtReceiptNumberRPaymentPlayer.Text);
-                            int year = dtpFechaMatricula.Value.Year;
-                            paysController.insertNewMonthPay(args, initialMonth, finalMonth, year);
+                            args.Add("2");
                         }
-                        cleanInput();
-                        paysController.fillPaysDataGridView(dgvPagosJugador, null);
-                        MessageBox.Show("Pago registrados correctamente");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error(" + result + ") al registrar pago");
+                        else if (ckbxMonthlyRPaymentPlayer.CheckState == CheckState.Checked && chbxAnnuityRPaymentPlayer.CheckState == CheckState.Unchecked)
+                        {
+                            args.Add("1");
+                        }
+                        else
+                        {
+                            args.Add("0");
+
+                        }
+                        int result = paysController.insertNewPay(args);
+
+                        if (result == 0)
+                        {
+                            if (ckbxMonthlyRPaymentPlayer.CheckState == CheckState.Checked)
+                            {
+                                string initialMonth = cmbInitalMonth.Text;
+                                string finalMonth = cmbFinalMonth.Text;
+                                args.Clear();
+                                /*0*/
+                                args.Add(cboEscuelas.SelectedItem.ToString());
+                                /*1*/
+                                args.Add(txtReceiptNumberRPaymentPlayer.Text);
+                                int year = dtpFechaMatricula.Value.Year;
+                                paysController.insertNewMonthPay(args, initialMonth, finalMonth, year);
+                            }
+                            args.Clear();
+                            args.Add(txtIDRPaymentPlayer.Text);
+                            args.Add("");
+                            args.Add(cboEscuelas.SelectedItem.ToString());
+                            paysController.fillPaysDataGridView(dgvPagosJugador, args);
+                            cleanInput();
+                            paysController.fillPaysDataGridView(dgvPagosJugador, null);
+                            MessageBox.Show("Pago registrados correctamente");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error(" + result + ") al registrar pago");
+                        }
                     }
                 }
+            }
+        }
+
+        private void Pays_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            bool r = Utilities.showQuestionMessage("¿Desea salir del módulo de pagos?",
+               "Módulo de pagos");
+            if (!r)
+            {
+                e.Cancel = true;
             }
         }
     }
