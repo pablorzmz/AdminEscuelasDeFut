@@ -603,6 +603,8 @@
             this.Name = "Players";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Módulo de Jugadores";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Players_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Players_FormClosed);
             this.Load += new System.EventHandler(this.Players_Load);
             this.menPlayers.ResumeLayout(false);
             this.menPlayers.PerformLayout();
