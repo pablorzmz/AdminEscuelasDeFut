@@ -39,6 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dgvPlayerTraining = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboCedulas = new System.Windows.Forms.ComboBox();
             this.cboFechasEntrenamientos = new System.Windows.Forms.ComboBox();
             this.cboEscuelas = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
-            this.cboCedulas = new System.Windows.Forms.ComboBox();
             this.menEntrenJugadores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlayerTraining)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -138,7 +138,7 @@
             this.dgvPlayerTraining.Name = "dgvPlayerTraining";
             this.dgvPlayerTraining.RowTemplate.Height = 24;
             this.dgvPlayerTraining.Size = new System.Drawing.Size(546, 187);
-            this.dgvPlayerTraining.TabIndex = 31;           
+            this.dgvPlayerTraining.TabIndex = 31;
             this.dgvPlayerTraining.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlayerTraining_CellDoubleClick);
             // 
             // groupBox1
@@ -156,6 +156,16 @@
             this.groupBox1.TabIndex = 40;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información de entrenamientos de jugadores";
+            // 
+            // cboCedulas
+            // 
+            this.cboCedulas.BackColor = System.Drawing.Color.AliceBlue;
+            this.cboCedulas.FormattingEnabled = true;
+            this.cboCedulas.Location = new System.Drawing.Point(386, 27);
+            this.cboCedulas.Name = "cboCedulas";
+            this.cboCedulas.Size = new System.Drawing.Size(140, 21);
+            this.cboCedulas.TabIndex = 77;
+            this.cboCedulas.SelectedIndexChanged += new System.EventHandler(this.cboCedulas_SelectedIndexChanged);
             // 
             // cboFechasEntrenamientos
             // 
@@ -214,6 +224,7 @@
             this.btnRegistrar.TabIndex = 41;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // btnActualizar
             // 
@@ -229,6 +240,7 @@
             this.btnActualizar.TabIndex = 42;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnBorrar
             // 
@@ -244,16 +256,7 @@
             this.btnBorrar.TabIndex = 43;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = false;
-            // 
-            // cboCedulas
-            // 
-            this.cboCedulas.BackColor = System.Drawing.Color.AliceBlue;
-            this.cboCedulas.FormattingEnabled = true;
-            this.cboCedulas.Location = new System.Drawing.Point(386, 27);
-            this.cboCedulas.Name = "cboCedulas";
-            this.cboCedulas.Size = new System.Drawing.Size(140, 21);
-            this.cboCedulas.TabIndex = 77;
-            this.cboCedulas.SelectedIndexChanged += new System.EventHandler(this.cboCedulas_SelectedIndexChanged);
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // PlayerTrainnings
             // 

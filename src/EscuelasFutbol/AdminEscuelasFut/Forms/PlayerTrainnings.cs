@@ -15,12 +15,14 @@ namespace AdminEscuelasFut
         private C_PlayerTrainnings playerTrainingController;
         private String cedula;
         private String escuela;
+        private DataGridViewRow currentRow;
         public PlayerTrainnings()
         {
             InitializeComponent();
             playerTrainingController = new C_PlayerTrainnings();
             this.cedula = "-1";
             this.escuela = "Elija una Escuela";
+            currentRow = null;
         }
 
 
@@ -99,12 +101,127 @@ namespace AdminEscuelasFut
         private void dgvPlayerTraining_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             List<String> buffer = new List<string>();
+            currentRow = dgvPlayerTraining.Rows[e.RowIndex];
             Utilities.readCurrentRowFromDataGridView(dgvPlayerTraining, e.RowIndex, dgvPlayerTraining.ColumnCount, buffer);
             this.cboEscuelas.SelectedItem = buffer[0];
             this.cboCedulas.SelectedItem = buffer[1];
             this.txtIDPlayerTraining.Text = buffer[1];
             DateTime t = Convert.ToDateTime(buffer[4]);
             this.cboFechasEntrenamientos.SelectedItem = t.ToString("dd/MM/yyyy");
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            if (txtIDPlayerTraining.Text == "")
+            {
+                MessageBox.Show("Se debe degitar una cédula válida");
+                txtIDPlayerTraining.Focus();
+            }
+            else if (cboFechasEntrenamientos.SelectedIndex == 0)
+            {
+                MessageBox.Show("Se debe seleccionar una fecha de entrenamiento válida");
+                cboFechasEntrenamientos.Focus();
+            }
+            else if (currentRow == null)
+            {
+                MessageBox.Show("Para actualizar un valor, debe haberse seleccionado" +
+                    " de la tabla de entrenamientos");
+                dgvPlayerTraining.Focus();
+            }
+            else
+            {
+                List<String> args = new List<string>();
+                args.Add(txtIDPlayerTraining.Text);
+                args.Add(cboFechasEntrenamientos.SelectedItem.ToString());
+                args.Add(currentRow.Cells["Fecha"].Value.ToString());
+
+                int result = playerTrainingController.updatePlayerTrainingInfo(args);
+
+                if (result == 0)
+                {
+                    MessageBox.Show("Actualizado con éxito");
+                    playerTrainingController.fillPlayerDataGridView(dgvPlayerTraining, null);
+                    currentRow = null;
+                    cleanInput();
+                }
+                else
+                {
+                    MessageBox.Show("Error al actualizar");
+                }
+            }
+        }
+        private void cleanInput()
+        {
+            txtIDPlayerTraining.Text = "";
+            cboCedulas.SelectedIndex = 0;
+            cboEscuelas.SelectedIndex = 0;
+            cboFechasEntrenamientos.SelectedIndex = 0;
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            if (txtIDPlayerTraining.Text == "")
+            {
+                MessageBox.Show("Se debe degitar una cédula válida");
+                txtIDPlayerTraining.Focus();
+            }
+            else if (cboFechasEntrenamientos.SelectedIndex == 0)
+            {
+                MessageBox.Show("Se debe seleccionar una fecha de entrenamiento válida");
+                cboFechasEntrenamientos.Focus();
+            }
+            else
+            {
+                List<String> args = new List<string>();
+                args.Add(txtIDPlayerTraining.Text);
+                args.Add(cboFechasEntrenamientos.SelectedItem.ToString());
+
+                int result = playerTrainingController.addNewPlayerTraining(args);
+
+                if (result == 0)
+                {
+                    MessageBox.Show("Registrado con éxito");
+                    playerTrainingController.fillPlayerDataGridView(dgvPlayerTraining, null);
+                    cleanInput();
+                }
+                else
+                {
+                    MessageBox.Show("Error al registrar entrenamiento de jugador");
+                }
+            }
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            if (txtIDPlayerTraining.Text == "")
+            {
+                MessageBox.Show("Se debe degitar una cédula válida");
+                txtIDPlayerTraining.Focus();
+            }
+            else if (cboFechasEntrenamientos.SelectedIndex == 0)
+            {
+                MessageBox.Show("Se debe seleccionar una fecha de entrenamiento válida");
+                cboFechasEntrenamientos.Focus();
+            }
+            else
+            {
+                List<String> args = new List<string>();
+                args.Add(txtIDPlayerTraining.Text);
+                args.Add(cboFechasEntrenamientos.SelectedItem.ToString());
+
+                int result = playerTrainingController.deletePlayerTraining(args);
+
+                if (result == 0)
+                {
+                    MessageBox.Show("Borrado con éxito");
+                    playerTrainingController.fillPlayerDataGridView(dgvPlayerTraining, null);
+                    cleanInput();
+                }
+                else
+                {
+                    MessageBox.Show("Error al borrar entrenamiento de jugador");
+                }
+            }
         }
     }
 }

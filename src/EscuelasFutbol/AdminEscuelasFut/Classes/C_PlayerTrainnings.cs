@@ -59,5 +59,70 @@ namespace AdminEscuelasFut
         {
             dataAccess.fillComboBox(cboCedulas, "SELECT CedJugador From Jugador", "Buscar cédula");
         }
+        public int updatePlayerTrainingInfo(List<String> args)
+        {
+            List<DataAccess.storedProcData> parameters = new List<DataAccess.storedProcData>();
+            DataAccess.storedProcData param;
+            String[] storedProcParamNames = 
+                {
+                    "@CedJugador"
+                    ,"@NuevoFecha"
+                    ,"@ViejaFecha"
+                };
+            SqlDbType[] paramDataTypes =
+                {
+                    SqlDbType.NChar,
+                    SqlDbType.Date,
+                    SqlDbType.Date
+                };
+            for (int index = 0; index < args.Count; ++index)
+            {
+                param = new DataAccess.storedProcData();
+                param.storedProcParam = storedProcParamNames[index];
+                param.storedProcParamType = paramDataTypes[index];
+                param.userParams = args[index];
+                parameters.Add(param);
+            }
+            return dataAccess.executeStoreProcedure(parameters, "actualizarEntrenamientoJugador");
+        }
+        public int addNewPlayerTraining(List<String> args)
+        {
+            List<DataAccess.storedProcData> parameters = new List<DataAccess.storedProcData>();
+            DataAccess.storedProcData param;
+
+            param = new DataAccess.storedProcData();
+            param.storedProcParam = "@CedJugador";
+            param.storedProcParamType = SqlDbType.NChar;
+            param.userParams = args[0];
+            parameters.Add(param);
+
+            param = new DataAccess.storedProcData();
+            param.storedProcParam = "@Fecha";
+            param.storedProcParamType = SqlDbType.Date;
+            param.userParams = args[1];
+            parameters.Add(param);
+
+            return dataAccess.executeStoreProcedure(parameters, "registrarEntrenamientoJugador");
+        }
+
+        public int deletePlayerTraining(List<String> args)
+        {
+            List<DataAccess.storedProcData> parameters = new List<DataAccess.storedProcData>();
+            DataAccess.storedProcData param;
+
+            param = new DataAccess.storedProcData();
+            param.storedProcParam = "@CedJugador";
+            param.storedProcParamType = SqlDbType.NChar;
+            param.userParams = args[0];
+            parameters.Add(param);
+
+            param = new DataAccess.storedProcData();
+            param.storedProcParam = "@FechEntren";
+            param.storedProcParamType = SqlDbType.Date;
+            param.userParams = args[1];
+            parameters.Add(param);
+
+            return dataAccess.executeStoreProcedure(parameters, "EliminarEntrenamientoDeJugador");
+        }
     }    
 }

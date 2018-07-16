@@ -35,9 +35,10 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemConsultarEntren = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarEncargadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grbDatosEncargado = new System.Windows.Forms.GroupBox();
-            this.btnConsultarCedEncar = new System.Windows.Forms.Button();
+            this.cboCedulasEncargado = new System.Windows.Forms.ComboBox();
             this.dtpFechaIngreso = new System.Windows.Forms.DateTimePicker();
             this.txbPrimerApellidoEncargado = new System.Windows.Forms.TextBox();
             this.lbFechaIngreso = new System.Windows.Forms.Label();
@@ -114,7 +115,8 @@
             // herramientasToolStripMenuItem
             // 
             this.herramientasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuItemConsultarEntren});
+            this.menuItemConsultarEntren,
+            this.consultarEncargadosToolStripMenuItem});
             this.herramientasToolStripMenuItem.Name = "herramientasToolStripMenuItem";
             this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
             this.herramientasToolStripMenuItem.Text = "Herramientas";
@@ -127,6 +129,13 @@
             this.menuItemConsultarEntren.Text = "Consultar entrenamientos";
             this.menuItemConsultarEntren.Click += new System.EventHandler(this.menuItemConsultarEntren_Click);
             // 
+            // consultarEncargadosToolStripMenuItem
+            // 
+            this.consultarEncargadosToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
+            this.consultarEncargadosToolStripMenuItem.Name = "consultarEncargadosToolStripMenuItem";
+            this.consultarEncargadosToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.consultarEncargadosToolStripMenuItem.Text = "Consultar encargados";
+            // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
@@ -135,7 +144,7 @@
             // 
             // grbDatosEncargado
             // 
-            this.grbDatosEncargado.Controls.Add(this.btnConsultarCedEncar);
+            this.grbDatosEncargado.Controls.Add(this.cboCedulasEncargado);
             this.grbDatosEncargado.Controls.Add(this.dtpFechaIngreso);
             this.grbDatosEncargado.Controls.Add(this.txbPrimerApellidoEncargado);
             this.grbDatosEncargado.Controls.Add(this.lbFechaIngreso);
@@ -153,20 +162,15 @@
             this.grbDatosEncargado.TabStop = false;
             this.grbDatosEncargado.Text = "Datos del encargado";
             // 
-            // btnConsultarCedEncar
+            // cboCedulasEncargado
             // 
-            this.btnConsultarCedEncar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnConsultarCedEncar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConsultarCedEncar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnConsultarCedEncar.FlatAppearance.BorderSize = 0;
-            this.btnConsultarCedEncar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnConsultarCedEncar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultarCedEncar.Location = new System.Drawing.Point(559, 18);
-            this.btnConsultarCedEncar.Name = "btnConsultarCedEncar";
-            this.btnConsultarCedEncar.Size = new System.Drawing.Size(104, 20);
-            this.btnConsultarCedEncar.TabIndex = 18;
-            this.btnConsultarCedEncar.Text = "Buscar cédula";
-            this.btnConsultarCedEncar.UseVisualStyleBackColor = false;
+            this.cboCedulasEncargado.BackColor = System.Drawing.Color.AliceBlue;
+            this.cboCedulasEncargado.FormattingEnabled = true;
+            this.cboCedulasEncargado.Location = new System.Drawing.Point(541, 18);
+            this.cboCedulasEncargado.Name = "cboCedulasEncargado";
+            this.cboCedulasEncargado.Size = new System.Drawing.Size(122, 21);
+            this.cboCedulasEncargado.TabIndex = 24;
+            this.cboCedulasEncargado.SelectedIndexChanged += new System.EventHandler(this.cboCedulasEncargado_SelectedIndexChanged);
             // 
             // dtpFechaIngreso
             // 
@@ -179,9 +183,11 @@
             // 
             // txbPrimerApellidoEncargado
             // 
+            this.txbPrimerApellidoEncargado.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txbPrimerApellidoEncargado.Location = new System.Drawing.Point(89, 51);
             this.txbPrimerApellidoEncargado.MaxLength = 15;
             this.txbPrimerApellidoEncargado.Name = "txbPrimerApellidoEncargado";
+            this.txbPrimerApellidoEncargado.ReadOnly = true;
             this.txbPrimerApellidoEncargado.Size = new System.Drawing.Size(259, 20);
             this.txbPrimerApellidoEncargado.TabIndex = 22;
             this.txbPrimerApellidoEncargado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPrimerApellidoEncargado_KeyPress);
@@ -206,18 +212,22 @@
             // 
             // txtCedulaEncargado
             // 
-            this.txtCedulaEncargado.Location = new System.Drawing.Point(409, 18);
+            this.txtCedulaEncargado.BackColor = System.Drawing.Color.White;
+            this.txtCedulaEncargado.Location = new System.Drawing.Point(406, 19);
             this.txtCedulaEncargado.MaxLength = 9;
             this.txtCedulaEncargado.Name = "txtCedulaEncargado";
-            this.txtCedulaEncargado.Size = new System.Drawing.Size(144, 20);
+            this.txtCedulaEncargado.ReadOnly = true;
+            this.txtCedulaEncargado.Size = new System.Drawing.Size(131, 20);
             this.txtCedulaEncargado.TabIndex = 14;
             this.txtCedulaEncargado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedulaEncargado_KeyPress);
             // 
             // txbNombreEncargado
             // 
+            this.txbNombreEncargado.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txbNombreEncargado.Location = new System.Drawing.Point(89, 22);
             this.txbNombreEncargado.MaxLength = 30;
             this.txbNombreEncargado.Name = "txbNombreEncargado";
+            this.txbNombreEncargado.ReadOnly = true;
             this.txbNombreEncargado.Size = new System.Drawing.Size(258, 20);
             this.txbNombreEncargado.TabIndex = 15;
             this.txbNombreEncargado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbNombreEncargado_KeyPress);
@@ -233,9 +243,11 @@
             // 
             // txbSegundoApellidoEncargado
             // 
+            this.txbSegundoApellidoEncargado.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txbSegundoApellidoEncargado.Location = new System.Drawing.Point(461, 47);
             this.txbSegundoApellidoEncargado.MaxLength = 15;
             this.txbSegundoApellidoEncargado.Name = "txbSegundoApellidoEncargado";
+            this.txbSegundoApellidoEncargado.ReadOnly = true;
             this.txbSegundoApellidoEncargado.Size = new System.Drawing.Size(204, 20);
             this.txbSegundoApellidoEncargado.TabIndex = 16;
             this.txbSegundoApellidoEncargado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbTelefonoDEncargado_KeyPress);
@@ -252,7 +264,7 @@
             // lbCedulaDEncargado
             // 
             this.lbCedulaDEncargado.AutoSize = true;
-            this.lbCedulaDEncargado.Location = new System.Drawing.Point(368, 21);
+            this.lbCedulaDEncargado.Location = new System.Drawing.Point(366, 21);
             this.lbCedulaDEncargado.Name = "lbCedulaDEncargado";
             this.lbCedulaDEncargado.Size = new System.Drawing.Size(40, 13);
             this.lbCedulaDEncargado.TabIndex = 1;
@@ -498,6 +510,7 @@
             this.btnRegistrar.TabIndex = 5;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // btnActualizar
             // 
@@ -529,6 +542,7 @@
             this.btnBorrar.TabIndex = 7;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = false;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // dgtvPlayersInfo
             // 
@@ -639,7 +653,6 @@
         private System.Windows.Forms.Label lbFechaIngreso;
         private System.Windows.Forms.DateTimePicker dtpFechaIngreso;
         private System.Windows.Forms.DataGridView dgtvPlayersInfo;
-        private System.Windows.Forms.Button btnConsultarCedEncar;
         private System.Windows.Forms.TextBox txbPrimerApellidoEncargado;
         private System.Windows.Forms.Label lbSegundoApellidoDEncargado;
         private System.Windows.Forms.Label lbPrimerApellidoDEncargado;
@@ -649,5 +662,7 @@
         private System.Windows.Forms.TextBox txbTelefonoJug2;
         private System.Windows.Forms.ComboBox cboEscuelas;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cboCedulasEncargado;
+        private System.Windows.Forms.ToolStripMenuItem consultarEncargadosToolStripMenuItem;
     }
 }
