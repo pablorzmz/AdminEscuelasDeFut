@@ -33,7 +33,12 @@ namespace AdminEscuelasFut
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            bool salir = Utilities.showQuestionMessage("¿Desea salir de las herramientas Niveles de Escuelas?",
+                          "Niveles de Escuelas");
+            if (salir)
+            {
+                this.Close();
+            }
         }
 
         private void txtMinimumAgeSchoolLevel_KeyPress(object sender, KeyPressEventArgs e)
@@ -77,31 +82,42 @@ namespace AdminEscuelasFut
             bool error = false;
             if (cmbSchoolName.SelectedIndex == 0)
             {
-                MessageBox.Show("Debe Seleccionar una Escuela válida");
+                Utilities.showWarningMessage("Debe Seleccionar una Escuela válida.", "Datos de entrada inválidos para el nombre de la Escuela");
                 cmbSchoolName.Focus();
                 error = true;
             }
             if (cmbSchoolLevel.SelectedIndex == 0)
             {
-                MessageBox.Show("Debe Seleccionar un Nivel válido");
+                Utilities.showWarningMessage("Debe Seleccionar un Nivel válido.", "Datos de entrada inválidos para el numero de Nivel");
                 cmbSchoolLevel.Focus();
                 error = true;
             }
             if (!error)
             {
-                List<String> args = new List<string>();
-                args.Add(cmbSchoolName.SelectedItem.ToString());
-                args.Add(cmbSchoolLevel.SelectedItem.ToString());
-                int result = schoolLevelsController.insertSchoolLevels(args);
-                if (result == 0)
+                bool seguir = Utilities.showQuestionMessage("¿Desea insertar el nivel: " + cmbSchoolLevel.SelectedItem + ", a la escuela: " + cmbSchoolName.SelectedItem + " ?", "Insertar nuevo Nivel a Escuela");
+                if (seguir)
                 {
-                    MessageBox.Show("Insercion Exitosa");
-                    cleanInput();
-                    schoolLevelsController.fillSchoolsLevelsDataGridView(dgvSchoolLevels, null);
-                }
-                else
-                {
-                    MessageBox.Show("Error número: " + result.ToString());
+                    List<String> args = new List<string>();
+                    args.Add(cmbSchoolName.SelectedItem.ToString());
+                    args.Add(cmbSchoolLevel.SelectedItem.ToString());
+                    int result = schoolLevelsController.insertSchoolLevels(args);
+                    if (result == 0)
+                    {
+                        Utilities.showInformationMessage("Exito al insertar el nivel en la escuela", "Éxito al registrar");
+                        cleanInput();
+                        schoolLevelsController.fillSchoolsLevelsDataGridView(dgvSchoolLevels, null);
+                    }
+                    else
+                    {
+                        if (result == Utilities.DUPLICATED_KEY)
+                        {
+                            Utilities.showErrorMessage("La escuela ya tienen ese nivel", "No se pudo registrar");
+                        }
+                        else
+                        {
+                            Utilities.showErrorMessage("Error(" + result + ") al registrar.", "Excepción al registrar");
+                        }
+                    }
                 }
             }
         }
@@ -111,31 +127,35 @@ namespace AdminEscuelasFut
             bool error = false;
             if (cmbSchoolName.SelectedIndex == 0)
             {
-                MessageBox.Show("Debe Seleccionar una Escuela válida");
+                Utilities.showWarningMessage("Debe Seleccionar una Escuela válida.", "Datos de entrada inválidos para el nombre de la Escuela");
                 cmbSchoolName.Focus();
                 error = true;
             }
             if (cmbSchoolLevel.SelectedIndex == 0)
             {
-                MessageBox.Show("Debe Seleccionar un Nivel válido");
+                Utilities.showWarningMessage("Debe Seleccionar un Nivel válido.", "Datos de entrada inválidos para el numero de Nivel");
                 cmbSchoolLevel.Focus();
                 error = true;
             }
             if (!error)
             {
-                List<String> args = new List<string>();
-                args.Add(cmbSchoolName.SelectedItem.ToString());
-                args.Add(cmbSchoolLevel.SelectedItem.ToString());
-                int result = schoolLevelsController.deleteSchoolLevels(args);
-                if (result == 0)
+                bool seguir = Utilities.showQuestionMessage("¿Desea borrar el nivel: " + cmbSchoolLevel.SelectedItem + ", de la escuela: " + cmbSchoolName.SelectedItem + " ?", "Borrar Nivel de Escuela");
+                if (seguir)
                 {
-                    MessageBox.Show("Borrado Exitoso");
-                    cleanInput();
-                    schoolLevelsController.fillSchoolsLevelsDataGridView(dgvSchoolLevels, null);
-                }
-                else
-                {
-                    MessageBox.Show("Error número: " + result.ToString());
+                    List<String> args = new List<string>();
+                    args.Add(cmbSchoolName.SelectedItem.ToString());
+                    args.Add(cmbSchoolLevel.SelectedItem.ToString());
+                    int result = schoolLevelsController.deleteSchoolLevels(args);
+                    if (result == 0)
+                    {
+                        Utilities.showInformationMessage("Exito al borrar el nivel de la escuela", "Éxito al borrar");
+                        cleanInput();
+                        schoolLevelsController.fillSchoolsLevelsDataGridView(dgvSchoolLevels, null);
+                    }
+                    else
+                    {
+                        Utilities.showErrorMessage("Error(" + result + ") al borrar el nivel de la escuela.", "Excepción al borrar");
+                    }
                 }
             }
         }
@@ -143,8 +163,16 @@ namespace AdminEscuelasFut
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            setVisibleBtn(false);
-            dataTemp.Add(cmbSchoolLevel.SelectedItem.ToString());
+            if (cmbSchoolLevel.SelectedIndex == 0)
+            {
+                Utilities.showWarningMessage("Debe Seleccionar un Nivel válido.", "Datos de entrada inválidos para el numero de Nivel");
+                cmbSchoolLevel.Focus();
+            }
+            else
+            {
+                setVisibleBtn(false);
+                dataTemp.Add(cmbSchoolLevel.SelectedItem.ToString());
+            }
         }
 
         public void setVisibleBtn(bool visible)
@@ -169,12 +197,33 @@ namespace AdminEscuelasFut
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            dataTemp.Add(cmbSchoolLevel.SelectedItem.ToString());
-            dataTemp.Add(cmbSchoolName.SelectedItem.ToString());
-            schoolLevelsController.updateSchoolLevelsInfo(dataTemp);
-            schoolLevelsController.fillSchoolsLevelsDataGridView(dgvSchoolLevels, null);
-            dataTemp.Clear();
-            setVisibleBtn(true);
+
+            bool error = false;
+            if (cmbSchoolName.SelectedIndex == 0)
+            {
+                Utilities.showWarningMessage("Debe Seleccionar una Escuela válida.", "Datos de entrada inválidos para el nombre de la Escuela");
+                cmbSchoolName.Focus();
+                error = true;
+            }
+            if (cmbSchoolLevel.SelectedIndex == 0)
+            {
+                Utilities.showWarningMessage("Debe Seleccionar un Nivel válido.", "Datos de entrada inválidos para el numero de Nivel");
+                cmbSchoolLevel.Focus();
+                error = true;
+            }
+            if (!error)
+            {
+                bool seguir = Utilities.showQuestionMessage("¿Desea actualizar el nivel: " + cmbSchoolLevel.SelectedItem + ", de la escuela: " + cmbSchoolName.SelectedItem + " ?", "Actualizar Nivel de Escuela");
+                if (seguir)
+                {
+                    dataTemp.Add(cmbSchoolLevel.SelectedItem.ToString());
+                    dataTemp.Add(cmbSchoolName.SelectedItem.ToString());
+                    schoolLevelsController.updateSchoolLevelsInfo(dataTemp);
+                    schoolLevelsController.fillSchoolsLevelsDataGridView(dgvSchoolLevels, null);
+                    dataTemp.Clear();
+                    setVisibleBtn(true);
+                }
+            }
         }
 
         
