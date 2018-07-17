@@ -169,7 +169,6 @@
             this.dgvPagosJugador.Name = "dgvPagosJugador";
             this.dgvPagosJugador.Size = new System.Drawing.Size(633, 250);
             this.dgvPagosJugador.TabIndex = 12;
-            this.dgvPagosJugador.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPagosJugador_CellMouseClick);
             this.dgvPagosJugador.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPagosJugador_CellMouseDoubleClick);
             // 
             // btnRegisterRPaymentPlayer
@@ -251,6 +250,7 @@
             this.txbDetail.Name = "txbDetail";
             this.txbDetail.Size = new System.Drawing.Size(386, 20);
             this.txbDetail.TabIndex = 67;
+            this.txbDetail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbDetail_KeyPress);
             // 
             // lblDetail
             // 
@@ -313,6 +313,7 @@
             this.txtIDRPaymentPlayer.Name = "txtIDRPaymentPlayer";
             this.txtIDRPaymentPlayer.Size = new System.Drawing.Size(126, 20);
             this.txtIDRPaymentPlayer.TabIndex = 2;
+            this.txtIDRPaymentPlayer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIDRPaymentPlayer_KeyPress);
             // 
             // label5
             // 
@@ -330,6 +331,7 @@
             this.txtNameRPaymentPlayer.Name = "txtNameRPaymentPlayer";
             this.txtNameRPaymentPlayer.Size = new System.Drawing.Size(100, 20);
             this.txtNameRPaymentPlayer.TabIndex = 65;
+            this.txtNameRPaymentPlayer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameRPaymentPlayer_KeyPress_1);
             // 
             // ckbxMonthlyRPaymentPlayer
             // 
@@ -487,7 +489,6 @@
         private System.Windows.Forms.GroupBox goBoxInfoPagosJugador;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DateTimePicker dtpFechaMatricula;
-        private System.Windows.Forms.TextBox txtIDRPaymentPlayer;
         private System.Windows.Forms.TextBox txtNameRPaymentPlayer;
         private System.Windows.Forms.CheckBox ckbxMonthlyRPaymentPlayer;
         private System.Windows.Forms.Label label1;
@@ -508,5 +509,6 @@
         private System.Windows.Forms.ComboBox cmbFinalMonth;
         private System.Windows.Forms.ComboBox cmbInitalMonth;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtIDRPaymentPlayer;
     }
 }
