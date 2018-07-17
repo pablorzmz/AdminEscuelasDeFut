@@ -67,7 +67,7 @@ namespace AdminEscuelasFut
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if (allFieldsFilled())
+            if (txtAddressAdministerInstallation.Text != "")
             {
                 int error = headQuartersController.insertHeadQuarter(txtAddressAdministerInstallation.Text, txtTelephoneAdministerInstallation.Text);
                 Console.WriteLine("Se retorna insert " + error);
@@ -75,7 +75,7 @@ namespace AdminEscuelasFut
             }
             else
             {
-                //mensaje de advertencia para que rellene los campos
+                //Solo se debe de dar advertencia en el Caso de La direccion, el tel si puede estar vacio
             }
             
         }
