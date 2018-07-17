@@ -1,4 +1,5 @@
 ﻿using AdminEscuelasFut.Classes;
+using AdminEscuelasFut.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,12 +15,17 @@ namespace AdminEscuelasFut
     public partial class Levels : Form
     {
         private C_Levels levelController;
+        private HelpForm help;
         private String dataTemp;
+
+        String helpText = "\r\nEn este módulo se pueden manipular los niveles que se imparten en las escuelas de futbol," +
+                            "donde no pueden existir niveles repetidos, además los rangos deberán ser excluyentes.";
 
         public Levels()
         {
             InitializeComponent();
             levelController = new C_Levels();
+            help = new HelpForm("Manipulacion niveles", helpText);
         }
 
         private void Levels_Load(object sender, EventArgs e)
@@ -162,6 +168,11 @@ namespace AdminEscuelasFut
         {
             setVisibleBtn(true);
             cleanInput();
+        }
+
+        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            help.Show();
         }
     }
 }

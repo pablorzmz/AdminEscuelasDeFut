@@ -83,9 +83,9 @@ namespace AdminEscuelasFut.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons_delete {
+        internal static System.Drawing.Bitmap icon_add {
             get {
-                object obj = ResourceManager.GetObject("icons_delete", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_add", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace AdminEscuelasFut.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons_edit {
+        internal static System.Drawing.Bitmap icon_delete {
             get {
-                object obj = ResourceManager.GetObject("icons_edit", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_delete", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace AdminEscuelasFut.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons_find {
+        internal static System.Drawing.Bitmap icon_edit {
             get {
-                object obj = ResourceManager.GetObject("icons_find", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_edit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace AdminEscuelasFut.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons_insert {
+        internal static System.Drawing.Bitmap icon_find {
             get {
-                object obj = ResourceManager.GetObject("icons_insert", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_find", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,19 @@ namespace AdminEscuelasFut.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons_save {
+        internal static System.Drawing.Bitmap icon_save {
             get {
-                object obj = ResourceManager.GetObject("icons_save", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_save", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons_discard {
+            get {
+                object obj = ResourceManager.GetObject("icons_discard", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

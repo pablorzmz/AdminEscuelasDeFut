@@ -10,18 +10,19 @@ using System.Windows.Forms;
 
 namespace AdminEscuelasFut.Forms
 {
-    public partial class Equipment : Form
+    public partial class HelpForm : Form
     {
-        public Equipment()
+        public HelpForm(String titleHelpText , String helpText )
         {
             InitializeComponent();
+            txtHelpText.Text = helpText;
+            txtHelpTitleText.Text = titleHelpText;
         }
+        
 
-        private void txtPriceEquipmentM_KeyPress(object sender, KeyPressEventArgs e)
+        private void HelpForm_Load(object sender, EventArgs e)
         {
-            Utilities.validateNumbers(sender, e, true);
-        }
 
-       
+        }
     }
 }

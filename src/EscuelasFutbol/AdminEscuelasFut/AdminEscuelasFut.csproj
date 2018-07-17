@@ -76,11 +76,11 @@
     <Compile Include="Classes\DataAccess.cs" />
     <Compile Include="Classes\C_Players.cs" />
     <Compile Include="Classes\Utilities.cs" />
-    <Compile Include="Forms\Equipment.cs">
+    <Compile Include="Forms\HelpForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Equipment.Designer.cs">
-      <DependentUpon>Equipment.cs</DependentUpon>
+    <Compile Include="Forms\HelpForm.Designer.cs">
+      <DependentUpon>HelpForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\HeadQuarters.cs">
       <SubType>Form</SubType>
@@ -162,8 +162,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Equipment.resx">
-      <DependentUpon>Equipment.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HelpForm.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeadQuarters.resx">
       <DependentUpon>HeadQuarters.cs</DependentUpon>
@@ -265,6 +265,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons_save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons_delete1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons_discard.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
