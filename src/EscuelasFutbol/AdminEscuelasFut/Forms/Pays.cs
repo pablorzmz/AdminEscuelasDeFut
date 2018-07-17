@@ -16,11 +16,13 @@ namespace AdminEscuelasFut
         private C_Pays paysController;
         private  PlayerPaysQuery playerPaysQuery;
         private DataAccess dataAccess;
+        private DataGridViewRow currentRow;
 
         public Pays()
         {
             InitializeComponent();
             paysController = new C_Pays();
+            currentRow = null;
         }
 
         private void Pays_Load(object sender, EventArgs e)
@@ -120,24 +122,10 @@ namespace AdminEscuelasFut
             }
         }
 
-        private void chbxAnnuityRPaymentPlayer_CheckedChanged(object sender, EventArgs e)
-        {
-            /*if (chbxAnnuityRPaymentPlayer.Checked)
-            {
-                dtpFechaMatricula.Enabled = true;
-            }
-            else
-            {
-                dtpFechaMatricula.Enabled = false;
-            }*/
-        }
-
         private void txtNameRPaymentPlayer_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.controlSQLInjection(sender, e);
         }
-
-       
 
         private void txtAmountRPaymentPlayer_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -179,7 +167,7 @@ namespace AdminEscuelasFut
             }
             else if (txtReceiptNumberRPaymentPlayer.Text == "")
             {
-                MessageBox.Show("El valor para el numero de recibo es inválido");
+                MessageBox.Show("El valor para el número de recibo es inválido");
                 txtReceiptNumberRPaymentPlayer.Focus();
             }
             else if (txtAmountRPaymentPlayer.Text == "")
@@ -196,7 +184,7 @@ namespace AdminEscuelasFut
             }
             else if (txtIDRPaymentPlayer.Text == "")
             {
-                MessageBox.Show("El valor para la cedula del jugador es invalido");
+                MessageBox.Show("El valor para la cédula del jugador es invalido");
                 txtIDRPaymentPlayer.Focus();
             }else if (ckbxMonthlyRPaymentPlayer.CheckState == CheckState.Checked && (cmbInitalMonth.SelectedIndex == 0 || cmbFinalMonth.SelectedIndex == 0))
             {
@@ -206,7 +194,7 @@ namespace AdminEscuelasFut
             }
             else
             {
-                bool r = Utilities.showQuestionMessage("¿Desea insertar el nuevo registro del pago: " +
+                bool r = Utilities.showQuestionMessage("¿Desea insertar el nuevo registro del pago?: " +
                        "\nCédula: " + txtIDRPaymentPlayer.Text + "\nRecibo: " + txtReceiptNumberRPaymentPlayer.Text + "\nMonto: " + txtAmountRPaymentPlayer.Text, "Insertar nuevo pago");
                 if (r)
                 {
@@ -270,7 +258,7 @@ namespace AdminEscuelasFut
                             {
                                 Utilities.showErrorMessage("El registro que desea insertar ya se encuentra en la base de datos", "No se pudo registrar el pago");
                             } else if (result == 547) {
-                                Utilities.showErrorMessage("El numero de cedula ingresado es incorrecto", "No se pudo registrar el pago");
+                                Utilities.showErrorMessage("El número de cédula ingresado es incorrecto", "No se pudo registrar el pago");
                             }
                             else
                             {
@@ -294,12 +282,17 @@ namespace AdminEscuelasFut
 
         private void dgvPagosJugador_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+
+            cleanInput();
+
             List<String> buffer = new List<string>();
-            Utilities.readCurrentRowFromDataGridView(dgvPagosJugador, e.RowIndex, dgvPagosJugador.ColumnCount, buffer);
             if (buffer.Count < 6)
             {
                 if (e.RowIndex >= 0 && e.RowIndex < dgvPagosJugador.RowCount - 1)
                 {
+
+                    currentRow = dgvPagosJugador.Rows[e.RowIndex];
+                    Utilities.readCurrentRowFromDataGridView(dgvPagosJugador, e.RowIndex, dgvPagosJugador.ColumnCount, buffer);
                     txtIDRPaymentPlayer.Text = buffer[0];
                     txtNameRPaymentPlayer.Text = buffer[1];
                 }
@@ -308,6 +301,9 @@ namespace AdminEscuelasFut
             {
                 if (e.RowIndex >= 0 && e.RowIndex < dgvPagosJugador.RowCount - 1)
                 {
+
+                    currentRow = dgvPagosJugador.Rows[e.RowIndex];
+                    Utilities.readCurrentRowFromDataGridView(dgvPagosJugador, e.RowIndex, dgvPagosJugador.ColumnCount, buffer);
                     txtIDRPaymentPlayer.Text = buffer[1];
                     txtReceiptNumberRPaymentPlayer.Text = buffer[2];
                     txtNameRPaymentPlayer.Text = buffer[0];

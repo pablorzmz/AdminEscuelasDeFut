@@ -365,7 +365,6 @@
             this.chbxAnnuityRPaymentPlayer.TabIndex = 9;
             this.chbxAnnuityRPaymentPlayer.Text = "Matrícula";
             this.chbxAnnuityRPaymentPlayer.UseVisualStyleBackColor = true;
-            this.chbxAnnuityRPaymentPlayer.CheckedChanged += new System.EventHandler(this.chbxAnnuityRPaymentPlayer_CheckedChanged);
             // 
             // label2
             // 
