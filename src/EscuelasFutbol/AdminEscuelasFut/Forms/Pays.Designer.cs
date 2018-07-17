@@ -158,15 +158,17 @@
             this.btnConsultar.Location = new System.Drawing.Point(545, 190);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(87, 23);
-            this.btnConsultar.TabIndex = 11;
+            this.btnConsultar.TabIndex = 13;
             this.btnConsultar.Text = "Consultar pago";
             this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // dgvPagosJugador
             // 
+            this.dgvPagosJugador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPagosJugador.Location = new System.Drawing.Point(7, 224);
             this.dgvPagosJugador.Name = "dgvPagosJugador";
+            this.dgvPagosJugador.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvPagosJugador.Size = new System.Drawing.Size(633, 250);
             this.dgvPagosJugador.TabIndex = 12;
             this.dgvPagosJugador.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPagosJugador_CellMouseDoubleClick);
@@ -182,7 +184,7 @@
             this.btnRegisterRPaymentPlayer.Location = new System.Drawing.Point(450, 190);
             this.btnRegisterRPaymentPlayer.Name = "btnRegisterRPaymentPlayer";
             this.btnRegisterRPaymentPlayer.Size = new System.Drawing.Size(89, 23);
-            this.btnRegisterRPaymentPlayer.TabIndex = 11;
+            this.btnRegisterRPaymentPlayer.TabIndex = 12;
             this.btnRegisterRPaymentPlayer.Text = "Registrar pago";
             this.btnRegisterRPaymentPlayer.UseVisualStyleBackColor = false;
             this.btnRegisterRPaymentPlayer.Click += new System.EventHandler(this.btnRegisterRPaymentPlayer_Click);
@@ -232,7 +234,7 @@
             this.cmbFinalMonth.Location = new System.Drawing.Point(241, 94);
             this.cmbFinalMonth.Name = "cmbFinalMonth";
             this.cmbFinalMonth.Size = new System.Drawing.Size(93, 21);
-            this.cmbFinalMonth.TabIndex = 69;
+            this.cmbFinalMonth.TabIndex = 8;
             // 
             // cmbInitalMonth
             // 
@@ -240,7 +242,7 @@
             this.cmbInitalMonth.Location = new System.Drawing.Point(94, 95);
             this.cmbInitalMonth.Name = "cmbInitalMonth";
             this.cmbInitalMonth.Size = new System.Drawing.Size(93, 21);
-            this.cmbInitalMonth.TabIndex = 68;
+            this.cmbInitalMonth.TabIndex = 7;
             // 
             // txbDetail
             // 
@@ -249,7 +251,7 @@
             this.txbDetail.MaxLength = 30;
             this.txbDetail.Name = "txbDetail";
             this.txbDetail.Size = new System.Drawing.Size(386, 20);
-            this.txbDetail.TabIndex = 67;
+            this.txbDetail.TabIndex = 11;
             this.txbDetail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbDetail_KeyPress);
             // 
             // lblDetail
@@ -269,7 +271,7 @@
             this.cboEscuelas.Location = new System.Drawing.Point(396, 94);
             this.cboEscuelas.Name = "cboEscuelas";
             this.cboEscuelas.Size = new System.Drawing.Size(231, 21);
-            this.cboEscuelas.TabIndex = 64;
+            this.cboEscuelas.TabIndex = 9;
             // 
             // label6
             // 
@@ -303,7 +305,7 @@
             this.dtpFechaMatricula.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaMatricula.Name = "dtpFechaMatricula";
             this.dtpFechaMatricula.Size = new System.Drawing.Size(93, 20);
-            this.dtpFechaMatricula.TabIndex = 10;
+            this.dtpFechaMatricula.TabIndex = 2;
             // 
             // txtIDRPaymentPlayer
             // 
@@ -312,7 +314,7 @@
             this.txtIDRPaymentPlayer.MaxLength = 9;
             this.txtIDRPaymentPlayer.Name = "txtIDRPaymentPlayer";
             this.txtIDRPaymentPlayer.Size = new System.Drawing.Size(126, 20);
-            this.txtIDRPaymentPlayer.TabIndex = 2;
+            this.txtIDRPaymentPlayer.TabIndex = 3;
             this.txtIDRPaymentPlayer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIDRPaymentPlayer_KeyPress);
             // 
             // label5
@@ -330,7 +332,7 @@
             this.txtNameRPaymentPlayer.Location = new System.Drawing.Point(68, 24);
             this.txtNameRPaymentPlayer.Name = "txtNameRPaymentPlayer";
             this.txtNameRPaymentPlayer.Size = new System.Drawing.Size(100, 20);
-            this.txtNameRPaymentPlayer.TabIndex = 65;
+            this.txtNameRPaymentPlayer.TabIndex = 1;
             this.txtNameRPaymentPlayer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNameRPaymentPlayer_KeyPress_1);
             // 
             // ckbxMonthlyRPaymentPlayer
@@ -362,7 +364,7 @@
             this.chbxAnnuityRPaymentPlayer.Margin = new System.Windows.Forms.Padding(2);
             this.chbxAnnuityRPaymentPlayer.Name = "chbxAnnuityRPaymentPlayer";
             this.chbxAnnuityRPaymentPlayer.Size = new System.Drawing.Size(71, 17);
-            this.chbxAnnuityRPaymentPlayer.TabIndex = 9;
+            this.chbxAnnuityRPaymentPlayer.TabIndex = 10;
             this.chbxAnnuityRPaymentPlayer.Text = "Matrícula";
             this.chbxAnnuityRPaymentPlayer.UseVisualStyleBackColor = true;
             // 

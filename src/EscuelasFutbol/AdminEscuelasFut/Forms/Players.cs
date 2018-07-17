@@ -330,7 +330,7 @@ namespace AdminEscuelasFut
                     }
                     else
                     {
-                        MessageBox.Show("Error al borrar el jugador: " + result.ToString());
+                        Utilities.showErrorMessage("Error al borrar el jugador: " + result.ToString(),"Excepción Sql");
                     }
 
                 }
@@ -421,14 +421,14 @@ namespace AdminEscuelasFut
              int result = playerController.updatePlayerInformaction(dataTemp);
              if (result == 0)
              {
-                 MessageBox.Show("Actualización Exitosa");
+                Utilities.showInformationMessage("Datos del jugador actualizados con éxito", "Actualización exitosa");
                  currentRow = null;
                  cleanInput();
                  playerController.fillPlayerDataGridView(dgtvPlayersInfo, null);
              }
              else
              {
-                 MessageBox.Show("Error número: " + result.ToString());
+                 Utilities.showErrorMessage("Error número: " + result.ToString(),"Excepción sql");
              }
             dataTemp.Clear();
             setVisibleBtn(true);

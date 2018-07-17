@@ -114,18 +114,18 @@ namespace AdminEscuelasFut
         {
             if (txtIDPlayerTraining.Text == "")
             {
-                MessageBox.Show("Se debe degitar una cédula válida");
+                Utilities.showErrorMessage("Se debe degitar una cédula válida","Campo inválido");
                 txtIDPlayerTraining.Focus();
             }
             else if (cboFechasEntrenamientos.SelectedIndex == 0)
             {
-                MessageBox.Show("Se debe seleccionar una fecha de entrenamiento válida");
+                Utilities.showErrorMessage("Se debe seleccionar una fecha de entrenamiento válida","Campo inválido");
                 cboFechasEntrenamientos.Focus();
             }
             else if (currentRow == null)
             {
-                MessageBox.Show("Para actualizar un valor, debe haberse seleccionado" +
-                    " de la tabla de entrenamientos");
+                Utilities.showErrorMessage("Para actualizar un valor, debe haberse seleccionado" +
+                    " de la tabla de entrenamientos","Seleccione un valod con doble clic en la tabla inferior");
                 dgvPlayerTraining.Focus();
             }
             else
@@ -139,14 +139,14 @@ namespace AdminEscuelasFut
 
                 if (result == 0)
                 {
-                    MessageBox.Show("Actualizado con éxito");
+                    Utilities.showInformationMessage("Entrenamiento actualizado con éxito","Actualización exitosa");
                     playerTrainingController.fillPlayerDataGridView(dgvPlayerTraining, null);
                     currentRow = null;
                     cleanInput();
                 }
                 else
                 {
-                    MessageBox.Show("Error al actualizar");
+                    Utilities.showErrorMessage("Execepción no controlada número(" + result + ")", "Excepción sql");
                 }
             }
         }
@@ -162,12 +162,12 @@ namespace AdminEscuelasFut
         {
             if (txtIDPlayerTraining.Text == "")
             {
-                MessageBox.Show("Se debe degitar una cédula válida");
+                Utilities.showErrorMessage("Se debe degitar una cédula válida","Campo cédula inválido");
                 txtIDPlayerTraining.Focus();
             }
             else if (cboFechasEntrenamientos.SelectedIndex == 0)
             {
-                MessageBox.Show("Se debe seleccionar una fecha de entrenamiento válida");
+                Utilities.showErrorMessage("Se debe seleccionar una fecha de entrenamiento válida","Campo fecha entrenamientos inválido");
                 cboFechasEntrenamientos.Focus();
             }
             else
@@ -180,13 +180,20 @@ namespace AdminEscuelasFut
 
                 if (result == 0)
                 {
-                    MessageBox.Show("Registrado con éxito");
+                    Utilities.showInformationMessage("Entrenamiento registrado con éxito","Registro correcto en la base de datos");
                     playerTrainingController.fillPlayerDataGridView(dgvPlayerTraining, null);
                     cleanInput();
                 }
                 else
                 {
-                    MessageBox.Show("Error al registrar entrenamiento de jugador");
+                    if (result == Utilities.DUPLICATED_KEY)
+                    {
+                        Utilities.showErrorMessage("El valor que intenta registrar ya se encuentra en la base de datos", "Valor duplicado");
+                    }
+                    else
+                    {
+                        Utilities.showErrorMessage("Excepción no controlada número: (" + result + ")","Excepción SQL");
+                    }
                 }
             }
         }
@@ -195,12 +202,12 @@ namespace AdminEscuelasFut
         {
             if (txtIDPlayerTraining.Text == "")
             {
-                MessageBox.Show("Se debe degitar una cédula válida");
+                Utilities.showErrorMessage("Se debe degitar una cédula válida","Campo inválido");
                 txtIDPlayerTraining.Focus();
             }
             else if (cboFechasEntrenamientos.SelectedIndex == 0)
             {
-                MessageBox.Show("Se debe seleccionar una fecha de entrenamiento válida");
+                Utilities.showErrorMessage("Se debe seleccionar una fecha de entrenamiento válida","Campo inválido");
                 cboFechasEntrenamientos.Focus();
             }
             else
@@ -213,13 +220,13 @@ namespace AdminEscuelasFut
 
                 if (result == 0)
                 {
-                    MessageBox.Show("Borrado con éxito");
+                    Utilities.showInformationMessage("Entrenamiento borrado con éxito","Borrado exitoso");
                     playerTrainingController.fillPlayerDataGridView(dgvPlayerTraining, null);
                     cleanInput();
                 }
                 else
                 {
-                    MessageBox.Show("Error al borrar entrenamiento de jugador");
+                    Utilities.showErrorMessage("Error al borrar entrenamiento de jugador. Excepción número(" + result + ")","Excepción SQL");
                 }
             }
         }

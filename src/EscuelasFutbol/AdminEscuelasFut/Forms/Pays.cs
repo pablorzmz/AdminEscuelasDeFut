@@ -12,9 +12,7 @@ namespace AdminEscuelasFut
 {    
     public partial class Pays : Form
     {
-        private  PlayerPaysRegister playerPaysRegister;
         private C_Pays paysController;
-        private  PlayerPaysQuery playerPaysQuery;
         private DataAccess dataAccess;
         private DataGridViewRow currentRow;
 
@@ -42,28 +40,12 @@ namespace AdminEscuelasFut
             txtReceiptNumberRPaymentPlayer.Text = "";
             txbDetail.Text = "";
         }
-
-        public  void showPlayersPaysRegister()
-        {
-            playerPaysRegister = new PlayerPaysRegister();
-            playerPaysRegister.ShowDialog();
-
-        }
-        public  void showPlayersPayQuery()
-        {
-            playerPaysQuery = new PlayerPaysQuery();
-            playerPaysQuery.ShowDialog();
-
-        }
-
         private void menuItemRegistPagJugadores_Click(object sender, EventArgs e)
         {
-            showPlayersPaysRegister();
         }
 
         private void menuItemConsultPagJugador_Click(object sender, EventArgs e)
         {
-            showPlayersPayQuery();
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -231,8 +213,7 @@ namespace AdminEscuelasFut
                         int result = paysController.insertNewPay(args);
 
                         if (result == 0)
-                        {
-                            MessageBox.Show("Datos válidos");
+                        {                            
                             if (ckbxMonthlyRPaymentPlayer.CheckState == CheckState.Checked)
                             {
                                 string initialMonth = cmbInitalMonth.Text;
@@ -251,7 +232,7 @@ namespace AdminEscuelasFut
                             args.Add(cboEscuelas.SelectedItem.ToString());
                             paysController.fillPaysDataGridView(dgvPagosJugador, args);
                             cleanInput();
-                            MessageBox.Show("Pago registrados correctamente");
+                            Utilities.showInformationMessage("Pago registrado con éxito","Registro de pago correcto");
                         }
                         else {
                             if (result == Utilities.DUPLICATED_KEY)
@@ -304,9 +285,9 @@ namespace AdminEscuelasFut
 
                     currentRow = dgvPagosJugador.Rows[e.RowIndex];
                     Utilities.readCurrentRowFromDataGridView(dgvPagosJugador, e.RowIndex, dgvPagosJugador.ColumnCount, buffer);
-                    txtIDRPaymentPlayer.Text = buffer[1];
+                    txtIDRPaymentPlayer.Text = buffer[0];
                     txtReceiptNumberRPaymentPlayer.Text = buffer[2];
-                    txtNameRPaymentPlayer.Text = buffer[0];
+                    txtNameRPaymentPlayer.Text = buffer[1];
                     txtAmountRPaymentPlayer.Text = buffer[4];
                     txbDetail.Text = buffer[5];
                     cboEscuelas.SelectedItem = buffer[6];
