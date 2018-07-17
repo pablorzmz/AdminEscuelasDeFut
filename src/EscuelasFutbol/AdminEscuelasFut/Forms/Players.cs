@@ -8,6 +8,7 @@ namespace AdminEscuelasFut
     public partial class Players : Form
     {
         private PlayerTrainnings playerTrainingsTool;
+        private LegalManager legalManagerTool;
         private C_Players playerController;
         private String sexValue;
         private DataGridViewRow currentRow;
@@ -27,6 +28,12 @@ namespace AdminEscuelasFut
             playerTrainingsTool.setCurrentArgs(txbCedula.Text, cboEscuelas.SelectedItem.ToString());
             playerTrainingsTool.ShowDialog();
         }
+        public void showLegalManagers()
+        {
+            legalManagerTool = new LegalManager();            
+            legalManagerTool.ShowDialog();
+        }
+
         private void menuItemConsultarEntren_Click(object sender, EventArgs e)
         {            
             showPlayersTraingins();
@@ -465,7 +472,11 @@ namespace AdminEscuelasFut
             else
                 return "f";
         }
-        
+
+        private void consultarEncargadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showLegalManagers();
+        }
     }
 }
 

@@ -54,7 +54,7 @@ namespace AdminEscuelasFut
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                //Utilities.showErrorMessage(ex.Message,"Sql Exception");
             }
             return data;
         }

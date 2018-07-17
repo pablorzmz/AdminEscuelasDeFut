@@ -151,34 +151,17 @@ namespace AdminEscuelasFut
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            List<String> parameters = new List<String>();
-            /*0*/ parameters.Add(txtIDRPaymentPlayer.Text);
-            /*1*/ parameters.Add(txtReceiptNumberRPaymentPlayer.Text);
-            /*2*/ parameters.Add(cboEscuelas.SelectedItem.ToString());
-            paysController.fillPaysDataGridView(dgvPagosJugador, parameters);
-        }
-
-        private void dgvPagosJugador_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-
-            List<String> buffer = new List<string>();
-            Utilities.readCurrentRowFromDataGridView(dgvPagosJugador, e.RowIndex, dgvPagosJugador.ColumnCount, buffer);
-            if (buffer.Count < 6) {
-                if (e.RowIndex >= 0 && e.RowIndex < dgvPagosJugador.RowCount - 1)
-                {
-                    txtIDRPaymentPlayer.Text = buffer[0];
-                    txtNameRPaymentPlayer.Text = buffer[1];
-                }
+            if (cboEscuelas.SelectedIndex == 0) {
+                MessageBox.Show("Debe seleccionar una escuela");
             } else {
-                if (e.RowIndex >= 0 && e.RowIndex < dgvPagosJugador.RowCount - 1)
-                {
-                    txtIDRPaymentPlayer.Text = buffer[1];
-                    txtReceiptNumberRPaymentPlayer.Text = buffer[2];
-                    txtNameRPaymentPlayer.Text = buffer[0];
-                    txtAmountRPaymentPlayer.Text = buffer[4];
-                    txbDetail.Text = buffer[5];
-                    cboEscuelas.SelectedItem = buffer[6];
-                }
+                List<String> parameters = new List<String>();
+                /*0*/
+                parameters.Add(txtIDRPaymentPlayer.Text);
+                /*1*/
+                parameters.Add(txtReceiptNumberRPaymentPlayer.Text);
+                /*2*/
+                parameters.Add(cboEscuelas.SelectedItem.ToString());
+                paysController.fillPaysDataGridView(dgvPagosJugador, parameters);
             }
         }
 
@@ -227,7 +210,6 @@ namespace AdminEscuelasFut
                        "\nCédula: " + txtIDRPaymentPlayer.Text + "\nRecibo: " + txtReceiptNumberRPaymentPlayer.Text + "\nMonto: " + txtAmountRPaymentPlayer.Text, "Insertar nuevo pago");
                 if (r)
                 {
-                    MessageBox.Show("Datos válidos");
                     List<String> args = new List<string>();
 
                     if (ckbxMonthlyRPaymentPlayer.CheckState == CheckState.Checked || chbxAnnuityRPaymentPlayer.CheckState == CheckState.Checked)
@@ -262,6 +244,7 @@ namespace AdminEscuelasFut
 
                         if (result == 0)
                         {
+                            MessageBox.Show("Datos válidos");
                             if (ckbxMonthlyRPaymentPlayer.CheckState == CheckState.Checked)
                             {
                                 string initialMonth = cmbInitalMonth.Text;
@@ -282,9 +265,17 @@ namespace AdminEscuelasFut
                             cleanInput();
                             MessageBox.Show("Pago registrados correctamente");
                         }
-                        else
-                        {
-                            MessageBox.Show("Error(" + result + ") al registrar pago");
+                        else {
+                            if (result == Utilities.DUPLICATED_KEY)
+                            {
+                                Utilities.showErrorMessage("El registro que desea insertar ya se encuentra en la base de datos", "No se pudo registrar el pago");
+                            } else if (result == 547) {
+                                Utilities.showErrorMessage("El numero de cedula ingresado es incorrecto", "No se pudo registrar el pago");
+                            }
+                            else
+                            {
+                                Utilities.showErrorMessage("Error(" + result + ") al registrar el jugador", "Excepción al registrar jugador");
+                            }
                         }
                     }
                 }
@@ -299,6 +290,52 @@ namespace AdminEscuelasFut
             {
                 e.Cancel = true;
             }
+        }
+
+        private void dgvPagosJugador_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            List<String> buffer = new List<string>();
+            Utilities.readCurrentRowFromDataGridView(dgvPagosJugador, e.RowIndex, dgvPagosJugador.ColumnCount, buffer);
+            if (buffer.Count < 6)
+            {
+                if (e.RowIndex >= 0 && e.RowIndex < dgvPagosJugador.RowCount - 1)
+                {
+                    txtIDRPaymentPlayer.Text = buffer[0];
+                    txtNameRPaymentPlayer.Text = buffer[1];
+                }
+            }
+            else
+            {
+                if (e.RowIndex >= 0 && e.RowIndex < dgvPagosJugador.RowCount - 1)
+                {
+                    txtIDRPaymentPlayer.Text = buffer[1];
+                    txtReceiptNumberRPaymentPlayer.Text = buffer[2];
+                    txtNameRPaymentPlayer.Text = buffer[0];
+                    txtAmountRPaymentPlayer.Text = buffer[4];
+                    txbDetail.Text = buffer[5];
+                    cboEscuelas.SelectedItem = buffer[6];
+                }
+            }
+        }
+
+        private void txtIDRPaymentPlayer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.validateNumbers(sender, e, false);
+        }
+
+        private void txtAmountRPaymentPlayer_TextChanged(object sender, KeyPressEventArgs e)
+        {
+            Utilities.validateNumbers(sender, e, false);
+        }
+
+        private void txbDetail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.controlSQLInjection(sender, e);
+        }
+
+        private void txtNameRPaymentPlayer_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            Utilities.controlSQLInjection(sender, e);
         }
     }
 }

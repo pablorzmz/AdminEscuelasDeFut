@@ -95,8 +95,7 @@ namespace AdminEscuelasFut
             Apellido2.Text = result.Rows[0]["Apellido2"].ToString();
         }
         public int updatePlayerInformaction(List<String> args)
-        {
-            List<DataAccess.storedProcData> newTelephones = new List<DataAccess.storedProcData>();
+        {            
             DataAccess.storedProcData param;
             String[] procParams =
               {

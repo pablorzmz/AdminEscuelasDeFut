@@ -163,12 +163,16 @@ namespace AdminEscuelasFut
             String filterQuery = "";
             if (parameters != null)
             {
-                filterQuery =
-                "SELECT * FROM VistaPagosJugador WHERE " +
-                    "('N° Cédula' like '%" + parameters[0] + "%' OR " +
-                    "'N° Recibo' like '%" + parameters[1] + "%') AND" +
-                    " Escuela = '"+ parameters[2] + "'" +
-                    "ORDER BY 'N° Recibo' DESC";            
+                if (parameters[0] != "") {
+                    filterQuery =
+                    "SELECT * FROM VistaPagosJugador WHERE " + "[N° Cedula] = '"+ parameters[0] + "' AND Escuela = '" + parameters[2] + "'" +
+                        " ORDER BY 'N° Recibo' DESC";
+                }
+                else {
+                    filterQuery =
+                    "SELECT * FROM VistaPagosJugador WHERE " + " Escuela = '" + parameters[2] + "'" +
+                        " ORDER BY 'N° Recibo' DESC";
+                }           
             }            
             DataTable dataTable = null;
             if (parameters == null)
