@@ -94,8 +94,7 @@
             this.ayudaToolStripMenuItem});
             this.menPlayers.Location = new System.Drawing.Point(0, 0);
             this.menPlayers.Name = "menPlayers";
-            this.menPlayers.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menPlayers.Size = new System.Drawing.Size(920, 28);
+            this.menPlayers.Size = new System.Drawing.Size(690, 24);
             this.menPlayers.TabIndex = 3;
             this.menPlayers.Text = "menuPrincipal";
             // 
@@ -104,14 +103,14 @@
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(113, 26);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -121,14 +120,14 @@
             this.menuItemConsultarEntren,
             this.consultarEncargadosToolStripMenuItem});
             this.herramientasToolStripMenuItem.Name = "herramientasToolStripMenuItem";
-            this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(110, 24);
+            this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
             this.herramientasToolStripMenuItem.Text = "Herramientas";
             // 
             // menuItemConsultarEntren
             // 
             this.menuItemConsultarEntren.BackColor = System.Drawing.Color.AliceBlue;
             this.menuItemConsultarEntren.Name = "menuItemConsultarEntren";
-            this.menuItemConsultarEntren.Size = new System.Drawing.Size(253, 26);
+            this.menuItemConsultarEntren.Size = new System.Drawing.Size(211, 22);
             this.menuItemConsultarEntren.Text = "Consultar entrenamientos";
             this.menuItemConsultarEntren.Click += new System.EventHandler(this.menuItemConsultarEntren_Click);
             // 
@@ -136,13 +135,14 @@
             // 
             this.consultarEncargadosToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
             this.consultarEncargadosToolStripMenuItem.Name = "consultarEncargadosToolStripMenuItem";
-            this.consultarEncargadosToolStripMenuItem.Size = new System.Drawing.Size(253, 26);
+            this.consultarEncargadosToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.consultarEncargadosToolStripMenuItem.Text = "Consultar encargados";
+            this.consultarEncargadosToolStripMenuItem.Click += new System.EventHandler(this.consultarEncargadosToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
             // grbDatosEncargado
@@ -158,11 +158,9 @@
             this.grbDatosEncargado.Controls.Add(this.txbSegundoApellidoEncargado);
             this.grbDatosEncargado.Controls.Add(this.lbNombreDEncargado);
             this.grbDatosEncargado.Controls.Add(this.lbCedulaDEncargado);
-            this.grbDatosEncargado.Location = new System.Drawing.Point(19, 274);
-            this.grbDatosEncargado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbDatosEncargado.Location = new System.Drawing.Point(14, 223);
             this.grbDatosEncargado.Name = "grbDatosEncargado";
-            this.grbDatosEncargado.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grbDatosEncargado.Size = new System.Drawing.Size(895, 140);
+            this.grbDatosEncargado.Size = new System.Drawing.Size(671, 114);
             this.grbDatosEncargado.TabIndex = 4;
             this.grbDatosEncargado.TabStop = false;
             this.grbDatosEncargado.Text = "Datos del encargado";
@@ -171,10 +169,9 @@
             // 
             this.cboCedulasEncargado.BackColor = System.Drawing.Color.AliceBlue;
             this.cboCedulasEncargado.FormattingEnabled = true;
-            this.cboCedulasEncargado.Location = new System.Drawing.Point(721, 22);
-            this.cboCedulasEncargado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboCedulasEncargado.Location = new System.Drawing.Point(541, 18);
             this.cboCedulasEncargado.Name = "cboCedulasEncargado";
-            this.cboCedulasEncargado.Size = new System.Drawing.Size(161, 24);
+            this.cboCedulasEncargado.Size = new System.Drawing.Size(122, 21);
             this.cboCedulasEncargado.TabIndex = 24;
             this.cboCedulasEncargado.SelectedIndexChanged += new System.EventHandler(this.cboCedulasEncargado_SelectedIndexChanged);
             // 
@@ -182,107 +179,97 @@
             // 
             this.dtpFechaIngreso.CalendarTitleBackColor = System.Drawing.Color.AliceBlue;
             this.dtpFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaIngreso.Location = new System.Drawing.Point(147, 98);
-            this.dtpFechaIngreso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(110, 80);
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
-            this.dtpFechaIngreso.Size = new System.Drawing.Size(316, 22);
+            this.dtpFechaIngreso.Size = new System.Drawing.Size(238, 20);
             this.dtpFechaIngreso.TabIndex = 17;
             // 
             // txbPrimerApellidoEncargado
             // 
             this.txbPrimerApellidoEncargado.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txbPrimerApellidoEncargado.Location = new System.Drawing.Point(119, 63);
-            this.txbPrimerApellidoEncargado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbPrimerApellidoEncargado.Location = new System.Drawing.Point(89, 51);
             this.txbPrimerApellidoEncargado.MaxLength = 15;
             this.txbPrimerApellidoEncargado.Name = "txbPrimerApellidoEncargado";
             this.txbPrimerApellidoEncargado.ReadOnly = true;
-            this.txbPrimerApellidoEncargado.Size = new System.Drawing.Size(344, 22);
+            this.txbPrimerApellidoEncargado.Size = new System.Drawing.Size(259, 20);
             this.txbPrimerApellidoEncargado.TabIndex = 22;
             this.txbPrimerApellidoEncargado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPrimerApellidoEncargado_KeyPress);
             // 
             // lbFechaIngreso
             // 
             this.lbFechaIngreso.AutoSize = true;
-            this.lbFechaIngreso.Location = new System.Drawing.Point(19, 103);
-            this.lbFechaIngreso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbFechaIngreso.Location = new System.Drawing.Point(14, 84);
             this.lbFechaIngreso.Name = "lbFechaIngreso";
-            this.lbFechaIngreso.Size = new System.Drawing.Size(118, 17);
+            this.lbFechaIngreso.Size = new System.Drawing.Size(90, 13);
             this.lbFechaIngreso.TabIndex = 14;
             this.lbFechaIngreso.Text = "Fecha de Ingreso";
             // 
             // lbSegundoApellidoDEncargado
             // 
             this.lbSegundoApellidoDEncargado.AutoSize = true;
-            this.lbSegundoApellidoDEncargado.Location = new System.Drawing.Point(487, 62);
-            this.lbSegundoApellidoDEncargado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbSegundoApellidoDEncargado.Location = new System.Drawing.Point(365, 50);
             this.lbSegundoApellidoDEncargado.Name = "lbSegundoApellidoDEncargado";
-            this.lbSegundoApellidoDEncargado.Size = new System.Drawing.Size(119, 17);
+            this.lbSegundoApellidoDEncargado.Size = new System.Drawing.Size(90, 13);
             this.lbSegundoApellidoDEncargado.TabIndex = 19;
             this.lbSegundoApellidoDEncargado.Text = "Segundo Apellido";
             // 
             // txtCedulaEncargado
             // 
             this.txtCedulaEncargado.BackColor = System.Drawing.Color.White;
-            this.txtCedulaEncargado.Location = new System.Drawing.Point(541, 23);
-            this.txtCedulaEncargado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCedulaEncargado.Location = new System.Drawing.Point(406, 19);
             this.txtCedulaEncargado.MaxLength = 9;
             this.txtCedulaEncargado.Name = "txtCedulaEncargado";
             this.txtCedulaEncargado.ReadOnly = true;
-            this.txtCedulaEncargado.Size = new System.Drawing.Size(173, 22);
+            this.txtCedulaEncargado.Size = new System.Drawing.Size(131, 20);
             this.txtCedulaEncargado.TabIndex = 14;
             this.txtCedulaEncargado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedulaEncargado_KeyPress);
             // 
             // txbNombreEncargado
             // 
             this.txbNombreEncargado.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txbNombreEncargado.Location = new System.Drawing.Point(119, 27);
-            this.txbNombreEncargado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbNombreEncargado.Location = new System.Drawing.Point(89, 22);
             this.txbNombreEncargado.MaxLength = 30;
             this.txbNombreEncargado.Name = "txbNombreEncargado";
             this.txbNombreEncargado.ReadOnly = true;
-            this.txbNombreEncargado.Size = new System.Drawing.Size(343, 22);
+            this.txbNombreEncargado.Size = new System.Drawing.Size(258, 20);
             this.txbNombreEncargado.TabIndex = 15;
             this.txbNombreEncargado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbNombreEncargado_KeyPress);
             // 
             // lbPrimerApellidoDEncargado
             // 
             this.lbPrimerApellidoDEncargado.AutoSize = true;
-            this.lbPrimerApellidoDEncargado.Location = new System.Drawing.Point(19, 66);
-            this.lbPrimerApellidoDEncargado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbPrimerApellidoDEncargado.Location = new System.Drawing.Point(14, 54);
             this.lbPrimerApellidoDEncargado.Name = "lbPrimerApellidoDEncargado";
-            this.lbPrimerApellidoDEncargado.Size = new System.Drawing.Size(103, 17);
+            this.lbPrimerApellidoDEncargado.Size = new System.Drawing.Size(76, 13);
             this.lbPrimerApellidoDEncargado.TabIndex = 20;
             this.lbPrimerApellidoDEncargado.Text = "Primer Apellido";
             // 
             // txbSegundoApellidoEncargado
             // 
             this.txbSegundoApellidoEncargado.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txbSegundoApellidoEncargado.Location = new System.Drawing.Point(615, 58);
-            this.txbSegundoApellidoEncargado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbSegundoApellidoEncargado.Location = new System.Drawing.Point(461, 47);
             this.txbSegundoApellidoEncargado.MaxLength = 15;
             this.txbSegundoApellidoEncargado.Name = "txbSegundoApellidoEncargado";
             this.txbSegundoApellidoEncargado.ReadOnly = true;
-            this.txbSegundoApellidoEncargado.Size = new System.Drawing.Size(271, 22);
+            this.txbSegundoApellidoEncargado.Size = new System.Drawing.Size(204, 20);
             this.txbSegundoApellidoEncargado.TabIndex = 16;
             this.txbSegundoApellidoEncargado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbTelefonoDEncargado_KeyPress);
             // 
             // lbNombreDEncargado
             // 
             this.lbNombreDEncargado.AutoSize = true;
-            this.lbNombreDEncargado.Location = new System.Drawing.Point(19, 31);
-            this.lbNombreDEncargado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbNombreDEncargado.Location = new System.Drawing.Point(14, 25);
             this.lbNombreDEncargado.Name = "lbNombreDEncargado";
-            this.lbNombreDEncargado.Size = new System.Drawing.Size(58, 17);
+            this.lbNombreDEncargado.Size = new System.Drawing.Size(44, 13);
             this.lbNombreDEncargado.TabIndex = 4;
             this.lbNombreDEncargado.Text = "Nombre";
             // 
             // lbCedulaDEncargado
             // 
             this.lbCedulaDEncargado.AutoSize = true;
-            this.lbCedulaDEncargado.Location = new System.Drawing.Point(488, 26);
-            this.lbCedulaDEncargado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbCedulaDEncargado.Location = new System.Drawing.Point(366, 21);
             this.lbCedulaDEncargado.Name = "lbCedulaDEncargado";
-            this.lbCedulaDEncargado.Size = new System.Drawing.Size(52, 17);
+            this.lbCedulaDEncargado.Size = new System.Drawing.Size(40, 13);
             this.lbCedulaDEncargado.TabIndex = 1;
             this.lbCedulaDEncargado.Text = "Cédula";
             // 
@@ -310,11 +297,9 @@
             this.grbDatosJugador.Controls.Add(this.lbPrimerApellido);
             this.grbDatosJugador.Controls.Add(this.lbFechaDeNacimiento);
             this.grbDatosJugador.Controls.Add(this.label2);
-            this.grbDatosJugador.Location = new System.Drawing.Point(16, 44);
-            this.grbDatosJugador.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbDatosJugador.Location = new System.Drawing.Point(12, 36);
             this.grbDatosJugador.Name = "grbDatosJugador";
-            this.grbDatosJugador.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grbDatosJugador.Size = new System.Drawing.Size(899, 231);
+            this.grbDatosJugador.Size = new System.Drawing.Size(674, 188);
             this.grbDatosJugador.TabIndex = 0;
             this.grbDatosJugador.TabStop = false;
             this.grbDatosJugador.Text = "Datos personales del jugador";
@@ -323,39 +308,35 @@
             // 
             this.cboEscuelas.BackColor = System.Drawing.Color.AliceBlue;
             this.cboEscuelas.FormattingEnabled = true;
-            this.cboEscuelas.Location = new System.Drawing.Point(640, 172);
-            this.cboEscuelas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboEscuelas.Location = new System.Drawing.Point(480, 140);
             this.cboEscuelas.Name = "cboEscuelas";
-            this.cboEscuelas.Size = new System.Drawing.Size(249, 24);
+            this.cboEscuelas.Size = new System.Drawing.Size(188, 21);
             this.cboEscuelas.TabIndex = 23;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(495, 177);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(371, 144);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 17);
+            this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 22;
             this.label3.Text = "Escuela";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 139);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(14, 113);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 17);
+            this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 20;
             this.label1.Text = "Teléfono 2";
             // 
             // txbTelefonoJug2
             // 
-            this.txbTelefonoJug2.Location = new System.Drawing.Point(123, 134);
-            this.txbTelefonoJug2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbTelefonoJug2.Location = new System.Drawing.Point(92, 109);
             this.txbTelefonoJug2.MaxLength = 8;
             this.txbTelefonoJug2.Name = "txbTelefonoJug2";
-            this.txbTelefonoJug2.Size = new System.Drawing.Size(340, 22);
+            this.txbTelefonoJug2.Size = new System.Drawing.Size(256, 20);
             this.txbTelefonoJug2.TabIndex = 21;
             this.txbTelefonoJug2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbTelefonoJug2_KeyPress);
             // 
@@ -363,30 +344,27 @@
             // 
             this.cboNiveles.BackColor = System.Drawing.Color.AliceBlue;
             this.cboNiveles.FormattingEnabled = true;
-            this.cboNiveles.Location = new System.Drawing.Point(123, 172);
-            this.cboNiveles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboNiveles.Location = new System.Drawing.Point(92, 140);
             this.cboNiveles.Name = "cboNiveles";
-            this.cboNiveles.Size = new System.Drawing.Size(343, 24);
+            this.cboNiveles.Size = new System.Drawing.Size(258, 21);
             this.cboNiveles.TabIndex = 19;
             // 
             // dtpFechaDeNacimiento
             // 
             this.dtpFechaDeNacimiento.CalendarTitleBackColor = System.Drawing.Color.AliceBlue;
             this.dtpFechaDeNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaDeNacimiento.Location = new System.Drawing.Point(640, 102);
-            this.dtpFechaDeNacimiento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFechaDeNacimiento.Location = new System.Drawing.Point(480, 83);
             this.dtpFechaDeNacimiento.Name = "dtpFechaDeNacimiento";
-            this.dtpFechaDeNacimiento.Size = new System.Drawing.Size(245, 22);
+            this.dtpFechaDeNacimiento.Size = new System.Drawing.Size(185, 20);
             this.dtpFechaDeNacimiento.TabIndex = 15;
             // 
             // rbtnHombre
             // 
             this.rbtnHombre.AutoSize = true;
             this.rbtnHombre.Checked = true;
-            this.rbtnHombre.Location = new System.Drawing.Point(640, 143);
-            this.rbtnHombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnHombre.Location = new System.Drawing.Point(480, 116);
             this.rbtnHombre.Name = "rbtnHombre";
-            this.rbtnHombre.Size = new System.Drawing.Size(79, 21);
+            this.rbtnHombre.Size = new System.Drawing.Size(62, 17);
             this.rbtnHombre.TabIndex = 14;
             this.rbtnHombre.TabStop = true;
             this.rbtnHombre.Text = "Hombre";
@@ -396,10 +374,9 @@
             // rbtnMujer
             // 
             this.rbtnMujer.AutoSize = true;
-            this.rbtnMujer.Location = new System.Drawing.Point(731, 143);
-            this.rbtnMujer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnMujer.Location = new System.Drawing.Point(548, 116);
             this.rbtnMujer.Name = "rbtnMujer";
-            this.rbtnMujer.Size = new System.Drawing.Size(64, 21);
+            this.rbtnMujer.Size = new System.Drawing.Size(51, 17);
             this.rbtnMujer.TabIndex = 13;
             this.rbtnMujer.Text = "Mujer";
             this.rbtnMujer.UseVisualStyleBackColor = true;
@@ -408,130 +385,117 @@
             // lbTeléfono
             // 
             this.lbTeléfono.AutoSize = true;
-            this.lbTeléfono.Location = new System.Drawing.Point(19, 107);
-            this.lbTeléfono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTeléfono.Location = new System.Drawing.Point(14, 87);
             this.lbTeléfono.Name = "lbTeléfono";
-            this.lbTeléfono.Size = new System.Drawing.Size(76, 17);
+            this.lbTeléfono.Size = new System.Drawing.Size(58, 13);
             this.lbTeléfono.TabIndex = 9;
             this.lbTeléfono.Text = "Teléfono 1";
             // 
             // txbCedula
             // 
-            this.txbCedula.Location = new System.Drawing.Point(640, 38);
-            this.txbCedula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbCedula.Location = new System.Drawing.Point(480, 31);
             this.txbCedula.MaxLength = 9;
             this.txbCedula.Name = "txbCedula";
-            this.txbCedula.Size = new System.Drawing.Size(245, 22);
+            this.txbCedula.Size = new System.Drawing.Size(185, 20);
             this.txbCedula.TabIndex = 12;
             this.txbCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbCedula_KeyPress);
             // 
             // txbNombre
             // 
-            this.txbNombre.Location = new System.Drawing.Point(123, 38);
-            this.txbNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbNombre.Location = new System.Drawing.Point(92, 31);
             this.txbNombre.MaxLength = 30;
             this.txbNombre.Name = "txbNombre";
-            this.txbNombre.Size = new System.Drawing.Size(340, 22);
+            this.txbNombre.Size = new System.Drawing.Size(256, 20);
             this.txbNombre.TabIndex = 13;
             this.txbNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbNombre_KeyPress);
             // 
             // lbNivel
             // 
             this.lbNivel.AutoSize = true;
-            this.lbNivel.Location = new System.Drawing.Point(21, 176);
-            this.lbNivel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbNivel.Location = new System.Drawing.Point(16, 143);
             this.lbNivel.Name = "lbNivel";
-            this.lbNivel.Size = new System.Drawing.Size(39, 17);
+            this.lbNivel.Size = new System.Drawing.Size(31, 13);
             this.lbNivel.TabIndex = 10;
             this.lbNivel.Text = "Nivel";
             // 
             // lbCedula
             // 
             this.lbCedula.AutoSize = true;
-            this.lbCedula.Location = new System.Drawing.Point(491, 42);
-            this.lbCedula.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbCedula.Location = new System.Drawing.Point(368, 34);
             this.lbCedula.Name = "lbCedula";
-            this.lbCedula.Size = new System.Drawing.Size(52, 17);
+            this.lbCedula.Size = new System.Drawing.Size(40, 13);
             this.lbCedula.TabIndex = 4;
             this.lbCedula.Text = "Cédula";
             // 
             // txbTelefonoJug1
             // 
-            this.txbTelefonoJug1.Location = new System.Drawing.Point(123, 102);
-            this.txbTelefonoJug1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbTelefonoJug1.Location = new System.Drawing.Point(92, 83);
             this.txbTelefonoJug1.MaxLength = 8;
             this.txbTelefonoJug1.Name = "txbTelefonoJug1";
-            this.txbTelefonoJug1.Size = new System.Drawing.Size(340, 22);
+            this.txbTelefonoJug1.Size = new System.Drawing.Size(256, 20);
             this.txbTelefonoJug1.TabIndex = 9;
             this.txbTelefonoJug1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbTelefonoJug1_KeyPress);
             // 
             // lbNombre
             // 
             this.lbNombre.AutoSize = true;
-            this.lbNombre.Location = new System.Drawing.Point(19, 42);
-            this.lbNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbNombre.Location = new System.Drawing.Point(14, 34);
             this.lbNombre.Name = "lbNombre";
-            this.lbNombre.Size = new System.Drawing.Size(58, 17);
+            this.lbNombre.Size = new System.Drawing.Size(44, 13);
             this.lbNombre.TabIndex = 3;
             this.lbNombre.Text = "Nombre";
             // 
             // txbSegundoApellidoJug
             // 
-            this.txbSegundoApellidoJug.Location = new System.Drawing.Point(640, 70);
-            this.txbSegundoApellidoJug.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbSegundoApellidoJug.Location = new System.Drawing.Point(480, 57);
             this.txbSegundoApellidoJug.MaxLength = 15;
             this.txbSegundoApellidoJug.Name = "txbSegundoApellidoJug";
-            this.txbSegundoApellidoJug.Size = new System.Drawing.Size(247, 22);
+            this.txbSegundoApellidoJug.Size = new System.Drawing.Size(186, 20);
             this.txbSegundoApellidoJug.TabIndex = 10;
             this.txbSegundoApellidoJug.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSegundoApellido_KeyPress);
             // 
             // txbPrimerApellidoJug
             // 
-            this.txbPrimerApellidoJug.Location = new System.Drawing.Point(123, 70);
-            this.txbPrimerApellidoJug.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbPrimerApellidoJug.Location = new System.Drawing.Point(92, 57);
             this.txbPrimerApellidoJug.MaxLength = 15;
             this.txbPrimerApellidoJug.Name = "txbPrimerApellidoJug";
-            this.txbPrimerApellidoJug.Size = new System.Drawing.Size(341, 22);
+            this.txbPrimerApellidoJug.Size = new System.Drawing.Size(257, 20);
             this.txbPrimerApellidoJug.TabIndex = 11;
             this.txbPrimerApellidoJug.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPrimerApellido_KeyPress);
             // 
             // lbSexo
             // 
             this.lbSexo.AutoSize = true;
-            this.lbSexo.Location = new System.Drawing.Point(493, 143);
-            this.lbSexo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbSexo.Location = new System.Drawing.Point(370, 116);
             this.lbSexo.Name = "lbSexo";
-            this.lbSexo.Size = new System.Drawing.Size(39, 17);
+            this.lbSexo.Size = new System.Drawing.Size(31, 13);
             this.lbSexo.TabIndex = 11;
             this.lbSexo.Text = "Sexo";
             // 
             // lbPrimerApellido
             // 
             this.lbPrimerApellido.AutoSize = true;
-            this.lbPrimerApellido.Location = new System.Drawing.Point(19, 75);
-            this.lbPrimerApellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbPrimerApellido.Location = new System.Drawing.Point(14, 61);
             this.lbPrimerApellido.Name = "lbPrimerApellido";
-            this.lbPrimerApellido.Size = new System.Drawing.Size(103, 17);
+            this.lbPrimerApellido.Size = new System.Drawing.Size(76, 13);
             this.lbPrimerApellido.TabIndex = 0;
             this.lbPrimerApellido.Text = "Primer Apellido";
             // 
             // lbFechaDeNacimiento
             // 
             this.lbFechaDeNacimiento.AutoSize = true;
-            this.lbFechaDeNacimiento.Location = new System.Drawing.Point(487, 111);
-            this.lbFechaDeNacimiento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbFechaDeNacimiento.Location = new System.Drawing.Point(365, 90);
             this.lbFechaDeNacimiento.Name = "lbFechaDeNacimiento";
-            this.lbFechaDeNacimiento.Size = new System.Drawing.Size(139, 17);
+            this.lbFechaDeNacimiento.Size = new System.Drawing.Size(106, 13);
             this.lbFechaDeNacimiento.TabIndex = 2;
             this.lbFechaDeNacimiento.Text = "Fecha de nacimiento";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(487, 79);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(365, 64);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 17);
+            this.label2.Size = new System.Drawing.Size(90, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Segundo Apellido";
             // 
@@ -543,10 +507,9 @@
             this.btnRegistrar.FlatAppearance.BorderSize = 0;
             this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrar.Location = new System.Drawing.Point(479, 421);
-            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegistrar.Location = new System.Drawing.Point(359, 342);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(100, 28);
+            this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
             this.btnRegistrar.TabIndex = 5;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
@@ -560,10 +523,9 @@
             this.btnActualizar.FlatAppearance.BorderSize = 0;
             this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Location = new System.Drawing.Point(588, 421);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnActualizar.Location = new System.Drawing.Point(441, 342);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(100, 28);
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 6;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -577,10 +539,9 @@
             this.btnBorrar.FlatAppearance.BorderSize = 0;
             this.btnBorrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBorrar.Location = new System.Drawing.Point(811, 421);
-            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBorrar.Location = new System.Drawing.Point(608, 342);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(100, 28);
+            this.btnBorrar.Size = new System.Drawing.Size(75, 23);
             this.btnBorrar.TabIndex = 7;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = false;
@@ -603,10 +564,9 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgtvPlayersInfo.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgtvPlayersInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgtvPlayersInfo.Location = new System.Drawing.Point(0, 457);
-            this.dgtvPlayersInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgtvPlayersInfo.Location = new System.Drawing.Point(0, 371);
             this.dgtvPlayersInfo.Name = "dgtvPlayersInfo";
-            this.dgtvPlayersInfo.Size = new System.Drawing.Size(920, 245);
+            this.dgtvPlayersInfo.Size = new System.Drawing.Size(690, 199);
             this.dgtvPlayersInfo.TabIndex = 18;
             this.dgtvPlayersInfo.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgtvPlayersInfo_CellMouseDoubleClick);
             // 
@@ -618,10 +578,9 @@
             this.btnConsultar.FlatAppearance.BorderSize = 0;
             this.btnConsultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultar.Location = new System.Drawing.Point(700, 421);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConsultar.Location = new System.Drawing.Point(525, 342);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(100, 28);
+            this.btnConsultar.Size = new System.Drawing.Size(75, 23);
             this.btnConsultar.TabIndex = 20;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = false;
@@ -635,10 +594,9 @@
             this.btnDescartar.FlatAppearance.BorderSize = 0;
             this.btnDescartar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnDescartar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDescartar.Location = new System.Drawing.Point(288, 422);
-            this.btnDescartar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDescartar.Location = new System.Drawing.Point(216, 343);
             this.btnDescartar.Name = "btnDescartar";
-            this.btnDescartar.Size = new System.Drawing.Size(158, 28);
+            this.btnDescartar.Size = new System.Drawing.Size(118, 23);
             this.btnDescartar.TabIndex = 21;
             this.btnDescartar.Text = "Descartar cambios";
             this.btnDescartar.UseVisualStyleBackColor = false;
@@ -653,10 +611,9 @@
             this.btnGuardar.FlatAppearance.BorderSize = 0;
             this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Location = new System.Drawing.Point(138, 422);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Location = new System.Drawing.Point(104, 343);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(142, 28);
+            this.btnGuardar.Size = new System.Drawing.Size(106, 23);
             this.btnGuardar.TabIndex = 22;
             this.btnGuardar.Text = "Guardar cambios";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -665,10 +622,10 @@
             // 
             // Players
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(920, 702);
+            this.ClientSize = new System.Drawing.Size(690, 570);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnDescartar);
             this.Controls.Add(this.btnConsultar);
@@ -681,7 +638,6 @@
             this.Controls.Add(this.menPlayers);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "Players";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -11,8 +11,8 @@ namespace AdminEscuelasFut
 {
     class Connection
     {
-        private const String user = "";
-        private const String password = "";
+        private const String user = "grupoerror";
+        private const String password = "sqlantro";
         private const String database = "DB_ERROR404";
         private const String connectionString = "Data Source=10.1.4.55;User ID=" + user + ";Password=" + password + "; Initial Catalog=" + database + "; Integrated Security=false";
         private SqlConnection sqlConnection;
@@ -34,8 +34,7 @@ namespace AdminEscuelasFut
         {
             openConnection();
             if (sqlConnection.State == ConnectionState.Open )
-            {
-                MessageBox.Show( "Connected to " + database );
+            {                
                 closeConnection();
             }
             else
