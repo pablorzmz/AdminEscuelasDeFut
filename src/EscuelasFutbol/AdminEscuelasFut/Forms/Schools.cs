@@ -53,7 +53,12 @@ namespace AdminEscuelasFut
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            bool salir = Utilities.showQuestionMessage("¿Desea salir del módulo Escuelas?",
+                          "Módulo Escuelas");
+            if (salir)
+            {
+                this.Close();
+            }
         }
 
         private void txtNameSchoolM_KeyPress(object sender, KeyPressEventArgs e)
@@ -87,9 +92,19 @@ namespace AdminEscuelasFut
 
         private void btnConsultar_MouseClick(object sender, MouseEventArgs e)
         {
-            List<String> parameters = new List<String>();
-            parameters.Add(txtNameSchoolM.Text);
-            schoolController.fillSchoolsDataGridView(dgvSchoolM, parameters);
+            cleanInput();
+            if (txtNameSchoolM.Text == "")
+            {
+                Utilities.showWarningMessage("El nombre de la escuela es " +
+                    "inválido.", "Datos de entrada inválidos para el nombre de la Escuela");
+                txtNameSchoolM.Focus();
+            }
+            else
+            {
+                List<String> parameters = new List<String>();
+                parameters.Add(txtNameSchoolM.Text);
+                schoolController.fillSchoolsDataGridView(dgvSchoolM, parameters);
+            }
         }
 
         private void dgvSchoolM_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
@@ -118,22 +133,22 @@ namespace AdminEscuelasFut
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            /*Asumiento que ya el ususario confirmo que quiere actualizar la información*/
-            /*Y se validó que todo sea del mismo tamaño que debería ser*/
             bool error = false;
             if (txtNameSchoolM.Text == "")
             {
-                MessageBox.Show("Nombre de la Escuela inválido");
+                Utilities.showWarningMessage("El nombre de la escuela es " +
+                    "inválido.", "Datos de entrada inválidos para el nombre de la Escuela");
                 txtNameSchoolM.Focus();
                 error = true;
             }
             if (txtPlaceSchoolM.Text == "")
             {
-                MessageBox.Show("Nombre del Lugar inválido");
+                Utilities.showWarningMessage("El nombre del Lugar es" +
+                    "inválido.", "Datos de entrada inválidos para el nombre del Lugar");
                 txtPlaceSchoolM.Focus();
                 error = true;
             }
-            if(!error)
+            if (!error)
             {
                 dataTemp.Add(txtNameSchoolM.Text);
                 dataTemp.Add(txtTelephoneSchoolM.Text);
@@ -148,40 +163,55 @@ namespace AdminEscuelasFut
             bool error = false;
             if (txtNameSchoolM.Text == "")
             {
-                MessageBox.Show("Nombre de la Escuela inválido");
+                Utilities.showWarningMessage("El nombre de la escuela es " +
+                    "inválido.", "Datos de entrada inválidos para el nombre de la Escuela");
                 txtNameSchoolM.Focus();
                 error = true;
             }
             if (txtPlaceSchoolM.Text == "")
             {
-                MessageBox.Show("Lugar inválido");
+                Utilities.showWarningMessage("El nombre del Lugar es" +
+                    "inválido.", "Datos de entrada inválidos para el nombre del Lugar");
                 txtNameSchoolM.Focus();
                 error = true;
             }
             if (!error)
             {
-                List<String> args = new List<string>();
-                args.Add(txtNameSchoolM.Text.ToString());
-                args.Add(txtPlaceSchoolM.Text.ToString());
-                if (cmbDirrInstalacion.SelectedItem.ToString().Equals("Elija una Instalacion")) {
-                    args.Add("");
-                }
-                else
+                bool seguir = Utilities.showQuestionMessage("¿Desea insertar la nueva escuela: " +
+                    "Nombre: " + txtNameSchoolM.Text + ", Lugar: " + txtPlaceSchoolM.Text + " en la base de datos?", "Insertar nueva Escuela");
+                if (seguir)
                 {
-                    args.Add(cmbDirrInstalacion.SelectedItem.ToString());
-                }
-                args.Add(txtTelephoneSchoolM.Text.ToString());
-                args.Add(txtTelephoneSchoo2M.Text.ToString());
-                int result = schoolController.insertSchool(args);
-                if (result == 0)
-                {
-                    MessageBox.Show("Agregado Exitoso");
-                    cleanInput();
-                    schoolController.fillSchoolsDataGridView(dgvSchoolM, null);
-                }
-                else
-                {
-                    MessageBox.Show("Error número: " + result.ToString());
+                    List<String> args = new List<string>();
+                    args.Add(txtNameSchoolM.Text.ToString());
+                    args.Add(txtPlaceSchoolM.Text.ToString());
+                    if (cmbDirrInstalacion.SelectedIndex == 0)
+                    {
+                        args.Add("");
+                    }
+                    else
+                    {
+                        args.Add(cmbDirrInstalacion.SelectedItem.ToString());
+                    }
+                    args.Add(txtTelephoneSchoolM.Text.ToString());
+                    args.Add(txtTelephoneSchoo2M.Text.ToString());
+                    int result = schoolController.insertSchool(args);
+                    if (result == 0)
+                    {
+                        Utilities.showInformationMessage("La escuela fue registrada con éxito", "Éxito al registrar");
+                        cleanInput();
+                        schoolController.fillSchoolsDataGridView(dgvSchoolM, null);
+                    }
+                    else
+                    {
+                        if (result == Utilities.DUPLICATED_KEY)
+                        {
+                            Utilities.showErrorMessage("El nombre de la escuela que desea insertar ya se encuentra en la base de datos", "No se pudo registrar la escuela");
+                        }
+                        else
+                        {
+                            Utilities.showErrorMessage("Error(" + result + ") al registrar la escuela.", "Excepción al registrar escuela");
+                        }
+                    }
                 }
             }
         }
@@ -190,22 +220,29 @@ namespace AdminEscuelasFut
         {
             if (txtNameSchoolM.Text == "")
             {
-                MessageBox.Show("Nombre de la Escuela inválido");
+                Utilities.showWarningMessage("El nombre de la escuela es " +
+                    "inválido.", "Datos de entrada inválidos para el nombre de la Escuela");
                 txtNameSchoolM.Focus();
             }
-            else {
-                List<String> args = new List<string>();
-                args.Add(txtNameSchoolM.Text.ToString());
-                int result = schoolController.deleteSchool(args);
-                if (result == 0)
+            else
+            {
+                bool seguir = Utilities.showQuestionMessage("¿Desea borrar la escuela: " +
+                    "Nombre: " + txtNameSchoolM.Text + " en la base de datos?", "Borrar una Escuela");
+                if (seguir)
                 {
-                    MessageBox.Show("Borrado Exitoso");
-                    cleanInput();
-                    schoolController.fillSchoolsDataGridView(dgvSchoolM, null);
-                }
-                else
-                {
-                    MessageBox.Show("Error número: " + result.ToString());
+                    List<String> args = new List<string>();
+                    args.Add(txtNameSchoolM.Text.ToString());
+                    int result = schoolController.deleteSchool(args);
+                    if (result == 0)
+                    {
+                        Utilities.showInformationMessage("La escuela fue borrada con éxito", "Éxito al borrar");
+                        cleanInput();
+                        schoolController.fillSchoolsDataGridView(dgvSchoolM, null);
+                    }
+                    else
+                    {
+                        Utilities.showErrorMessage("Error(" + result + ") al borrar la escuela.", "Excepción al borrar escuela");
+                    }
                 }
             }
         }
@@ -232,16 +269,34 @@ namespace AdminEscuelasFut
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            dataTemp.Add(txtNameSchoolM.Text);
-            dataTemp.Add(txtPlaceSchoolM.Text);
-            dataTemp.Add(cmbDirrInstalacion.SelectedItem.ToString());
-            dataTemp.Add(txtTelephoneSchoolM.Text);
-            dataTemp.Add(txtTelephoneSchoo2M.Text);
-            schoolController.updateSchoolInfo(dataTemp);
+            bool error = false;
+            if (txtNameSchoolM.Text == "")
+            {
+                Utilities.showWarningMessage("El nombre de la escuela es " +
+                    "inválido.", "Datos de entrada inválidos para el nombre de la Escuela");
+                txtNameSchoolM.Focus();
+                error = true;
+            }
+            if (txtPlaceSchoolM.Text == "")
+            {
+                Utilities.showWarningMessage("El nombre del Lugar es" +
+                    "inválido.", "Datos de entrada inválidos para el nombre del Lugar");
+                txtPlaceSchoolM.Focus();
+                error = true;
+            }
+            if (!error)
+            {
+                dataTemp.Add(txtNameSchoolM.Text);
+                dataTemp.Add(txtPlaceSchoolM.Text);
+                dataTemp.Add(cmbDirrInstalacion.SelectedItem.ToString());
+                dataTemp.Add(txtTelephoneSchoolM.Text);
+                dataTemp.Add(txtTelephoneSchoo2M.Text);
+                schoolController.updateSchoolInfo(dataTemp);
 
-            setVisibleBtn(true);
-            dataTemp.Clear();
-            schoolController.fillSchoolsDataGridView(dgvSchoolM, null);
+                setVisibleBtn(true);
+                dataTemp.Clear();
+                schoolController.fillSchoolsDataGridView(dgvSchoolM, null);
+            }
         }
     }
 }
