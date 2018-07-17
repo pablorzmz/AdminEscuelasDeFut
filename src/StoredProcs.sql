@@ -28,7 +28,7 @@ GO
 CREATE PROCEDURE insertarJugador @nombreJ VARCHAR(30), @Apellido1J VARCHAR(15), @tel1J VARCHAR(8), @tel2J VARCHAR(8),
 				 @cedulaJ CHAR(9), @Apellido2J VARCHAR(15), @fechaNac DATE, @sexo CHAR(1),  @escuela VARCHAR(30),
 				 @nombreE VARCHAR(30), @Apellido1E VARCHAR(15), @fechaIngreso DATE, @cedulaE CHAR(9), @Apellido2E VARCHAR(15)
-AS 
+	AS 
 	DECLARE @numTemp INT, @edad INT
 
 	/*Verificar si existe la persona*/
@@ -75,15 +75,17 @@ GO
 3- /* Registrar un nuevo nivel que se imparte en las escuelas  */
 GO
 CREATE PROCEDURE insertarNivel @numero TINYINT,  @edadInicio TINYINT, @edadFin TINYINT
-AS 
-INSERT Nivel VALUES( @numero, @edadInicio, @edadFin)
+	AS 
+	/*Se inserta tupla Nivel*/
+	INSERT Nivel VALUES( @numero, @edadInicio, @edadFin)
 GO
 
 4- /* Registrar un nuevo entrenamiento que se vaya a realizar en las escuelas  */
 GO
 CREATE PROCEDURE registrarEntrenamiento @fecha DATE, @hora TIME(7)
-AS 
-INSERT Entrenamiento VALUES ( @fecha, @hora) 
+	AS 
+	/*Se inserta tupla Entrenamiento*/
+	INSERT Entrenamiento VALUES ( @fecha, @hora) 
 GO
 
 5- /* Registrar un entrenamiento realizado por un jugador especifico */
@@ -92,6 +94,7 @@ CREATE PROCEDURE Registar_EntrenamientoJug
 	@Cedula char(9),
 	@Fecha date
 	AS
+		/*Se inserta tupla Entrenamiento*/
 		INSERT INTO Asiste VALUES (@Cedula, @Fecha);
 GO
 
@@ -101,11 +104,11 @@ CREATE PROCEDURE Registrar_Instalacion
 	@Direccion varchar(30), 
 	@Telefono varchar (8)  
 	AS
-		IF @Telefono = '' BEGIN
+		IF @Telefono = '' BEGIN  /*Si el telefono es vacio solo se inserta direccion*/
 			INSERT INTO Instalacion(Direccion) VALUES (@Direccion);
 		END
 
-		IF @Telefono <> '' BEGIN
+		IF @Telefono <> '' BEGIN /*Si el telefono no es vacio se inserta todo*/
 			INSERT INTO Instalacion VALUES (@Direccion, @Telefono);
 		END
 GO
@@ -119,19 +122,19 @@ CREATE PROCEDURE Registrar_Escuela
 	@tel1 VARCHAR(8), 
 	@tel2 VARCHAR(8)
 	AS
-		IF '' <> @Direccion BEGIN
+		IF '' <> @Direccion BEGIN    /*Si la direccion no es vacia*/
 			INSERT INTO Escuela VALUES (@Nombre, @Lugar, @Direccion);
 		END
 
-		IF '' = @Direccion BEGIN
+		IF '' = @Direccion BEGIN	/*Si la direccion es vacia*/
 			INSERT INTO Escuela VALUES (@Nombre, @Lugar, NULL);
 		END
 
-		IF '' <> @tel1 BEGIN
+		IF '' <> @tel1 BEGIN	/*SI el telefono1 no es vacio*/
 			INSERT INTO TelefonoE VALUES( @Nombre , @tel1 );
 		END
 
-		IF '' <> @tel2 BEGIN
+		IF '' <> @tel2 BEGIN    /*SI el telefono2 no es vacio*/
 			INSERT INTO TelefonoE VALUES( @Nombre , @tel2 );
 		END
 GO
@@ -144,6 +147,7 @@ CREATE PROCEDURE InsertarPagoMes
 		@mes char(3),
 		@ano char(4)
 		AS
+			/*Se inserta tupla Mes*/
 			INSERT INTO Mes VALUES (@escuela, @numRecibo, @mes, @ano);
 GO
 
@@ -154,12 +158,12 @@ CREATE PROCEDURE agregarTelefonoJugadorExistente
 	@Telefono1 varchar(8),
 	@Telefono2 varchar(8)
 	AS
-	IF @Telefono1 <> '-1' BEGIN
+	IF @Telefono1 <> '-1' BEGIN /*Si telefono1 no existe se inserta*/
 		INSERT INTO 
 			TelefonoP
 		VALUES ( @CedJugador, @Telefono1 )
 	END
-	IF @Telefono2 <> '-1' BEGIN
+	IF @Telefono2 <> '-1' BEGIN  /*Si telefono1 no existe se inserta*/
 		INSERT INTO 
 			TelefonoP
 		VALUES ( @CedJugador, @Telefono2 )
@@ -174,10 +178,10 @@ CREATE  PROCEDURE insertarEncargado
 	@Apellido1 varchar(15),
 	@Apellido2 varchar (15)
 	AS
-	INSERT INTO PERSONA 
+	INSERT INTO PERSONA		/*Se inserta primero en persona*/
 	VALUES (@Cedula,@Nombre,@Apellido1,@Apellido2)
 
-	INSERT INTO Encargado
+	INSERT INTO Encargado	/*Se inserta en Encargado*/
 		VALUES (@Cedula)
 GO
 
@@ -187,6 +191,7 @@ CREATE PROCEDURE insertarNivelesAEscuela
 	@nombreEsc VARCHAR(30),
 	@numNivel TINYINT
 	AS BEGIN
+		/*Se inserta el nivel en la escuela*/
 		INSERT INTO TIENE VALUES
 		(@nombreEsc, @numNivel);
 	END
@@ -199,11 +204,11 @@ CREATE PROCEDURE insertarTelefonoE
 	@tel1 VARCHAR(8), 
 	@tel2 VARCHAR(8)
 	AS BEGIN
-		IF '' <> @tel1 BEGIN
+		IF '' <> @tel1 BEGIN /*Si el telefono1 no es vacio se inserta*/
 			INSERT INTO TelefonoE VALUES( @nombreEsc , @tel1 );
 		END
 
-		IF '' <> @tel2 BEGIN
+		IF '' <> @tel2 BEGIN   /*Si el telefono2 no es vacio se inserta*/
 			INSERT INTO TelefonoE VALUES( @nombreEsc , @tel2 );
 		END
 	END
@@ -230,8 +235,8 @@ CREATE PROCEDURE actualizaOInsertarTelefonoNuevo
 	WHERE
 		TelefonoP.Cedula = @Cedula AND
 		TelefonoP.Telefono = @VTel1
-	IF @COUNT = 0 BEGIN
-		IF @VTel1 <> '' BEGIN
+	IF @COUNT = 0 BEGIN				/*Si no existe telefono1*/
+		IF @VTel1 <> '' BEGIN			/*y si el telefono nuevo no es vacio se inserta*/
 			INSERT INTO
 				TelefonoP
 			VALUES (@Cedula,@VTel1)
@@ -239,7 +244,7 @@ CREATE PROCEDURE actualizaOInsertarTelefonoNuevo
 		END
 	END
 	ELSE BEGIN
-		UPDATE 
+		UPDATE						/*Si el telefono1 si existe se actualiza*/
 			TelefonoP
 		SET 
 			Telefono = @NTel1
@@ -256,8 +261,8 @@ CREATE PROCEDURE actualizaOInsertarTelefonoNuevo
 	WHERE
 		TelefonoP.Cedula = @Cedula AND
 		TelefonoP.Telefono = @VTel2
-	IF @COUNT = 0 BEGIN
-		IF @VTel2 <> '' BEGIN
+	IF @COUNT = 0 BEGIN				/*Si no existe telefono2*/
+		IF @VTel2 <> '' BEGIN			/*y si el telefono nuevo no es vacio se inserta*/
 			INSERT INTO
 				TelefonoP
 			VALUES (@Cedula,@VTel2)
@@ -265,7 +270,7 @@ CREATE PROCEDURE actualizaOInsertarTelefonoNuevo
 		END
 	END
 	ELSE BEGIN
-		UPDATE 
+		UPDATE						/*Si el telefono2 si existe se actualiza*/
 			TelefonoP
 		SET 
 			Telefono = @NTel2
@@ -288,14 +293,14 @@ CREATE PROCEDURE actualizarEncargado
 	@VApellido1 varchar(15),
 	@VApellido2 varchar (15)
 	AS
-	UPDATE
+	UPDATE				/*Se actualiza el encargado*/
 		Persona
-	SET
+									/*Valores nuevos*/
 		Cedula = @NCedula,
 		NombreP = @NNombre,
 		Apellido1 = @NApellido1,
 		Apellido2 = @NApellido2
-	WHERE
+	WHERE							/*Valores viejos*/
 		Cedula = @VCedula AND
 		NombreP = @VNombre AND
 		Apellido1 = @VApellido1 AND
@@ -309,9 +314,9 @@ CREATE PROCEDURE actualizarEntrenamiento
 	@fechaN DATE, 
 	@horaN TIME(7)
 	AS 
-		UPDATE Entrenamiento 
-		SET Fecha = @fechaN,Hora = @horaN
-		WHERE Fecha = @fechaV
+		UPDATE Entrenamiento		/*Se actualiza el entrenamiento*/
+		SET Fecha = @fechaN,Hora = @horaN   /*Valores nuevos*/
+		WHERE Fecha = @fechaV				/*Fecha del entrenamiento*/
 GO
 
 4- /* Actualizar el entrenamiento de un Jugador */
@@ -321,7 +326,7 @@ CREATE PROCEDURE actualizarEntrenamientoJugador
 	@NuevoFecha date,
 	@ViejaFecha date
 	AS
-	UPDATE 
+	UPDATE		/*Se actualiza la asistencia de un jugador a un entrenamiento*/
 		Asiste
 	SET 
 		Asiste.FecEntrenamiento = @NuevoFecha
@@ -342,33 +347,33 @@ CREATE PROCEDURE ActualizarEscuela
 	@tel1Nuevo VARCHAR(8),
 	@tel2Nuevo VARCHAR(8)
 	AS BEGIN
-		IF @nombreEscViejo <> @nombreEscNuevo BEGIN
+		IF @nombreEscViejo <> @nombreEscNuevo BEGIN	/*Si el nombre nuevo es diferente se actualiza*/
 			UPDATE Escuela 
 			SET Nombre = @nombreEscNuevo
 			WHERE Nombre = @nombreEscViejo;
 		END
 
-		UPDATE Escuela 
+		UPDATE Escuela						/*Los demas valores de la escuela se actualizan*/
 		SET Lugar = @Lugar, DireccionInst = @Direccion
 		WHERE Nombre = @nombreEscNuevo;
 
-		IF @tel1Viejo <> '' BEGIN
+		IF @tel1Viejo <> '' BEGIN		/*Si existe un telefono1 se actualiza*/
 			UPDATE TelefonoE
 			SET Telefono = @tel1Nuevo
 			WHERE NombreEsc = @nombreEscNuevo AND Telefono = @tel1Viejo;
 		END
 
-		IF @tel1Viejo = '' AND @tel1Nuevo <> '' BEGIN
+		IF @tel1Viejo = '' AND @tel1Nuevo <> '' BEGIN	/*Si no existe un telefono1 se inserta uno, si lo hay*/
 			INSERT INTO TelefonoE VALUES( @nombreEscNuevo , @tel1Nuevo );
 		END
 
-		IF @tel2Viejo <> '' BEGIN
+		IF @tel2Viejo <> '' BEGIN	/*Si existe un telefono2 se actualiza*/
 			UPDATE TelefonoE
 			SET Telefono = @tel2Nuevo
 			WHERE NombreEsc = @nombreEscNuevo AND Telefono = @tel2Viejo;
 		END
 
-		IF @tel2Viejo = '' AND @tel2Nuevo <> '' BEGIN
+		IF @tel2Viejo = '' AND @tel2Nuevo <> '' BEGIN	/*Si no existe un telefono2 se inserta uno, si lo hay*/
 			INSERT INTO TelefonoE VALUES( @nombreEscNuevo , @tel2Nuevo );
 		END
 	END
@@ -381,7 +386,7 @@ CREATE PROCEDURE actualizarInstalacion
 	@direccionN VARCHAR(30), 
 	@telefono VARCHAR(8)
 AS 
-	UPDATE Instalacion 
+	UPDATE Instalacion		/*Se actualizan los valores de la instalacion*/
 	SET Direccion = @direccionN, Telefono = @telefono
 	WHERE Direccion = @direccionV
 GO
@@ -416,7 +421,7 @@ CREATE PROCEDURE actualizarJugador
 			Persona.Cedula = @NuevaCedJugador
 		WHERE 
 			Persona.Cedula = @ViejaCedJugador;
-
+    /*Luego se actualiza en jugador*/
 		UPDATE Jugador
 		SET 
 			Jugador.CedJugador = @NuevaCedJugador
@@ -433,6 +438,7 @@ CREATE PROCEDURE actualizarJugador
 	WHERE
 		Persona.Cedula = @NuevaCedJugador;
 
+	/*Se actualiza la informacíon basica del Jugador */
 	Update 
 		Jugador
 	SET
@@ -444,14 +450,14 @@ CREATE PROCEDURE actualizarJugador
 	WHERE
 		Jugador.CedJugador = @NuevaCedJugador;
 	/*Se actualiza toda de Esta_En correspondiente */
-	UPDATE 
+	UPDATE   /*Se actualiza la informacíon de acuerdo a la escuela a la que pertenece*/
 		Esta_En
 	SET
 		Esta_En.NomEscuela = @NomEscuela,
 		Esta_En.Nivel = @Nivel
 	WHERE
 		Esta_En.CedJugador = @NuevaCedJugador;
-	/*Se telefonos de persona-Jugador */	
+	/*Se insertan o actualizan los telefonos de persona-Jugador */	
 	EXEC actualizaOInsertarTelefonoNuevo 
 				@NuevaCedJugador,
 				@NuevoTelefono1Jugador,
@@ -469,7 +475,7 @@ CREATE PROCEDURE actualizarNivel
 	@edadInicio TINYINT, 
 	@edadFin TINYINT
 AS 
-	UPDATE Nivel 
+	UPDATE Nivel /*Se actualiza la informacion del nivel*/
 	SET Numero = @numeroN, EdadInicio = @edadInicio, EdadFin = @edadFin
 	WHERE Numero = @numeroV
 GO
@@ -481,7 +487,7 @@ CREATE PROCEDURE ActualizarNivelesDeEscuela
 	@numNivelNuevo TINYINT,
 	@nombreEsc VARCHAR(30)
 	AS BEGIN
-		UPDATE TIENE 
+		UPDATE TIENE /*Se actualiza un nivel perteneciente a una escuela*/
 		SET NumNivel = @numNivelNuevo
 		WHERE NomEsc = @nombreEsc AND NumNivel = @numNivelViejo;
 	END
@@ -512,7 +518,7 @@ CREATE PROCEDURE Eliminar_Jugador
 			UPDATE
 				PagosDeJugador
 			SET
-				Detalle = 
+				Detalle = /*Con esto se salva la cedula de la persona que ha realizado pagos*/
 				CONCAT(@Detalle,' (Pago del jugador eliminado con cédula',@Cedula,')')
 			WHERE
 				CedJugador = @Cedula
@@ -549,13 +555,13 @@ CREATE PROCEDURE eliminarEscuela
 		FOR SELECT CedJugador FROM Esta_En WHERE NomEscuela = @nombre;
 		OPEN Cursor1
 		FETCH NEXT FROM Cursor1 INTO @ced
-		WHILE @@fetch_status = 0 BEGIN
+		WHILE @@fetch_status = 0 BEGIN /*Este procedimiento debe eliminar los jugadores que pertenecen a la escuela*/
 			EXEC Eliminar_Jugador @ced;
 			FETCH NEXT FROM Cursor1 INTO @ced
 		END
 		CLOSE Cursor1
 		DEALLOCATE Cursor1
-		DELETE FROM Escuela
+		DELETE FROM Escuela  /*Despues de que se eliminan todos los jugadores se elimina la escuela*/
 		WHERE Nombre = @nombre;
 	END
 GO
@@ -565,7 +571,7 @@ GO
 CREATE PROCEDURE eliminarInstalacion 
 	@direccion VARCHAR(30)
 AS 
-	DELETE Instalacion WHERE Direccion = @direccion
+	DELETE Instalacion WHERE Direccion = @direccion /*Se elimina la instalacion*/
 GO
 
 4- /* Eliminar un nivel de la base de datos */
@@ -574,7 +580,7 @@ CREATE PROCEDURE eliminarNivel
 	@numero TINYINT
 AS 
 	DELETE 
-	FROM Nivel
+	FROM Nivel	/*Se elimina el nivel*/
 	WHERE Numero = @numero
 GO
 
@@ -583,7 +589,7 @@ GO
 CREATE PROCEDURE eliminarEntrenamiento 
 	@fecha DATE
 AS 
-	DELETE Entrenamiento 
+	DELETE Entrenamiento /*Se elimina el entrenamiento*/
 	WHERE fecha = @fecha 
 GO
 
@@ -593,7 +599,7 @@ CREATE PROCEDURE EliminarEntrenamientoDeJugador
 	@CedJugador char (9),
 	@FechEntren date 
 	AS
-	DELETE  FROM Asiste WHERE Asiste.CedJugador = @CedJugador 
+	DELETE  FROM Asiste WHERE Asiste.CedJugador = @CedJugador /*Se elimina el entrenamiento del jugador*/
 							  AND Asiste.FecEntrenamiento = @FechEntren									
 GO
 
@@ -602,7 +608,7 @@ GO
 CREATE PROCEDURE eliminarEncargado
 	@Cedula char(9)
 	AS	
-	DELETE FROM Encargado WHERE CedEncargado = @Cedula
+	DELETE FROM Encargado WHERE CedEncargado = @Cedula /*Se elimina el encargado*/
 	--DELETE FROM Persona WHERE Cedula = @Cedula
 GO
 
@@ -612,7 +618,7 @@ CREATE PROCEDURE eliminarNivelesDeEscuela
 	@nombreEsc VARCHAR(30),
 	@numNivel TINYINT
 	AS BEGIN
-		DELETE FROM TIENE 
+		DELETE FROM TIENE /*Se elimina el nivel perteneciente a la escuela*/
 		WHERE NomEsc = @nombreEsc AND NumNivel = @numNivel;
 	END
 GO
@@ -623,7 +629,7 @@ CREATE PROCEDURE EliminarPagoGeneralJugador
 	@NombreEscuela varchar (30),
 	@NumeroRecibo varchar (5)
 	AS
-			DELETE FROM PagosDeJugador WHERE 
+			DELETE FROM PagosDeJugador WHERE  /*Se elimina el pago del jugador (General)*/
 			PagosDeJugador.NombreEscuela = @NombreEscuela AND
 			PagosDeJugador.NumeroRecibo = @NumeroRecibo
 GO
@@ -634,7 +640,7 @@ CREATE PROCEDURE EliminarPagoMatriculaJugador
 	@NombreEscuela varchar (30),
 	@NumeroRecibo varchar (5)
 	AS
-			DELETE FROM PagoMatricula WHERE 
+			DELETE FROM PagoMatricula WHERE		/*Se elimina el pago del jugador (Matricula)*/
 			PagoMatricula.NombreEscuela = @NombreEscuela AND
 			PagoMatricula.NumeroRecibo = @NumeroRecibo
 GO
@@ -647,13 +653,13 @@ CREATE PROCEDURE EliminarPagoMensualidadJugador
 	@Mes char (3),
 	@Año char (4)
 	AS
-		DELETE FROM Mes WHERE 
+		DELETE FROM Mes WHERE		/*Se elimina el pago del registro de meses*/
 			Mes.NombreEscuela = @NombreEscuela AND
 			Mes.NumeroRecibo = @NumeroRecibo AND
 			Mes.Mes = @Mes AND
 			Mes.Año = @Año
 
-		DELETE FROM PagoMensualidad WHERE 
+		DELETE FROM PagoMensualidad WHERE /*Se elimina el pago del jugador (Mensual)*/
 			PagoMensualidad.NombreEscuela = @NombreEscuela AND
 			PagoMensualidad.NumeroRecibo = @NumeroRecibo
 GO
@@ -682,7 +688,7 @@ ON Encargado
 		Encargado as E left join Jugador as J on E.CedEncargado = J.CedEncargado
 	WHERE E.CedEncargado = @CedEncargado;	
 	
-	IF @COUNTER = 0 BEGIN
+	IF @COUNTER = 0 BEGIN /*Si el encargado ya no tiene jugadores se elimina*/
 		DELETE 
 		FROM 
 			Encargado
@@ -721,7 +727,7 @@ CREATE TRIGGER insertarJugANivel
 		FETCH NEXT FROM Cursor1 INTO @nivelEsc, @edadI, @edadF;
 		WHILE @@fetch_status = 0 BEGIN
 			
-			IF @edad >= @edadI AND @edad <= @edadF BEGIN
+			IF @edad >= @edadI AND @edad <= @edadF BEGIN  /*Se verifica a cual nivel de la escuela pertenece el jugador*/
 				INSERT INTO Esta_En VALUES
 				(@ced, @escuela, @nivelEsc);
 			END
