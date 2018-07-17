@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdminEscuelasFut.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,12 +15,14 @@ namespace AdminEscuelasFut
     {
         private C_SchoolLevels schoolLevelsController;
         private List<String> dataTemp;
+        private HelpForm help;
 
         public SchoolLevels()
         {
             InitializeComponent();
             schoolLevelsController = new C_SchoolLevels();
             dataTemp = new List<string>();
+            help = new HelpForm();
         }
 
         private void SchoolLevels_Load(object sender, EventArgs e)
@@ -234,6 +237,19 @@ namespace AdminEscuelasFut
             }
         }
 
-        
+        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            help.Show();
+        }
+
+        private void SchoolLevels_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            bool salir = Utilities.showQuestionMessage("¿Desea salir de las herramientas Niveles de Escuelas?",
+                          "Niveles de Escuelas");
+            if (!salir)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

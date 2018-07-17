@@ -135,6 +135,12 @@ namespace AdminEscuelasFut
          * @param messageHeader: Header to show on top in dialog message
          * @return: Return true, if user picked Yes, false otherwise
         */
+        /// <summary>
+        /// este m
+        /// </summary>
+        /// <param name="messageContent"> contenido mensaje </param>
+        /// <param name="messageHeader"></param>
+        /// <returns></returns>
         public static bool showQuestionMessage(String messageContent, String messageHeader)
         {
             DialogResult result = MessageBox.Show(messageContent, messageHeader, MessageBoxButtons.YesNo, MessageBoxIcon.Question);

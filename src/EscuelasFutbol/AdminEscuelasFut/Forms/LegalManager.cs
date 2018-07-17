@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdminEscuelasFut.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,7 @@ namespace AdminEscuelasFut
     {
         private C_LegalManager legalManagerController;
         private List<String> dataTemp;
+        private HelpForm help;
 
 
         public LegalManager()
@@ -21,6 +23,7 @@ namespace AdminEscuelasFut
             InitializeComponent();
             legalManagerController = new C_LegalManager();
             dataTemp = new List<string>();
+            help = new HelpForm();
         }
 
         private void LegalManager_Load(object sender, EventArgs e)
@@ -273,6 +276,11 @@ namespace AdminEscuelasFut
 
             btnGuardar.Visible = !visible;
             btnDescartar.Visible = !visible;
+        }
+
+        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            help.Show();
         }
     }
 }

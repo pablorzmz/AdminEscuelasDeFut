@@ -107,7 +107,7 @@ namespace AdminEscuelasFut
                     }
                     catch (SqlException ex)
                     {
-                        MessageBox.Show(ex.Message);
+                       ///MessageBox.Show(ex.Message);
                         error = ex.Number;
                         return error;
                     }

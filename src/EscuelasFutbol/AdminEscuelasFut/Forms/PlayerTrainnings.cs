@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdminEscuelasFut.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,8 @@ namespace AdminEscuelasFut
         private String cedula;
         private String escuela;
         private DataGridViewRow currentRow;
+        private HelpForm help;
+
         public PlayerTrainnings()
         {
             InitializeComponent();
@@ -23,6 +26,7 @@ namespace AdminEscuelasFut
             this.cedula = "-1";
             this.escuela = "Elija una Escuela";
             currentRow = null;
+            help = new HelpForm();
         }
 
 
@@ -229,6 +233,11 @@ namespace AdminEscuelasFut
                     Utilities.showErrorMessage("Error al borrar entrenamiento de jugador. Excepción número(" + result + ")","Excepción SQL");
                 }
             }
+        }
+
+        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            help.Show();
         }
     }
 }

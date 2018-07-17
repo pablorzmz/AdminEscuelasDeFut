@@ -61,7 +61,8 @@
             this.ayudaToolStripMenuItem});
             this.menTrainings.Location = new System.Drawing.Point(0, 0);
             this.menTrainings.Name = "menTrainings";
-            this.menTrainings.Size = new System.Drawing.Size(554, 24);
+            this.menTrainings.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menTrainings.Size = new System.Drawing.Size(739, 28);
             this.menTrainings.TabIndex = 4;
             this.menTrainings.Text = "menuPrincipal";
             // 
@@ -70,22 +71,23 @@
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.BackColor = System.Drawing.Color.AliceBlue;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(113, 26);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
+            this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.ayudaToolStripMenuItem_Click);
             // 
             // dgvTrainingM
             // 
@@ -111,11 +113,11 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTrainingM.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTrainingM.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvTrainingM.Location = new System.Drawing.Point(0, 195);
-            this.dgvTrainingM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvTrainingM.Location = new System.Drawing.Point(0, 240);
+            this.dgvTrainingM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvTrainingM.Name = "dgvTrainingM";
             this.dgvTrainingM.RowTemplate.Height = 24;
-            this.dgvTrainingM.Size = new System.Drawing.Size(554, 268);
+            this.dgvTrainingM.Size = new System.Drawing.Size(739, 330);
             this.dgvTrainingM.TabIndex = 7;
             this.dgvTrainingM.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTrainingM_CellDoubleClick);
             // 
@@ -123,10 +125,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.label2.Location = new System.Drawing.Point(10, 76);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(13, 94);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.Size = new System.Drawing.Size(39, 17);
             this.label2.TabIndex = 8;
             this.label2.Text = "Hora";
             // 
@@ -134,20 +135,19 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.label4.Location = new System.Drawing.Point(10, 41);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(13, 50);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.Size = new System.Drawing.Size(47, 17);
             this.label4.TabIndex = 10;
             this.label4.Text = "Fecha";
             // 
             // dtpDateTrainingM
             // 
             this.dtpDateTrainingM.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateTrainingM.Location = new System.Drawing.Point(100, 40);
-            this.dtpDateTrainingM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpDateTrainingM.Location = new System.Drawing.Point(133, 49);
+            this.dtpDateTrainingM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpDateTrainingM.Name = "dtpDateTrainingM";
-            this.dtpDateTrainingM.Size = new System.Drawing.Size(398, 20);
+            this.dtpDateTrainingM.Size = new System.Drawing.Size(529, 22);
             this.dtpDateTrainingM.TabIndex = 1;
             // 
             // groupBox1
@@ -156,19 +156,22 @@
             this.groupBox1.Controls.Add(this.dtpDateTrainingM);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(13, 28);
+            this.groupBox1.Location = new System.Drawing.Point(17, 34);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(534, 122);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(712, 150);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información de los entrenamientos";
             // 
             // txtHourTrainingM
             // 
-            this.txtHourTrainingM.Location = new System.Drawing.Point(100, 76);
+            this.txtHourTrainingM.Location = new System.Drawing.Point(133, 94);
+            this.txtHourTrainingM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtHourTrainingM.Mask = "00:00:00";
             this.txtHourTrainingM.Name = "txtHourTrainingM";
-            this.txtHourTrainingM.Size = new System.Drawing.Size(398, 20);
+            this.txtHourTrainingM.Size = new System.Drawing.Size(529, 22);
             this.txtHourTrainingM.TabIndex = 2;
             // 
             // btnGuardar
@@ -180,9 +183,10 @@
             this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Image = global::AdminEscuelasFut.Properties.Resources.icon_save;
-            this.btnGuardar.Location = new System.Drawing.Point(248, 162);
+            this.btnGuardar.Location = new System.Drawing.Point(331, 199);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(83, 28);
+            this.btnGuardar.Size = new System.Drawing.Size(111, 34);
             this.btnGuardar.TabIndex = 4;
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Visible = false;
@@ -197,9 +201,10 @@
             this.btnDescartar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnDescartar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDescartar.Image = global::AdminEscuelasFut.Properties.Resources.icons_discard;
-            this.btnDescartar.Location = new System.Drawing.Point(337, 162);
+            this.btnDescartar.Location = new System.Drawing.Point(449, 199);
+            this.btnDescartar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDescartar.Name = "btnDescartar";
-            this.btnDescartar.Size = new System.Drawing.Size(83, 28);
+            this.btnDescartar.Size = new System.Drawing.Size(111, 34);
             this.btnDescartar.TabIndex = 5;
             this.btnDescartar.UseVisualStyleBackColor = false;
             this.btnDescartar.Visible = false;
@@ -214,9 +219,10 @@
             this.btnConsultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultar.Image = global::AdminEscuelasFut.Properties.Resources.icon_find;
-            this.btnConsultar.Location = new System.Drawing.Point(337, 162);
+            this.btnConsultar.Location = new System.Drawing.Point(449, 199);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(83, 28);
+            this.btnConsultar.Size = new System.Drawing.Size(111, 34);
             this.btnConsultar.TabIndex = 35;
             this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
@@ -230,9 +236,10 @@
             this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Image = global::AdminEscuelasFut.Properties.Resources.icon_add;
-            this.btnRegistrar.Location = new System.Drawing.Point(158, 162);
+            this.btnRegistrar.Location = new System.Drawing.Point(211, 199);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(83, 28);
+            this.btnRegistrar.Size = new System.Drawing.Size(111, 34);
             this.btnRegistrar.TabIndex = 3;
             this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
@@ -246,9 +253,10 @@
             this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Image = global::AdminEscuelasFut.Properties.Resources.icon_edit;
-            this.btnActualizar.Location = new System.Drawing.Point(248, 162);
+            this.btnActualizar.Location = new System.Drawing.Point(331, 199);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(83, 28);
+            this.btnActualizar.Size = new System.Drawing.Size(111, 34);
             this.btnActualizar.TabIndex = 33;
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -262,18 +270,19 @@
             this.btnBorrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrar.Image = global::AdminEscuelasFut.Properties.Resources.icon_delete;
-            this.btnBorrar.Location = new System.Drawing.Point(426, 162);
+            this.btnBorrar.Location = new System.Drawing.Point(568, 199);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(83, 28);
+            this.btnBorrar.Size = new System.Drawing.Size(111, 34);
             this.btnBorrar.TabIndex = 6;
             this.btnBorrar.UseVisualStyleBackColor = false;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // Trainings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(554, 463);
+            this.ClientSize = new System.Drawing.Size(739, 570);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnDescartar);
             this.Controls.Add(this.btnConsultar);
@@ -285,6 +294,7 @@
             this.Controls.Add(this.menTrainings);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "Trainings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

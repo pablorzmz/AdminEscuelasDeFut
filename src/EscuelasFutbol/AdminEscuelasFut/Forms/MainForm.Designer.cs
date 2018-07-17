@@ -47,13 +47,15 @@
             // menPrincp
             // 
             this.menPrincp.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.menPrincp.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menPrincp.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.módulosToolStripMenuItem,
             this.ayudaToolStripMenuItem});
             this.menPrincp.Location = new System.Drawing.Point(0, 0);
             this.menPrincp.Name = "menPrincp";
-            this.menPrincp.Size = new System.Drawing.Size(1037, 24);
+            this.menPrincp.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menPrincp.Size = new System.Drawing.Size(1383, 28);
             this.menPrincp.TabIndex = 2;
             this.menPrincp.Text = "menuPrincipal";
             // 
@@ -63,14 +65,14 @@
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlLight;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(113, 26);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -85,7 +87,7 @@
             this.menuItemNiveles,
             this.menuItemPagos});
             this.módulosToolStripMenuItem.Name = "módulosToolStripMenuItem";
-            this.módulosToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.módulosToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
             this.módulosToolStripMenuItem.Text = "Módulos";
             // 
             // administradoresToolStripMenuItem
@@ -93,7 +95,7 @@
             this.administradoresToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlLight;
             this.administradoresToolStripMenuItem.Enabled = false;
             this.administradoresToolStripMenuItem.Name = "administradoresToolStripMenuItem";
-            this.administradoresToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.administradoresToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
             this.administradoresToolStripMenuItem.Text = "Administradores";
             // 
             // entrenadoresToolStripMenuItem
@@ -101,14 +103,14 @@
             this.entrenadoresToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlLight;
             this.entrenadoresToolStripMenuItem.Enabled = false;
             this.entrenadoresToolStripMenuItem.Name = "entrenadoresToolStripMenuItem";
-            this.entrenadoresToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.entrenadoresToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
             this.entrenadoresToolStripMenuItem.Text = "Entrenadores";
             // 
             // entrenamientosToolStripMenuItem
             // 
             this.entrenamientosToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlLight;
             this.entrenamientosToolStripMenuItem.Name = "entrenamientosToolStripMenuItem";
-            this.entrenamientosToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.entrenamientosToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
             this.entrenamientosToolStripMenuItem.Text = "Entrenamientos";
             this.entrenamientosToolStripMenuItem.Click += new System.EventHandler(this.entrenamientosToolStripMenuItem_Click);
             // 
@@ -116,7 +118,7 @@
             // 
             this.escuelasToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlLight;
             this.escuelasToolStripMenuItem.Name = "escuelasToolStripMenuItem";
-            this.escuelasToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.escuelasToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
             this.escuelasToolStripMenuItem.Text = "Escuelas";
             this.escuelasToolStripMenuItem.Click += new System.EventHandler(this.escuelasToolStripMenuItem_Click);
             // 
@@ -124,7 +126,7 @@
             // 
             this.menuItemJugadores.BackColor = System.Drawing.SystemColors.ControlLight;
             this.menuItemJugadores.Name = "menuItemJugadores";
-            this.menuItemJugadores.Size = new System.Drawing.Size(161, 22);
+            this.menuItemJugadores.Size = new System.Drawing.Size(193, 26);
             this.menuItemJugadores.Text = "Jugadores";
             this.menuItemJugadores.Click += new System.EventHandler(this.menuItemJugadores_Click);
             // 
@@ -132,7 +134,7 @@
             // 
             this.menuItemNiveles.BackColor = System.Drawing.SystemColors.ControlLight;
             this.menuItemNiveles.Name = "menuItemNiveles";
-            this.menuItemNiveles.Size = new System.Drawing.Size(161, 22);
+            this.menuItemNiveles.Size = new System.Drawing.Size(193, 26);
             this.menuItemNiveles.Text = "Niveles";
             this.menuItemNiveles.Click += new System.EventHandler(this.menuItemNiveles_Click);
             // 
@@ -140,26 +142,28 @@
             // 
             this.menuItemPagos.BackColor = System.Drawing.SystemColors.ControlLight;
             this.menuItemPagos.Name = "menuItemPagos";
-            this.menuItemPagos.Size = new System.Drawing.Size(161, 22);
+            this.menuItemPagos.Size = new System.Drawing.Size(193, 26);
             this.menuItemPagos.Text = "Pagos";
             this.menuItemPagos.Click += new System.EventHandler(this.menuItemPagos_Click);
             // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
+            this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.ayudaToolStripMenuItem_Click);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImage = global::AdminEscuelasFut.Properties.Resources.estadioFondo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1037, 549);
+            this.ClientSize = new System.Drawing.Size(1383, 676);
             this.Controls.Add(this.menPrincp);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administración de escuelas de fútbol 2018";

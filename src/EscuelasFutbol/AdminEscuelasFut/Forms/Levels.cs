@@ -25,7 +25,7 @@ namespace AdminEscuelasFut
         {
             InitializeComponent();
             levelController = new C_Levels();
-            help = new HelpForm("Manipulacion niveles", helpText);
+            help = new HelpForm();
         }
 
         private void Levels_Load(object sender, EventArgs e)

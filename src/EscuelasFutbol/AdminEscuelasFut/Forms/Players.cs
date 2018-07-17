@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdminEscuelasFut.Forms;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
@@ -13,6 +14,8 @@ namespace AdminEscuelasFut
         private String sexValue;
         private DataGridViewRow currentRow;
         private List<String> dataTemp;
+        private HelpForm help;
+
         public Players()
         {
             InitializeComponent();
@@ -20,6 +23,7 @@ namespace AdminEscuelasFut
             sexValue = "m";
             currentRow = null;
             dataTemp = new List<string>();
+            help = new HelpForm();
         }
 
         public void showPlayersTraingins()
@@ -476,6 +480,11 @@ namespace AdminEscuelasFut
         private void consultarEncargadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showLegalManagers();
+        }
+
+        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            help.Show();
         }
     }
 }

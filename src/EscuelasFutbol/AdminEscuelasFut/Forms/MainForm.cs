@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdminEscuelasFut.Forms;
+using System;
 using System.Windows.Forms;
 
 namespace AdminEscuelasFut
@@ -10,10 +11,12 @@ namespace AdminEscuelasFut
         private  Trainings trainingsModule;
         private  Schools schoolsModule;
         private  Players playersModule;
+        private  HelpForm help;
 
         public MainForm()
         {            
-            InitializeComponent();            
+            InitializeComponent();
+            help = new HelpForm();
         }
 
         private void MainForm_Load( object sender, EventArgs e )
@@ -159,6 +162,11 @@ namespace AdminEscuelasFut
             {
                 e.Cancel = true;
             }
-        }       
+        }
+
+        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            help.Show();
+        }
     }
 }

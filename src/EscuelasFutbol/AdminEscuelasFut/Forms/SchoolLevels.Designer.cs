@@ -54,21 +54,22 @@
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(113, 26);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
+            this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.ayudaToolStripMenuItem_Click);
             // 
             // menSchoolLeves
             // 
@@ -79,7 +80,8 @@
             this.ayudaToolStripMenuItem});
             this.menSchoolLeves.Location = new System.Drawing.Point(0, 0);
             this.menSchoolLeves.Name = "menSchoolLeves";
-            this.menSchoolLeves.Size = new System.Drawing.Size(508, 24);
+            this.menSchoolLeves.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menSchoolLeves.Size = new System.Drawing.Size(677, 28);
             this.menSchoolLeves.TabIndex = 4;
             this.menSchoolLeves.Text = "menuPrincipal";
             // 
@@ -89,9 +91,11 @@
             this.groupBox1.Controls.Add(this.cmbSchoolLevel);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(13, 31);
+            this.groupBox1.Location = new System.Drawing.Point(17, 38);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(484, 80);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(645, 98);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Niveles por escuela";
@@ -100,50 +104,48 @@
             // 
             this.cmbSchoolName.BackColor = System.Drawing.Color.AliceBlue;
             this.cmbSchoolName.FormattingEnabled = true;
-            this.cmbSchoolName.Location = new System.Drawing.Point(102, 25);
-            this.cmbSchoolName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbSchoolName.Location = new System.Drawing.Point(136, 31);
+            this.cmbSchoolName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbSchoolName.Name = "cmbSchoolName";
-            this.cmbSchoolName.Size = new System.Drawing.Size(375, 21);
+            this.cmbSchoolName.Size = new System.Drawing.Size(499, 24);
             this.cmbSchoolName.TabIndex = 1;
             // 
             // cmbSchoolLevel
             // 
             this.cmbSchoolLevel.BackColor = System.Drawing.Color.AliceBlue;
             this.cmbSchoolLevel.FormattingEnabled = true;
-            this.cmbSchoolLevel.Location = new System.Drawing.Point(102, 51);
-            this.cmbSchoolLevel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbSchoolLevel.Location = new System.Drawing.Point(136, 63);
+            this.cmbSchoolLevel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbSchoolLevel.Name = "cmbSchoolLevel";
-            this.cmbSchoolLevel.Size = new System.Drawing.Size(374, 21);
+            this.cmbSchoolLevel.Size = new System.Drawing.Size(497, 24);
             this.cmbSchoolLevel.TabIndex = 2;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 56);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(19, 69);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 13);
+            this.label4.Size = new System.Drawing.Size(39, 17);
             this.label4.TabIndex = 35;
             this.label4.Text = "Nivel";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 28);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(19, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 13);
+            this.label1.Size = new System.Drawing.Size(111, 17);
             this.label1.TabIndex = 32;
             this.label1.Text = "Nombre escuela";
             // 
             // dgvSchoolLevels
             // 
             this.dgvSchoolLevels.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvSchoolLevels.Location = new System.Drawing.Point(0, 158);
-            this.dgvSchoolLevels.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvSchoolLevels.Location = new System.Drawing.Point(0, 194);
+            this.dgvSchoolLevels.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvSchoolLevels.Name = "dgvSchoolLevels";
             this.dgvSchoolLevels.RowTemplate.Height = 24;
-            this.dgvSchoolLevels.Size = new System.Drawing.Size(508, 190);
+            this.dgvSchoolLevels.Size = new System.Drawing.Size(677, 234);
             this.dgvSchoolLevels.TabIndex = 56;
             this.dgvSchoolLevels.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSchoolLevels_CellMouseDoubleClick);
             // 
@@ -156,9 +158,10 @@
             this.btnDescartar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnDescartar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDescartar.Image = global::AdminEscuelasFut.Properties.Resources.icons_discard;
-            this.btnDescartar.Location = new System.Drawing.Point(315, 125);
+            this.btnDescartar.Location = new System.Drawing.Point(420, 154);
+            this.btnDescartar.Margin = new System.Windows.Forms.Padding(4);
             this.btnDescartar.Name = "btnDescartar";
-            this.btnDescartar.Size = new System.Drawing.Size(83, 28);
+            this.btnDescartar.Size = new System.Drawing.Size(111, 34);
             this.btnDescartar.TabIndex = 5;
             this.btnDescartar.UseVisualStyleBackColor = false;
             this.btnDescartar.Visible = false;
@@ -173,9 +176,10 @@
             this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Image = global::AdminEscuelasFut.Properties.Resources.icon_save;
-            this.btnGuardar.Location = new System.Drawing.Point(226, 125);
+            this.btnGuardar.Location = new System.Drawing.Point(301, 154);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(83, 28);
+            this.btnGuardar.Size = new System.Drawing.Size(111, 34);
             this.btnGuardar.TabIndex = 4;
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Visible = false;
@@ -190,9 +194,10 @@
             this.btnConsultar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultar.Image = global::AdminEscuelasFut.Properties.Resources.icon_find;
-            this.btnConsultar.Location = new System.Drawing.Point(315, 125);
+            this.btnConsultar.Location = new System.Drawing.Point(420, 154);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(83, 28);
+            this.btnConsultar.Size = new System.Drawing.Size(111, 34);
             this.btnConsultar.TabIndex = 55;
             this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnConsultar_MouseClick);
@@ -206,9 +211,10 @@
             this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Image = global::AdminEscuelasFut.Properties.Resources.icon_add;
-            this.btnRegistrar.Location = new System.Drawing.Point(136, 125);
+            this.btnRegistrar.Location = new System.Drawing.Point(181, 154);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(83, 28);
+            this.btnRegistrar.Size = new System.Drawing.Size(111, 34);
             this.btnRegistrar.TabIndex = 3;
             this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
@@ -222,9 +228,10 @@
             this.btnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Image = global::AdminEscuelasFut.Properties.Resources.icon_edit;
-            this.btnActualizar.Location = new System.Drawing.Point(226, 125);
+            this.btnActualizar.Location = new System.Drawing.Point(301, 154);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(83, 28);
+            this.btnActualizar.Size = new System.Drawing.Size(111, 34);
             this.btnActualizar.TabIndex = 53;
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -238,18 +245,19 @@
             this.btnBorrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrar.Image = global::AdminEscuelasFut.Properties.Resources.icon_delete;
-            this.btnBorrar.Location = new System.Drawing.Point(404, 125);
+            this.btnBorrar.Location = new System.Drawing.Point(539, 154);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(83, 28);
+            this.btnBorrar.Size = new System.Drawing.Size(111, 34);
             this.btnBorrar.TabIndex = 6;
             this.btnBorrar.UseVisualStyleBackColor = false;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // SchoolLevels
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 348);
+            this.ClientSize = new System.Drawing.Size(677, 428);
             this.Controls.Add(this.btnDescartar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.dgvSchoolLevels);
@@ -260,10 +268,12 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menSchoolLeves);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "SchoolLevels";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Gestionar niveles de escuelas";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SchoolLevels_FormClosing);
             this.Load += new System.EventHandler(this.SchoolLevels_Load);
             this.menSchoolLeves.ResumeLayout(false);
             this.menSchoolLeves.PerformLayout();

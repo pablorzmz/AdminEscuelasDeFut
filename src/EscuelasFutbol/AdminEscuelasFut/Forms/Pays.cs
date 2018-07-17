@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdminEscuelasFut.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,12 +16,14 @@ namespace AdminEscuelasFut
         private C_Pays paysController;
         private DataAccess dataAccess;
         private DataGridViewRow currentRow;
+        private HelpForm help;
 
         public Pays()
         {
             InitializeComponent();
             paysController = new C_Pays();
             currentRow = null;
+            help = new HelpForm();
         }
 
         private void Pays_Load(object sender, EventArgs e)
@@ -265,32 +268,35 @@ namespace AdminEscuelasFut
         {
 
             cleanInput();
-
-            List<String> buffer = new List<string>();
-            if (buffer.Count < 6)
+            if (e.RowIndex >= 0)
             {
-                if (e.RowIndex >= 0 && e.RowIndex < dgvPagosJugador.RowCount - 1)
-                {
+                List<String> buffer = new List<string>();
+                Utilities.readCurrentRowFromDataGridView(dgvPagosJugador, e.RowIndex, dgvPagosJugador.ColumnCount, buffer);
 
-                    currentRow = dgvPagosJugador.Rows[e.RowIndex];
-                    Utilities.readCurrentRowFromDataGridView(dgvPagosJugador, e.RowIndex, dgvPagosJugador.ColumnCount, buffer);
-                    txtIDRPaymentPlayer.Text = buffer[0];
-                    txtNameRPaymentPlayer.Text = buffer[1];
+                if (buffer.Count < 6)
+                {
+                    if (e.RowIndex >= 0 && e.RowIndex < dgvPagosJugador.RowCount - 1)
+                    {
+
+                        currentRow = dgvPagosJugador.Rows[e.RowIndex];
+                        txtIDRPaymentPlayer.Text = buffer[0];
+                        txtNameRPaymentPlayer.Text = buffer[1];
+                    }
                 }
-            }
-            else
-            {
-                if (e.RowIndex >= 0 && e.RowIndex < dgvPagosJugador.RowCount - 1)
+                else
                 {
+                    if (e.RowIndex >= 0 && e.RowIndex < dgvPagosJugador.RowCount - 1)
+                    {
 
-                    currentRow = dgvPagosJugador.Rows[e.RowIndex];
-                    Utilities.readCurrentRowFromDataGridView(dgvPagosJugador, e.RowIndex, dgvPagosJugador.ColumnCount, buffer);
-                    txtIDRPaymentPlayer.Text = buffer[0];
-                    txtReceiptNumberRPaymentPlayer.Text = buffer[2];
-                    txtNameRPaymentPlayer.Text = buffer[1];
-                    txtAmountRPaymentPlayer.Text = buffer[4];
-                    txbDetail.Text = buffer[5];
-                    cboEscuelas.SelectedItem = buffer[6];
+
+                        currentRow = dgvPagosJugador.Rows[e.RowIndex];
+                        txtIDRPaymentPlayer.Text = buffer[1];
+                        txtReceiptNumberRPaymentPlayer.Text = buffer[2];
+                        txtNameRPaymentPlayer.Text = buffer[0];
+                        txtAmountRPaymentPlayer.Text = buffer[4];
+                        txbDetail.Text = buffer[5];
+                        cboEscuelas.SelectedItem = buffer[6];
+                    }
                 }
             }
         }
@@ -313,6 +319,11 @@ namespace AdminEscuelasFut
         private void txtNameRPaymentPlayer_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             Utilities.controlSQLInjection(sender, e);
+        }
+
+        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            help.Show();
         }
     }
 }

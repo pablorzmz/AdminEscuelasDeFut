@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdminEscuelasFut.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,12 +17,14 @@ namespace AdminEscuelasFut
         private SchoolLevels schoolLevesManagement;
         private C_Schools schoolController;
         private List<String> dataTemp;
+        private HelpForm help;
 
         public Schools()
         {
             InitializeComponent();
             schoolController = new C_Schools();
             dataTemp = new List<string>();
+            help = new HelpForm();
         }
 
         public void showHeadQuaderModule()
@@ -92,7 +95,7 @@ namespace AdminEscuelasFut
 
         private void btnConsultar_MouseClick(object sender, MouseEventArgs e)
         {
-            cleanInput();
+            //cleanInput();
             if (txtNameSchoolM.Text == "")
             {
                 Utilities.showWarningMessage("El nombre de la escuela es " +
@@ -296,6 +299,21 @@ namespace AdminEscuelasFut
                 setVisibleBtn(true);
                 dataTemp.Clear();
                 schoolController.fillSchoolsDataGridView(dgvSchoolM, null);
+            }
+        }
+
+        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            help.Show();
+        }
+
+        private void Schools_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            bool salir = Utilities.showQuestionMessage("¿Desea salir del módulo Escuelas?",
+                          "Módulo Escuelas");
+            if (!salir)
+            {
+                e.Cancel = true;
             }
         }
     }

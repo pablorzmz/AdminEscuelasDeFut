@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdminEscuelasFut.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,12 +16,14 @@ namespace AdminEscuelasFut
         private C_Trainings trainingsController;
         private DataGridViewRow currentRow;
         private String dataTemp;
+        private HelpForm help;
 
         public Trainings()
         {
             InitializeComponent();
             trainingsController = new C_Trainings();
             currentRow = null;
+            help = new HelpForm();
         }
 
         private void Trainings_Load(object sender, EventArgs e)
@@ -174,6 +177,11 @@ namespace AdminEscuelasFut
         private void cleanInput()
         {
             this.txtHourTrainingM.Text = "  :  :";
+        }
+
+        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            help.Show();
         }
     }
 }

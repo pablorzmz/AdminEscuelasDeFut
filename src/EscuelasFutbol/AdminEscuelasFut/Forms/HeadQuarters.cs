@@ -1,4 +1,5 @@
 ﻿using AdminEscuelasFut.Classes;
+using AdminEscuelasFut.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,11 +16,13 @@ namespace AdminEscuelasFut
     {
         private C_HeadQuarters headQuartersController;
         String dataTemp;
+        private HelpForm help;
 
         public HeadQuarters()
         {
             InitializeComponent();
             headQuartersController = new C_HeadQuarters();
+            help = new HelpForm();
         }
 
         private void HeadQuarters_Load(object sender, EventArgs e)
@@ -191,6 +194,11 @@ namespace AdminEscuelasFut
         {
             setVisibleBtn(true);
             cleanInput();
+        }
+
+        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            help.Show();
         }
     }
 }
