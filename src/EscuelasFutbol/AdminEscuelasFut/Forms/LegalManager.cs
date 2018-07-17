@@ -13,10 +13,14 @@ namespace AdminEscuelasFut
     public partial class LegalManager : Form
     {
         private C_LegalManager legalManagerController;
+        private List<String> dataTemp;
+
+
         public LegalManager()
         {
             InitializeComponent();
             legalManagerController = new C_LegalManager();
+            dataTemp = new List<string>();
         }
 
         private void LegalManager_Load(object sender, EventArgs e)
@@ -159,48 +163,76 @@ namespace AdminEscuelasFut
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            if ( isOk()) {
+                dataTemp.Clear();
+                //@NCedula char(9),
+                dataTemp.Add(txtCedula.Text);
+                //@NNombre varchar(30),	
+                dataTemp.Add(txtNombre.Text);
+                //@NApellido1 varchar(15),
+                dataTemp.Add(txtApellido1.Text);
+                //@NApellido2 varchar(15),
+                dataTemp.Add(txtApellido2.Text);
+
+                setVisibleBtn(false);
+            }
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            List<String> args = new List<string>();
+            args.Add(txtCedula.Text);
+            args.Add(txtNombre.Text);
+            legalManagerController.filldtgvEncarcado(dtgvEncargados, args);
+        }
+
+        private Boolean isOk()
+        {
+            bool isOk = true;
             if (txtCedula.Text == "")
             {
                 Utilities.showErrorMessage("El campo para la cédula es inválido", "Dato inválido");
                 txtCedula.Focus();
+                isOk = false;
             }
             else if (txtNombre.Text == "")
             {
                 Utilities.showErrorMessage("El campo para el nombre del encargado es inválido", "Dato inválido");
                 txtNombre.Focus();
+                isOk = false;
             }
             else if (txtApellido1.Text == "")
             {
                 Utilities.showErrorMessage("El campo para el primer apellido del encargado es inválido", "Dato inválido");
                 txtApellido1.Focus();
+                isOk = false;
             }
             else if (txtApellido2.Text == "")
             {
                 Utilities.showErrorMessage("El campo para el segundo apellido del encargado es inválido", "Dato inválido");
                 txtApellido2.Focus();
+                isOk = false;
             }
-            else
-            {
-                List<String> args = new List<string>();
-                //@NCedula char(9),
-                args.Add(txtCedula.Text);
-                //@NNombre varchar(30),	
-                args.Add(txtNombre.Text);
-                //@NApellido1 varchar(15),
-                args.Add(txtApellido1.Text);
-                //@NApellido2 varchar(15),
-                args.Add(txtApellido2.Text);
+            return isOk;
+        }
 
-                /*Gerald estos valores que empiezan con V son los viejos*/
-                //@VCedula char(9),
-                //@VNombre varchar(30),
-                //@VApellido1 varchar(15),
-                //@VApellido2 varchar(15)
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (isOk())
+            {
+                //@NCedula char(9),
+                dataTemp.Add(txtCedula.Text);
+                //@NNombre varchar(30),	
+                dataTemp.Add(txtNombre.Text);
+                //@NApellido1 varchar(15),
+                dataTemp.Add(txtApellido1.Text);
+                //@NApellido2 varchar(15),
+                dataTemp.Add(txtApellido2.Text);
 
                 bool confirm = Utilities.showQuestionMessage("¿Desea actualizar al encargado en la base de datos?", "Registrar nuevo encargado");
                 if (confirm)
                 {
-                    int result = legalManagerController.updateEncargado(args);
+                    int result = legalManagerController.updateEncargado(dataTemp);
 
                     if (result == 0)
                     {
@@ -219,17 +251,28 @@ namespace AdminEscuelasFut
                             Utilities.showErrorMessage("Excepción no controlada número (" + result + ")", "Error al registrar encargado");
                         }
                     }
+                    setVisibleBtn(true);
                 }
-
             }
         }
 
-        private void btnConsultar_Click(object sender, EventArgs e)
+        private void btnDescartar_Click(object sender, EventArgs e)
         {
-            List<String> args = new List<string>();
-            args.Add(txtCedula.Text);
-            args.Add(txtNombre.Text);
-            legalManagerController.filldtgvEncarcado(dtgvEncargados, args);
+            cleanInput();
+            setVisibleBtn(true);
+        }
+
+        public void setVisibleBtn(bool visible)
+        {
+            btnBorrar.Visible = visible;
+            btnConsultar.Visible = visible;
+            btnRegistrar.Visible = visible;
+            btnActualizar.Visible = visible;
+
+            dtgvEncargados.Enabled = visible;
+
+            btnGuardar.Visible = !visible;
+            btnDescartar.Visible = !visible;
         }
     }
 }
