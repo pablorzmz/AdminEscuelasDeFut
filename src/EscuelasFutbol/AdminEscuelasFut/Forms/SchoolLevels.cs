@@ -59,9 +59,16 @@ namespace AdminEscuelasFut
 
         private void btnConsultar_MouseClick(object sender, MouseEventArgs e)
         {
-            List<String> parameters = new List<String>();
-            parameters.Add(cmbSchoolName.SelectedItem.ToString());
-            schoolLevelsController.fillSchoolsLevelsDataGridView(dgvSchoolLevels, parameters);
+            cleanInput();
+            if (cmbSchoolName.SelectedIndex == 0) {
+                Utilities.showWarningMessage("Debe Seleccionar una Escuela válida.", "Datos de entrada inválidos para el nombre de la Escuela");
+                cmbSchoolName.Focus();
+            }
+            else {
+                List<String> parameters = new List<String>();
+                parameters.Add(cmbSchoolName.SelectedItem.ToString());
+                schoolLevelsController.fillSchoolsLevelsDataGridView(dgvSchoolLevels, parameters);
+            }
         }
 
         private void dgvSchoolLevels_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)

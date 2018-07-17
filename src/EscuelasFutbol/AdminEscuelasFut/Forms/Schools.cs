@@ -92,9 +92,19 @@ namespace AdminEscuelasFut
 
         private void btnConsultar_MouseClick(object sender, MouseEventArgs e)
         {
-            List<String> parameters = new List<String>();
-            parameters.Add(txtNameSchoolM.Text);
-            schoolController.fillSchoolsDataGridView(dgvSchoolM, parameters);
+            cleanInput();
+            if (txtNameSchoolM.Text == "")
+            {
+                Utilities.showWarningMessage("El nombre de la escuela es " +
+                    "inválido.", "Datos de entrada inválidos para el nombre de la Escuela");
+                txtNameSchoolM.Focus();
+            }
+            else
+            {
+                List<String> parameters = new List<String>();
+                parameters.Add(txtNameSchoolM.Text);
+                schoolController.fillSchoolsDataGridView(dgvSchoolM, parameters);
+            }
         }
 
         private void dgvSchoolM_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
