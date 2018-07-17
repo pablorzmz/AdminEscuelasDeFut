@@ -69,13 +69,29 @@ namespace AdminEscuelasFut
         {
             if (allFieldsFilled())
             {
-                int error = headQuartersController.insertHeadQuarter(txtAddressAdministerInstallation.Text, txtTelephoneAdministerInstallation.Text);
-                Console.WriteLine("Se retorna insert " + error);
-                headQuartersController.fillHeadQuartersDataGridView(dgvAdministerInstallation, null);
-            }
-            else
-            {
-                //mensaje de advertencia para que rellene los campos
+                bool confirm = Utilities.showQuestionMessage("¿Desea registrar la instalación en la base de datos?", "Registrar instalación");
+                if (confirm)
+                {
+                    int result = headQuartersController.insertHeadQuarter(txtAddressAdministerInstallation.Text, txtTelephoneAdministerInstallation.Text);
+                    if (result == 0)
+                    {
+                        Utilities.showInformationMessage("Instalación registrada con éxito", "Éxito al registrar");
+                        cleanInput();
+                        headQuartersController.fillHeadQuartersDataGridView(dgvAdministerInstallation, null);
+                    }
+                    else
+                    {
+                        if (result == Utilities.DUPLICATED_KEY)
+                        {
+                            Utilities.showErrorMessage("La instalación con dicha dirrección ya se encuentra registrada en la base de datos", "Error al insertar instalación");
+                        }
+                        else
+                        {
+                            Utilities.showErrorMessage("Excepción no controlada número (" + result + ")", "Error al insertar instalación");
+                        }
+                    }
+                }
+                
             }
             
         }
@@ -84,28 +100,39 @@ namespace AdminEscuelasFut
         {
             if (txtAddressAdministerInstallation.Text != "")
             {
-                int error = headQuartersController.deleteHeadQuarter(txtAddressAdministerInstallation.Text);
-                Console.WriteLine("Se retorna delete " + error);
-                headQuartersController.fillHeadQuartersDataGridView(dgvAdministerInstallation, null);
-                cleanInput();
+                bool confirm = Utilities.showQuestionMessage("¿Desea eliminar la instalación con dirección " + txtAddressAdministerInstallation.Text + " de la base de datos?", "Borrar instalación");
+                if (confirm)
+                {
+                    int result = headQuartersController.deleteHeadQuarter(txtAddressAdministerInstallation.Text);
+                    if (result == 0)
+                    {
+                        Utilities.showInformationMessage("Operación de borrado exitosa", "Éxito al borrar");
+                        cleanInput();
+                        headQuartersController.fillHeadQuartersDataGridView(dgvAdministerInstallation, null);
+                    }
+                    else
+                    {
+                        Utilities.showErrorMessage("Excepción no controlada número (" + result + ")", "Error al borrar instalación");
+                    }
+                }
             }
             else
             {
-                //mensaje de error
-                //Diciendo que hacen falta los niveles
+                Utilities.showErrorMessage("El campo para la direccción es inválido, no puede estar vacío", "Dato inválido");
+                txtAddressAdministerInstallation.Focus();
             }
         }
 
         private bool allFieldsFilled()
         {
+            bool isOk = true;
             if (txtAddressAdministerInstallation.Text != "")
             {
-                return true;
+                Utilities.showErrorMessage("El campo para la direccción es inválido", "Dato inválido");
+                txtAddressAdministerInstallation.Focus();
+                isOk = false;
             }
-            else
-            {
-                return false;
-            }
+            return isOk;
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -119,9 +146,32 @@ namespace AdminEscuelasFut
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            headQuartersController.updateHeadQuarter(dataTemp, txtAddressAdministerInstallation.Text, txtTelephoneAdministerInstallation.Text);
-            headQuartersController.fillHeadQuartersDataGridView(dgvAdministerInstallation, null);
-            setVisibleBtn(true);
+            if (allFieldsFilled())
+            {
+                bool confirm = Utilities.showQuestionMessage("¿Desea actualizar la instalación en la base de datos?", "Actualizar instalación");
+                if (confirm)
+                {
+                    int result = headQuartersController.updateHeadQuarter(dataTemp, txtAddressAdministerInstallation.Text, txtTelephoneAdministerInstallation.Text);
+                    if (result == 0)
+                    {
+                        Utilities.showInformationMessage("Instalación actualizado con éxito", "Éxito al actualizar");
+                        cleanInput();
+                        headQuartersController.fillHeadQuartersDataGridView(dgvAdministerInstallation, null);
+                    }
+                    else
+                    {
+                        if (result == Utilities.DUPLICATED_KEY)
+                        {
+                            Utilities.showErrorMessage("La instalación con dicha dirección ya se encuentra registrada en la base de datos", "Error al actualizar instalación");
+                        }
+                        else
+                        {
+                            Utilities.showErrorMessage("Excepción no controlada número (" + result + ")", "Error al actualizar instalación");
+                        }
+                    }
+                    setVisibleBtn(true);
+                }
+            }
         }
 
         public void setVisibleBtn(bool visible)

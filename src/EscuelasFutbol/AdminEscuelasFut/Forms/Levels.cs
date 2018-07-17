@@ -35,7 +35,12 @@ namespace AdminEscuelasFut
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            bool r = Utilities.showQuestionMessage("¿Desea salir del módulo de niveles?",
+                          "Módulo de niveles");
+            if (r)
+            {
+                this.Close();
+            }
         }
 
         private void txbNivel_KeyPress(object sender, KeyPressEventArgs e)
@@ -87,13 +92,28 @@ namespace AdminEscuelasFut
         {
             if (allFieldsFilled())
             {
-                int error = levelController.insertLevel(txbNivel.Text, txbEdadInicio.Text, txbEdadFin.Text);
-                Console.WriteLine("Se retorna insert " + error);
-                levelController.fillLevelsDataGridView(dgtvLevelInfo, null);
-            }
-            else
-            {
-                //mensaje de advertencia para que llene los campos
+                bool confirm = Utilities.showQuestionMessage("¿Desea registrar el nivel en la base de datos?", "Actualizar nivel");
+                if (confirm)
+                {
+                    int result = levelController.insertLevel(txbNivel.Text, txbEdadInicio.Text, txbEdadFin.Text);
+                    if (result == 0)
+                    {
+                        Utilities.showInformationMessage("Nivel registrado con éxito", "Éxito al registrar");
+                        cleanInput();
+                        levelController.fillLevelsDataGridView(dgtvLevelInfo, null);
+                    }
+                    else
+                    {
+                        if (result == Utilities.DUPLICATED_KEY)
+                        {
+                            Utilities.showErrorMessage("El nivel con dicha número ya se encuentra registrado en la base de datos", "Error al insertar nivel");
+                        }
+                        else
+                        {
+                            Utilities.showErrorMessage("Excepción no controlada número (" + result + ")", "Error al insertar nivel");
+                        }
+                    }
+                }
             }
         }
 
@@ -101,15 +121,26 @@ namespace AdminEscuelasFut
         {
             if( txbNivel.Text != "")
             {
-                int error = levelController.deleteLevel(txbNivel.Text);
-                Console.WriteLine("Se retorna delete " + error);
-                levelController.fillLevelsDataGridView(dgtvLevelInfo, null);
-                cleanInput();
+                bool confirm = Utilities.showQuestionMessage("¿Desea eliminar al nivel con número " + txbNivel.Text + " de la base de datos?", "Borrar nivel");
+                if (confirm)
+                {
+                    int result = levelController.deleteLevel(txbNivel.Text);
+                    if (result == 0)
+                    {
+                        Utilities.showInformationMessage("Operación de borrado exitosa", "Éxito al borrar");
+                        cleanInput();
+                        levelController.fillLevelsDataGridView(dgtvLevelInfo, null);
+                    }
+                    else
+                    {
+                        Utilities.showErrorMessage("Excepción no controlada número (" + result + ")", "Error al borrar nivel");
+                    }
+                }
             }
             else
             {
-                //mensaje de error
-                //Diciendo que hacen falta los niveles
+                Utilities.showErrorMessage("Campo para nivel invalido, no debe estar vacío", "Dato inválido");
+                txbNivel.Focus();
             }
         }
 
@@ -125,14 +156,31 @@ namespace AdminEscuelasFut
 
         private bool allFieldsFilled()
         {
-            if(txbNivel.Text != "" && txbEdadInicio.Text != "" && txbEdadFin.Text != "")
+            bool isOk = true;
+            if(txbNivel.Text == ""  )
             {
-                return true;
-            }
-            else
+                Utilities.showErrorMessage("El campo para el nivel es inválido", "Dato inválido");
+                txbNivel.Focus();
+                isOk = false;
+            }else if(txbEdadInicio.Text == "")
             {
-                return false;
+                Utilities.showErrorMessage("El campo para la edad mínima es inválido", "Dato inválido");
+                txbEdadInicio.Focus();
+                isOk = false;
             }
+            else if(txbEdadFin.Text == "")
+            {
+                Utilities.showErrorMessage("El campo para la edad máxima es inválido", "Dato inválido");
+                txbEdadFin.Focus();
+                isOk = false;
+            }else if(Convert.ToInt32( txbEdadInicio.Text) >= Convert.ToInt32( txbEdadFin.Text) )
+            {
+                Utilities.showErrorMessage("La edad minima no puede ser mayor o igual a la máxima", "Dato inválido");
+                txbEdadInicio.Focus();
+                isOk = false;
+            }
+
+            return isOk;
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -146,9 +194,32 @@ namespace AdminEscuelasFut
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            levelController.updateLevel(dataTemp, txbNivel.Text, txbEdadInicio.Text, txbEdadFin.Text);
-            levelController.fillLevelsDataGridView(dgtvLevelInfo, null);
-            setVisibleBtn(true);
+            if (allFieldsFilled())
+            {
+                bool confirm = Utilities.showQuestionMessage("¿Desea actualizar el nivel en la base de datos?", "Actualizar nivel");
+                if (confirm)
+                {
+                    int result = levelController.updateLevel(dataTemp, txbNivel.Text, txbEdadInicio.Text, txbEdadFin.Text);
+                    if (result == 0)
+                    {
+                        Utilities.showInformationMessage("Nivel actualizado con éxito", "Éxito al actualizar");
+                        cleanInput();
+                        levelController.fillLevelsDataGridView(dgtvLevelInfo, null);
+                    }
+                    else
+                    {
+                        if (result == Utilities.DUPLICATED_KEY)
+                        {
+                            Utilities.showErrorMessage("El nivel con dicha número ya se encuentra registrado en la base de datos", "Error al actualizar nivel");
+                        }
+                        else
+                        {
+                            Utilities.showErrorMessage("Excepción no controlada número (" + result + ")", "Error al actualizar nivel");
+                        }
+                    }
+                    setVisibleBtn(true);
+                }
+            }
         }
 
         public void setVisibleBtn(bool visible)
@@ -173,6 +244,16 @@ namespace AdminEscuelasFut
         private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             help.Show();
+        }
+
+        private void Levels_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            bool r = Utilities.showQuestionMessage("¿Desea salir del módulo de niveles?",
+                          "Módulo de niveles");
+            if (!r)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

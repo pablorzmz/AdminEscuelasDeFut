@@ -307,6 +307,7 @@
             this.Name = "Levels";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Módulo de Niveles";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Levels_FormClosing);
             this.Load += new System.EventHandler(this.Levels_Load);
             this.menLevels.ResumeLayout(false);
             this.menLevels.PerformLayout();

@@ -186,7 +186,7 @@ namespace AdminEscuelasFut
             legalManagerController.filldtgvEncarcado(dtgvEncargados, args);
         }
 
-        private Boolean isOk()
+        private bool isOk()
         {
             bool isOk = true;
             if (txtCedula.Text == "")
