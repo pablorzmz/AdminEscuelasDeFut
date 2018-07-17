@@ -160,26 +160,6 @@ namespace AdminEscuelasFut
 
         private void dgvPagosJugador_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-
-            List<String> buffer = new List<string>();
-            Utilities.readCurrentRowFromDataGridView(dgvPagosJugador, e.RowIndex, dgvPagosJugador.ColumnCount, buffer);
-            if (buffer.Count < 6) {
-                if (e.RowIndex >= 0 && e.RowIndex < dgvPagosJugador.RowCount - 1)
-                {
-                    txtIDRPaymentPlayer.Text = buffer[0];
-                    txtNameRPaymentPlayer.Text = buffer[1];
-                }
-            } else {
-                if (e.RowIndex >= 0 && e.RowIndex < dgvPagosJugador.RowCount - 1)
-                {
-                    txtIDRPaymentPlayer.Text = buffer[1];
-                    txtReceiptNumberRPaymentPlayer.Text = buffer[2];
-                    txtNameRPaymentPlayer.Text = buffer[0];
-                    txtAmountRPaymentPlayer.Text = buffer[4];
-                    txbDetail.Text = buffer[5];
-                    cboEscuelas.SelectedItem = buffer[6];
-                }
-            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -298,6 +278,32 @@ namespace AdminEscuelasFut
             if (!r)
             {
                 e.Cancel = true;
+            }
+        }
+
+        private void dgvPagosJugador_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            List<String> buffer = new List<string>();
+            Utilities.readCurrentRowFromDataGridView(dgvPagosJugador, e.RowIndex, dgvPagosJugador.ColumnCount, buffer);
+            if (buffer.Count < 6)
+            {
+                if (e.RowIndex >= 0 && e.RowIndex < dgvPagosJugador.RowCount - 1)
+                {
+                    txtIDRPaymentPlayer.Text = buffer[0];
+                    txtNameRPaymentPlayer.Text = buffer[1];
+                }
+            }
+            else
+            {
+                if (e.RowIndex >= 0 && e.RowIndex < dgvPagosJugador.RowCount - 1)
+                {
+                    txtIDRPaymentPlayer.Text = buffer[1];
+                    txtReceiptNumberRPaymentPlayer.Text = buffer[2];
+                    txtNameRPaymentPlayer.Text = buffer[0];
+                    txtAmountRPaymentPlayer.Text = buffer[4];
+                    txbDetail.Text = buffer[5];
+                    cboEscuelas.SelectedItem = buffer[6];
+                }
             }
         }
     }

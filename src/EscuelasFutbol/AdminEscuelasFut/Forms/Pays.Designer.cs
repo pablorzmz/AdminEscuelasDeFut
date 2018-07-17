@@ -170,6 +170,7 @@
             this.dgvPagosJugador.Size = new System.Drawing.Size(633, 250);
             this.dgvPagosJugador.TabIndex = 12;
             this.dgvPagosJugador.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPagosJugador_CellMouseClick);
+            this.dgvPagosJugador.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPagosJugador_CellMouseDoubleClick);
             // 
             // btnRegisterRPaymentPlayer
             // 
