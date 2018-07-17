@@ -132,7 +132,9 @@ namespace AdminEscuelasFut
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            bool result = Utilities.showQuestionMessage("¿Desea salir de la aplicación?", "Salir del sistema");
+            if (result)
+                this.Close();
         }
 
         private void entrenamientosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -149,5 +151,14 @@ namespace AdminEscuelasFut
         {
             showPlayersModule();
         }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            bool result = Utilities.showQuestionMessage("¿Desea salir de la aplicación?", "Salir del sistema");
+            if (!result)
+            {
+                e.Cancel = true;
+            }
+        }       
     }
 }
