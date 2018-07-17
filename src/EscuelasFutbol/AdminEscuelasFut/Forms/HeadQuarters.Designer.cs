@@ -39,12 +39,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDescartar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnDescartar = new System.Windows.Forms.Button();
             this.menAdminInstalaciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdministerInstallation)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -150,6 +150,42 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información de las intalaciones";
             // 
+            // btnDescartar
+            // 
+            this.btnDescartar.BackColor = System.Drawing.Color.Transparent;
+            this.btnDescartar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDescartar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnDescartar.FlatAppearance.BorderSize = 0;
+            this.btnDescartar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnDescartar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDescartar.Image = global::AdminEscuelasFut.Properties.Resources.icons_discard;
+            this.btnDescartar.Location = new System.Drawing.Point(380, 173);
+            this.btnDescartar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDescartar.Name = "btnDescartar";
+            this.btnDescartar.Size = new System.Drawing.Size(111, 34);
+            this.btnDescartar.TabIndex = 49;
+            this.btnDescartar.UseVisualStyleBackColor = false;
+            this.btnDescartar.Visible = false;
+            this.btnDescartar.Click += new System.EventHandler(this.btnDescartar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.Transparent;
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Image = global::AdminEscuelasFut.Properties.Resources.icon_save;
+            this.btnGuardar.Location = new System.Drawing.Point(261, 173);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(111, 34);
+            this.btnGuardar.TabIndex = 48;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Visible = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // btnConsultar
             // 
             this.btnConsultar.BackColor = System.Drawing.Color.Transparent;
@@ -203,7 +239,7 @@
             // 
             // btnBorrar
             // 
-            this.btnBorrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnBorrar.BackColor = System.Drawing.Color.Red;
             this.btnBorrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBorrar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnBorrar.FlatAppearance.BorderSize = 0;
@@ -217,42 +253,6 @@
             this.btnBorrar.TabIndex = 6;
             this.btnBorrar.UseVisualStyleBackColor = false;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.Transparent;
-            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnGuardar.FlatAppearance.BorderSize = 0;
-            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Image = global::AdminEscuelasFut.Properties.Resources.icon_save;
-            this.btnGuardar.Location = new System.Drawing.Point(261, 173);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(111, 34);
-            this.btnGuardar.TabIndex = 48;
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Visible = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnDescartar
-            // 
-            this.btnDescartar.BackColor = System.Drawing.Color.Transparent;
-            this.btnDescartar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDescartar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnDescartar.FlatAppearance.BorderSize = 0;
-            this.btnDescartar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnDescartar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDescartar.Image = global::AdminEscuelasFut.Properties.Resources.icons_discard;
-            this.btnDescartar.Location = new System.Drawing.Point(380, 173);
-            this.btnDescartar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDescartar.Name = "btnDescartar";
-            this.btnDescartar.Size = new System.Drawing.Size(111, 34);
-            this.btnDescartar.TabIndex = 49;
-            this.btnDescartar.UseVisualStyleBackColor = false;
-            this.btnDescartar.Visible = false;
-            this.btnDescartar.Click += new System.EventHandler(this.btnDescartar_Click);
             // 
             // HeadQuarters
             // 
