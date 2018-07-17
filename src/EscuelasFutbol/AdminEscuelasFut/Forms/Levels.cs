@@ -131,6 +131,10 @@ namespace AdminEscuelasFut
                         cleanInput();
                         levelController.fillLevelsDataGridView(dgtvLevelInfo, null);
                     }
+                    else if (result == 547)
+                    {
+                        Utilities.showErrorMessage("Solo se pueden eliminar niveles que no pertenecen a una escuela", "Error al eliminar nivel");
+                    }
                     else
                     {
                         Utilities.showErrorMessage("Excepción no controlada número (" + result + ")", "Error al borrar nivel");
@@ -210,9 +214,8 @@ namespace AdminEscuelasFut
                     {
                         if (result == Utilities.DUPLICATED_KEY)
                         {
-                            Utilities.showErrorMessage("El nivel con dicha número ya se encuentra registrado en la base de datos", "Error al actualizar nivel");
-                        }
-                        else
+                            Utilities.showErrorMessage("El nivel qu intenta ingresar ya se encuentra registrado en la base de datos", "Error al actualizar nivel");
+                        }else
                         {
                             Utilities.showErrorMessage("Excepción no controlada número (" + result + ")", "Error al actualizar nivel");
                         }

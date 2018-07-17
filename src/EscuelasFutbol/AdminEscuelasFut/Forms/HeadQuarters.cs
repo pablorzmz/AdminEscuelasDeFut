@@ -83,7 +83,7 @@ namespace AdminEscuelasFut
                     {
                         if (result == Utilities.DUPLICATED_KEY)
                         {
-                            Utilities.showErrorMessage("La instalación con dicha dirrección ya se encuentra registrada en la base de datos", "Error al insertar instalación");
+                            Utilities.showErrorMessage("La instalación con dicha dirección ya se encuentra registrada en la base de datos", "Error al insertar instalación");
                         }
                         else
                         {
@@ -126,7 +126,7 @@ namespace AdminEscuelasFut
         private bool allFieldsFilled()
         {
             bool isOk = true;
-            if (txtAddressAdministerInstallation.Text != "")
+            if (txtAddressAdministerInstallation.Text == "")
             {
                 Utilities.showErrorMessage("El campo para la direccción es inválido", "Dato inválido");
                 txtAddressAdministerInstallation.Focus();
