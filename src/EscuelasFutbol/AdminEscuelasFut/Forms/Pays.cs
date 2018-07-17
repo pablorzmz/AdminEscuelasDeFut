@@ -25,6 +25,8 @@ namespace AdminEscuelasFut
 
         private void Pays_Load(object sender, EventArgs e)
         {
+            cmbInitalMonth.Enabled = false;
+            cmbFinalMonth.Enabled = false;
             paysController.fillSchoolsComboBox(this.cboEscuelas);
             paysController.fillMonthsComboBox(this.cmbInitalMonth, 'I');
             paysController.fillMonthsComboBox(this.cmbFinalMonth, 'F');
@@ -165,6 +167,7 @@ namespace AdminEscuelasFut
                 if (e.RowIndex >= 0 && e.RowIndex < dgvPagosJugador.RowCount - 1)
                 {
                     txtIDRPaymentPlayer.Text = buffer[0];
+                    txtNameRPaymentPlayer.Text = buffer[1];
                 }
             } else {
                 if (e.RowIndex >= 0 && e.RowIndex < dgvPagosJugador.RowCount - 1)
@@ -173,6 +176,7 @@ namespace AdminEscuelasFut
                     txtReceiptNumberRPaymentPlayer.Text = buffer[2];
                     txtNameRPaymentPlayer.Text = buffer[0];
                     txtAmountRPaymentPlayer.Text = buffer[4];
+                    txbDetail.Text = buffer[5];
                     cboEscuelas.SelectedItem = buffer[6];
                 }
             }
@@ -276,7 +280,6 @@ namespace AdminEscuelasFut
                             args.Add(cboEscuelas.SelectedItem.ToString());
                             paysController.fillPaysDataGridView(dgvPagosJugador, args);
                             cleanInput();
-                            paysController.fillPaysDataGridView(dgvPagosJugador, null);
                             MessageBox.Show("Pago registrados correctamente");
                         }
                         else

@@ -229,7 +229,6 @@
             // cmbFinalMonth
             // 
             this.cmbFinalMonth.BackColor = System.Drawing.Color.AliceBlue;
-            this.cmbFinalMonth.FormattingEnabled = false;
             this.cmbFinalMonth.Location = new System.Drawing.Point(241, 94);
             this.cmbFinalMonth.Name = "cmbFinalMonth";
             this.cmbFinalMonth.Size = new System.Drawing.Size(93, 21);
@@ -238,7 +237,6 @@
             // cmbInitalMonth
             // 
             this.cmbInitalMonth.BackColor = System.Drawing.Color.AliceBlue;
-            this.cmbInitalMonth.FormattingEnabled = false;
             this.cmbInitalMonth.Location = new System.Drawing.Point(94, 95);
             this.cmbInitalMonth.Name = "cmbInitalMonth";
             this.cmbInitalMonth.Size = new System.Drawing.Size(93, 21);
@@ -248,7 +246,7 @@
             // 
             this.txbDetail.Location = new System.Drawing.Point(241, 132);
             this.txbDetail.Margin = new System.Windows.Forms.Padding(2);
-            this.txbDetail.MaxLength = 5;
+            this.txbDetail.MaxLength = 30;
             this.txbDetail.Name = "txbDetail";
             this.txbDetail.Size = new System.Drawing.Size(386, 20);
             this.txbDetail.TabIndex = 67;

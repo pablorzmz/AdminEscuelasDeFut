@@ -151,8 +151,8 @@ namespace AdminEscuelasFut
 
             BindingSource bindingSource = new BindingSource();
             bindingSource.DataSource = dataTable;
-
-            dgvPagosJugador.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            
+            dgvPagosJugador.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPagosJugador.DataSource = bindingSource;
             dgvPagosJugador.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvPagosJugador.ReadOnly = true;
@@ -168,7 +168,7 @@ namespace AdminEscuelasFut
                     "('N° Cédula' like '%" + parameters[0] + "%' OR " +
                     "'N° Recibo' like '%" + parameters[1] + "%') AND" +
                     " Escuela = '"+ parameters[2] + "'" +
-                    "";            
+                    "ORDER BY 'N° Recibo' DESC";            
             }            
             DataTable dataTable = null;
             if (parameters == null)
@@ -182,8 +182,7 @@ namespace AdminEscuelasFut
 
             BindingSource bindingSource = new BindingSource();
             bindingSource.DataSource = dataTable;
-
-            dgvPagosJugador.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dgvPagosJugador.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPagosJugador.DataSource = bindingSource;
             dgvPagosJugador.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvPagosJugador.ReadOnly = true;
