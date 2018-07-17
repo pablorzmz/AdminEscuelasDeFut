@@ -90,14 +90,14 @@ namespace AdminEscuelasFut
             DataAccess.storedProcData paramStruct;
             String[] procParams =
             {
-               "@NCedula"
-              ,"@NNombre"
-              ,"@NApellido1"
-              ,"@NApellido2"
-              ,"@VCedula"
+               "@VCedula"
               ,"@VNombre"
               ,"@VApellido1"
               ,"@VApellido2"
+               ,"@NCedula"
+              ,"@NNombre"
+              ,"@NApellido1"
+              ,"@NApellido2"
             };
 
             SqlDbType[] dataTypes =
