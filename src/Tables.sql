@@ -1,5 +1,6 @@
 USE DB_ERROR404;
 
+/* Tabla de la entidad de Persona*/
 CREATE TABLE Persona
 (
 	Cedula		CHAR(9)		NOT NULL,
@@ -9,15 +10,16 @@ CREATE TABLE Persona
 	CONSTRAINT Ced_Persona PRIMARY KEY ( Cedula )
 );
 
+/*Atributo multivalor de los teléfonos de las personas*/
 CREATE TABLE TelefonoP
 (
 	Cedula 		CHAR(9)		NOT NULL,
 	Telefono 	VARCHAR(8)	NOT NULL,
 	CONSTRAINT Tels_Persona PRIMARY KEY ( Cedula, Telefono ),
 	CONSTRAINT Ref_Per FOREIGN KEY ( Cedula ) REFERENCES Persona( Cedula )
-	ON DELETE CASCADE
+	ON DELETE CASCADE ON DELETE CASCADE
 );
-/* SCRIPT PARA LA TABLA ENCARGADO */
+/* Tabla de la entidad especializada Encargado */
 CREATE TABLE Encargado
 (
 	CedEncargado 			 CHAR (9)	NOT NULL,
@@ -25,8 +27,7 @@ CREATE TABLE Encargado
 	CONSTRAINT Ref_Per_Encar FOREIGN KEY ( CedEncargado ) REFERENCES Persona( Cedula )
 		ON UPDATE CASCADE
 );
-
-/* SCRIPT PARA LA TABLA JUGADOR */
+/* Tabla de la entidad especializada Jugador */
 CREATE TABLE Jugador
 (
 	CedJugador		CHAR (9)	NOT NULL,
@@ -37,9 +38,10 @@ CREATE TABLE Jugador
 	CONSTRAINT	Ced_Jug PRIMARY KEY ( CedJugador ),
 	CONSTRAINT Ref_Ced_Encar  FOREIGN KEY ( CedEncargado ) REFERENCES Encargado( CedEncargado )
 		ON UPDATE CASCADE
-
+	CONSTRAINT Ref_Jug_Pers FOREIGN KEY ( CedJugador ) REFERENCES Persona( Cedula )
+		ON UPDATE CASCADE
 );
-/* SCRIPT PARA LA TABLA ESCUELA */
+/* Tabla entidad instalación */
 CREATE TABLE Instalacion
 (
 	Direccion	VARCHAR(30) NOT NULL,
@@ -47,6 +49,7 @@ CREATE TABLE Instalacion
 	CONSTRAINT Dir_Inst PRIMARY KEY( Direccion )		
 );
 
+/* Tabla de la entidad Esculea */
 CREATE TABLE Escuela
 (
 	Nombre			VARCHAR(30) NOT NULL,
@@ -57,6 +60,7 @@ CREATE TABLE Escuela
 		ON DELETE SET NULL ON UPDATE CASCADE
 );
 
+/* Atributo multivalor de las escuelas */
 CREATE TABLE TelefonoE
 (
 	NombreEsc 		VARCHAR(30)		NOT NULL,
@@ -66,7 +70,7 @@ CREATE TABLE TelefonoE
 		ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-/* SCRIPT PARA LA TABLA DE PAGOS DEL JUGADOR */
+/* Tabla de la entidad pagos del jugador */
 CREATE TABLE PagosDeJugador
 (
 	NombreEscuela	VARCHAR(30)		NOT NULL,
@@ -77,25 +81,21 @@ CREATE TABLE PagosDeJugador
 	CedJugador		CHAR(9)			NOT NULL,
 	CONSTRAINT Nomb_NumR PRIMARY KEY( NombreEscuela, NumeroRecibo ),
 	CONSTRAINT Ref_Jug1	 FOREIGN KEY ( CedJugador ) REFERENCES Jugador ( CedJugador )
-		ON UPDATE CASCADE ON DELETE NO ACTION,
+		ON UPDATE CASCADE ON DELETE NO SET NULL,
 	CONSTRAINT Ref_Escc	 FOREIGN KEY ( NombreEscuela ) REFERENCES Escuela ( Nombre )
 		ON UPDATE CASCADE ON DELETE NO ACTION
 );
-
-ALTER TABLE PagosDeJugador DROP CONSTRAINT Ref_Jug1;
-ALTER TABLE PagosDeJugador ALTER COLUMN CedJugador CHAR(9) NULL;
-ALTER TABLE PagosDeJugador ADD CONSTRAINT Ref_Jug1	 FOREIGN KEY ( CedJugador ) REFERENCES Jugador ( CedJugador )
-ON UPDATE CASCADE ON DELETE SET NULL;
-
+/* Tabla de la entidad especializada pagos del jugador  mensualidad */
 CREATE TABLE PagoMensualidad
 (
 	NombreEscuela 	VARCHAR(30)		NOT NULL,
 	NumeroRecibo 	VARCHAR(5)			NOT NULL,
 	CONSTRAINT Pago_Men PRIMARY KEY ( NombreEscuela, NumeroRecibo ),
 	CONSTRAINT Ref_Pago FOREIGN KEY ( NombreEscuela, NumeroRecibo ) REFERENCES PagosDeJugador( NombreEscuela, NumeroRecibo )
-		ON UPDATE CASCADE ON DELETE NO ACTION
+		ON UPDATE CASCADE 
 );
 
+/* Atributo multivalor de los meses pagados del pago mensualidad */
 CREATE TABLE Mes
 (
 	NombreEscuela 	VARCHAR(30) NOT NULL,
@@ -107,6 +107,7 @@ CREATE TABLE Mes
 		ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+/* Tabla de la entidad especializada pagos del jugador matrículas */
 CREATE TABLE PagoMatricula
 (
 	NombreEscuela 	VARCHAR(30) NOT NULL,
@@ -116,6 +117,7 @@ CREATE TABLE PagoMatricula
 		ON UPDATE CASCADE
 );
 
+/* Tabla de la entidad de entrenamientos */
 CREATE TABLE Entrenamiento
 (
 	Fecha 			DATE NOT NULL,
@@ -123,7 +125,7 @@ CREATE TABLE Entrenamiento
 	CONSTRAINT Fecha_entreno PRIMARY KEY( Fecha )
 );
 
-
+/* Tabla de la entidad de nivel */
 CREATE TABLE Nivel
 (
 	Numero 		    TINYINT		NOT NULL,
@@ -132,8 +134,7 @@ CREATE TABLE Nivel
 	CONSTRAINT Num_nivel PRIMARY KEY ( Numero)
 );
 
-/* RELACIONES DE LOS JUGADORES */
-
+/* Relación de los jugadores en un nivel y en una escuela específica */
 CREATE TABLE Esta_En
 (
 	CedJugador		CHAR (9)		 NOT NULL,
@@ -141,25 +142,26 @@ CREATE TABLE Esta_En
 	Nivel			TINYINT			 NOT NULL
 	CONSTRAINT Esc_Jug_Niv PRIMARY KEY ( CedJugador, NomEscuela ), 			
 	CONSTRAINT Ced_For FOREIGN KEY ( CedJugador ) REFERENCES Jugador( CedJugador )
-		ON UPDATE CASCADE,
+		ON UPDATE CASCADE ON DELETE CASCADE,
 	CONSTRAINT Esc_For FOREIGN KEY ( NomEscuela ) REFERENCES Escuela ( Nombre )
 		ON UPDATE CASCADE,
 	CONSTRAINT Niv_For FOREIGN KEY ( Nivel ) REFERENCES Nivel ( Numero )
 		ON UPDATE CASCADE
 );
 
+/* Relación de los entrenamientos a los que asiste el jugador */
 CREATE TABLE Asiste
 (
 	CedJugador CHAR (9)		NOT NULL,
 	FecEntrenamiento DATE	NOT NULL,
 	CONSTRAINT Jug_Entre PRIMARY KEY ( CedJugador, FecEntrenamiento ),
 	CONSTRAINT Ref_Jug	FOREIGN KEY ( CedJugador ) REFERENCES Jugador( CedJugador)
-		ON UPDATE CASCADE,
+		ON UPDATE CASCADE ON DELETE CASCADE,
 	CONSTRAINT Ref_Entre FOREIGN KEY ( FecEntrenamiento ) REFERENCES Entrenamiento ( Fecha )
 		ON UPDATE CASCADE,
 );
 
-/* Escuela y nivel relación */
+/* Relación de los niveles que tiene una escuela */
 CREATE TABLE Tiene 
 (
 	NomEsc			VARCHAR(30)		NOT NULL,
