@@ -11,11 +11,18 @@ namespace AdminEscuelasFut
     class C_Trainings
     {
         private DataAccess dataAccess;
+        /// <summary>
+        ///  Default class constructor
+        /// </summary>
         public C_Trainings()
         {
             dataAccess = new DataAccess();
         }
-
+        /// <summary>
+        /// Method that calls a stored proc for deleting a player training record from database
+        /// </summary>
+        /// <param name="args">List of strings with values for deleting a player training record from data base</param>
+        /// <returns>Returns the integer code result of the stored proc execution</returns>
         public int deleteTraining(List<String> args)
         {
             List<DataAccess.storedProcData> procParams = new List<DataAccess.storedProcData>();
@@ -28,6 +35,11 @@ namespace AdminEscuelasFut
 
             return dataAccess.executeStoreProcedure(procParams, "eliminarEntrenamiento"); ;
         }
+        /// <summary>
+        /// Method that calls a stored proc for updating a player training record from database
+        /// </summary>
+        /// <param name="args">List of strings with the new and values for updating a player training record from data base</param>
+        /// <returns>Returns the integer code result of the stored proc execution</returns>
         public int updateTraining(List<String> args)
         {
             List<DataAccess.storedProcData> procParams = new List<DataAccess.storedProcData>();
@@ -53,6 +65,11 @@ namespace AdminEscuelasFut
 
             return dataAccess.executeStoreProcedure(procParams, "actualizarEntrenamiento");
         }
+        /// <summary>
+        /// Method that calls a stored proc for inserting a player training record from database
+        /// </summary>
+        /// <param name="args">List of strings with the new to insert a new player training record into data base</param>
+        /// <returns>Returns the integer code result of the stored proc execution</returns>
         public int insertNewTraining(List<String> args)
         {
             List<DataAccess.storedProcData> procParams = new List<DataAccess.storedProcData>();
@@ -72,6 +89,11 @@ namespace AdminEscuelasFut
 
             return dataAccess.executeStoreProcedure(procParams, "registrarEntrenamiento");
         }
+        /// <summary>
+        /// Method  that fills a DataGridView component with player trainings record from data base
+        /// </summary>
+        /// <param name="dtgvTrainings">DataGridView component to fill</param>
+        /// <param name="parameters">List of strings with values for the query filter</param>
         public void filldataGridViewTrainings(DataGridView dtgvTrainings, List<String> parameters)
         {
             const String defaultQuery = "SELECT * FROM Entrenamiento";

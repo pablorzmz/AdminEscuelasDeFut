@@ -4,16 +4,23 @@ using System.Data;
 using System.Windows.Forms;
 
 namespace AdminEscuelasFut
-{
+{    
     class C_PlayerTrainnings
     {
         private DataAccess dataAccess;
 
+        /// <summary>
+        /// Default class constructor
+        /// </summary>
         public C_PlayerTrainnings()
         {
             dataAccess = new DataAccess();
         }
-
+        /// <summary>
+        /// Method to fill a datagridview with the necessary player´s information according to a selected school
+        /// </summary>
+        /// <param name="dtgvTrainings">DataGridView component to fill</param>
+        /// <param name="parameters">List of string with the values for filtering the data</param>
         public void fillPlayerDataGridView(DataGridView dtgvTrainings, List<String> parameters)
         {
             const String loadDefaultQuery =
@@ -47,18 +54,35 @@ namespace AdminEscuelasFut
             dtgvTrainings.AutoResizeColumns();            
             dtgvTrainings.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+        /// <summary>
+        /// Method that fills a ComboBox component with the schools names from database
+        /// </summary>
+        /// <param name="cboEscuelas">ComboBox component to fill</param>
         public void fillComboBoxEscuelas( ComboBox cboEscuelas )
         {
             dataAccess.fillComboBox(cboEscuelas, "SELECT Nombre FROM Escuela", "Elija una Escuela");
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cboFechasEntren"></param>
         public void fillComboBoxFechasEntren(ComboBox cboFechasEntren)
         {
             dataAccess.fillComboBox(cboFechasEntren, "SELECT Fecha FROM Entrenamiento ORDER BY Fecha DESC", "Elija una Fecha");
         }
+        /// <summary>
+        /// Method that fills a ComboBox component with the player´s id numbers from database
+        /// </summary>
+        /// <param name="cboEscuelas">ComboBox component to fill</param>
         public void fillComboBoxCedula( ComboBox cboCedulas )
         {
             dataAccess.fillComboBox(cboCedulas, "SELECT CedJugador From Jugador", "Buscar cédula");
         }
+        /// <summary>
+        /// Method that call a stored proc in database to update a selected player information
+        /// </summary>
+        /// <param name="args">List of strings with the new and old values to call stored proc</param>
+        /// <returns>Return the integer value result from executing the stored procedure</returns>
         public int updatePlayerTrainingInfo(List<String> args)
         {
             List<DataAccess.storedProcData> parameters = new List<DataAccess.storedProcData>();
@@ -85,6 +109,11 @@ namespace AdminEscuelasFut
             }
             return dataAccess.executeStoreProcedure(parameters, "actualizarEntrenamientoJugador");
         }
+        /// <summary>
+        /// Method that call a stored proc in database to insert a new player into database
+        /// </summary>
+        /// <param name="args">List of strings with the arguments for inserting a new player into database</param>
+        /// <returns>Return the integer value result from executing the stored procedure</returns>
         public int addNewPlayerTraining(List<String> args)
         {
             List<DataAccess.storedProcData> parameters = new List<DataAccess.storedProcData>();
@@ -104,7 +133,11 @@ namespace AdminEscuelasFut
 
             return dataAccess.executeStoreProcedure(parameters, "registrarEntrenamientoJugador");
         }
-
+        /// <summary>
+        /// Method to call a stored proc to delete a existing player from database
+        /// </summary>
+        /// <param name="args">List of strings with the identifiers values for deleting a player</param>
+        /// <returns>Return the integer value result from executing the stored procedure</returns>
         public int deletePlayerTraining(List<String> args)
         {
             List<DataAccess.storedProcData> parameters = new List<DataAccess.storedProcData>();

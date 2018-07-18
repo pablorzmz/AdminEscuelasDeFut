@@ -14,10 +14,19 @@ namespace AdminEscuelasFut
     {
         private Connection database;
 
+        /// <summary>
+        /// Default class constructor
+        /// </summary>
         public DataAccess()
         {
             database = new Connection();
         }
+        /// <summary>
+        /// Generic method for fill a ComboBox Component with a set of data from a column result of a query
+        /// </summary>
+        /// <param name="cbo">ComboBox component to fill with query result</param>
+        /// <param name="query">String value to the query to execute</param>
+        /// <param name="item_0">String value for add a item 0 to the combo box, example: "Pick a id number"</param>
         public void fillComboBox(ComboBox cbo, String query, String item_0)
         {
             SqlDataReader data = null;
@@ -41,7 +50,11 @@ namespace AdminEscuelasFut
                 MessageBox.Show(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Generic methos to execute a query on data base
+        /// </summary>
+        /// <param name="query">String for the query</param>
+        /// <returns>SqlData adapter with the source result of the executed query</returns>
         public SqlDataReader executeQuery(String query)
         {
             SqlDataReader data = null;
@@ -58,7 +71,11 @@ namespace AdminEscuelasFut
             }
             return data;
         }
-
+        /// <summary>
+        /// Method that returns a data table with 'clean' source data from data base
+        /// </summary>
+        /// <param name="consulta">String value of the query to execute</param>
+        /// <returns>Returns a valid data table with the date result of query execution</returns>
         public DataTable getTableFromQuery(String consulta)
         {
             database.openConnection();
@@ -70,13 +87,21 @@ namespace AdminEscuelasFut
             database.closeConnection();
             return table;
         }
+        /// <summary>
+        /// Struct used for each parameter needed in a stored procedur
+        /// </summary>
         public struct storedProcData
         {
             public String storedProcParam;
             public SqlDbType storedProcParamType;
             public String userParams;
         }
-
+        /// <summary>
+        /// Generic methos for executing a stored procedure in the database
+        /// </summary>
+        /// <param name="storedProcData">List of storedProcData objecto as stored proc arguments</param>
+        /// <param name="storeProcName">String with the stored proc name value</param>
+        /// <returns></returns>
         public int executeStoreProcedure( List<storedProcData> storedProcData ,String storeProcName)
         {
             int error = 0;            

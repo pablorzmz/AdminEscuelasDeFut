@@ -9,14 +9,21 @@ using System.Windows.Forms;
 namespace AdminEscuelasFut
 {
     class C_LegalManager
-    {
+    {        
         private DataAccess dataAccess;
 
+        /// <summary>
+        /// Default class constructors
+        /// </summary>
         public C_LegalManager()
         {
             dataAccess = new DataAccess();
         }
-
+        /// <summary>
+        /// Method that fills DataGridView object of legal manager UI
+        /// </summary>
+        /// <param name="dataGrid">DataGridView component to fill</param>
+        /// <param name="parameters">List of String with the values for the filter</param>
         public void filldtgvEncarcado(DataGridView dataGrid, List<String> parameters)
         {
             const String defaultQuery = "SELECT * FROM verInforEncargado";
@@ -52,7 +59,11 @@ namespace AdminEscuelasFut
             dataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
-
+        /// <summary>
+        /// Method that calls a stored proc to insert a new legal manager into database
+        /// </summary>
+        /// <param name="args">List of strings with the values for the new legal manager</param>
+        /// <returns>Returns int value result from stored proc execution</returns>
         public int insertNewEncargado(List<String> args)
         {
             List<DataAccess.storedProcData> parameters = new List<DataAccess.storedProcData>();
@@ -83,7 +94,11 @@ namespace AdminEscuelasFut
             }
             return dataAccess.executeStoreProcedure(parameters, "insertarEncargado");
         }
-
+        /// <summary>
+        /// Method that calls a stored proc to update legal manager information
+        /// </summary>
+        /// <param name="args">List of strings with the values the new and old values for a legal manager</param>
+        /// <returns>Returns int value result from stored proc execution</returns>
         public int updateEncargado(List<String> args)
         {
             List<DataAccess.storedProcData> parameters = new List<DataAccess.storedProcData>();
@@ -123,7 +138,11 @@ namespace AdminEscuelasFut
 
             return dataAccess.executeStoreProcedure(parameters, "actualizarEncargado");
         }
-
+        /// <summary>
+        /// Method that calls a stored proc to delete a legal manager from database
+        /// </summary>
+        /// <param name="args">List of strings of the identifies of a legal manager</param>
+        /// <returns>Returns int value result from stored proc execution</returns>
         public int deleteEncargado(List<String> args)
         {
             List<DataAccess.storedProcData> parameters = new List<DataAccess.storedProcData>();
