@@ -17,7 +17,9 @@ namespace AdminEscuelasFut
         private List<String> dataTemp;
         private HelpForm help;
 
-
+        /// <summary>
+        /// Default class constructor
+        /// </summary>
         public LegalManager()
         {
             InitializeComponent();
@@ -25,32 +27,56 @@ namespace AdminEscuelasFut
             dataTemp = new List<string>();
             help = new HelpForm();
         }
-
+        /// <summary>
+        /// Load method for this form. Do the first load in DataGridViewComponent
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LegalManager_Load(object sender, EventArgs e)
         {
             legalManagerController.filldtgvEncarcado(this.dtgvEncargados,null);
         }
-
+        /// <summary>
+        ///  Key press event action for sql injection control
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.controlSQLInjection(sender,e);
         }
-
+        /// <summary>
+        ///  Key press event action for sql injection control
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtApellido2_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.controlSQLInjection(sender, e);
         }
-
+        /// <summary>
+        ///  Key press event action for sql injection control
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtApellido1_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.controlSQLInjection(sender, e);
         }
-
+        /// <summary>
+        ///  Key press event action for sql injection control
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.validateNumbers(sender, e, false);
         }
-
+        /// <summary>
+        ///  Cell mouse double click event for loading data into other component from a DataGridView component
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dtgvEncargados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             List<String> buffer = new List<string>();
@@ -60,12 +86,20 @@ namespace AdminEscuelasFut
             txtApellido1.Text = buffer[2];
             txtApellido2.Text = buffer[3];
         }
-
+        /// <summary>
+        /// Method that ask user to close this form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Click event of button that calls the controller to insert a new legal manager
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRegistrar_Click(object sender, EventArgs e)
         {            
             if (txtCedula.Text == "")
@@ -125,6 +159,9 @@ namespace AdminEscuelasFut
                 }
             }
         }
+        /// <summary>
+        /// Clean all textbox files in this form
+        /// </summary>
         private void cleanInput()
         {
             txtCedula.Text = "";
@@ -132,7 +169,11 @@ namespace AdminEscuelasFut
             txtApellido1.Text = "";
             txtApellido2.Text = "";
         }
-
+        /// <summary>
+        /// Click event of button that calls the controller to delete a legal manager
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             if (txtCedula.Text == "")
@@ -163,7 +204,11 @@ namespace AdminEscuelasFut
                 }
             }
         }
-
+        /// <summary>
+        /// Click event of button that calls the controller to update a legal manager
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             if ( isOk()) {
@@ -180,7 +225,11 @@ namespace AdminEscuelasFut
                 setVisibleBtn(false);
             }
         }
-
+        /// <summary>
+        /// Click event of button that calls the controller to show a query of legal managers
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             List<String> args = new List<string>();
@@ -188,7 +237,10 @@ namespace AdminEscuelasFut
             args.Add(txtNombre.Text);
             legalManagerController.filldtgvEncarcado(dtgvEncargados, args);
         }
-
+        /// <summary>
+        ///  Valida input data
+        /// </summary>
+        /// <returns></returns>
         private bool isOk()
         {
             bool isOk = true;
@@ -218,7 +270,11 @@ namespace AdminEscuelasFut
             }
             return isOk;
         }
-
+        /// <summary>
+        /// Click event of button that calls the controller to save updated info of legal managers
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (isOk())
@@ -258,13 +314,20 @@ namespace AdminEscuelasFut
                 }
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDescartar_Click(object sender, EventArgs e)
         {
             cleanInput();
             setVisibleBtn(true);
         }
-
+        /// <summary>
+        /// Method that show hidden button for update action
+        /// </summary>
+        /// <param name="visible"> Boolean value to show or hide buttons</param>
         public void setVisibleBtn(bool visible)
         {
             btnBorrar.Visible = visible;
@@ -277,7 +340,11 @@ namespace AdminEscuelasFut
             btnGuardar.Visible = !visible;
             btnDescartar.Visible = !visible;
         }
-
+        /// <summary>
+        ///  Show help form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             help.Show();

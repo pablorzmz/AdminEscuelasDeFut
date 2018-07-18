@@ -16,6 +16,9 @@ namespace AdminEscuelasFut
         private List<String> dataTemp;
         private HelpForm help;
 
+        /// <summary>
+        /// 
+        /// </summary>
         public Players()
         {
             InitializeComponent();
@@ -25,24 +28,37 @@ namespace AdminEscuelasFut
             dataTemp = new List<string>();
             help = new HelpForm();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public void showPlayersTraingins()
         {
             playerTrainingsTool = new PlayerTrainnings();            
             playerTrainingsTool.setCurrentArgs(txbCedula.Text, cboEscuelas.SelectedItem.ToString());
             playerTrainingsTool.ShowDialog();
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public void showLegalManagers()
         {
             legalManagerTool = new LegalManager();            
             legalManagerTool.ShowDialog();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void menuItemConsultarEntren_Click(object sender, EventArgs e)
         {            
             showPlayersTraingins();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Players_Load(object sender, EventArgs e)
         {
             /* Fill combo box with user levels*/
@@ -58,6 +74,9 @@ namespace AdminEscuelasFut
             dgtvPlayersInfo.Columns[12].Visible = false;
             dgtvPlayersInfo.Columns[13].Visible = false;                        
         }
+        /// <summary>
+        /// 
+        /// </summary>
         private void exitForm()
         {
             bool r = Utilities.showQuestionMessage("¿Desea salir del módulo de jugadores?",
@@ -67,43 +86,92 @@ namespace AdminEscuelasFut
                 this.Close();
             }            
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             exitForm();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtCedulaEncargado_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.validateNumbers(sender,e,false);            
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.controlSQLInjection(sender, e);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbPrimerApellido_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.controlSQLInjection(sender, e);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbSegundoApellido_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.controlSQLInjection(sender, e);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbNombreEncargado_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.controlSQLInjection(sender, e);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbNumeroPoliza_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.validateNumbers(sender, e, false);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbPrimerApellidoEncargado_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.controlSQLInjection(sender, e);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbTelefonoDEncargado_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.controlSQLInjection(sender, e);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             List<String> parameters = new List<String>();
@@ -112,19 +180,38 @@ namespace AdminEscuelasFut
             /*2*/parameters.Add(cboEscuelas.SelectedItem.ToString());
             playerController.fillPlayerDataGridView(dgtvPlayersInfo, parameters);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void rbtnHombre_CheckedChanged(object sender, EventArgs e)
         {
             this.sexValue = "m";
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void rbtnMujer_CheckedChanged(object sender, EventArgs e)
         {
             this.sexValue = "f";
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.validateNumbers(sender, e, false);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbTelefonoJug1_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.validateNumbers(sender, e, false);
@@ -134,11 +221,18 @@ namespace AdminEscuelasFut
         {
             Utilities.validateNumbers(sender, e, false);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbSegundoApellidoEncargado_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.validateNumbers(sender, e, false);
         }
+        /// <summary>
+        /// 
+        /// </summary>
         private void cleanInput()
         {
             txbCedula.Text = "";
@@ -153,9 +247,11 @@ namespace AdminEscuelasFut
             txbSegundoApellidoEncargado.Text = "";
             txbSegundoApellidoEncargado.Text = "";
         }
-
-       
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>        
         private void dgtvPlayersInfo_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             cleanInput();
@@ -201,7 +297,11 @@ namespace AdminEscuelasFut
                 playerController.fillPlayerTelephoneInfo(buffer[0], txbTelefonoJug1, txbTelefonoJug2);
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cboCedulasEncargado_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboCedulasEncargado.SelectedIndex != 0)
@@ -210,7 +310,11 @@ namespace AdminEscuelasFut
                 playerController.fillEncargadoInfo(txtCedulaEncargado.Text,txbNombreEncargado,txbPrimerApellidoEncargado,txbSegundoApellidoEncargado);
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             if (txbCedula.Text == "")
@@ -307,7 +411,11 @@ namespace AdminEscuelasFut
                 }                
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             if (txbCedula.Text == "")
@@ -349,11 +457,18 @@ namespace AdminEscuelasFut
                 e.Cancel = true;
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Players_FormClosed(object sender, FormClosedEventArgs e)
         {            
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="visible"></param>
         public void setVisibleBtn(bool visible)
         {
             btnBorrar.Visible = visible;
@@ -366,14 +481,22 @@ namespace AdminEscuelasFut
             btnDescartar.Visible = !visible;
             
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDescartar_Click(object sender, EventArgs e)
         {
             dataTemp.Clear();
             setVisibleBtn(true);
             cleanInput();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             setVisibleBtn(false);
@@ -382,7 +505,11 @@ namespace AdminEscuelasFut
             dataTemp.Add(txbTelefonoJug1.Text);
             dataTemp.Add(txbTelefonoJug2.Text);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGuardar_Click(object sender, EventArgs e)
         {
              //"@NuevaCedJugador"
@@ -437,7 +564,10 @@ namespace AdminEscuelasFut
             dataTemp.Clear();
             setVisibleBtn(true);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private bool validate()
         {
             /*Asumiento que ya el ususario confirmo que quiere actualizar la información*/
@@ -468,7 +598,10 @@ namespace AdminEscuelasFut
             }
             return true;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private String getSexo()
         {
             if (rbtnHombre.Checked)
@@ -476,12 +609,21 @@ namespace AdminEscuelasFut
             else
                 return "f";
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void consultarEncargadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showLegalManagers();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             help.Show();

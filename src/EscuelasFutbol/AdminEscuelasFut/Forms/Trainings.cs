@@ -18,6 +18,9 @@ namespace AdminEscuelasFut
         private String dataTemp;
         private HelpForm help;
 
+        /// <summary>
+        /// 
+        /// </summary>
         public Trainings()
         {
             InitializeComponent();
@@ -25,7 +28,11 @@ namespace AdminEscuelasFut
             currentRow = null;
             help = new HelpForm();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Trainings_Load(object sender, EventArgs e)
         {
             trainingsController.filldataGridViewTrainings(this.dgvTrainingM,null);
@@ -35,12 +42,20 @@ namespace AdminEscuelasFut
         {
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvTrainingM_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.RowIndex < dgvTrainingM.RowCount)
@@ -52,7 +67,11 @@ namespace AdminEscuelasFut
                 this.txtHourTrainingM.Text = buffer[1];
             }            
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConsultar_Click(object sender, EventArgs e)
         {
 
@@ -69,7 +88,11 @@ namespace AdminEscuelasFut
             }
             
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             TimeSpan time;          
@@ -88,7 +111,11 @@ namespace AdminEscuelasFut
                 setVisibleBtn(false);
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             TimeSpan time;
@@ -115,7 +142,11 @@ namespace AdminEscuelasFut
                 }
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             List<String> args = new List<string>();
@@ -133,7 +164,11 @@ namespace AdminEscuelasFut
                 MessageBox.Show("Error al borrar entrenamiento");
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             List<String> args = new List<string>();
@@ -155,7 +190,10 @@ namespace AdminEscuelasFut
             }
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="visible"></param>
         public void setVisibleBtn(bool visible)
         {
             btnBorrar.Visible = visible;
@@ -167,18 +205,28 @@ namespace AdminEscuelasFut
             btnGuardar.Visible = !visible;
             btnDescartar.Visible = !visible;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDescartar_Click(object sender, EventArgs e)
         {
             cleanInput();
             setVisibleBtn(true);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         private void cleanInput()
         {
             this.txtHourTrainingM.Text = "  :  :";
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             help.Show();

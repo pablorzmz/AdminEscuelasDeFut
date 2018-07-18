@@ -18,7 +18,9 @@ namespace AdminEscuelasFut
         private String escuela;
         private DataGridViewRow currentRow;
         private HelpForm help;
-
+        /// <summary>
+        /// 
+        /// </summary>
         public PlayerTrainnings()
         {
             InitializeComponent();
@@ -28,14 +30,21 @@ namespace AdminEscuelasFut
             currentRow = null;
             help = new HelpForm();
         }
-
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cedula"></param>
+        /// <param name="escuela"></param>
         public void setCurrentArgs(String cedula, String escuela)
         {
             this.cedula = cedula;
             this.escuela = escuela;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PlayerTrainnings_Load(object sender, EventArgs e)
         {
             this.MinimumSize = this.Size;
@@ -64,12 +73,20 @@ namespace AdminEscuelasFut
             }
             
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             if (cboFechasEntrenamientos.SelectedIndex != 0)
@@ -93,7 +110,11 @@ namespace AdminEscuelasFut
                 }                
             }            
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cboCedulas_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboCedulas.SelectedIndex != 0)
@@ -101,7 +122,11 @@ namespace AdminEscuelasFut
                 txtIDPlayerTraining.Text = cboCedulas.SelectedItem.ToString();
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvPlayerTraining_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             List<String> buffer = new List<string>();
@@ -113,7 +138,11 @@ namespace AdminEscuelasFut
             DateTime t = Convert.ToDateTime(buffer[4]);
             this.cboFechasEntrenamientos.SelectedItem = t.ToString("dd/MM/yyyy");
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             if (txtIDPlayerTraining.Text == "")
@@ -154,6 +183,9 @@ namespace AdminEscuelasFut
                 }
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
         private void cleanInput()
         {
             txtIDPlayerTraining.Text = "";
@@ -161,7 +193,11 @@ namespace AdminEscuelasFut
             cboEscuelas.SelectedIndex = 0;
             cboFechasEntrenamientos.SelectedIndex = 0;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             if (txtIDPlayerTraining.Text == "")
@@ -201,7 +237,11 @@ namespace AdminEscuelasFut
                 }
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             if (txtIDPlayerTraining.Text == "")
