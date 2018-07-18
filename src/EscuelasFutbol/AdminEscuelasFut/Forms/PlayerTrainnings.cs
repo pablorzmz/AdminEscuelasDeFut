@@ -19,7 +19,7 @@ namespace AdminEscuelasFut
         private DataGridViewRow currentRow;
         private HelpForm help;
         /// <summary>
-        /// 
+        /// Default class constructor
         /// </summary>
         public PlayerTrainnings()
         {
@@ -31,7 +31,7 @@ namespace AdminEscuelasFut
             help = new HelpForm();
         }
         /// <summary>
-        /// 
+        /// Set loaded values of Cedula and Escuelas as selected in this form.
         /// </summary>
         /// <param name="cedula"></param>
         /// <param name="escuela"></param>
@@ -41,7 +41,7 @@ namespace AdminEscuelasFut
             this.escuela = escuela;
         }
         /// <summary>
-        /// 
+        /// Default load method of this form. Initialize and show all  first-look info from data base in this context
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -74,7 +74,7 @@ namespace AdminEscuelasFut
             
         }
         /// <summary>
-        /// 
+        /// Control and ask to user to close this form
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -83,7 +83,7 @@ namespace AdminEscuelasFut
             this.Close();
         }
         /// <summary>
-        /// 
+        /// Click action that calls controller to execute stored proc for executing a query of a player training record from data base
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -111,7 +111,7 @@ namespace AdminEscuelasFut
             }            
         }
         /// <summary>
-        /// 
+        /// Clone a valid id number from comboBox to the specific player id number textbox.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -123,7 +123,7 @@ namespace AdminEscuelasFut
             }
         }
         /// <summary>
-        /// 
+        /// Displays and fills files with a selected row from datagridview. Double click action event of the datagridview component.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -139,7 +139,7 @@ namespace AdminEscuelasFut
             this.cboFechasEntrenamientos.SelectedItem = t.ToString("dd/MM/yyyy");
         }
         /// <summary>
-        /// 
+        /// Click action that calls controller to execute stored proc for updating a player training record from data base
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -184,7 +184,7 @@ namespace AdminEscuelasFut
             }
         }
         /// <summary>
-        /// 
+        /// Clear all data input
         /// </summary>
         private void cleanInput()
         {
@@ -194,7 +194,7 @@ namespace AdminEscuelasFut
             cboFechasEntrenamientos.SelectedIndex = 0;
         }
         /// <summary>
-        /// 
+        /// Click action that calls controller to execute stored proc for inserting a player training record into data base
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -238,7 +238,7 @@ namespace AdminEscuelasFut
             }
         }
         /// <summary>
-        /// 
+        /// Click action that calls controller to execute stored proc for deleting a player training record from data base
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
