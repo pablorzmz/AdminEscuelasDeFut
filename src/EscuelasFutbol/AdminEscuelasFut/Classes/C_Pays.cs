@@ -9,13 +9,27 @@ namespace AdminEscuelasFut
     {
         private DataAccess dataAccess;
 
+
+        /// <summary>
+        /// Constructor of C_Pays (Controller of pays form).
+        /// </summary>
         public C_Pays() {
             dataAccess = new DataAccess();
         }
 
+        /// <summary>
+        /// Fill the combobox with schools.
+        /// </summary>
+        /// <param name="cboEscuelas"></param> Used to fill it.
         public void fillSchoolsComboBox(ComboBox cboEscuelas) {
             dataAccess.fillComboBox(cboEscuelas, "SELECT Nombre FROM Escuela", "Elija una Escuela");
         }
+
+        /// <summary>
+        /// Fill the combox with months (Initial or Final).  
+        /// </summary>
+        /// <param name="cboMonths"></param>  Used to fill it.
+        /// <param name="which"></param> Used to know if the combobox is the initial month or the final month.
         public void fillMonthsComboBox(ComboBox cboMonths, char which) {
             if (which == 'I')
             {
@@ -41,6 +55,11 @@ namespace AdminEscuelasFut
             cboMonths.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// Insert a new payment in the database.
+        /// </summary>
+        /// <param name="args"></param>   Used to pass values ​​to the stored procedure insertarPagoJugador.
+        /// <returns>(0, if the insert is correct)</returns>.
         public int insertNewPay(List<String> args)
         {
             List<DataAccess.storedProcData> parameters = new List<DataAccess.storedProcData>();
@@ -80,6 +99,13 @@ namespace AdminEscuelasFut
            return dataAccess.executeStoreProcedure(parameters, "insertarPagoJugador");
         }
 
+        /// <summary>
+        ///Insert monthly payments from the initial month to the final month.
+        /// </summary>
+        /// <param name="args"></param>  Used to pass values ​​to the stored procedure insertarPagoJugador.
+        /// <param name="initM"></param> Used to know what the initial month is.
+        /// <param name="finM"></param> Used to know what the final month is.
+        /// <param name="year"></param> Used to know what is the year of the payment date.
         public void insertNewMonthPay(List<String> args, string initM, string finM, int year) {
             List<DataAccess.storedProcData> parameters = new List<DataAccess.storedProcData>();
             DataAccess.storedProcData paramStruct;
@@ -144,6 +170,10 @@ namespace AdminEscuelasFut
             } while (months[iterator%12] != finM);
         }
 
+        /// <summary>
+        /// Fill the data table with the information of the "VistaInfoCedulasJugador" view.
+        /// </summary>
+        /// <param name="dgvPagosJugador"></param> Used to fill it with the data.
         public void fillIDPlayerDataGridView(DataGridView dgvPagosJugador) {
             const String loadQuery = "SELECT * FROM VistaInfoCedulasJugador ORDER BY Nombre";
             DataTable dataTable = null;
@@ -158,6 +188,11 @@ namespace AdminEscuelasFut
             dgvPagosJugador.ReadOnly = true;
         }
 
+        /// <summary>
+        /// Fill the data table with the information of the "VistaPagosJugador" view.
+        /// </summary>
+        /// <param name="dgvPagosJugador"></param>  Used to fill it with the data.
+        /// <param name="parameters"></param> It is used to filter by the parameters inserted by the user.
         public void fillPaysDataGridView(DataGridView dgvPagosJugador, List<String> parameters) {
             const String loadDefaultQuery = "SELECT TOP 100 * FROM VistaPagosJugador";
             String filterQuery = "";

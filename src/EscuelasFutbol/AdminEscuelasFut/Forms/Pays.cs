@@ -1,12 +1,7 @@
 ﻿using AdminEscuelasFut.Forms;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AdminEscuelasFut
@@ -18,6 +13,9 @@ namespace AdminEscuelasFut
         private DataGridViewRow currentRow;
         private HelpForm help;
 
+        /// <summary>
+        /// Constructor of pays form.
+        /// </summary>
         public Pays()
         {
             InitializeComponent();
@@ -26,6 +24,11 @@ namespace AdminEscuelasFut
             help = new HelpForm();
         }
 
+        /// <summary>
+        /// Load the default values of Pays form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Pays_Load(object sender, EventArgs e)
         {
             cmbInitalMonth.Enabled = false;
@@ -35,6 +38,9 @@ namespace AdminEscuelasFut
             paysController.fillMonthsComboBox(this.cmbFinalMonth, 'F');
         }
 
+        /// <summary>
+        /// Cleans all form values.
+        /// </summary>
         private void cleanInput()
         {
             txtAmountRPaymentPlayer.Text = "";
@@ -43,19 +49,22 @@ namespace AdminEscuelasFut
             txtReceiptNumberRPaymentPlayer.Text = "";
             txbDetail.Text = "";
         }
-        private void menuItemRegistPagJugadores_Click(object sender, EventArgs e)
-        {
-        }
 
-        private void menuItemConsultPagJugador_Click(object sender, EventArgs e)
-        {
-        }
-
+        /// <summary>
+        /// Exit form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// It moves through editable or selectable spaces in the form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tabCPagosGeneral_DrawItem(object sender, DrawItemEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -68,7 +77,6 @@ namespace AdminEscuelasFut
             Rectangle _tabBounds = tabCPagosGeneral.GetTabRect(e.Index);
 
             if (e.State == DrawItemState.Selected)
-
             {
                 _textBrush = new SolidBrush(Color.Black);
                 g.FillRectangle(Brushes.LightSeaGreen, e.Bounds);
@@ -93,6 +101,11 @@ namespace AdminEscuelasFut
             tabCPagosGeneral.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// Check if the monthly payment box was checked to enable the months options.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ckbxMonthlyRPaymentPlayer_CheckedChanged(object sender, EventArgs e)
         {
             if (ckbxMonthlyRPaymentPlayer.Checked)
@@ -107,21 +120,91 @@ namespace AdminEscuelasFut
             }
         }
 
+        /// <summary>
+        /// Control of the sql injection in txtNameRPaymentPlayer.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtNameRPaymentPlayer_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.controlSQLInjection(sender, e);
         }
 
+        /// <summary>
+        /// Control that space txtAmountRPaymentPlayer contains numbers.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtAmountRPaymentPlayer_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.validateNumbers(sender, e, false);
         }
 
+        /// <summary>
+        /// Control of the sql injection in txtReceiptNumberRPaymentPlayer.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtReceiptNumberRPaymentPlayer_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.validateNumbers(sender, e, false);
         }
 
+        /// <summary>
+        /// Control that space txtIDRPaymentPlayer contains numbers.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtIDRPaymentPlayer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.validateNumbers(sender, e, false);
+        }
+
+        /// <summary>
+        /// Control that space txtAmountRPaymentPlayer contains numbers.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtAmountRPaymentPlayer_TextChanged(object sender, KeyPressEventArgs e)
+        {
+            Utilities.validateNumbers(sender, e, false);
+        }
+
+        /// <summary>
+        /// Control of the sql injection in txbDetail.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txbDetail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Utilities.controlSQLInjection(sender, e);
+        }
+
+        /// <summary>
+        /// Control of the sql injection in txtNameRPaymentPlayer.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtNameRPaymentPlayer_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            Utilities.controlSQLInjection(sender, e);
+        }
+
+        /// <summary>
+        /// Show the help of the form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            help.Show();
+        }
+
+        /// <summary>
+        /// Execute a stored procedure to check the payments of a player or school.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             if (cboEscuelas.SelectedIndex == 0) {
@@ -138,11 +221,22 @@ namespace AdminEscuelasFut
             }
         }
 
+        /// <summary>
+        ///  Execute a stored procedure to consult the messi view.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             paysController.fillIDPlayerDataGridView(dgvPagosJugador);
         }
 
+        /// <summary>
+        /// Record the payment of a player validating the data inserted in the form and verify if the payment is of tuition, monthly or both.
+        /// If the registration attempt is incorrect then the user is notified.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRegisterRPaymentPlayer_Click(object sender, EventArgs e)
         {
             if (cboEscuelas.SelectedIndex == 0)
@@ -254,6 +348,11 @@ namespace AdminEscuelasFut
             }
         }
 
+        /// <summary>
+        /// Close the payment module but first ask if you want to exit.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Pays_FormClosing(object sender, FormClosingEventArgs e)
         {
             bool r = Utilities.showQuestionMessage("¿Desea salir del módulo de pagos?",
@@ -264,9 +363,13 @@ namespace AdminEscuelasFut
             }
         }
 
+        /// <summary>
+        /// If you double click on a row of a query, some data is loaded into the spaces of the form depending on the type of query.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvPagosJugador_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-
             cleanInput();
             if (e.RowIndex >= 0)
             {
@@ -299,31 +402,6 @@ namespace AdminEscuelasFut
                     }
                 }
             }
-        }
-
-        private void txtIDRPaymentPlayer_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Utilities.validateNumbers(sender, e, false);
-        }
-
-        private void txtAmountRPaymentPlayer_TextChanged(object sender, KeyPressEventArgs e)
-        {
-            Utilities.validateNumbers(sender, e, false);
-        }
-
-        private void txbDetail_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Utilities.controlSQLInjection(sender, e);
-        }
-
-        private void txtNameRPaymentPlayer_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            Utilities.controlSQLInjection(sender, e);
-        }
-
-        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            help.Show();
         }
     }
 }
