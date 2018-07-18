@@ -12,11 +12,20 @@ namespace AdminEscuelasFut.Classes
     {
         private DataAccess dataAccess;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public C_HeadQuarters()
         {
             dataAccess = new DataAccess();
         }
 
+
+        /// <summary>
+        /// Fill the DataGridView with the data from the table of levels of the database.
+        /// </summary>
+        /// <param name="dgtvHeadQuarterInfo">Datagrid</param>
+        /// <param name="parameters">Parameters to perform the query in the database.</param>
         public void fillHeadQuartersDataGridView(DataGridView dgtvHeadQuarterInfo, List<String> parameters)
         {
             const String loadDefaultQuery = "SELECT * FROM Instalacion";
@@ -47,6 +56,12 @@ namespace AdminEscuelasFut.Classes
             dgtvHeadQuarterInfo.ReadOnly = true;
         }
 
+        /// <summary>
+        /// Insert an installation in the database
+        /// </summary>
+        /// <param name="address"></param>
+        /// <param name="telephone"></param>
+        /// <returns>return code returned by the stored procedure</returns>
         public int insertHeadQuarter(String address, String telephone)
         {
             DataAccess.storedProcData datos = new DataAccess.storedProcData();
@@ -67,6 +82,12 @@ namespace AdminEscuelasFut.Classes
             return dataAccess.executeStoreProcedure(parameters, "Registrar_Instalacion");
         }
 
+
+        /// <summary>
+        /// Remove an installation from the database
+        /// </summary>
+        /// <param name="address"></param>
+        /// <returns>return code returned by the stored procedure</returns>
         public int deleteHeadQuarter(String address)
         {
             DataAccess.storedProcData datos = new DataAccess.storedProcData();
@@ -81,6 +102,14 @@ namespace AdminEscuelasFut.Classes
             return dataAccess.executeStoreProcedure(parameters, "eliminarInstalacion");
         }
 
+
+        /// <summary>
+        /// Update an installation in the database
+        /// </summary>
+        /// <param name="oldAddress"></param>
+        /// <param name="newAddress"></param>
+        /// <param name="telephone"></param>
+        /// <returns>return code returned by the stored procedure</returns>
         public int updateHeadQuarter(String oldAddress, String newAddress, String telephone)
         {
             DataAccess.storedProcData datos = new DataAccess.storedProcData();

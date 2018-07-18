@@ -17,10 +17,11 @@ namespace AdminEscuelasFut
         private C_Levels levelController;
         private HelpForm help;
         private String dataTemp;
+        
 
-        String helpText = "\r\nEn este módulo se pueden manipular los niveles que se imparten en las escuelas de futbol," +
-                            "donde no pueden existir niveles repetidos, además los rangos deberán ser excluyentes.";
-
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public Levels()
         {
             InitializeComponent();
@@ -28,11 +29,21 @@ namespace AdminEscuelasFut
             help = new HelpForm();
         }
 
+        /// <summary>
+        /// Event that is activated when the form is loaded, loads the data in the datagrid.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Levels_Load(object sender, EventArgs e)
         {
             levelController.fillLevelsDataGridView(dgtvLevelInfo, null);
         }
 
+        /// <summary>
+        /// event click exit button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             bool r = Utilities.showQuestionMessage("¿Desea salir del módulo de niveles?",
@@ -43,25 +54,41 @@ namespace AdminEscuelasFut
             }
         }
 
+        /// <summary>
+        /// Event that is activated when a key is pressed, validates that what is typed is correct.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbNivel_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.validateNumbers(sender, e, false);
         }
 
+        /// <summary>
+        /// Event that is activated when a key is pressed, validates that what is typed is correct.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbEdadInicio_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.validateNumbers(sender, e, false);
         }
 
+        /// <summary>
+        /// Event that is activated when a key is pressed, validates that what is typed is correct.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbEdadFin_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.validateNumbers(sender, e, false);
         }
 
-        /**
-         * 
-         * 
-         **/
+        /// <summary>
+        /// event click button Consultar. Search the database, according to the data in the text fields.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             List<String> parameters = new List<String>();
@@ -70,9 +97,13 @@ namespace AdminEscuelasFut
             /*2*/parameters.Add(txbEdadFin.Text);
             levelController.fillLevelsDataGridView(dgtvLevelInfo, parameters);
         }
-        
-       
-        
+
+
+        /// <summary>
+        /// event double click. Load the selected datagrid information to the text fields.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgtvLevelInfo_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             cleanInput();
@@ -87,7 +118,12 @@ namespace AdminEscuelasFut
             }
         }
 
-
+        /// <summary>
+        /// event click register button. It is responsible for validating that everything is fine, then inserting the information in the database, 
+        /// it also controls the different errors, and according to the error, it shows an informative message to the user.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             if (allFieldsFilled())
@@ -117,6 +153,12 @@ namespace AdminEscuelasFut
             }
         }
 
+        /// <summary>
+        /// event click save button. It is responsible for validating that everything is fine, then boorar the information of the database, 
+        /// also controls the various errors, and according to the error shows an informative message to the user.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             if( txbNivel.Text != "")
@@ -148,9 +190,11 @@ namespace AdminEscuelasFut
             }
         }
 
-        /**
-         * clean all text fields
-         **/
+        
+
+        /// <summary>
+        /// clean all text fields
+        /// </summary>
         private void cleanInput()
         {
             txbNivel.Text = "";
@@ -158,6 +202,10 @@ namespace AdminEscuelasFut
             txbEdadFin.Text = "";
         }
 
+        /// <summary>
+        /// Method that verifies that all the fields of the form are well, in case it is not notified to the user.
+        /// </summary>
+        /// <returns>Returns true if all is well.</returns>
         private bool allFieldsFilled()
         {
             bool isOk = true;
@@ -187,6 +235,11 @@ namespace AdminEscuelasFut
             return isOk;
         }
 
+        /// <summary>
+        /// event click update button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             if (allFieldsFilled())
@@ -196,6 +249,12 @@ namespace AdminEscuelasFut
             }
         }
 
+        /// <summary>
+        /// event click save button. It is responsible for validating that everything is fine, then save the information in the database, 
+        /// also controls the various errors, and according to the error shows an informative message to the user.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (allFieldsFilled())
@@ -225,6 +284,10 @@ namespace AdminEscuelasFut
             }
         }
 
+        /// <summary>
+        /// Method that is responsible for manipulating the visibility of buttons
+        /// </summary>
+        /// <param name="visible">Boolean indicating the visibility of the button.</param>
         public void setVisibleBtn(bool visible)
         {
             btnBorrar.Visible = visible;
@@ -238,17 +301,34 @@ namespace AdminEscuelasFut
             btnDescartar.Visible = !visible;
         }
 
+        /// <summary>
+        /// event click button descartar. Discard the changes that were made when modifying.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDescartar_Click(object sender, EventArgs e)
         {
             setVisibleBtn(true);
             cleanInput();
         }
 
+
+        /// <summary>
+        /// event click button help, show the help to the user.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             help.Show();
         }
 
+
+        /// <summary>
+        /// Closed form event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Levels_FormClosing(object sender, FormClosingEventArgs e)
         {
             bool r = Utilities.showQuestionMessage("¿Desea salir del módulo de niveles?",

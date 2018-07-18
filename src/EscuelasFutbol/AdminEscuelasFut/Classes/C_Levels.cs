@@ -12,17 +12,19 @@ namespace AdminEscuelasFut.Classes
     {
         private DataAccess dataAccess;
 
-        /**
-         * class constructor
-         **/
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public C_Levels()
         {
             dataAccess = new DataAccess();
         }
 
-        /**
-         * Fill the DataGridView with the data from the table of levels of the database.
-         **/
+        /// <summary>
+        /// Fill the DataGridView with the data from the table of levels of the database.
+        /// </summary>
+        /// <param name="dgtvLevelInfo">Datagrid</param>
+        /// <param name="parameters">Parameters to perform the query in the database.</param>
         public void fillLevelsDataGridView(DataGridView dgtvLevelInfo, List<String> parameters)
         {
             const String loadDefaultQuery = "SELECT * FROM Nivel";
@@ -57,9 +59,13 @@ namespace AdminEscuelasFut.Classes
         }
 
 
-        /**
-         * Insert one level from the database
-         **/
+        /// <summary>
+        /// Insert one level from the database
+        /// </summary>
+        /// <param name="numLevel">level number</param>
+        /// <param name="minimumAge">minimum age</param>
+        /// <param name="maximumAge">maximum age</param>
+        /// <returns>return code returned by the stored procedure</returns>
         public int insertLevel(String numLevel, String minimumAge, String maximumAge)
         {
             DataAccess.storedProcData datos = new DataAccess.storedProcData();
@@ -86,9 +92,12 @@ namespace AdminEscuelasFut.Classes
             return dataAccess.executeStoreProcedure(parameters, "insertarNivel");
         }
 
-        /**
-         * Remove one level from the database
-         **/
+        /// <summary>
+        /// Remove one level from the database
+        /// </summary>
+        /// <param name="numLevel">Level number to delete</param>
+        /// <returns>return code returned by the stored procedure</returns>
+
         public int deleteLevel(String numLevel)
         {
             DataAccess.storedProcData datos = new DataAccess.storedProcData();
@@ -103,9 +112,15 @@ namespace AdminEscuelasFut.Classes
             return dataAccess.executeStoreProcedure(parameters, "eliminarNivel");
         }
 
-        /**
-         * Remove one level from the database
-         **/
+
+        /// <summary>
+        /// Remove one level from the database
+        /// </summary>
+        /// <param name="oldLevelNumber"> old level number</param>
+        /// <param name="newLevelNumber"> new level number</param>
+        /// <param name="minimumAge">minimum age</param>
+        /// <param name="maximumAge">maximum age</param>
+        /// <returns>return code returned by the stored procedure</returns>
         public int updateLevel(String oldLevelNumber, String newLevelNumber, String minimumAge, String maximumAge)
         {
             DataAccess.storedProcData datos = new DataAccess.storedProcData();
