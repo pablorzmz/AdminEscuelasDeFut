@@ -17,7 +17,7 @@ namespace AdminEscuelasFut
         private HelpForm help;
 
         /// <summary>
-        /// 
+        /// Default class constructor
         /// </summary>
         public Players()
         {
@@ -29,7 +29,7 @@ namespace AdminEscuelasFut
             help = new HelpForm();
         }
         /// <summary>
-        /// 
+        /// Show form that operates player training records
         /// </summary>
         public void showPlayersTraingins()
         {
@@ -38,7 +38,7 @@ namespace AdminEscuelasFut
             playerTrainingsTool.ShowDialog();
         }
         /// <summary>
-        /// 
+        /// /// Show form that operates legal managers
         /// </summary>
         public void showLegalManagers()
         {
@@ -46,7 +46,7 @@ namespace AdminEscuelasFut
             legalManagerTool.ShowDialog();
         }
         /// <summary>
-        /// 
+        /// Show a new form of PlayerTrainings
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -55,7 +55,7 @@ namespace AdminEscuelasFut
             showPlayersTraingins();
         }
         /// <summary>
-        /// 
+        /// Load method of this form. Load all initial data
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -75,7 +75,7 @@ namespace AdminEscuelasFut
             dgtvPlayersInfo.Columns[13].Visible = false;                        
         }
         /// <summary>
-        /// 
+        /// Method that is called when form is closing. Ask user to really close this form.
         /// </summary>
         private void exitForm()
         {
@@ -87,7 +87,7 @@ namespace AdminEscuelasFut
             }            
         }
         /// <summary>
-        /// 
+        /// Menu item action for closing this form
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -105,7 +105,7 @@ namespace AdminEscuelasFut
             Utilities.validateNumbers(sender,e,false);            
         }
         /// <summary>
-        /// 
+        /// Control sql injection in this file. Key press event of this component used
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -114,7 +114,7 @@ namespace AdminEscuelasFut
             Utilities.controlSQLInjection(sender, e);
         }
         /// <summary>
-        /// 
+        /// Control sql injection in this file. Key press event of this component used
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -122,7 +122,7 @@ namespace AdminEscuelasFut
         {
             Utilities.controlSQLInjection(sender, e);
         }
-        /// <summary>
+        /// Control sql injection in this file. Key press event of this component used
         /// 
         /// </summary>
         /// <param name="sender"></param>
@@ -132,7 +132,7 @@ namespace AdminEscuelasFut
             Utilities.controlSQLInjection(sender, e);
         }
         /// <summary>
-        /// 
+        /// Control sql injection in this file. Key press event of this component used
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -141,7 +141,7 @@ namespace AdminEscuelasFut
             Utilities.controlSQLInjection(sender, e);
         }
         /// <summary>
-        /// 
+        /// Control sql injection in this file. Key press event of this component used
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -150,7 +150,7 @@ namespace AdminEscuelasFut
             Utilities.validateNumbers(sender, e, false);
         }
         /// <summary>
-        /// 
+        /// Control sql injection in this file. Key press event of this component used
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -159,7 +159,7 @@ namespace AdminEscuelasFut
             Utilities.controlSQLInjection(sender, e);
         }
         /// <summary>
-        /// 
+        /// Control sql injection in this file. Key press event of this component used
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -168,7 +168,7 @@ namespace AdminEscuelasFut
             Utilities.controlSQLInjection(sender, e);
         }
         /// <summary>
-        /// 
+        ///  Execute a load of information into the datagridview with a set of filter arguments
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -181,7 +181,7 @@ namespace AdminEscuelasFut
             playerController.fillPlayerDataGridView(dgtvPlayersInfo, parameters);
         }
         /// <summary>
-        /// 
+        /// Update currente selected sex vale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -190,7 +190,7 @@ namespace AdminEscuelasFut
             this.sexValue = "m";
         }
         /// <summary>
-        /// 
+        /// Update currente selected sex vale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -199,7 +199,7 @@ namespace AdminEscuelasFut
             this.sexValue = "f";
         }
         /// <summary>
-        /// 
+        /// Valide just numeric chars in this component
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -208,7 +208,7 @@ namespace AdminEscuelasFut
             Utilities.validateNumbers(sender, e, false);
         }
         /// <summary>
-        /// 
+        /// Valide just numeric chars in this component/// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -222,7 +222,7 @@ namespace AdminEscuelasFut
             Utilities.validateNumbers(sender, e, false);
         }
         /// <summary>
-        /// 
+        /// Valide just numeric chars in this component/// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -231,7 +231,7 @@ namespace AdminEscuelasFut
             Utilities.validateNumbers(sender, e, false);
         }
         /// <summary>
-        /// 
+        /// Clear all input data
         /// </summary>
         private void cleanInput()
         {
@@ -248,7 +248,7 @@ namespace AdminEscuelasFut
             txbSegundoApellidoEncargado.Text = "";
         }
         /// <summary>
-        /// 
+        /// Displays and fills files with a selected row from datagridview. Double click action event of the datagridview component.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>        
@@ -298,7 +298,7 @@ namespace AdminEscuelasFut
             }
         }
         /// <summary>
-        /// 
+        /// Fill legal manager information  according to a selected value from the cboCedulasEncargado.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -311,7 +311,7 @@ namespace AdminEscuelasFut
             }
         }
         /// <summary>
-        /// 
+        /// Click action that calls controller to execute stored proc for inserting a new player from data base
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -412,7 +412,7 @@ namespace AdminEscuelasFut
             }
         }
         /// <summary>
-        /// 
+        /// Click action that calls controller to execute stored proc for deleting a player from data base
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -466,7 +466,7 @@ namespace AdminEscuelasFut
         {            
         }
         /// <summary>
-        /// 
+        /// Method that hide or show seleted components in the UI of this form
         /// </summary>
         /// <param name="visible"></param>
         public void setVisibleBtn(bool visible)
@@ -482,7 +482,7 @@ namespace AdminEscuelasFut
             
         }
         /// <summary>
-        /// 
+        /// Click action for discard changes that were seleted for an update operation
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -493,7 +493,7 @@ namespace AdminEscuelasFut
             cleanInput();
         }
         /// <summary>
-        /// 
+        /// Click action for calling controller to execute a stored proc to update changes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -506,7 +506,7 @@ namespace AdminEscuelasFut
             dataTemp.Add(txbTelefonoJug2.Text);
         }
         /// <summary>
-        /// 
+        /// Click action for calling controller to execute a stored proc to update changes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -565,7 +565,7 @@ namespace AdminEscuelasFut
             setVisibleBtn(true);
         }
         /// <summary>
-        /// 
+        /// Valid all input data to execute an action
         /// </summary>
         /// <returns></returns>
         private bool validate()
@@ -599,9 +599,9 @@ namespace AdminEscuelasFut
             return true;
         }
         /// <summary>
-        /// 
+        /// Return the selected sex value of the current two radio buttons
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Return a String value. M is masculino, f otherwise</returns>
         private String getSexo()
         {
             if (rbtnHombre.Checked)
@@ -610,7 +610,7 @@ namespace AdminEscuelasFut
                 return "f";
         }
         /// <summary>
-        /// 
+        /// Click action event that call the control to execute a query
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -620,7 +620,7 @@ namespace AdminEscuelasFut
         }
 
         /// <summary>
-        /// 
+        ///  Show a help form
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
