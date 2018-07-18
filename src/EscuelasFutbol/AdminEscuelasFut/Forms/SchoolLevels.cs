@@ -17,6 +17,9 @@ namespace AdminEscuelasFut
         private List<String> dataTemp;
         private HelpForm help;
 
+        /// <summary>
+        /// Builder of the interface schoolLevels
+        /// </summary>
         public SchoolLevels()
         {
             InitializeComponent();
@@ -25,6 +28,11 @@ namespace AdminEscuelasFut
             help = new HelpForm();
         }
 
+        /// <summary>
+        /// Load the data that is necessary for this interface
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SchoolLevels_Load(object sender, EventArgs e)
         {
             this.MinimumSize = this.Size;
@@ -34,6 +42,11 @@ namespace AdminEscuelasFut
             schoolLevelsController.fillSchoolsLevelsDataGridView(dgvSchoolLevels, null);
         }
 
+        /// <summary>
+        /// Exit the interface
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             bool salir = Utilities.showQuestionMessage("¿Desea salir de las herramientas Niveles de Escuelas?",
@@ -44,22 +57,40 @@ namespace AdminEscuelasFut
             }
         }
 
+        /// <summary>
+        /// Control the injection in the txtMinimumAgeSchoolLevel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtMinimumAgeSchoolLevel_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.validateNumbers(sender, e, false);
         }
 
+        /// <summary>
+        /// Control the injection in the txtMaximumAgeSchoolLevel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtMaximumAgeSchoolLevel_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.validateNumbers(sender, e, false);
         }
 
+        /// <summary>
+        /// Clean all spaces in the interface
+        /// </summary>
         private void cleanInput()
         {
             cmbSchoolName.SelectedItem = 0;
             cmbSchoolLevel.SelectedItem = 0;
         }
 
+        /// <summary>
+        /// Activates the action of consulting
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConsultar_MouseClick(object sender, MouseEventArgs e)
         {
             cleanInput();
@@ -76,6 +107,11 @@ namespace AdminEscuelasFut
             }
         }
 
+        /// <summary>
+        /// Activates the action of loading selected data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvSchoolLevels_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             cleanInput();
@@ -89,6 +125,11 @@ namespace AdminEscuelasFut
             }
         }
 
+        /// <summary>
+        /// Activates the action of inserting data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             bool error = false;
@@ -134,6 +175,11 @@ namespace AdminEscuelasFut
             }
         }
 
+        /// <summary>
+        /// Activates the action of deleting data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             bool error = false;
@@ -172,7 +218,11 @@ namespace AdminEscuelasFut
             }
         }
 
-
+        /// <summary>
+        /// Activates the action of updating data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             if (cmbSchoolLevel.SelectedIndex == 0)
@@ -187,6 +237,10 @@ namespace AdminEscuelasFut
             }
         }
 
+        /// <summary>
+        /// Enable and disable buttons
+        /// </summary>
+        /// <param name="visible"></param>
         public void setVisibleBtn(bool visible)
         {
             btnBorrar.Visible = visible;
@@ -200,6 +254,11 @@ namespace AdminEscuelasFut
             cmbSchoolName.Enabled = visible;
         }
 
+        /// <summary>
+        /// Activate the action to discard changes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDescartar_Click(object sender, EventArgs e)
         {
             cleanInput();
@@ -207,6 +266,11 @@ namespace AdminEscuelasFut
             dataTemp.Clear();
         }
 
+        /// <summary>
+        /// Activate the action to save changes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             bool error = false;
@@ -237,11 +301,21 @@ namespace AdminEscuelasFut
             }
         }
 
+        /// <summary>
+        /// Show help window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             help.Show();
         }
 
+        /// <summary>
+        /// Verify if you want to leave
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SchoolLevels_FormClosing(object sender, FormClosingEventArgs e)
         {
             bool salir = Utilities.showQuestionMessage("¿Desea salir de las herramientas Niveles de Escuelas?",

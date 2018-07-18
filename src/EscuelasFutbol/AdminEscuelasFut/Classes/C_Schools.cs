@@ -13,17 +13,29 @@ namespace AdminEscuelasFut
         private DataAccess dataAccess;
         private DataTable dataTableTelephones;
 
+        /// <summary>
+        /// Builder of the class C_Schools
+        /// </summary>
         public C_Schools()
         {
             dataAccess = new DataAccess();
             dataTableTelephones = null;
         }
 
+        /// <summary>
+        /// Fill the DirrInstalacionComboBox with the necessary data
+        /// </summary>
+        /// <param name="cmbDirrInstalacion"> The comboBox that i want to fill </param>
         public void fillDirrInstalacionComboBox(ComboBox cmbDirrInstalacion)
         {
             dataAccess.fillComboBox(cmbDirrInstalacion, "SELECT Direccion FROM Instalacion", "Elija una Instalacion");
         }
 
+        /// <summary>
+        /// Fill the SchoolsDataGridView with the necessary data
+        /// </summary>
+        /// <param name="dgvSchoolM"> The DataGridView that i want to fill </param>
+        /// <param name="parameters"> The list of parameters that filter the search </param>
         public void fillSchoolsDataGridView(DataGridView dgvSchoolM, List<String> parameters)
         {
             const String loadDefaultQuery = "SELECT TOP 100 * FROM Escuela";
@@ -53,6 +65,12 @@ namespace AdminEscuelasFut
             dgvSchoolM.ReadOnly = true;
         }
 
+        /// <summary>
+        /// Fill the spaces of telephone numbers
+        /// </summary>
+        /// <param name="nombreEsc"> The name of the school I want to fill out the phone numbers </param>
+        /// <param name="tel1"> the TextBox that i want to fill </param>
+        /// <param name="tel2"> the TextBox that i want to fill </param>
         public void fillSchoolTelephoneInfo(String nombreEsc, TextBox tel1, TextBox tel2)
         {
             String queryTelephoneNumbers =
@@ -75,6 +93,11 @@ namespace AdminEscuelasFut
 
         }
 
+        /// <summary>
+        /// Method to update data
+        /// </summary>
+        /// <param name="args"> The list of parameters that i want to update </param>
+        /// <returns> Return the status of the update </returns>
         public int updateSchoolInfo(List<String> args) {
             String[] procParams =
               {
@@ -116,6 +139,11 @@ namespace AdminEscuelasFut
             return dataAccess.executeStoreProcedure(parameters, "ActualizarEscuela");
         }
 
+        /// <summary>
+        /// Method to insert data
+        /// </summary>
+        /// <param name="args"> The list of parameters that i want to insert </param>
+        /// <returns> Return the status of the insert </returns>
         public int insertSchool(List<String> args)
         {
             String[] procParams =
@@ -152,6 +180,11 @@ namespace AdminEscuelasFut
             return dataAccess.executeStoreProcedure(parameters, "Registrar_Escuela");
         }
 
+        /// <summary>
+        /// Method to delete data
+        /// </summary>
+        /// <param name="args"> The list of parameters that i want to delete </param>
+        /// <returns></returns>
         public int deleteSchool(List<String> args)
         {
             String[] procParams =

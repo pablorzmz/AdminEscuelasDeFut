@@ -12,21 +12,37 @@ namespace AdminEscuelasFut
     {
         private DataAccess dataAccess;
 
+        /// <summary>
+        /// Builder of the class C_SchoolLevels
+        /// </summary>
         public C_SchoolLevels()
         {
             dataAccess = new DataAccess();
         }
 
+        /// <summary>
+        /// Fill the LevesComboBox with the necessary data
+        /// </summary>
+        /// <param name="cboNiveles"> The comboBox that i want to fill  </param>
         public void fillLevesComboBox(ComboBox cboNiveles)
         {
             dataAccess.fillComboBox(cboNiveles, "SELECT Numero FROM Nivel", "Elija un nivel");
         }
 
+        /// <summary>
+        /// Fill the SchoolsComboBox with the necessary data
+        /// </summary>
+        /// <param name="cboEscuelas"> The comboBox that i want to fill  </param>
         public void fillSchoolsComboBox(ComboBox cboEscuelas)
         {
             dataAccess.fillComboBox(cboEscuelas, "SELECT Nombre FROM Escuela", "Elija una Escuela");
         }
 
+        /// <summary>
+        /// Fill the SchoolsLevelsDataGridView with the necessary data
+        /// </summary>
+        /// <param name="dgvSchoolLevels"> The DataGridView that i want to fill </param>
+        /// <param name="parameters"> The list of parameters that filter the search </param>
         public void fillSchoolsLevelsDataGridView(DataGridView dgvSchoolLevels, List<String> parameters)
         {
             const String loadDefaultQuery = "SELECT TOP 100 * FROM Tiene";
@@ -56,6 +72,11 @@ namespace AdminEscuelasFut
             dgvSchoolLevels.ReadOnly = true;
         }
 
+        /// <summary>
+        /// Method to update data
+        /// </summary>
+        /// <param name="args"> The list of parameters that i want to update </param>
+        /// <returns> Return the status of the update </returns>
         public int updateSchoolLevelsInfo( List<String> args ) {
             String[] procParams =
               {
@@ -87,6 +108,11 @@ namespace AdminEscuelasFut
             return dataAccess.executeStoreProcedure(parameters, "ActualizarNivelesDeEscuela");
         }
 
+        /// <summary>
+        /// Method to insert data
+        /// </summary>
+        /// <param name="args"> The list of parameters that i want to insert </param>
+        /// <returns> Return the status of the insert </returns>
         public int insertSchoolLevels( List<String> args ) {
             String[] procParams =
               {
@@ -116,6 +142,11 @@ namespace AdminEscuelasFut
             return dataAccess.executeStoreProcedure(parameters, "insertarNivelesAEscuela");
         }
 
+        /// <summary>
+        /// Method to delete data
+        /// </summary>
+        /// <param name="args"> The list of parameters that i want to delete </param>
+        /// <returns> Return the status of the delete </returns>
         public int deleteSchoolLevels(List<String> args)
         {
             String[] procParams =

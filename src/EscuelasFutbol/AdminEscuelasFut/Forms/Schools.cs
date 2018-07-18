@@ -19,6 +19,9 @@ namespace AdminEscuelasFut
         private List<String> dataTemp;
         private HelpForm help;
 
+        /// <summary>
+        /// Builder of the interface school
+        /// </summary>
         public Schools()
         {
             InitializeComponent();
@@ -27,63 +30,108 @@ namespace AdminEscuelasFut
             help = new HelpForm();
         }
 
+        /// <summary>
+        /// Show interface to manage headquarters
+        /// </summary>
         public void showHeadQuaderModule()
         {
             headQuatersModule = new HeadQuarters();
             headQuatersModule.ShowDialog();
         }
+
+        /// <summary>
+        /// Activates the interface to manage the headquarters
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void menuItemAdministrarInst_Click(object sender, EventArgs e)
         {
             showHeadQuaderModule();
         }
 
+        /// <summary>
+        /// Shows interface to manage the school levels
+        /// </summary>
         public void showSchooLevels()
         {
             schoolLevesManagement = new SchoolLevels();
             schoolLevesManagement.ShowDialog();
         }
 
+        /// <summary>
+        /// Activates the interface to manage the school levels
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void menuItemGestionarNiveles_Click(object sender, EventArgs e)
         {
             showSchooLevels();
         }
 
+        /// <summary>
+        /// Load the data that is necessary for this interface
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Schools_Load(object sender, EventArgs e)
         {
             schoolController.fillSchoolsDataGridView(dgvSchoolM, null);
             schoolController.fillDirrInstalacionComboBox(cmbDirrInstalacion);
         }
 
+        /// <summary>
+        /// Exit the interface
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            bool salir = Utilities.showQuestionMessage("¿Desea salir del módulo Escuelas?",
-                          "Módulo Escuelas");
-            if (salir)
-            {
-                this.Close();
-            }
+            this.Close();
         }
 
+        /// <summary>
+        /// Control the injection in the txtNameSchoolM 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtNameSchoolM_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.controlSQLInjection(sender, e);
         }
 
+        /// <summary>
+        /// Control the injection in the txtPlaceSchoolM 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtPlaceSchoolM_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.controlSQLInjection(sender, e);
         }
 
+        /// <summary>
+        /// Control the injection in the txtAddressSchoolM
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtAddressSchoolM_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.controlSQLInjection(sender, e);
         }
 
+        /// <summary>
+        /// Control the injection in the TxtInstallationNameSchoolM
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxtInstallationNameSchoolM_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.controlSQLInjection(sender, e);
         }
 
+        /// <summary>
+        /// Clean all spaces in the interface
+        /// </summary>
         private void cleanInput()
         {
             txtNameSchoolM.Text = "";
@@ -93,6 +141,11 @@ namespace AdminEscuelasFut
             txtTelephoneSchoo2M.Text = "";
         }
 
+        /// <summary>
+        /// Activates the action of consulting
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConsultar_MouseClick(object sender, MouseEventArgs e)
         {
             //cleanInput();
@@ -110,6 +163,11 @@ namespace AdminEscuelasFut
             }
         }
 
+        /// <summary>
+        /// Activates the action of loading selected data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvSchoolM_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
             cleanInput();
@@ -124,16 +182,31 @@ namespace AdminEscuelasFut
             }
         }
 
+        /// <summary>
+        /// Control the injection in the txtTelephoneSchoolM
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtTelephoneSchoolM_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.validateNumbers(sender, e, false);
         }
 
+        /// <summary>
+        /// Control the injection in the txtTelephoneSchoo2M
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtTelephoneSchoo2M_KeyPress(object sender, KeyPressEventArgs e)
         {
             Utilities.validateNumbers(sender, e, false);
         }
 
+        /// <summary>
+        /// Activates the action of updating data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             bool error = false;
@@ -161,6 +234,11 @@ namespace AdminEscuelasFut
 
         }
 
+        /// <summary>
+        /// Activates the action of inserting data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             bool error = false;
@@ -219,6 +297,11 @@ namespace AdminEscuelasFut
             }
         }
 
+        /// <summary>
+        /// Activates the action of deleting data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             if (txtNameSchoolM.Text == "")
@@ -250,6 +333,10 @@ namespace AdminEscuelasFut
             }
         }
 
+        /// <summary>
+        /// Enable and disable buttons
+        /// </summary>
+        /// <param name="visible"></param>
         public void setVisibleBtn(bool visible)
         {
             btnBorrar.Visible = visible;
@@ -263,6 +350,11 @@ namespace AdminEscuelasFut
             btnDescartar.Visible = !visible;
         }
 
+        /// <summary>
+        /// Activate the action to discard changes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDescartar_Click(object sender, EventArgs e)
         {
             cleanInput();
@@ -270,6 +362,11 @@ namespace AdminEscuelasFut
             dataTemp.Clear();
         }
 
+        /// <summary>
+        /// Activate the action to save changes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             bool error = false;
@@ -302,11 +399,22 @@ namespace AdminEscuelasFut
             }
         }
 
+
+        /// <summary>
+        /// Show help window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             help.Show();
         }
 
+        /// <summary>
+        /// Verify if you want to leave
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Schools_FormClosing(object sender, FormClosingEventArgs e)
         {
             bool salir = Utilities.showQuestionMessage("¿Desea salir del módulo Escuelas?",
